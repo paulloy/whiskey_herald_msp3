@@ -34,6 +34,64 @@ This should facilitate community building and provide a meaningful experience to
 
 [View wireframes](WIREFRAMES.md)
 
+# database
+
+![whiskey herald database](static/README/database/whiskey_herald.png)
+
+## drinks_collection {}
+This collection contains all drinks that are displayed on the website. Any registered user can create and update documents within this collection. Only the website admin can delete these documents, so a malicious user cannot start deleting documents. 
+
+## reviews_collection {}
+This collection contains all the reviews written to the website. Any registered user can write a review, update their review, or delete it.
+
+## users_collection {}
+This collection contains all the data on registered users. A user writes to this collection when registering. These can delete their own document if they choose to delete their account. Some fields can be updated by the user.
+
+![drinks collection](static/README/database/drinks_collection.png)
+
+## _id 
+The ObjectId of this document.
+## drink 
+The name of the drink. E.g. Jameson’s
+## image_location
+The location of the image in the static directory.
+## type
+The whiskeys type e.g. Irish
+## description
+A description of the drink.
+## average_score
+This is the average score of the drink, its value is calculated by totaling the scores from each review and finding the mean.
+
+![reviews collection](static/README/database/reviews_collection.png)
+
+## _id
+The ObjectId of this document.
+## users_id
+The ObjectId of a users_collection document. So a unique user can be identified as the author of this review.
+## drinks_id
+The ObjectId of a drinks_collection document. So the review can be attached as unique to an individual drink.
+## title
+The title of this review
+## review
+The review itself.
+## score
+An integer value of 1,2,3,4,5. 5 star rating.
+
+![users collection](static/README/database/users_collection.png)
+
+## _id
+The ObjectId of this document.
+## email
+The users unique email.
+## username
+the users unique username
+## password
+the users hashed password.
+## bio
+The users biography.
+## profile_pic
+A path to the users profile picture in the static directory.
+
 # Credits
 ## Acknowledgements
 
