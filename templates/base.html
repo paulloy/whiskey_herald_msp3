@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Whiskey Herald</title>
+</head>
+<body>
+    <h1>RISER FRIENDS</h1>
+
+<a href="{{ url_for('about') }}">about</a>
+<a href="{{ url_for('add_whiskey') }}">add whiskey</a>
+<a href="{{ url_for('index') }}">index</a>
+<a href="{{ url_for('login') }}">login</a>
+<a href="{{ url_for('register') }}">register</a>
+<a href="{{ url_for('profile') }}">profile</a>
+<a href="{{ url_for('search') }}">search</a>
+<a href="{{ url_for('whiskey') }}">whiskey</a>
+
+    {% block content %}
+    {% endblock %}
+
+</body>
+</html>
