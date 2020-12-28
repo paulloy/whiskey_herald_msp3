@@ -101,9 +101,16 @@ def login():
     return render_template("login.html")
 
 
+@app.route("/logout")
+def logout():
+    session.clear()
+    flash("You have been logged out", "success")
+    return redirect(url_for("login"))
+
+
 @app.route("/profile/<username>")
 def profile(username):
-    return render_template("profile.html")
+    return render_template("profile.html", username=username)
 
 
 @app.route("/search")

@@ -39,9 +39,13 @@
     <nav id="sidenav">
         <span id="close-navbar"><i class="far fa-times-circle"></i></span>
         <ul>
-            <li><a href="{{ url_for('register') }}">REGISTER</a></li>
-            <li><a href="{{ url_for('login') }}"><i class="fas fa-user"></i> LOG IN</a></li>
-            <li><a href="#">LOGOUT</a></li>
+            {% if session["username"] %}
+                <li><a href="{{ url_for('profile', username = session['username']) }}"><i class="fas fa-user"></i> {{ session["username"] }}</a></li>
+                <li><a href="{{ url_for('logout') }}">LOGOUT</a></li>
+            {% else %}
+                <li><a href="{{ url_for('register') }}">REGISTER</a></li>
+                <li><a href="{{ url_for('login') }}"><i class="fas fa-user"></i> LOG IN</a></li>
+            {% endif %}
             <li><a href="{{ url_for('index') }}">HOME</a></li>
             <li><a href="{{ url_for('about') }}">WHO WE ARE</a></li>
             <li><a href="{{ url_for('add_whiskey') }}">ADD A WHISKEY</a></li>
