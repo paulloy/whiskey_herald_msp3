@@ -2,7 +2,7 @@
 
 {% block content %}
 
-<form id="register" class="form">
+<form id="register" class="form" method="POST" action="{{ url_for('register') }}">
     <h2>REGISTER</h2>
 
     <label for="email">Email</label>

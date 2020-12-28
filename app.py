@@ -17,6 +17,9 @@ app.secret_key = os.environ.get("SECRET_KEY")
 
 mongo = PyMongo(app)
 
+# get collections
+coll = mongo.db
+
 
 @app.route("/")
 def index():
@@ -33,14 +36,45 @@ def add_whiskey():
     return render_template("add-whiskey.html")
 
 
+@app.route("/register", methods=["GET", "POST"])
+def register():
+    if request.method == "POST":
+        existing_username = coll.users.find_one(
+            {"username": request.form.get("username").lower()}
+        )
+        existing_email = coll.users.find_one(
+            {"email": request.form.get("email").lower()}
+        )
+
+        if existing_username:
+            flash("This username is unavailable, please try another.", "error")
+            return redirect(url_for("register"))
+        elif existing_email:
+            flash("This email is unavailable, please try another.", "error")
+            return redirect(url_for("register"))
+
+        # dictionary for inserting a new user to users collection
+        newUser = {
+            "email": request.form.get("email").lower(),
+            "username": request.form.get("username").lower(),
+            "password": generate_password_hash(request.form.get("password")),
+            "bio": "Tell us more about yourself :)",
+            "profile_pic": "DEFAULT"
+        }
+
+        coll.users.insert_one(newUser)
+
+        flash("Registration successful, thanks for joining! \
+            You can now login.", "success")
+
+        return redirect(url_for("login"))
+
+    return render_template("register.html")
+
+
 @app.route("/login")
 def login():
     return render_template("login.html")
-
-
-@app.route("/register")
-def register():
-    return render_template("register.html")
 
 
 @app.route("/profile")
@@ -60,6 +94,6 @@ def whiskey():
 
 if __name__ == "__main__":
     app.run(
-        host=os.environ.get("IP", "0.0.0.0"),
-        port=int(os.environ.get("PORT", "5000")),
+        host=os.environ.get("IP"),
+        port=int(os.environ.get("PORT")),
         debug=True)
