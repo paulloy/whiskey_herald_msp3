@@ -1,0 +1,52 @@
+$header-height: 4rem;
+
+#header {
+    border: 1px solid black;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    height: $header-height;
+    div:first-of-type {
+        span {
+            display: inline-block;
+            a {
+                text-decoration: none;
+                h1 {
+                    color: red;
+                }
+            }
+        }
+    }
+    div:last-of-type {
+        display: flex;
+        align-items: center;
+        form {
+            margin-left: auto;
+            width: 100%;
+            display: flex;
+            flex-wrap: nowrap;
+            input {
+                width: 90%;
+            }
+            button {
+                height: $header-height * 0.75;
+                width: $header-height * 0.75;
+                border-radius: 50%;
+                margin-left: 1rem;
+            }
+        }
+        #navbar-toggle {
+            display: flex;
+            margin-left: 2rem;
+            font-size: 1.8rem;
+            border: 1px solid black;
+            height: $header-height * 0.75;
+            border-radius: 50%;
+            width: $header-height * 0.75;
+            i {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    }
+}

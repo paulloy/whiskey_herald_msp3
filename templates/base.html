@@ -4,18 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Whiskey Herald</title>
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
+    <!-- custom stylesheets -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}" />
 </head>
 <body>
-    <h1>RISER FRIENDS</h1>
-
-<a href="{{ url_for('about') }}">about</a>
-<a href="{{ url_for('add_whiskey') }}">add whiskey</a>
-<a href="{{ url_for('index') }}">index</a>
-<a href="{{ url_for('login') }}">login</a>
-<a href="{{ url_for('register') }}">register</a>
-<a href="{{ url_for('profile') }}">profile</a>
-<a href="{{ url_for('search') }}">search</a>
-<a href="{{ url_for('whiskey') }}">whiskey</a>
+    <header id="header" class="row">
+        <div class="col-lg-6">
+            <span>
+                <a href="{{ url_for('index') }}">
+                    <h1>Whiskey Herald</h1>
+                </a>
+            </span>
+        </div>
+        <div class="col-lg-6">
+            <form>
+                <input type="text" placeholder="Search Whiskeys"/>
+                <button type="submit"><i class="fas fa-search"></i></button>
+            </form>
+            <div id="navbar-toggle">
+                <i i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
 
     {% block content %}
     {% endblock %}

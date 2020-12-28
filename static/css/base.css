@@ -1,0 +1,50 @@
+#header {
+  border: 1px solid black;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  height: 4rem;
+}
+#header div:first-of-type span {
+  display: inline-block;
+}
+#header div:first-of-type span a {
+  text-decoration: none;
+}
+#header div:first-of-type span a h1 {
+  color: red;
+}
+#header div:last-of-type {
+  display: flex;
+  align-items: center;
+}
+#header div:last-of-type form {
+  margin-left: auto;
+  width: 100%;
+  display: flex;
+  flex-wrap: nowrap;
+}
+#header div:last-of-type form input {
+  width: 90%;
+}
+#header div:last-of-type form button {
+  height: 3rem;
+  width: 3rem;
+  border-radius: 50%;
+  margin-left: 1rem;
+}
+#header div:last-of-type #navbar-toggle {
+  display: flex;
+  margin-left: 2rem;
+  font-size: 1.8rem;
+  border: 1px solid black;
+  height: 3rem;
+  border-radius: 50%;
+  width: 3rem;
+}
+#header div:last-of-type #navbar-toggle i {
+  width: 100%;
+  text-align: center;
+}
+
+/*# sourceMappingURL=base.css.map */
