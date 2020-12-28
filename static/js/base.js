@@ -1,3 +1,4 @@
+// Sidenav
 $('#navbar-toggle').click(function () {
     $('#navbar-background').show();
     $('#sidenav').show().animate({
@@ -12,4 +13,9 @@ $('#navbar-background, #close-navbar').click(function () {
     }, 300, function() {
         $('#sidenav').hide();
     });
+});
+
+// close flashed messages
+$('#close-flash').click(function () {
+    $("#flash").remove();
 });
