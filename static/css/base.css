@@ -1,3 +1,8 @@
+body {
+  position: relative;
+  overflow-x: hidden;
+}
+
 #header {
   border: 1px solid black;
   width: 80%;
@@ -45,6 +50,71 @@
 #header div:last-of-type #navbar-toggle i {
   width: 100%;
   text-align: center;
+}
+
+#navbar-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none;
+}
+
+#navbar-background:hover {
+  cursor: pointer;
+}
+
+#sidenav {
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  right: -15rem;
+  width: 15rem;
+  height: 100vh;
+  background-color: #3e5558;
+}
+#sidenav #close-navbar {
+  display: flex;
+  align-items: center;
+  justify-items: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  font-size: 2rem;
+  background-color: white;
+  border-radius: 50%;
+  border: 1px solid black;
+  margin-left: auto;
+  margin-right: 0.5rem;
+  margin-top: 0.5rem;
+}
+#sidenav #close-navbar i {
+  width: 100%;
+  text-align: center;
+}
+#sidenav #close-navbar:hover {
+  cursor: pointer;
+}
+#sidenav ul {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 1rem;
+  padding: 0;
+}
+#sidenav ul li {
+  background-color: white;
+  margin-bottom: 0.5rem;
+  padding: 0.25rem 0.5rem 0.25rem 0.5rem;
+  width: 90%;
+  text-align: center;
+  font-size: 1.5rem;
+  list-style-type: none;
+}
+#sidenav ul li a {
+  color: black;
 }
 
 /*# sourceMappingURL=base.css.map */

@@ -1,5 +1,10 @@
 $header-height: 4rem;
 
+body {
+    position: relative;
+    overflow-x: hidden;
+}
+
 #header {
     border: 1px solid black;
     width: 80%;
@@ -46,6 +51,68 @@ $header-height: 4rem;
             i {
                 width: 100%;
                 text-align: center;
+            }
+        }
+    }
+}
+
+$sidenav-width: 15rem;
+#navbar-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+} #navbar-background:hover {
+    cursor: pointer;
+}
+#sidenav {
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    right: - $sidenav-width;
+    width: $sidenav-width;
+    height: 100vh;
+    background-color: rgb(62, 85, 88);
+    #close-navbar {
+        display: flex;
+        align-items: center;
+        justify-items: center;
+        width: 2.5rem;
+        height: 2.5rem;
+        font-size: 2rem;
+        background-color: white;
+        border-radius: 50%;
+        border: 1px solid black;
+        margin-left: auto;
+        margin-right: 0.5rem;
+        margin-top: 0.5rem;
+        i {
+            width: 100%;
+            text-align: center;
+        }
+    } #close-navbar:hover {
+        cursor: pointer;
+    }
+    ul {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 1rem;
+        padding: 0;
+        li {
+            background-color: white;
+            margin-bottom: 0.5rem;
+            padding: 0.25rem 0.5rem 0.25rem 0.5rem;
+            width: 90%;
+            text-align: center;
+            font-size: 1.5rem;
+            list-style-type: none;
+            a {
+                color: black;
             }
         }
     }
