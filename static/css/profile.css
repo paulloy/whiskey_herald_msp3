@@ -1,0 +1,20 @@
+#bio {
+  width: 80%;
+  border: 1px solid black;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1rem;
+}
+#bio h3 {
+  text-align: center;
+}
+#bio div:first-of-type i {
+  font-size: 15rem;
+  width: 100%;
+  text-align: center;
+}
+#bio div:last-of-type {
+  text-align: justify;
+}
+
+/*# sourceMappingURL=profile.css.map */

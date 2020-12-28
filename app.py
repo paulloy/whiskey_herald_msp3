@@ -56,7 +56,7 @@ def register():
         # dictionary for inserting a new user to users collection
         newUser = {
             "email": request.form.get("email").lower(),
-            "username": request.form.get("username").lower(),
+            "username": request.form.get("username"),
             "password": generate_password_hash(request.form.get("password")),
             "bio": "Tell us more about yourself :)",
             "profile_pic": "DEFAULT"
@@ -110,7 +110,17 @@ def logout():
 
 @app.route("/profile/<username>")
 def profile(username):
-    return render_template("profile.html", username=username)
+    user = coll.users.find_one(
+        {"username": username}
+    )
+
+    userDetails = {
+        "username": user["username"],
+        "bio": user["bio"],
+        "profile_pic": user["profile_pic"]
+    }
+
+    return render_template("profile.html", username=username, userDetails=userDetails)
 
 
 @app.route("/search")
