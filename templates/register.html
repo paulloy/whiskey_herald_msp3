@@ -1,5 +1,37 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <h1>register</h1>
+
+<form id="register" class="form">
+    <h2>REGISTER</h2>
+
+    <label for="email">Email</label>
+    <input id="email" name="email" type="email" placeholder="Email" required>
+
+    <label for="username">Username</label>
+    <input id="username" name="username" type="text" pattern="^[a-zA-Z0-9]{5,15}$" placeholder="Username" required>
+
+    <label for="password">Password</label>
+    <input id="password" name="password"
+        type="password"
+        minlength="5" maxlength="15" 
+        pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,15}"
+        placeholder="Password"
+        title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 and fewer than 15 characters."
+        required>
+
+    <label for="repeat-password">Repeat Password</label>
+    <input id="repeat-password" name="repeat-password" 
+        type="password"
+        minlength="5" maxlength="15"
+        pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,15}"  
+        placeholder="Confirm Password"
+        title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 and fewer than 15 characters."
+        required>
+
+    <button id="submit" type="submit" disabled>REGISTER</button>
+
+    <a href="{{ url_for('login') }}">Already a user? LOGIN</a>
+</form>
+
 {% endblock %}

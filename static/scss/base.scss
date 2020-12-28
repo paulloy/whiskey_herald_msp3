@@ -1,10 +1,11 @@
-$header-height: 4rem;
 
 body {
     position: relative;
     overflow-x: hidden;
 }
 
+// Header
+$header-height: 4rem;
 #header {
     border: 1px solid black;
     width: 80%;
@@ -56,6 +57,7 @@ body {
     }
 }
 
+// Sidenav
 $sidenav-width: 15rem;
 #navbar-background {
     position: fixed;

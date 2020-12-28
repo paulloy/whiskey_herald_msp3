@@ -1,0 +1,27 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid black;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2rem;
+    h2 {
+        margin-top: 1rem;
+    }
+    label {
+        width: 75%;
+    }
+    input {
+        width: 75%;
+        margin-bottom: 1rem;
+    }
+    button {
+        width: 25%;
+        margin-bottom: 1rem;
+    }
+    a {
+        margin-bottom: 1rem;
+    }
+}
