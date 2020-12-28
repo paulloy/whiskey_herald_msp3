@@ -72,13 +72,37 @@ def register():
     return render_template("register.html")
 
 
-@app.route("/login")
+@app.route("/login", methods=["GET", "POST"])
 def login():
+    if request.method == "POST":
+        existing_user = coll.users.find_one(
+            {"email": request.form.get("email")}
+        )
+
+        if existing_user:
+            if check_password_hash(existing_user["password"], request.form.get("password")):
+                current_user = mongo.db.users.find_one(
+                    {"email": request.form.get("email")}
+                )
+
+                session["email"] = current_user["email"]
+                session["username"] = current_user["username"]
+
+                flash("You have logged in. Welcome " + session["username"], "success")
+                return redirect(url_for("profile", username=session["username"]))
+            else:
+                flash("Incorrect Email/Password", "error")
+                return redirect(url_for("login"))
+
+        else:
+            flash("Incorrect Email/Password", "error")
+            return redirect(url_for("login"))
+
     return render_template("login.html")
 
 
-@app.route("/profile")
-def profile():
+@app.route("/profile/<username>")
+def profile(username):
     return render_template("profile.html")
 
 
