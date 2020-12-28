@@ -1,5 +1,27 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <h1>add whiskey</h1>
+    
+    <form id="add-whiskey" method="POST" action="{{ url_for('add_whiskey') }}">
+        <h2>Add a whiskey</h2>
+        <div class="row">
+            <div class="col-sm-6">
+                <img src="{{ url_for('static', filename='img/w1.jpg') }}" alt="whiskey image goes here">
+                <button>Upload Image</button>
+            </div>
+            <div class="col-sm-6">
+                <label for="whiskey-name">Whiskey Name</label>
+                <input id="whiskey-name" name="whiskey-name" type="text" placeholder="e.g. Mourne Irish Whiskey" required>
+
+                <label for="whiskey-type">Whiskey Type</label>
+                <input id="whiskey-type" name="whiskey-type" type="text" placeholder="e.g. Irish" required>                
+            </div>
+        </div>
+        <div class="row">
+            <label for="description">Description</label>
+            <textarea name="description" id="descript" cols="30" rows="10" placeholder="What's important to know about this whiskey?" required></textarea>
+            <button type="submit">SUBMIT</button>
+        </div>
+    </form>
+
 {% endblock %}

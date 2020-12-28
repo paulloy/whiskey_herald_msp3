@@ -2,8 +2,14 @@
 
 {% block content %}
 
-    <div class="row">
-        <h3 class="col-12">{{ username }} Profile</h3>
+    <div id="bio" class="row">
+        <h3 class="col-12">{{ userDetails["username"] }}</h3>
+        <div class="col-4">
+            <i class="fas fa-user"></i>
+        </div>
+        <div class="col-8">
+            {{ userDetails["bio"] }}
+        </div>
     </div>
 
 {% endblock %}

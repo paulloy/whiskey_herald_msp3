@@ -31,8 +31,27 @@ def about():
     return render_template("about.html")
 
 
-@app.route("/add_whiskey")
+@app.route("/add_whiskey", methods=["GET", "POST"])
 def add_whiskey():
+    if request.method == "POST":
+        existing_drink = coll.drinks.find_one(
+            {"drink": request.form.get("whiskey-name").lower()}
+        )
+
+        if existing_drink:
+            flash("This drink already exists", "error")
+            return redirect(url_for("add_whiskey"))
+
+        formSubmission = {
+            "drink": request.form.get("whiskey-name").lower(),
+            "image_location": "img/asdasd",
+            "type": request.form.get("whiskey-type"),
+            "description": request.form.get("description"),
+            "average_score": "number"
+        }
+
+        coll.drinks.insert_one(formSubmission)
+
     return render_template("add-whiskey.html")
 
 
