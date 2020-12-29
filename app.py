@@ -229,7 +229,7 @@ def review(whiskey_name):
                 "drink": whiskey_name,
                 "title": request.form.get("review-title"),
                 "review": request.form.get("review"),
-                "score": request.form.get("score")
+                "score": int(request.form.get("score"))
             }
 
             coll.reviews.update({"username": session["username"], "drink": whiskey_name}, reviewUpdate)
@@ -241,7 +241,7 @@ def review(whiskey_name):
                 "drink": whiskey_name,
                 "title": request.form.get("review-title"),
                 "review": request.form.get("review"),
-                "score": request.form.get("score")
+                "score": int(request.form.get("score"))
             }
 
             coll.reviews.insert_one(newReview)

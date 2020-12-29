@@ -62,8 +62,21 @@
                 <div class="col-12">
                     <h3>{{ review['title'] }}</h3>
                     <!-- <p>Added some time ago</p> -->
-                    <p>{{ review['score'] }}<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
-                            class="fas fa-star"></i><i class="far fa-star"></i></p>
+                    <p id="user-rating">
+                        {% if review["score"] == 0 %}
+                            No rating yet
+                        {% elif review["score"] == 1 %}
+                            <i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>
+                        {% elif review["score"] == 2 %}
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>
+                        {% elif review["score"] == 3 %}
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>
+                        {% elif review["score"] == 4 %}
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
+                        {% elif review["score"] == 5 %}
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        {% endif %}
+                    </p>
                 </div>
                 <hr class="col-11">
                 <p class="col-12">{{ review['review'] }}</p>
@@ -85,15 +98,23 @@
                         title: "{{ review['title'] }}",
                         score: "{{ review['score'] }}",
                         review: "{{ review['review'] }}",
+                        starRating: document.getElementById("user-rating").innerHTML,
                         edit: function () {
                             document.getElementById("review-title").value = this.title;
                             document.getElementById("score").value = this.score;
                             document.getElementById("review").value = this.review;
+                            document.getElementById("rating").innerHTML = this.starRating;
+
                         }
                     }
 
                     document.getElementById("edit-review").addEventListener("click", function () {
                         userReview.edit();
+                        starRating(1);
+                        starRating(2);
+                        starRating(3);
+                        starRating(4);
+                        starRating(5);
                     });
                 </script>
 
@@ -115,7 +136,11 @@
         <input id="review-title" name="review-title" type="text" required>
 
         <label for="score">SCORE</label>
-        <input id="score" name="score" type="number" min="1" max="5">
+        <div id="rating" title="Please leave a rating.">
+            <i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>
+        </div>
+        <input id="score" name="score" type="number" min="1" max="5" required>
+
 
         <label for="review">YOUR REVIEW</label>
         <textarea id="review" name="review" cols="30" rows="10" required></textarea>

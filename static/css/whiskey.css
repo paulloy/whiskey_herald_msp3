@@ -57,5 +57,12 @@
   display: flex;
   flex-direction: column;
 }
+#leave-review #score {
+  opacity: 0;
+  width: 10px;
+}
+#leave-review textarea {
+  resize: none;
+}
 
 /*# sourceMappingURL=whiskey.css.map */
