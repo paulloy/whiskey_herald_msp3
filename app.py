@@ -143,9 +143,14 @@ def profile(username):
     return render_template("profile.html", username=username, userDetails=userDetails)
 
 
-@app.route("/search")
+@app.route("/search", methods=["GET", "POST"])
 def search():
-    return render_template("search.html")
+    query = request.form.get("search")
+    results = list(coll.drinks.find({"$text": {"$search": query}}))
+
+    searched_value = request.form.get("search")
+
+    return render_template("search.html", results=results, searched_value=searched_value)
 
 
 @app.route("/whiskey/<whiskey_name>")
