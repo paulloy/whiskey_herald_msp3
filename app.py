@@ -52,6 +52,7 @@ def add_whiskey():
 
         coll.drinks.insert_one(formSubmission)
         flash("This drink has been added to Whiskey Herald", "success")
+        return redirect(url_for("whiskey", whiskey_name=formSubmission["drink"]))
 
     return render_template("add-whiskey.html")
 
@@ -85,6 +86,15 @@ def edit_whiskey(whiskey_name):
         return redirect(url_for("whiskey", whiskey_name=whiskeyUpdate["drink"]))
 
     return render_template("edit-whiskey.html", whiskey_name=whiskey_name, find_drink=find_drink)
+
+
+@app.route("/delete_whiskey/<whiskey_name>")
+def delete_whiskey(whiskey_name):
+    coll.drinks.remove({"drink": whiskey_name})
+    coll.reviews.remove({"drink": whiskey_name})
+    flash("Whiskey has been removed from the database", "success")
+
+    return redirect(url_for("add_whiskey"))
 
 
 @app.route("/register", methods=["GET", "POST"])
@@ -242,7 +252,7 @@ def review(whiskey_name):
 
 @app.route("/delete_review/<whiskey_name>")
 def delete_review(whiskey_name):
-    mongo.db.reviews.remove({"username": session["username"], "drink": whiskey_name})
+    coll.reviews.remove({"username": session["username"], "drink": whiskey_name})
     flash("Your review has been deleted", "success")
     return redirect(url_for("whiskey", whiskey_name=whiskey_name))
 
