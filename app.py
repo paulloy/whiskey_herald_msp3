@@ -148,23 +148,27 @@ def search():
     return render_template("search.html")
 
 
-@app.route("/whiskey/<whiskey_name>", methods=["GET", "POST"])
+@app.route("/whiskey/<whiskey_name>")
 def whiskey(whiskey_name):
     find_whiskey = coll.drinks.find_one({"drink": whiskey_name})
+    find_reviews = coll.reviews.find({"drink": whiskey_name})
+    find_average_score = coll.reviews.find({"drink": whiskey_name})
+
+    average_score = 0
+    if find_average_score.count() != 0:
+        for doc in find_average_score:
+            average_score = average_score + int(doc["score"])
+        average_score = int(round(average_score / find_average_score.count()))
 
     whiskeyDetails = {
         "_id": find_whiskey["_id"],
         "drink": find_whiskey["drink"],
         "image_location": find_whiskey["image_location"],
         "type": find_whiskey["type"],
-        "description": find_whiskey["description"],
-        "average_score": "5"
+        "description": find_whiskey["description"]
     }
 
-    find_reviews = coll.reviews.find({"drink": whiskeyDetails["drink"]})
-
-
-    return render_template("whiskey.html", whiskeyDetails=whiskeyDetails, find_reviews=find_reviews)
+    return render_template("whiskey.html", whiskeyDetails=whiskeyDetails, find_reviews=find_reviews, average_score=average_score)
 
 
 if __name__ == "__main__":
