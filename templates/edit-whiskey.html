@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block content %}
+    
+    <form id="add-whiskey" method="POST" action="{{ url_for('edit_whiskey', whiskey_name = whiskey_name) }}">
+        <h2>Update Whiskey Details</h2>
+        <div class="row">
+            <div class="col-sm-6">
+                <img src="{{ url_for('static', filename='img/w1.jpg') }}" alt="whiskey image goes here">
+                <button>Upload Image</button>
+            </div>
+            <div class="col-sm-6">
+                <label for="whiskey-name">Whiskey Name</label>
+                <input id="whiskey-name" name="whiskey-name" type="text" value="{{ find_drink['drink'] }}" required>
+
+                <label for="whiskey-type">Whiskey Type</label>
+                <input id="whiskey-type" name="whiskey-type" type="text" value="{{ find_drink['type'] }}" required>                
+            </div>
+        </div>
+        <div class="row">
+            <label for="description">Description</label>
+            <textarea name="description" id="descript" cols="30" rows="10" required>{{ find_drink['description'] }}</textarea>
+            <a href="{{ url_for('whiskey', whiskey_name = whiskey_name) }}" class="btn btn-primary">CANCEL</a>
+            <button type="submit">SUBMIT</button>
+        </div>
+    </form>
+
+{% endblock %}

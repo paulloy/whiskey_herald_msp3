@@ -56,6 +56,37 @@ def add_whiskey():
     return render_template("add-whiskey.html")
 
 
+@app.route("/edit_whiskey/<whiskey_name>", methods=["GET", "POST"])
+def edit_whiskey(whiskey_name):
+    find_drink = coll.drinks.find_one({"drink": whiskey_name})
+
+    if request.method == "POST":
+        whiskeyUpdate = {
+                "drink": request.form.get("whiskey-name"),
+                "image_location": "img/w4.png",
+                "type": request.form.get("whiskey-type"),
+                "description": request.form.get("description")
+            }
+
+        find_reviews = coll.reviews.find({"drink": whiskey_name})
+        for doc in find_reviews:
+            reviewUpdate = {
+                "username": doc["username"],
+                "drink": whiskeyUpdate["drink"],
+                "title": doc["title"],
+                "review": doc["review"],
+                "score": doc["score"]
+            }
+
+            coll.reviews.update({"drink": whiskey_name}, reviewUpdate)
+
+        coll.drinks.update({"drink": whiskey_name}, whiskeyUpdate)
+        flash("Whiskey has been updated", "success")
+        return redirect(url_for("whiskey", whiskey_name=whiskeyUpdate["drink"]))
+
+    return render_template("edit-whiskey.html", whiskey_name=whiskey_name, find_drink=find_drink)
+
+
 @app.route("/register", methods=["GET", "POST"])
 def register():
     if request.method == "POST":
@@ -168,7 +199,6 @@ def whiskey(whiskey_name):
         average_score = int(round(average_score / find_average_score.count()))
 
     whiskeyDetails = {
-        "_id": find_whiskey["_id"],
         "drink": find_whiskey["drink"],
         "image_location": find_whiskey["image_location"],
         "type": find_whiskey["type"],
