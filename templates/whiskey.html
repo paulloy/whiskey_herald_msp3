@@ -3,12 +3,35 @@
 {% block content %}
     
     <div id="whiskey-details" class="row width">
-        <div class="col-12 col-md-3">
+        <div class="col-12 col-xl-3 col-lg-6">
             <img src="{{ url_for('static', filename='') }}{{ whiskeyDetails.image_location }}" alt="whiskey image goes here">
         </div>
-        <div class="col-12 col-md-7">
+        <div class="col-12 col-xl-7 col-lg-6">
             <div class="row">
                 <h3>{{ whiskeyDetails.drink }}</h3>
+                <!-- <p>
+                    {% if average_score == 0 %}
+                        No rating yet
+                    {% elif average_score == 1 %}
+                        <i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>
+                    {% elif average_score == 2 %}
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>
+                    {% elif average_score == 3 %}
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>
+                    {% elif average_score == 4 %}
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
+                    {% elif average_score == 5 %}
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    {% endif %}
+                </p> -->
+            </div> 
+            <article>
+                <h4>Whiskey Description</h4>
+                <p>{{ whiskeyDetails.description }}</p>
+            </article>
+        </div>
+        
+        <div class="col-xl-2 col-lg-12" id="update">
                 <p>
                     {% if average_score == 0 %}
                         No rating yet
@@ -23,24 +46,14 @@
                     {% elif average_score == 5 %}
                         <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                     {% endif %}
-                </p>
-            </div>
-            <article>
-                <h4>Whiskey Description</h4>
-                <p>{{ whiskeyDetails.description }}</p>
-            </article>
-        </div>
-        
-        <div class="col-md-2" id="update">
-            <p><em>Last updated by:</em><br> {{ session["username"] }}</p>
-            <i class="fas fa-user-alt"></i>
-
-            {% if session["username"] %}
-                <a href="{{ url_for('edit_whiskey', whiskey_name = whiskeyDetails['drink']) }}" type="button" class="btn btn-primary">UPDATE</a>
-            {% endif %}
-            {% if session["username"] == "admin" %}
-                <a href="{{ url_for('delete_whiskey', whiskey_name = whiskeyDetails['drink']) }}" type="button" class="btn btn-danger">DELETE</a>
-            {% endif %}
+                </p>                                           
+                <p>Type: <em>{{ whiskeyDetails.type }}</em></p>
+                {% if session["username"] %}
+                    <a href="{{ url_for('edit_whiskey', whiskey_name = whiskeyDetails['drink']) }}" type="button" class="btn btn-primary">UPDATE</a>
+                {% endif %}
+                {% if session["username"] == "admin" %}
+                    <a href="{{ url_for('delete_whiskey', whiskey_name = whiskeyDetails['drink']) }}" type="button" class="btn btn-danger">DELETE</a>
+                {% endif %}
         </div>
     </div>
 

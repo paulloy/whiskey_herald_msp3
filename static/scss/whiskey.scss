@@ -1,35 +1,171 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+// for base.css
+// #background-image {
+//     position: fixed;
+//     height: 100vh;
+//     width: 100vw;
+//     top: 0;
+//     left: 0;
+//     z-index: -1;
+//     background-image: url("https://media.istockphoto.com/photos/starburst-on-lights-in-bourbon-aging-warehouse-picture-id859708976?k=6&m=859708976&s=612x612&w=0&h=23DFdTFiN-0Rv7dHtK6LD5whSmlbNFK-Hb_d7QS6aEU=");
+//     background-position: center;
+//     background-repeat: no-repeat; 
+//     background-size: cover;
+//     box-shadow: inset 50vw 50vw rgba(0, 0, 0, 0.5);
+//     filter: blur(1px);
+//     background-color: black;
+// }
+
+
+$green: #CAD4C0;
+$red: #C14056;
+$cream: #FFDFC9;
+$desert: #C7AD9B;
+$black: #212529;
+$padding: 0.5rem 1rem 0.5rem 1rem;
+$font: 'Poppins', sans-serif;
+
 #whiskey-details {
-    border: 1px solid black;
+    border: 1rem solid $green;
+    border-radius: 1rem;
     width: 80%;
     margin-left: auto;
     margin-right: auto;
     margin-top: 1rem;
-    height: 30rem;
+    height: 35rem;
+    background-color: $cream;
     div:nth-of-type(1) {
-        height: 100%;
         padding: 0;
+        background-color: $green;
+        display: flex;
+        align-items: center;
+        padding: 1rem;
+        max-height: 100%;
         img {
-            height: 100%;
+            height: auto;
             object-fit: scale-down;
-            border: 1px solid black;
             width: 100%;
+            border: 1rem white dashed;
+            border-radius: 1rem;
+            max-height: 100%;
         }
     }
     div:nth-of-type(2) {
-        border: 1px solid black;
+        height: 100%;
+        background-color: $cream;
         div {
             height: auto;
+            background-color: transparent;
+            display: flex;
+            align-items: center;
+            padding: 0;
+            h3 {
+                color: $red;
+                background-color: $green;
+                margin-top: 2rem;
+                padding: $padding;
+                font-size: 2.5rem;
+                font-family: $font;
+                font-weight: 500;
+                letter-spacing: -1px;
+                box-shadow: 0.5rem 0.5rem rgba(0, 0, 0, 0.1);
+                padding-top: 0;
+                border-bottom: 0.5rem dashed white;
+                border-right: 0.5rem dashed white;
+                border-top: 0.5rem solid rgba(0, 0, 0, 0.1);
+                border-top-right-radius: 1rem;
+            }
+            p {
+                background-color: $green;
+                color: $red;
+                font-size: 2rem;
+                padding: $padding;
+                margin-top: 2rem;
+                border-radius: 1rem;
+                margin-left: auto;
+                border-right: 0.5rem dashed white;
+                border-top: 0.5rem solid rgba(0, 0, 0, 0.1);
+                box-shadow: 0.5rem 0.5rem rgba(0, 0, 0, 0.1);
+                border-left: 0.5rem solid rgba(0, 0, 0, 0.1);
+                padding-top: 0;
+                border-bottom: 0.5rem dashed white;
+                margin-right: auto;
+            }
         }
         article {
             height: auto;
+            color: $red;
+            background-color: $green;
+            margin-top: 2rem;
+            padding: $padding;
+            letter-spacing: -1px;
+            box-shadow: 0.5rem 0.5rem rgba(0, 0, 0, 0.1);
+            padding-top: 0;
+            border-bottom: 0.5rem dashed white;
+            border-right: 0.5rem dashed white;
+            border-top: 0.5rem solid rgba(0, 0, 0, 0.1);
+            border-top-right-radius: 1rem;
+            width: 98%;
+            margin-left: -1rem;
+            h4 {
+                margin-top: 0.5rem;
+                font-size: 1.8rem;
+                font-weight: 500;
+                font-family: $font;
+                text-decoration: underline;
+            }
+            p {
+                font-size: 1.1rem;
+                font-weight: 500;
+                font-family: $font;
+                letter-spacing: 0.1px;
+            }
         }
     }
     div:nth-of-type(3) {
-        border: 1px solid black;
         display: flex;
         flex-direction: column;
+        background-color: $desert;
+        border: 0.5rem solid #21252962;
+        align-items: center;
+        p:first-of-type {
+            margin-top: 3rem;
+            height: 3rem;
+            display: flex;
+            align-items: center;
+            padding: $padding;
+            border-radius: 1rem;
+            color: $black;
+            font-family: $font;
+            background-color: #21252935;
+            font-size: 1.2rem;
+            i {
+                font-size: 2rem;
+                color: $red;
+            }
+        }
+        p:last-of-type {
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            font-size: 1.2rem;
+            font-weight: 500;
+            background-color: #21252935;
+            padding: $padding;
+            border-radius: 1rem;
+            color: $black;
+            margin-top: 1rem;
+            em {
+                font-style: unset;
+                font-size: 1.5rem;
+                font-weight: 700;
+                letter-spacing: 1px;
+            }
+        }
         a {
             margin-bottom: 1rem;
+            width: 100%;
         }
         a:first-of-type {
             margin-top: auto;
