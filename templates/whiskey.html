@@ -83,9 +83,11 @@
                 <script>
                     let userReview = {
                         title: "{{ review['title'] }}",
+                        score: "{{ review['score'] }}",
                         review: "{{ review['review'] }}",
                         edit: function () {
                             document.getElementById("review-title").value = this.title;
+                            document.getElementById("score").value = this.score;
                             document.getElementById("review").value = this.review;
                         }
                     }
@@ -106,14 +108,17 @@
     {% endif %}
 
     <!-- leave-review -->
-    <form id="leave-review" class="width">
+    <form id="leave-review" class="width" method="POST" action="{{ url_for('review', whiskey_name = whiskeyDetails.drink) }}">
         <h3>LEAVE A REVIEW?</h3>
 
         <label for="review-title">REVIEW TITLE</label>
         <input id="review-title" name="review-title" type="text" required>
 
+        <label for="score">SCORE</label>
+        <input id="score" name="score" type="number" min="1" max="5">
+
         <label for="review">YOUR REVIEW</label>
-        <textarea name="review" id="review" cols="30" rows="10" required></textarea>
+        <textarea id="review" name="review" cols="30" rows="10" required></textarea>
 
         {% if session['username'] %}
             <button type="submit" class="btn btn-primary">SUBMIT</button>

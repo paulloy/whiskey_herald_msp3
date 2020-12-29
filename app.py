@@ -171,6 +171,38 @@ def whiskey(whiskey_name):
     return render_template("whiskey.html", whiskeyDetails=whiskeyDetails, find_reviews=find_reviews, average_score=average_score)
 
 
+@app.route("/review/<whiskey_name>", methods=["GET", "POST"])
+def review(whiskey_name):
+    existing_review = coll.reviews.find_one({"username": session["username"], "drink": whiskey_name})
+
+    if request.method == "POST":
+        if existing_review:
+            reviewUpdate = {
+                "username": session["username"],
+                "drink": whiskey_name,
+                "title": request.form.get("review-title"),
+                "review": request.form.get("review"),
+                "score": request.form.get("score")
+            }
+
+            coll.reviews.update({"username": session["username"], "drink": whiskey_name}, reviewUpdate)
+            flash("Your review has been updated", "success")
+
+        else:
+            newReview = {
+                "username": session["username"],
+                "drink": whiskey_name,
+                "title": request.form.get("review-title"),
+                "review": request.form.get("review"),
+                "score": request.form.get("score")
+            }
+
+            coll.reviews.insert_one(newReview)
+            flash("Your review has been submitted", "success")
+
+    return redirect(url_for("whiskey", whiskey_name=whiskey_name))
+
+
 if __name__ == "__main__":
     app.run(
         host=os.environ.get("IP"),
