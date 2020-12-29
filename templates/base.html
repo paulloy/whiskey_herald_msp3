@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/profile.css') }}" />
     <link rel="stylesheet" href="{{ url_for('static', filename='css/add-whiskey.css') }}" />
     <link rel="stylesheet" href="{{ url_for('static', filename='css/whiskey.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/search.css') }}" />
 </head>
 <body>
     <!-- Header  -->
@@ -27,8 +28,8 @@
             </span>
         </div>
         <div class="col-lg-6">
-            <form>
-                <input type="text" placeholder="Search Whiskeys"/>
+            <form id="search" action="{{ url_for('search') }}" method="POST">
+                <input type="text" name="search" placeholder="Search Whiskeys"/>
                 <button type="submit"><i class="fas fa-search"></i></button>
             </form>
             <div id="navbar-toggle">

@@ -1,0 +1,25 @@
+#searched h2 {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#results div {
+  height: 25rem;
+  border: 1px solid black;
+}
+#results div img {
+  height: 80%;
+  width: 100%;
+  object-fit: scale-down;
+}
+#results div a {
+  width: 100%;
+  text-align: center;
+  height: 15%;
+}
+#results div a p {
+  margin: 0;
+  font-size: 1.8rem;
+}
+
+/*# sourceMappingURL=search.css.map */
