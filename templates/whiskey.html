@@ -75,7 +75,7 @@
                 <div id="edit-delete">
                     <div>
                         <a id="edit-review" href="#leave-review" type="button" class="btn btn-primary">EDIT</a>
-                        <a href="#" type="button"
+                        <a href="{{ url_for('delete_review', whiskey_name = whiskeyDetails.drink) }}" type="button"
                             class="btn btn-danger">DELETE</a>
                     </div>
                 </div>

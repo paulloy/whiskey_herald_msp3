@@ -203,6 +203,13 @@ def review(whiskey_name):
     return redirect(url_for("whiskey", whiskey_name=whiskey_name))
 
 
+@app.route("/delete_review/<whiskey_name>")
+def delete_review(whiskey_name):
+    mongo.db.reviews.remove({"username": session["username"], "drink": whiskey_name})
+    flash("Your review has been deleted", "success")
+    return redirect(url_for("whiskey", whiskey_name=whiskey_name))
+
+
 if __name__ == "__main__":
     app.run(
         host=os.environ.get("IP"),
