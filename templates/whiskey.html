@@ -1,5 +1,105 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <h1>whiskey</h1>
+    
+    <div id="whiskey-details" class="row width">
+        <div class="col-12 col-md-3">
+            <img src="{{ url_for('static', filename='') }}{{ whiskeyDetails.image_location }}" alt="whiskey image goes here">
+        </div>
+        <div class="col-12 col-md-7">
+            <div class="row">
+                <h3>{{ whiskeyDetails.drink }}</h3>
+                <p><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                        class="fas fa-star"></i><i class="far fa-star"></i></p>
+            </div>
+            <article>
+                <h4>Whiskey Description</h4>
+                <p>{{ whiskeyDetails.description }}</p>
+            </article>
+        </div>
+        {% if session["username"] %}
+        <div class="col-md-2" id="update">
+            <p><em>Last updated by:</em><br> {{ session["username"] }}</p>
+            <i class="fas fa-user-alt"></i>
+            <a href="#" type="button"
+                class="btn btn-primary">UPDATE</a>
+            {% if session["username"] == "admin" %}
+            <a href="#" type="button" class="btn btn-danger">DELETE</a>
+            {% endif %}
+        </div>
+        {% endif %}
+    </div>
+
+    <!-- comments row  -->
+    <div id="comments" class="row width">
+        <p>COMMENTS</p>
+        <a href="#leave-review">Leave a comment?</a>
+        <span>
+            <span><i class="far fa-comment-alt"></i></span>
+            <p>{{ find_reviews.count() }}</p>
+        </span>
+    </div>
+
+    <!-- reviews -->
+    {% for review in find_reviews %}
+    <div class="row reviews col-10 width">
+        <div class="col-10">
+            <div class="col-12">
+                <h3>{{ review['title'] }}</h3>
+                <!-- <p>Added some time ago</p> -->
+                <p>{{ review['score'] }}<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                        class="fas fa-star"></i><i class="far fa-star"></i></p>
+            </div>
+            <hr class="col-11">
+            <p class="col-12">{{ review['review'] }}</p>
+        </div>
+        <div class="col-2 user">
+            <h3>{{ review['username'] }}</h3>
+            <i class="fas fa-user-alt"></i>
+            {% if session['username'] == review['username'] %}
+            <div id="edit-delete">
+                <div>
+                    <a id="edit-review" href="#leave-review" type="button" class="btn btn-primary">EDIT</a>
+                    <a href="#" type="button"
+                        class="btn btn-danger">DELETE</a>
+                </div>
+            </div>
+
+            <script>
+                let userReview = {
+                    title: "{{ review['title'] }}",
+                    review: "{{ review['review'] }}",
+                    edit: function () {
+                        document.getElementById("review-title").value = this.title;
+                        document.getElementById("review").value = this.review;
+                    }
+                }
+
+                document.getElementById("edit-review").addEventListener("click", function () {
+                    userReview.edit();
+                });
+            </script>
+
+            {% endif %}
+        </div>
+    </div>
+    {% endfor %}
+
+    <!-- leave-review -->
+    <form id="leave-review" class="width">
+        <h3>LEAVE A REVIEW?</h3>
+
+        <label for="review-title">REVIEW TITLE</label>
+        <input id="review-title" name="review-title" type="text" required>
+
+        <label for="review">YOUR REVIEW</label>
+        <textarea name="review" id="review" cols="30" rows="10" required></textarea>
+        
+        {% if session['username'] %}
+            <button type="submit" class="btn btn-primary">SUBMIT</button>
+        {% else %}
+            <a href="{{ url_for('register') }}">Register an account to review this whiskey.</a>
+        {% endif %}
+    </form>
+
 {% endblock %}

@@ -1,0 +1,61 @@
+#whiskey-details {
+  border: 1px solid black;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1rem;
+  height: 30rem;
+}
+#whiskey-details div:nth-of-type(1) {
+  height: 100%;
+  padding: 0;
+}
+#whiskey-details div:nth-of-type(1) img {
+  height: 100%;
+  object-fit: scale-down;
+  border: 1px solid black;
+  width: 100%;
+}
+#whiskey-details div:nth-of-type(2) {
+  border: 1px solid black;
+}
+#whiskey-details div:nth-of-type(2) div {
+  height: auto;
+}
+#whiskey-details div:nth-of-type(2) article {
+  height: auto;
+}
+#whiskey-details div:nth-of-type(3) {
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+}
+#whiskey-details div:nth-of-type(3) a {
+  margin-bottom: 1rem;
+}
+#whiskey-details div:nth-of-type(3) a:first-of-type {
+  margin-top: auto;
+}
+
+#comments {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+#comments a {
+  margin-left: auto;
+}
+#comments span {
+  display: flex;
+}
+
+.reviews {
+  display: flex;
+}
+
+#leave-review {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+/*# sourceMappingURL=whiskey.css.map */

@@ -1,0 +1,59 @@
+#whiskey-details {
+    border: 1px solid black;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1rem;
+    height: 30rem;
+    div:nth-of-type(1) {
+        height: 100%;
+        padding: 0;
+        img {
+            height: 100%;
+            object-fit: scale-down;
+            border: 1px solid black;
+            width: 100%;
+        }
+    }
+    div:nth-of-type(2) {
+        border: 1px solid black;
+        div {
+            height: auto;
+        }
+        article {
+            height: auto;
+        }
+    }
+    div:nth-of-type(3) {
+        border: 1px solid black;
+        display: flex;
+        flex-direction: column;
+        a {
+            margin-bottom: 1rem;
+        }
+        a:first-of-type {
+            margin-top: auto;
+        }
+    }
+}
+
+#comments {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    a {
+        margin-left: auto;
+    }
+    span {
+        display: flex;
+    }
+}
+
+.reviews {
+    display: flex;
+}
+
+#leave-review {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+}

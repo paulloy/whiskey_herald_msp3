@@ -43,14 +43,15 @@ def add_whiskey():
             return redirect(url_for("add_whiskey"))
 
         formSubmission = {
-            "drink": request.form.get("whiskey-name").lower(),
-            "image_location": "img/asdasd",
+            "drink": request.form.get("whiskey-name"),
+            "image_location": "img/w4.png",
             "type": request.form.get("whiskey-type"),
             "description": request.form.get("description"),
             "average_score": "number"
         }
 
         coll.drinks.insert_one(formSubmission)
+        flash("This drink has been added to Whiskey Herald", "success")
 
     return render_template("add-whiskey.html")
 
@@ -147,9 +148,23 @@ def search():
     return render_template("search.html")
 
 
-@app.route("/whiskey")
-def whiskey():
-    return render_template("whiskey.html")
+@app.route("/whiskey/<whiskey_name>", methods=["GET", "POST"])
+def whiskey(whiskey_name):
+    find_whiskey = coll.drinks.find_one({"drink": whiskey_name})
+
+    whiskeyDetails = {
+        "_id": find_whiskey["_id"],
+        "drink": find_whiskey["drink"],
+        "image_location": find_whiskey["image_location"],
+        "type": find_whiskey["type"],
+        "description": find_whiskey["description"],
+        "average_score": "5"
+    }
+
+    find_reviews = coll.reviews.find({"drink": whiskeyDetails["drink"]})
+
+
+    return render_template("whiskey.html", whiskeyDetails=whiskeyDetails, find_reviews=find_reviews)
 
 
 if __name__ == "__main__":
