@@ -17,17 +17,18 @@
                 <p>{{ whiskeyDetails.description }}</p>
             </article>
         </div>
-        {% if session["username"] %}
+        
         <div class="col-md-2" id="update">
             <p><em>Last updated by:</em><br> {{ session["username"] }}</p>
             <i class="fas fa-user-alt"></i>
-            <a href="#" type="button"
-                class="btn btn-primary">UPDATE</a>
+
+            {% if session["username"] %}
+                <a href="#" type="button" class="btn btn-primary">UPDATE</a>
+            {% endif %}
             {% if session["username"] == "admin" %}
-            <a href="#" type="button" class="btn btn-danger">DELETE</a>
+                <a href="#" type="button" class="btn btn-danger">DELETE</a>
             {% endif %}
         </div>
-        {% endif %}
     </div>
 
     <!-- comments row  -->
@@ -94,7 +95,7 @@
 
         <label for="review">YOUR REVIEW</label>
         <textarea name="review" id="review" cols="30" rows="10" required></textarea>
-        
+
         {% if session['username'] %}
             <button type="submit" class="btn btn-primary">SUBMIT</button>
         {% else %}
