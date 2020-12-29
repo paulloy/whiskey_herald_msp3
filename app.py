@@ -140,7 +140,9 @@ def profile(username):
         "profile_pic": user["profile_pic"]
     }
 
-    return render_template("profile.html", username=username, userDetails=userDetails)
+    user_reviews = coll.reviews.find({"username": username})
+
+    return render_template("profile.html", username=username, userDetails=userDetails, user_reviews=user_reviews)
 
 
 @app.route("/search", methods=["GET", "POST"])

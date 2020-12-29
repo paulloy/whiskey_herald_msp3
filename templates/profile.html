@@ -12,4 +12,26 @@
         </div>
     </div>
 
+    {% if user_reviews.count() > 0 %}
+        {% for doc in user_reviews %}
+            <div class="width row">
+                <div class="col-4">
+                    <img src="#" alt="#">
+                    <p><a href="{{ url_for('whiskey', whiskey_name = doc['drink']) }}">{{ doc['drink'] }}</a></p>
+                </div>
+                <div class="col-8">
+                    <h3>{{ doc['title'] }}</h3>
+                    <p>{{ doc['score'] }}
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
+                    </p>
+                    <p>{{ doc['review'] }}</p>
+                </div>
+            </div>
+        {% endfor %}
+    {% else %}
+            <div class="width">
+                <p>This user has not left any reviews :(</p>
+            </div>
+    {% endif %}
+
 {% endblock %}
