@@ -26,6 +26,7 @@ $black: #212529;
 $padding: 0.5rem 1rem 0.5rem 1rem;
 $font: 'Poppins', sans-serif;
 
+
 #whiskey-details {
     border: 1rem solid $green;
     border-radius: 1rem;
@@ -33,9 +34,10 @@ $font: 'Poppins', sans-serif;
     margin-left: auto;
     margin-right: auto;
     margin-top: 1rem;
-    height: 35rem;
-    background-color: $cream;
+    height: 30rem;
+    background-color: $green;
     div:nth-of-type(1) {
+        width: 24%;
         padding: 0;
         background-color: $green;
         display: flex;
@@ -43,23 +45,29 @@ $font: 'Poppins', sans-serif;
         padding: 1rem;
         max-height: 100%;
         img {
-            height: auto;
+            height: 100%;
             object-fit: scale-down;
             width: 100%;
             border: 1rem white dashed;
             border-radius: 1rem;
             max-height: 100%;
+            box-shadow: inset 100rem 100rem rgba(0, 0, 0, 0.1);
         }
     }
     div:nth-of-type(2) {
+        width: 54%;
+        margin-right: 1rem;
         height: 100%;
+        box-shadow: inset 2rem 2rem rgba(0, 0, 0, 0.1);
         background-color: $cream;
+        border-radius: 1rem;
         div {
             height: auto;
             background-color: transparent;
             display: flex;
             align-items: center;
             padding: 0;
+            width: auto;
             h3 {
                 color: $red;
                 background-color: $green;
@@ -107,7 +115,6 @@ $font: 'Poppins', sans-serif;
             border-top: 0.5rem solid rgba(0, 0, 0, 0.1);
             border-top-right-radius: 1rem;
             width: 98%;
-            margin-left: -1rem;
             h4 {
                 margin-top: 0.5rem;
                 font-size: 1.8rem;
@@ -120,15 +127,20 @@ $font: 'Poppins', sans-serif;
                 font-weight: 500;
                 font-family: $font;
                 letter-spacing: 0.1px;
+                text-align: justify;
             }
         }
     }
     div:nth-of-type(3) {
+        width: 20%;
+        margin-left: auto;
+        margin-right: auto;
         display: flex;
         flex-direction: column;
         background-color: $desert;
         border: 0.5rem solid #21252962;
         align-items: center;
+        border-radius: 1rem;
         p:first-of-type {
             margin-top: 3rem;
             height: 3rem;
@@ -165,11 +177,194 @@ $font: 'Poppins', sans-serif;
         }
         a {
             margin-bottom: 1rem;
-            width: 100%;
+            width: 80%;
         }
         a:first-of-type {
             margin-top: auto;
         }
+    }
+}
+@media only screen and (max-width: 1564px) {
+    #whiskey-details {
+        width: 90%;
+        div:nth-of-type(1) {
+        img {
+        }
+    }
+    div:nth-of-type(2) {
+        div {
+            h3 {
+            }
+            p {
+            }
+        }
+        article {
+            h4 {
+            }
+            p {
+            }
+        }
+    }
+    div:nth-of-type(3) {
+        p:first-of-type {
+            i {
+            }
+        }
+        p:last-of-type {
+            em {
+            }
+        }
+        a {
+        }
+        a:first-of-type {}
+    }
+    }
+}
+@media only screen and (max-width: 1380px) {
+    #whiskey-details {
+        width: 100%;
+    }
+}
+@media only screen and (max-width: 1250px) {
+    #whiskey-details {
+        height: 50rem;
+        padding-bottom: 1rem;
+        border-radius: 0;
+        div:nth-of-type(1) {
+            width: 25%;
+            height: 60%;
+            margin-left: auto;
+            margin-right: auto;
+            img {}
+        }
+        div:nth-of-type(2) {
+            width: 73%;
+            height: 60%;
+            div {
+                h3 {
+                    margin-top: 1rem;
+                }
+            }
+            article {
+                margin-top: 1rem;
+            }
+        }
+        div:nth-of-type(3) {
+            width: 98%;
+            height: 40%;
+            margin-top: 1rem;
+            justify-items: flex-start;
+            p:first-of-type {
+                margin-top: 1rem;
+                font-size: 1.8rem;
+            }
+            p:last-of-type {
+                margin-top: 0;
+                flex-direction: row;
+                align-items: center;
+                em {
+                    margin-left: 0.5rem;
+                }
+            }
+            a {
+                width: 50%;
+            }
+        }
+    }
+}
+@media only screen and (max-width: 850px) {
+    #whiskey-details {
+        width: 100%;
+        height: auto;
+        border: 0.5rem solid $green;
+        div:nth-of-type(1) {
+            width: 100%;
+            margin-right: 0;
+            margin-left: 0;
+            height: 25rem;
+        img {
+        }
+    }
+    div:nth-of-type(2) {
+        width: 100%;
+        margin-right: 0;
+        margin-left: 0;
+        div {
+            h3 {
+                font-size: 1.7rem;
+                margin-left: auto;
+                margin-right: auto;
+                border-top-left-radius: 1rem;
+                border-left: 0.5rem dashed white;
+                padding-top: 0.25rem;
+                text-align: center;
+            }
+        }
+        article {
+            width: 96%;
+            margin-left: auto;
+            margin-right: auto;
+            border-top-left-radius: 1rem;
+            border-left: 0.5rem dashed white;
+            height: auto;
+            margin-bottom: 1rem;
+            h4 {
+                font-size: 1.5rem;
+            }
+            p {
+                font-size: 1rem;
+            }
+        }
+    }
+    div:nth-of-type(3) {
+        height: auto;
+        p:first-of-type {
+            i {
+            }
+        }
+        p:last-of-type {
+            em {
+            }
+        }
+        a {
+        }
+        a:first-of-type {}
+    }
+    }
+}
+@media only screen and (max-width: 480px) {
+    #whiskey-details {
+        div:nth-of-type(1) {
+        img {
+        }
+    }
+    div:nth-of-type(2) {
+        div {
+            h3 {
+                width: 94%;
+            }
+        }
+        article {
+                width: 94%;
+            h4 {
+            }
+            p {
+            }
+        }
+    }
+    div:nth-of-type(3) {
+        p:first-of-type {
+            i {
+            }
+        }
+        p:last-of-type {
+            em {
+            }
+        }
+        a {
+        }
+        a:first-of-type {}
+    }
     }
 }
 
