@@ -61,7 +61,7 @@ def add_whiskey():
 
         else:
             flash("Url must end with .jpg, .jpeg, or .png", "error")
-            return redirect("add_whiskey")
+            return redirect(url_for("add_whiskey"))
 
         return redirect(url_for("whiskey", whiskey_name=formSubmission["drink"]))
 
@@ -100,7 +100,7 @@ def edit_whiskey(whiskey_name):
 
         else:
             flash("Url must end with .jpg, .jpeg, or .png", "error")
-            return redirect("add_whiskey")
+            return redirect(url_for("edit_whiskey", whiskey_name=whiskey_name))
 
         coll.drinks.update({"drink": whiskey_name}, whiskeyUpdate)
         flash("Whiskey has been updated", "success")
