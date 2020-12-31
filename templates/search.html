@@ -10,7 +10,7 @@
         <div id="results" class="row width">
             {% for whiskey in results %}
             <div class="col-lg-3 col-md-4 col-sm-6 col-12">
-                <img src="{{ url_for('static', filename='') }}{{ whiskey.image_location }}" alt="Image of {{ whiskey.drink }} Whiskey">
+                <img src="{{ whiskey.image_location }}" alt="Image of {{ whiskey.drink }} Whiskey">
                 <a href="{{ url_for('whiskey', whiskey_name = whiskey.drink) }}">
                     <p name="whiskey_name">{{ whiskey.drink }}</p>
                 </a>
