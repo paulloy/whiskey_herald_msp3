@@ -1,39 +1,43 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 #whiskey-details {
-  border: 1rem solid #CAD4C0;
-  border-radius: 1rem;
+  border: 1.75rem solid rgba(138, 138, 138, 0.1);
   width: 80%;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 1rem;
-  height: 30rem;
-  background-color: #CAD4C0;
+  margin-top: 4rem;
+  height: 32rem;
+  background-color: #c8cfcf;
+  outline: 2.5rem double #3c2f27;
+  margin-bottom: 5rem;
+  position: relative;
 }
 #whiskey-details div:nth-of-type(1) {
-  width: 24%;
+  width: 20%;
   padding: 0;
   background-color: #CAD4C0;
+  box-shadow: inset 50rem 50rem rgba(255, 255, 255, 0.1);
   display: flex;
   align-items: center;
-  padding: 1rem;
   max-height: 100%;
 }
 #whiskey-details div:nth-of-type(1) img {
   height: 100%;
   object-fit: scale-down;
   width: 100%;
-  border: 1rem white dashed;
-  border-radius: 1rem;
+  border: 0.5rem rgba(255, 255, 255, 0.7) double;
   max-height: 100%;
   box-shadow: inset 100rem 100rem rgba(0, 0, 0, 0.1);
+  border-right: 0;
 }
 #whiskey-details div:nth-of-type(2) {
-  width: 54%;
+  width: 60%;
   margin-right: 1rem;
   height: 100%;
   box-shadow: inset 2rem 2rem rgba(0, 0, 0, 0.1);
-  background-color: #FFDFC9;
-  border-radius: 1rem;
+  background-color: rgba(124, 96, 77, 0.59);
+  border-top: 0.5rem double rgba(255, 255, 255, 0.7);
+  border-bottom: 0.5rem double rgba(255, 255, 255, 0.7);
+  box-shadow: inset 2rem 2rem rgba(0, 0, 0, 0.1);
 }
 #whiskey-details div:nth-of-type(2) div {
   height: auto;
@@ -44,9 +48,9 @@
   width: auto;
 }
 #whiskey-details div:nth-of-type(2) div h3 {
-  color: #C14056;
+  color: #c72c44;
   background-color: #CAD4C0;
-  margin-top: 2rem;
+  margin-top: 1rem;
   padding: 0.5rem 1rem 0.5rem 1rem;
   font-size: 2.5rem;
   font-family: "Poppins", sans-serif;
@@ -54,14 +58,22 @@
   letter-spacing: -1px;
   box-shadow: 0.5rem 0.5rem rgba(0, 0, 0, 0.1);
   padding-top: 0;
-  border-bottom: 0.5rem dashed white;
-  border-right: 0.5rem dashed white;
+  border-bottom: 0.25rem dashed white;
+  border-right: 0.25rem dashed white;
   border-top: 0.5rem solid rgba(0, 0, 0, 0.1);
   border-top-right-radius: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+  border-left: 0.25rem dashed white;
+  border-top-left-radius: 1rem;
+  border-radius: 1rem;
+}
+#whiskey-details div:nth-of-type(2) div h3 span {
+  color: rgba(124, 96, 77, 0.59);
 }
 #whiskey-details div:nth-of-type(2) div p {
   background-color: #CAD4C0;
-  color: #C14056;
+  color: #c72c44;
   font-size: 2rem;
   padding: 0.5rem 1rem 0.5rem 1rem;
   margin-top: 2rem;
@@ -77,25 +89,36 @@
 }
 #whiskey-details div:nth-of-type(2) article {
   height: auto;
-  color: #C14056;
+  color: #c72c44;
   background-color: #CAD4C0;
-  margin-top: 2rem;
+  margin-top: 1rem;
   padding: 0.5rem 1rem 0.5rem 1rem;
   letter-spacing: -1px;
   box-shadow: 0.5rem 0.5rem rgba(0, 0, 0, 0.1);
   padding-top: 0;
-  border-bottom: 0.5rem dashed white;
-  border-right: 0.5rem dashed white;
+  border-bottom: 0.25rem dashed white;
+  border-right: 0.25rem dashed white;
+  border-left: 0.25rem dashed white;
   border-top: 0.5rem solid rgba(0, 0, 0, 0.1);
   border-top-right-radius: 1rem;
-  width: 98%;
+  border-top-left-radius: 1rem;
+  width: 94%;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: inset 100rem 100rem rgba(255, 255, 255, 0.1);
+  position: relative;
+  margin-bottom: 0.5rem;
 }
 #whiskey-details div:nth-of-type(2) article h4 {
   margin-top: 0.5rem;
-  font-size: 1.8rem;
+  font-size: 1.7rem;
   font-weight: 500;
   font-family: "Poppins", sans-serif;
   text-decoration: underline;
+  text-align: center;
+  padding: 0.25rem 0.5rem 0.25rem 0.5rem;
+  width: 100%;
+  letter-spacing: 1px;
 }
 #whiskey-details div:nth-of-type(2) article p {
   font-size: 1.1rem;
@@ -103,17 +126,19 @@
   font-family: "Poppins", sans-serif;
   letter-spacing: 0.1px;
   text-align: justify;
+  padding: 0.25rem 0.5rem 0.25rem 0.5rem;
 }
 #whiskey-details div:nth-of-type(3) {
   width: 20%;
   margin-left: auto;
-  margin-right: auto;
   display: flex;
   flex-direction: column;
   background-color: #C7AD9B;
-  border: 0.5rem solid #21252962;
+  box-shadow: inset 50rem 50rem rgba(255, 255, 255, 0.05);
+  border: 0.5rem double rgba(255, 255, 255, 0.7);
   align-items: center;
-  border-radius: 1rem;
+  margin-left: -1rem;
+  border-left: 0;
 }
 #whiskey-details div:nth-of-type(3) p:first-of-type {
   margin-top: 3rem;
@@ -129,7 +154,7 @@
 }
 #whiskey-details div:nth-of-type(3) p:first-of-type i {
   font-size: 2rem;
-  color: #C14056;
+  color: #c72c44;
 }
 #whiskey-details div:nth-of-type(3) p:last-of-type {
   display: flex;
@@ -164,35 +189,55 @@
 }
 @media only screen and (max-width: 1380px) {
   #whiskey-details {
-    width: 100%;
+    width: 94%;
+    border: 0;
+    outline: 2rem double #3c2f27;
   }
 }
 @media only screen and (max-width: 1250px) {
   #whiskey-details {
-    height: 50rem;
-    padding-bottom: 1rem;
+    height: 55rem;
     border-radius: 0;
+    border: 0;
+    outline: 2rem double #3c2f27;
   }
   #whiskey-details div:nth-of-type(1) {
     width: 25%;
+    height: 65%;
+    border-top: 0.5rem rgba(255, 255, 255, 0.7) double;
+    border-left: 0.5rem rgba(255, 255, 255, 0.7) double;
+    margin-left: -1rem;
+    margin: 0;
+  }
+  #whiskey-details div:nth-of-type(1) img {
+    border: 0;
     height: 60%;
-    margin-left: auto;
-    margin-right: auto;
+    height: 100%;
   }
   #whiskey-details div:nth-of-type(2) {
-    width: 73%;
-    height: 60%;
+    width: 75%;
+    height: 65%;
+    margin-right: -0.5rem;
+    border-bottom: 0;
+    border-right: 0.5rem rgba(255, 255, 255, 0.7) double;
+  }
+  #whiskey-details div:nth-of-type(2) div {
+    border: 0;
   }
   #whiskey-details div:nth-of-type(2) div h3 {
     margin-top: 1rem;
+    width: 94%;
   }
   #whiskey-details div:nth-of-type(2) article {
     margin-top: 1rem;
   }
   #whiskey-details div:nth-of-type(3) {
-    width: 98%;
-    height: 40%;
-    margin-top: 1rem;
+    width: 100%;
+    height: 35%;
+    margin-top: 0;
+    border-top: 0;
+    margin: 0;
+    border-left: 0.5rem rgba(255, 255, 255, 0.7) double;
     justify-items: flex-start;
   }
   #whiskey-details div:nth-of-type(3) p:first-of-type {
@@ -216,17 +261,22 @@
     width: 100%;
     height: auto;
     border: 0.5rem solid #CAD4C0;
+    outline: 0;
+    border: 0.5rem rgba(145, 145, 145, 0.7) solid;
   }
   #whiskey-details div:nth-of-type(1) {
     width: 100%;
     margin-right: 0;
     margin-left: 0;
     height: 25rem;
+    border-right: 0.5rem rgba(255, 255, 255, 0.7) double;
   }
   #whiskey-details div:nth-of-type(2) {
     width: 100%;
     margin-right: 0;
     margin-left: 0;
+    border-top: 0;
+    border-left: 0.5rem rgba(255, 255, 255, 0.7) double;
   }
   #whiskey-details div:nth-of-type(2) div h3 {
     font-size: 1.7rem;
@@ -265,18 +315,124 @@
   }
 }
 #comments {
+  border: 0.5rem solid #CAD4C0;
+  border-top-right-radius: 1rem;
+  border-top-left-radius: 1rem;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
   margin-top: 1rem;
-  margin-bottom: 1rem;
+  background-color: rgba(124, 96, 77, 0.59);
+  display: flex;
+  align-items: center;
+  box-shadow: inset 0.5rem 0.5rem rgba(0, 0, 0, 0.1);
+}
+#comments p:first-of-type {
+  color: #c72c44;
+  margin: 0;
+  margin-left: 2rem;
+  font-size: 2rem;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
 }
 #comments a {
   margin-left: auto;
+  font-size: 1.4rem;
 }
 #comments span {
   display: flex;
+  margin-left: 1rem;
+  margin-right: 2rem;
+  color: #c72c44;
+  font-size: 1.8rem;
+  height: 100%;
+  align-items: center;
+}
+#comments span p:last-of-type {
+  margin-left: -1rem;
+}
+
+#background-image {
+  height: 110vh;
+  width: 110vw;
+  z-index: -1;
+  position: fixed;
+  top: 0;
+  left: -5vw;
+  top: -5vh;
+  box-shadow: inset 100rem 100rem rgba(17, 38, 39, 0.1);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .reviews {
   display: flex;
+  border: 0.5rem solid #CAD4C0;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: rgba(124, 96, 77, 0.59);
+  display: flex;
+  align-items: center;
+  box-shadow: inset 0.5rem 0.5rem rgba(0, 0, 0, 0.1);
+}
+.reviews div:nth-of-type(1) div:first-of-type {
+  display: flex;
+  color: #c72c44;
+  align-items: center;
+  margin-top: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 0.25rem rgba(0, 0, 0, 0.1) solid;
+  font-family: "Poppins", sans-serif;
+}
+.reviews div:nth-of-type(1) div:first-of-type h3 {
+  font-size: 2rem;
+  padding: 0.5rem 1rem 0.5rem 1rem;
+  margin: 0;
+  background-color: rgba(202, 212, 192, 0.8);
+  box-shadow: 0.25rem 0.25rem rgba(0, 0, 0, 0.1);
+}
+.reviews div:nth-of-type(1) div:first-of-type p {
+  margin-bottom: 0;
+  font-size: 2rem;
+  padding: 0rem 1rem 0rem 1rem;
+  background-color: rgba(202, 212, 192, 0.8);
+  box-shadow: 0.25rem 0.25rem rgba(0, 0, 0, 0.1);
+  margin-left: auto;
+}
+.reviews div:nth-of-type(1) p {
+  font-family: "Poppins", sans-serif;
+  color: #c72c44;
+  font-size: 1.1rem;
+  text-align: justify;
+  margin: 0;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+.reviews div:nth-of-type(2) {
+  font-family: "Poppins", sans-serif;
+  color: #212529;
+  background-color: #C7AD9B;
+  height: 100%;
+}
+
+.reviews:last-of-type {
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+hr {
+  width: 80%;
+  border-top: 0.25rem solid #C7AD9B;
+  background-color: #CAD4C0;
+  margin: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+hr:last-of-type {
+  display: none;
 }
 
 #leave-review {

@@ -19,48 +19,54 @@
 
 
 $green: #CAD4C0;
-$red: #C14056;
-$cream: #FFDFC9;
+$red: rgb(199, 44, 68);
+$cream: rgba(124, 96, 77, 0.59);
 $desert: #C7AD9B;
 $black: #212529;
 $padding: 0.5rem 1rem 0.5rem 1rem;
 $font: 'Poppins', sans-serif;
 
-
+// whiskey-details
 #whiskey-details {
-    border: 1rem solid $green;
-    border-radius: 1rem;
+    border: 1.75rem solid rgba(138, 138, 138, 0.1);
     width: 80%;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 1rem;
-    height: 30rem;
-    background-color: $green;
+    margin-top: 4rem;
+    height: 32rem;
+    background-color: rgb(200, 207, 207);
+    outline: 2.5rem double rgb(60, 47, 39);
+    margin-bottom: 5rem;
+    position: relative;
     div:nth-of-type(1) {
-        width: 24%;
+        width: 20%;
         padding: 0;
         background-color: $green;
+        box-shadow: inset 50rem 50rem rgba(255, 255, 255, 0.1);
         display: flex;
         align-items: center;
-        padding: 1rem;
         max-height: 100%;
         img {
             height: 100%;
             object-fit: scale-down;
             width: 100%;
-            border: 1rem white dashed;
-            border-radius: 1rem;
+            border: 0.5rem rgba(255, 255, 255, 0.7) double;
             max-height: 100%;
             box-shadow: inset 100rem 100rem rgba(0, 0, 0, 0.1);
+            border-right: 0;
         }
     }
+   
     div:nth-of-type(2) {
-        width: 54%;
+        width: 60%;
         margin-right: 1rem;
         height: 100%;
         box-shadow: inset 2rem 2rem rgba(0, 0, 0, 0.1);
         background-color: $cream;
-        border-radius: 1rem;
+        // border-radius: 1rem;
+        border-top: 0.5rem double rgba(255, 255, 255, 0.7);
+        border-bottom: 0.5rem double rgba(255, 255, 255, 0.7);
+            box-shadow: inset 2rem 2rem rgba(0, 0, 0, 0.1);
         div {
             height: auto;
             background-color: transparent;
@@ -71,7 +77,7 @@ $font: 'Poppins', sans-serif;
             h3 {
                 color: $red;
                 background-color: $green;
-                margin-top: 2rem;
+                margin-top: 1rem;
                 padding: $padding;
                 font-size: 2.5rem;
                 font-family: $font;
@@ -79,10 +85,18 @@ $font: 'Poppins', sans-serif;
                 letter-spacing: -1px;
                 box-shadow: 0.5rem 0.5rem rgba(0, 0, 0, 0.1);
                 padding-top: 0;
-                border-bottom: 0.5rem dashed white;
-                border-right: 0.5rem dashed white;
+                border-bottom: 0.25rem dashed white;
+                border-right: 0.25rem dashed white;
                 border-top: 0.5rem solid rgba(0, 0, 0, 0.1);
                 border-top-right-radius: 1rem;
+                margin-left: auto;
+                margin-right: auto;
+                border-left: 0.25rem dashed white;
+                border-top-left-radius: 1rem;
+                border-radius: 1rem;
+                span {
+                    color: $cream;
+                }
             }
             p {
                 background-color: $green;
@@ -105,22 +119,33 @@ $font: 'Poppins', sans-serif;
             height: auto;
             color: $red;
             background-color: $green;
-            margin-top: 2rem;
+            margin-top: 1rem;
             padding: $padding;
             letter-spacing: -1px;
             box-shadow: 0.5rem 0.5rem rgba(0, 0, 0, 0.1);
             padding-top: 0;
-            border-bottom: 0.5rem dashed white;
-            border-right: 0.5rem dashed white;
+            border-bottom: 0.25rem dashed white;
+            border-right: 0.25rem dashed white;
+            border-left: 0.25rem dashed white;
             border-top: 0.5rem solid rgba(0, 0, 0, 0.1);
             border-top-right-radius: 1rem;
-            width: 98%;
+            border-top-left-radius: 1rem;
+            width: 94%;
+            margin-left: auto;
+            margin-right: auto;
+                box-shadow: inset 100rem 100rem rgba(255, 255, 255, 0.1);
+                position: relative;
+                margin-bottom: 0.5rem;
             h4 {
                 margin-top: 0.5rem;
-                font-size: 1.8rem;
+                font-size: 1.7rem;
                 font-weight: 500;
                 font-family: $font;
                 text-decoration: underline;
+                text-align: center;
+                padding: 0.25rem 0.5rem 0.25rem 0.5rem;
+                width: 100%;
+                letter-spacing: 1px;
             }
             p {
                 font-size: 1.1rem;
@@ -128,19 +153,21 @@ $font: 'Poppins', sans-serif;
                 font-family: $font;
                 letter-spacing: 0.1px;
                 text-align: justify;
+                padding: 0.25rem 0.5rem 0.25rem 0.5rem;
             }
         }
     }
     div:nth-of-type(3) {
         width: 20%;
         margin-left: auto;
-        margin-right: auto;
         display: flex;
         flex-direction: column;
         background-color: $desert;
-        border: 0.5rem solid #21252962;
+        box-shadow: inset 50rem 50rem rgba(255, 255, 255, 0.05);
+        border: 0.5rem double rgba(255, 255, 255, 0.7);
         align-items: center;
-        border-radius: 1rem;
+        margin-left: -1rem;
+        border-left: 0;
         p:first-of-type {
             margin-top: 3rem;
             height: 3rem;
@@ -187,62 +214,45 @@ $font: 'Poppins', sans-serif;
 @media only screen and (max-width: 1564px) {
     #whiskey-details {
         width: 90%;
-        div:nth-of-type(1) {
-        img {
-        }
-    }
-    div:nth-of-type(2) {
-        div {
-            h3 {
-            }
-            p {
-            }
-        }
-        article {
-            h4 {
-            }
-            p {
-            }
-        }
-    }
-    div:nth-of-type(3) {
-        p:first-of-type {
-            i {
-            }
-        }
-        p:last-of-type {
-            em {
-            }
-        }
-        a {
-        }
-        a:first-of-type {}
-    }
     }
 }
 @media only screen and (max-width: 1380px) {
     #whiskey-details {
-        width: 100%;
+        width: 94%;
+        border: 0;
+        outline: 2rem double rgb(60, 47, 39);
     }
 }
 @media only screen and (max-width: 1250px) {
     #whiskey-details {
-        height: 50rem;
-        padding-bottom: 1rem;
+        height: 55rem;
         border-radius: 0;
+        border: 0;
+        outline: 2rem double rgb(60, 47, 39);
         div:nth-of-type(1) {
             width: 25%;
-            height: 60%;
-            margin-left: auto;
-            margin-right: auto;
-            img {}
+            height: 65%;
+        border-top: 0.5rem rgba(255, 255, 255, 0.7) double;
+        border-left: 0.5rem rgba(255, 255, 255, 0.7) double;
+            margin-left: -1rem;
+        margin: 0;
+            img {
+                border: 0;
+                height: 60%;
+                height: 100%;
+            }
         }
         div:nth-of-type(2) {
-            width: 73%;
-            height: 60%;
+            width: 75%;
+            height: 65%;
+            margin-right: -0.5rem;
+            border-bottom: 0;
+            border-right: 0.5rem rgba(255, 255, 255, 0.7) double;
             div {
+                border: 0;
                 h3 {
                     margin-top: 1rem;
+                    width: 94%;
                 }
             }
             article {
@@ -250,9 +260,12 @@ $font: 'Poppins', sans-serif;
             }
         }
         div:nth-of-type(3) {
-            width: 98%;
-            height: 40%;
-            margin-top: 1rem;
+            width: 100%;
+            height: 35%;
+            margin-top: 0;
+            border-top: 0;
+            margin: 0;
+            border-left: 0.5rem rgba(255, 255, 255, 0.7) double;
             justify-items: flex-start;
             p:first-of-type {
                 margin-top: 1rem;
@@ -277,18 +290,22 @@ $font: 'Poppins', sans-serif;
         width: 100%;
         height: auto;
         border: 0.5rem solid $green;
+        outline: 0;
+        border: 0.5rem rgba(145, 145, 145, 0.7) solid;
         div:nth-of-type(1) {
             width: 100%;
             margin-right: 0;
             margin-left: 0;
             height: 25rem;
-        img {
-        }
-    }
+            border-right: 0.5rem rgba(255, 255, 255, 0.7) double;
+             }
     div:nth-of-type(2) {
         width: 100%;
         margin-right: 0;
         margin-left: 0;
+        border-top: 0;
+        border-left: 0.5rem rgba(255, 255, 255, 0.7) double;
+        
         div {
             h3 {
                 font-size: 1.7rem;
@@ -318,27 +335,12 @@ $font: 'Poppins', sans-serif;
     }
     div:nth-of-type(3) {
         height: auto;
-        p:first-of-type {
-            i {
-            }
-        }
-        p:last-of-type {
-            em {
-            }
-        }
-        a {
-        }
-        a:first-of-type {}
     }
     }
 }
 @media only screen and (max-width: 480px) {
     #whiskey-details {
-        div:nth-of-type(1) {
-        img {
-        }
-    }
-    div:nth-of-type(2) {
+        div:nth-of-type(2) {
         div {
             h3 {
                 width: 94%;
@@ -346,41 +348,149 @@ $font: 'Poppins', sans-serif;
         }
         article {
                 width: 94%;
-            h4 {
-            }
-            p {
-            }
+            
         }
     }
-    div:nth-of-type(3) {
-        p:first-of-type {
-            i {
-            }
-        }
-        p:last-of-type {
-            em {
-            }
-        }
-        a {
-        }
-        a:first-of-type {}
-    }
-    }
+   
+    } 
+    
+    
 }
 
-#comments {
+
+// comments
+#comments {   
+    border: 0.5rem solid $green;
+    border-top-right-radius: 1rem;
+    border-top-left-radius: 1rem;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
     margin-top: 1rem;
-    margin-bottom: 1rem;
+    background-color: $cream;
+    display: flex;
+    align-items: center;
+    box-shadow: inset 0.5rem 0.5rem rgba(0, 0, 0, 0.1);
+    p:first-of-type {
+        color: $red;
+        margin: 0;
+        margin-left: 2rem;
+        font-size: 2rem;
+        font-family: $font;
+        font-weight: 500;
+    }
     a {
         margin-left: auto;
+        font-size: 1.4rem;
     }
     span {
         display: flex;
+        margin-left: 1rem;
+        margin-right: 2rem;
+        color: $red;
+        font-size: 1.8rem;
+        height: 100%;
+        align-items: center;
+        i {
+        }
+        p:last-of-type {
+            margin-left: -1rem;
+        }
     }
+}
+body {
+    // background-color: rgba(100, 66, 39, 0.24);
+}
+#background-image {
+    height: 110vh;
+    width: 110vw;
+    z-index: -1;
+    position: fixed;
+    top: 0;
+    left: -5vw;
+    top: -5vh;
+    box-shadow: inset 100rem 100rem rgba(17, 38, 39, 0.1);
+    // background-image: url("https://media.istockphoto.com/photos/starburst-on-lights-in-bourbon-aging-warehouse-picture-id859708976?k=6&m=859708976&s=612x612&w=0&h=23DFdTFiN-0Rv7dHtK6LD5whSmlbNFK-Hb_d7QS6aEU=");
+    background-repeat: no-repeat;
+    background-size: cover;
+    // filter: blur(4px);
 }
 
 .reviews {
     display: flex;
+    border: 0.5rem solid $green;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: $cream;
+    display: flex;
+    align-items: center;
+    box-shadow: inset 0.5rem 0.5rem rgba(0, 0, 0, 0.1);
+    div:nth-of-type(1) {
+        div:first-of-type {
+            display: flex;
+            color: $red;
+            align-items: center;
+            margin-top: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 0.25rem rgba(0, 0, 0, 0.1) solid;
+            font-family: $font;
+            h3 {
+                font-size: 2rem;
+                // background-color: $green;
+                padding: 0.5rem 1rem 0.5rem 1rem;
+                // border-radius: 1rem;
+                // border: 0.5rem solid rgba(0, 0, 0, 0.1);
+                margin: 0;
+                background-color: rgba(202, 212, 192, 0.8);
+                // background-color: rgba(202, 212, 192, 0.05);
+                box-shadow: 0.25rem 0.25rem rgba(0, 0, 0, 0.1);
+            }
+            p {
+                margin-bottom: 0;
+                font-size: 2rem;
+                // background-color: rgba(0, 0, 0, 0.05);
+                padding: 0rem 1rem 0rem 1rem;
+                // border-radius: 1rem;
+                // border: 0.5rem solid rgba(0, 0, 0, 0.1);
+                background-color: rgba(202, 212, 192, 0.8);
+                box-shadow: 0.25rem 0.25rem rgba(0, 0, 0, 0.1);
+                margin-left: auto;
+            }
+        }
+        p {
+            font-family: $font;
+            color: $red;
+            font-size: 1.1rem;
+            text-align: justify;
+            margin: 0;
+            padding-top: 0.5rem;
+            padding-bottom: 0.5rem;
+        }
+    }
+    div:nth-of-type(2) {
+        font-family: $font;
+        color: $black;
+        background-color: $desert;
+        height: 100%;
+    }
+}
+.reviews:last-of-type {    
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+hr {
+    width: 80%;
+    border-top: 0.25rem solid $desert;
+    background-color: $green;
+    margin: 0;
+    margin-left: auto;
+    margin-right: auto;
+}
+hr:last-of-type {
+    display: none;
 }
 
 #leave-review {
