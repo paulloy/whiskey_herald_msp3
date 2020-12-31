@@ -5,7 +5,7 @@
 
     <div id="whiskey-details" class="row">
         <div>
-            <img src="{{ url_for('static', filename='') }}{{ whiskeyDetails.image_location }}" alt="whiskey image goes here">
+            <img src="{{ whiskeyDetails.image_location }}" alt="whiskey image goes here">
         </div>
 
         <div>
@@ -68,6 +68,7 @@
             <p>{{ find_reviews.count() }}</p>
         </span>
     </div>
+    <hr>
 
     <!-- reviews -->
     {% if find_reviews.count() > 0 %}
@@ -93,7 +94,6 @@
                         {% endif %}
                     </p>
                 </div>
-                <hr class="col-11">
                 <p class="col-12">{{ review['review'] }}</p>
             </div>
             <div class="col-2 user">
@@ -136,6 +136,8 @@
                 {% endif %}
             </div>
         </div>
+    <hr>
+
         {% endfor %}
     {% else %}
         <div class="row col-10 width">

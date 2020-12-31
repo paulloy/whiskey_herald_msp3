@@ -42,16 +42,27 @@ def add_whiskey():
             flash("This drink already exists", "error")
             return redirect(url_for("add_whiskey"))
 
-        formSubmission = {
-            "drink": request.form.get("whiskey-name"),
-            "image_location": "img/w4.png",
-            "type": request.form.get("whiskey-type"),
-            "description": request.form.get("description"),
-            "average_score": "number"
-        }
+        allow_exten = ["jpg", "jpeg", "png"]
+        form_url = str(request.form.get("image-url"))
+        x = form_url.split(".")
+        y = x[-1]
 
-        coll.drinks.insert_one(formSubmission)
-        flash("This drink has been added to Whiskey Herald", "success")
+        if y == allow_exten[0] or y == allow_exten[1] or y == allow_exten[2]:
+            formSubmission = {
+                "drink": request.form.get("whiskey-name"),
+                "image_location": str(request.form.get("image-url")),
+                "type": request.form.get("whiskey-type"),
+                "description": request.form.get("description"),
+                "average_score": "number"
+            }
+
+            coll.drinks.insert_one(formSubmission)
+            flash("This drink has been added to Whiskey Herald", "success")
+
+        else:
+            flash("Url must end with .jpg, .jpeg, or .png", "error")
+            return redirect("add_whiskey")
+
         return redirect(url_for("whiskey", whiskey_name=formSubmission["drink"]))
 
     return render_template("add-whiskey.html")
