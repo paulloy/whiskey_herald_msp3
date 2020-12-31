@@ -73,9 +73,9 @@
     <!-- reviews -->
     {% if find_reviews.count() > 0 %}
         {% for review in find_reviews %}
-        <div class="row reviews col-10 width">
-            <div class="col-10">
-                <div class="col-12">
+        <div class="reviews width">
+            <div>
+                <div>
                     <h3>{{ review['title'] }}</h3>
                     <!-- <p>Added some time ago</p> -->
                     <p id="user-rating">
@@ -94,9 +94,9 @@
                         {% endif %}
                     </p>
                 </div>
-                <p class="col-12">{{ review['review'] }}</p>
+                <p>{{ review['review'] }}</p>
             </div>
-            <div class="col-2 user">
+            <div class="user">
                 <h3><a href="{{ url_for('profile', username = review['username']) }}">{{ review['username'] }}</a></h3>
                 <i class="fas fa-user-alt"></i>
                 {% if session['username'] == review['username'] %}
@@ -140,7 +140,7 @@
 
         {% endfor %}
     {% else %}
-        <div class="row col-10 width">
+        <div class="width">
             <p>This drink has no reviews yet</p>
         </div>
     {% endif %}

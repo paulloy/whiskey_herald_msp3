@@ -186,12 +186,20 @@
   #whiskey-details {
     width: 90%;
   }
+
+  .reviews {
+    width: 90%;
+  }
 }
 @media only screen and (max-width: 1380px) {
   #whiskey-details {
     width: 94%;
     border: 0;
     outline: 2rem double #3c2f27;
+  }
+
+  .reviews {
+    width: 94%;
   }
 }
 @media only screen and (max-width: 1250px) {
@@ -305,6 +313,10 @@
   #whiskey-details div:nth-of-type(3) {
     height: auto;
   }
+
+  .reviews {
+    width: 100%;
+  }
 }
 @media only screen and (max-width: 480px) {
   #whiskey-details div:nth-of-type(2) div h3 {
@@ -315,14 +327,14 @@
   }
 }
 #comments {
-  border: 0.5rem solid #CAD4C0;
+  border: 1rem double rgba(60, 47, 39, 0.5);
   border-top-right-radius: 1rem;
   border-top-left-radius: 1rem;
   width: 80%;
   margin-left: auto;
   margin-right: auto;
   margin-top: 1rem;
-  background-color: rgba(124, 96, 77, 0.59);
+  background-color: #e3e6d9;
   display: flex;
   align-items: center;
   box-shadow: inset 0.5rem 0.5rem rgba(0, 0, 0, 0.1);
@@ -367,38 +379,51 @@
 
 .reviews {
   display: flex;
-  border: 0.5rem solid #CAD4C0;
+  border: 1rem double rgba(60, 47, 39, 0.5);
   width: 80%;
   margin-left: auto;
   margin-right: auto;
-  background-color: rgba(124, 96, 77, 0.59);
+  background-color: #e3e6d9;
   display: flex;
   align-items: center;
   box-shadow: inset 0.5rem 0.5rem rgba(0, 0, 0, 0.1);
+  height: 25rem;
+}
+.reviews div:nth-of-type(1) {
+  width: 80%;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 .reviews div:nth-of-type(1) div:first-of-type {
+  width: 100%;
   display: flex;
   color: #c72c44;
   align-items: center;
   margin-top: 1rem;
-  padding-bottom: 0.5rem;
-  border-bottom: 0.25rem rgba(0, 0, 0, 0.1) solid;
+  padding-bottom: 1rem;
   font-family: "Poppins", sans-serif;
 }
 .reviews div:nth-of-type(1) div:first-of-type h3 {
   font-size: 2rem;
   padding: 0.5rem 1rem 0.5rem 1rem;
   margin: 0;
-  background-color: rgba(202, 212, 192, 0.8);
+  background-color: #c0d3d4;
   box-shadow: 0.25rem 0.25rem rgba(0, 0, 0, 0.1);
+  border-top: 0.25rem rgba(0, 0, 0, 0.2) solid;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
 }
 .reviews div:nth-of-type(1) div:first-of-type p {
   margin-bottom: 0;
   font-size: 2rem;
   padding: 0rem 1rem 0rem 1rem;
-  background-color: rgba(202, 212, 192, 0.8);
+  background-color: #c0d3d4;
   box-shadow: 0.25rem 0.25rem rgba(0, 0, 0, 0.1);
   margin-left: auto;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
 }
 .reviews div:nth-of-type(1) p {
   font-family: "Poppins", sans-serif;
@@ -406,14 +431,49 @@
   font-size: 1.1rem;
   text-align: justify;
   margin: 0;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
+  padding: 1rem;
+  background-color: #c0d3d4;
+  box-shadow: 0.25rem 0.25rem rgba(0, 0, 0, 0.1);
+  border-top: 0.25rem rgba(0, 0, 0, 0.2) solid;
+  margin-bottom: 1rem;
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
 }
 .reviews div:nth-of-type(2) {
   font-family: "Poppins", sans-serif;
   color: #212529;
   background-color: #C7AD9B;
+  width: 20%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
   height: 100%;
+}
+.reviews div:nth-of-type(2) h3 {
+  margin-top: 1rem;
+  text-align: center;
+  align-self: center;
+  font-size: 2rem;
+}
+.reviews div:nth-of-type(2) i {
+  width: 100%;
+  text-align: center;
+  font-size: 4rem;
+  margin-top: 1rem;
+}
+.reviews div:nth-of-type(2) div:last-of-type {
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
+.reviews div:nth-of-type(2) div:last-of-type a:first-of-type {
+  margin-top: auto;
+}
+.reviews div:nth-of-type(2) div:last-of-type a {
+  margin-top: 1rem;
+  width: 100%;
 }
 
 .reviews:last-of-type {
@@ -435,6 +495,74 @@ hr:last-of-type {
   display: none;
 }
 
+@media only screen and (max-width: 1564px) {
+  #comments {
+    width: 90%;
+  }
+
+  hr {
+    width: 90%;
+  }
+
+  .reviews {
+    width: 90%;
+  }
+}
+@media only screen and (max-width: 1250px) {
+  #comments {
+    width: 100%;
+  }
+
+  hr {
+    width: 100%;
+  }
+
+  .reviews {
+    width: 100%;
+  }
+}
+@media only screen and (max-width: 970px) {
+  #comments {
+    flex-direction: column;
+  }
+  #comments p:first-of-type {
+    margin-left: 0;
+  }
+  #comments a {
+    margin-right: auto;
+    text-align: center;
+  }
+  #comments span {
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    width: 4rem;
+  }
+
+  .reviews {
+    height: auto;
+    width: 100%;
+    flex-wrap: wrap;
+  }
+  .reviews div:nth-of-type(1) {
+    width: 100%;
+    height: auto;
+    padding-bottom: 1rem;
+    flex-direction: column;
+  }
+  .reviews div:nth-of-type(1) div:first-of-type {
+    height: auto;
+  }
+  .reviews div:nth-of-type(1) p {
+    margin-top: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .reviews div:nth-of-type(2) {
+    width: 100%;
+    height: auto;
+  }
+}
 #leave-review {
   margin-top: 1rem;
   display: flex;
