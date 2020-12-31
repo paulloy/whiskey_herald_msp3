@@ -6,20 +6,22 @@
         <h2>Update Whiskey Details</h2>
         <div class="row">
             <div class="col-sm-6">
-                <img src="{{ url_for('static', filename='img/w1.jpg') }}" alt="whiskey image goes here">
-                <button>Upload Image</button>
+                <img id="img" src="{{ find_drink['image_location'] }}" alt="Image of {{ find_drink['drink'] }} whiskey">
             </div>
             <div class="col-sm-6">
                 <label for="whiskey-name">Whiskey Name</label>
                 <input id="whiskey-name" name="whiskey-name" type="text" value="{{ find_drink['drink'] }}" required>
 
                 <label for="whiskey-type">Whiskey Type</label>
-                <input id="whiskey-type" name="whiskey-type" type="text" value="{{ find_drink['type'] }}" required>                
+                <input id="whiskey-type" name="whiskey-type" type="text" value="{{ find_drink['type'] }}" required>  
+                
+                <label for="image-url">Whiskey Image Url: <span>Image must be .jpg, .jpeg, or .png</span></label>
+                <input id="image-url" name="image-url" type="text" value="{{ find_drink['image_location'] }}" required>                
             </div>
         </div>
         <div class="row">
             <label for="description">Description</label>
-            <textarea name="description" id="descript" cols="30" rows="10" required>{{ find_drink['description'] }}</textarea>
+            <textarea name="description" id="descript" minlength="100" maxlength="580" cols="30" rows="10" required>{{ find_drink['description'] }}</textarea>
             <a href="{{ url_for('whiskey', whiskey_name = whiskey_name) }}" class="btn btn-primary">CANCEL</a>
             <button type="submit">SUBMIT</button>
         </div>

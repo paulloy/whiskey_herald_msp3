@@ -73,24 +73,34 @@ def edit_whiskey(whiskey_name):
     find_drink = coll.drinks.find_one({"drink": whiskey_name})
 
     if request.method == "POST":
-        whiskeyUpdate = {
+        allow_exten = ["jpg", "jpeg", "png"]
+        form_url = str(request.form.get("image-url"))
+        x = form_url.split(".")
+        y = x[-1]
+
+        if y == allow_exten[0] or y == allow_exten[1] or y == allow_exten[2]:
+            whiskeyUpdate = {
                 "drink": request.form.get("whiskey-name"),
-                "image_location": "img/w4.png",
+                "image_location": str(request.form.get("image-url")),
                 "type": request.form.get("whiskey-type"),
                 "description": request.form.get("description")
             }
 
-        find_reviews = coll.reviews.find({"drink": whiskey_name})
-        for doc in find_reviews:
-            reviewUpdate = {
-                "username": doc["username"],
-                "drink": whiskeyUpdate["drink"],
-                "title": doc["title"],
-                "review": doc["review"],
-                "score": doc["score"]
-            }
+            find_reviews = coll.reviews.find({"drink": whiskey_name})
+            for doc in find_reviews:
+                reviewUpdate = {
+                    "username": doc["username"],
+                    "drink": whiskeyUpdate["drink"],
+                    "title": doc["title"],
+                    "review": doc["review"],
+                    "score": doc["score"]
+                }
 
-            coll.reviews.update({"drink": whiskey_name}, reviewUpdate)
+                coll.reviews.update({"drink": whiskey_name}, reviewUpdate)
+
+        else:
+            flash("Url must end with .jpg, .jpeg, or .png", "error")
+            return redirect("add_whiskey")
 
         coll.drinks.update({"drink": whiskey_name}, whiskeyUpdate)
         flash("Whiskey has been updated", "success")
