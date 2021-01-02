@@ -9,16 +9,16 @@
     {% if results|length > 0 %}
         <div id="results" class="row width">
             {% for whiskey in results %}
-            <div class="col-lg-3 col-md-4 col-sm-6 col-12">
-                <img src="{{ whiskey.image_location }}" alt="Image of {{ whiskey.drink }} Whiskey">
+            <div class="col-lg-3 col-md-6 col-12">
                 <a href="{{ url_for('whiskey', whiskey_name = whiskey.drink) }}">
+                    <img src="{{ whiskey.image_location }}" alt="Image of {{ whiskey.drink }} Whiskey">
                     <p name="whiskey_name">{{ whiskey.drink }}</p>
                 </a>
             </div>
             {% endfor %}
         </div>
     {% else %}
-        <p class="width">Sorry... "{{ searched_value }}" has returned no results</p>
+        <p class="width">Sorry... we could not find anything that matches "{{ searched_value }}"</p>
     {% endif %}
 
 {% endblock %}

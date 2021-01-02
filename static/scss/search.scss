@@ -1,26 +1,68 @@
+$green: #CAD4C0;
+$red: rgb(199, 44, 68);
+$cream: rgba(124, 96, 77, 0.59);
+$desert: #C7AD9B;
+$black: #212529;
+$padding: 0.5rem 1rem 0.5rem 1rem;
+$font: 'Poppins', sans-serif;
+
+// #header {
+//     display: none !important;
+// }
+
+p:last-of-type {    
+    border: 0.5rem double rgba(0, 0, 0, 0.2);
+    background-color: $green;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    color: $red;
+    font-size: 1.2rem;
+    padding: 0.5rem;
+    text-align: center;
+}
+
 #searched {
+    border: 0.5rem double rgba(0, 0, 0, 0.2);
+    background-color: $green;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
     h2 {
         margin-left: auto;
         margin-right: auto;
+        color: $red;
     }
 }
 
 #results {
+    border: 0.5rem double rgba(0, 0, 0, 0.2);
     div {
         height: 25rem;
-        border: 1px solid black;
-        img {
-            height: 80%;
-            width: 100%;
-            object-fit: scale-down;
-        }
+        border: 1px solid rgba(0, 0, 0, 0.2);
+        padding: 0.5rem;
+        background-color: $green;
         a {
             width: 100%;
             text-align: center;
-            height: 15%;
+            height: 100%;
+            img {
+                height: 80%;
+                width: 100%;
+                object-fit: scale-down;
+                border: 0.5rem double rgba(0, 0, 0, 0.2);
+            }
             p {
+                height: 20%;
                 margin: 0;
                 font-size: 1.8rem;
+                background-color: transparent;
+                border: 0;
+                text-align: center;
+                font-size: 1.2rem;
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 100%;
             }
         }
     }

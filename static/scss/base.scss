@@ -10,6 +10,11 @@ body {
     margin-right: auto;
     border: 1px solid black;
 }
+@media only screen and (max-width: 750px) {
+    .width {
+        width: 100%;
+    }
+}
 
 // Header
 $header-height: 4rem;
