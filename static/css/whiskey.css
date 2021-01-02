@@ -187,7 +187,7 @@
     width: 90%;
   }
 
-  .reviews {
+  .reviews, #leave-review {
     width: 90%;
   }
 }
@@ -198,7 +198,7 @@
     outline: 2rem double #3c2f27;
   }
 
-  .reviews {
+  .reviews, #leave-review {
     width: 94%;
   }
 }
@@ -271,6 +271,7 @@
     border: 0.5rem solid #CAD4C0;
     outline: 0;
     border: 0.5rem rgba(145, 145, 145, 0.7) solid;
+    margin-bottom: 0;
   }
   #whiskey-details div:nth-of-type(1) {
     width: 100%;
@@ -291,30 +292,33 @@
     margin-left: auto;
     margin-right: auto;
     border-top-left-radius: 1rem;
-    border-left: 0.5rem dashed white;
+    border-left: 0.25rem dashed white;
     padding-top: 0.25rem;
     text-align: center;
   }
   #whiskey-details div:nth-of-type(2) article {
-    width: 96%;
+    width: 97%;
     margin-left: auto;
     margin-right: auto;
     border-top-left-radius: 1rem;
-    border-left: 0.5rem dashed white;
+    border-left: 0.25rem dashed white;
     height: auto;
     margin-bottom: 1rem;
+    padding: 0.5rem;
+    margin-top: 0;
   }
   #whiskey-details div:nth-of-type(2) article h4 {
     font-size: 1.5rem;
   }
   #whiskey-details div:nth-of-type(2) article p {
     font-size: 1rem;
+    margin: 0;
   }
   #whiskey-details div:nth-of-type(3) {
     height: auto;
   }
 
-  .reviews {
+  .reviews, #leave-review {
     width: 100%;
   }
 }
@@ -404,7 +408,7 @@
   font-family: "Poppins", sans-serif;
 }
 .reviews div:nth-of-type(1) div:first-of-type h3 {
-  font-size: 2rem;
+  font-size: 1.4rem;
   padding: 0.5rem 1rem 0.5rem 1rem;
   margin: 0;
   background-color: #c0d3d4;
@@ -415,7 +419,7 @@
 }
 .reviews div:nth-of-type(1) div:first-of-type p {
   margin-bottom: 0;
-  font-size: 2rem;
+  font-size: 1.1rem;
   padding: 0rem 1rem 0rem 1rem;
   background-color: #c0d3d4;
   box-shadow: 0.25rem 0.25rem rgba(0, 0, 0, 0.1);
@@ -428,7 +432,7 @@
 .reviews div:nth-of-type(1) p {
   font-family: "Poppins", sans-serif;
   color: #c72c44;
-  font-size: 1.1rem;
+  font-size: 1rem;
   text-align: justify;
   margin: 0;
   padding: 1rem;
@@ -558,6 +562,7 @@ hr:last-of-type {
     margin-top: 1rem;
     margin-left: auto;
     margin-right: auto;
+    font-size: 1rem;
   }
   .reviews div:nth-of-type(2) {
     width: 100%;
@@ -568,6 +573,20 @@ hr:last-of-type {
   margin-top: 1rem;
   display: flex;
   flex-direction: column;
+  border: 1rem double rgba(0, 0, 0, 0.4);
+  background-color: rgba(35, 79, 87, 0.2);
+  padding: 1rem;
+  margin-bottom: 1rem;
+  color: #c72c44;
+}
+#leave-review input, #leave-review textarea {
+  border: 0.5 solid rgba(0, 0, 0, 0.4);
+  padding: 0.5rem;
+  border-radius: 1rem;
+}
+#leave-review label {
+  font-size: 1.2rem;
+  font-weight: 400;
 }
 #leave-review #score {
   opacity: 0;
@@ -575,6 +594,12 @@ hr:last-of-type {
 }
 #leave-review textarea {
   resize: none;
+}
+#leave-review button {
+  margin-top: 1rem;
+}
+#leave-review a {
+  margin-top: 1rem;
 }
 
 /*# sourceMappingURL=whiskey.css.map */

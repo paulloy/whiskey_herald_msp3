@@ -215,7 +215,7 @@ $font: 'Poppins', sans-serif;
     #whiskey-details {
         width: 90%;
     }
-    .reviews {
+    .reviews, #leave-review {
         width: 90%;
     }
 }
@@ -225,7 +225,7 @@ $font: 'Poppins', sans-serif;
         border: 0;
         outline: 2rem double rgb(60, 47, 39);
     }
-    .reviews {
+    .reviews, #leave-review {
         width: 94%;
     }
 }
@@ -298,6 +298,7 @@ $font: 'Poppins', sans-serif;
         border: 0.5rem solid $green;
         outline: 0;
         border: 0.5rem rgba(145, 145, 145, 0.7) solid;
+        margin-bottom: 0;
         div:nth-of-type(1) {
             width: 100%;
             margin-right: 0;
@@ -318,24 +319,27 @@ $font: 'Poppins', sans-serif;
                 margin-left: auto;
                 margin-right: auto;
                 border-top-left-radius: 1rem;
-                border-left: 0.5rem dashed white;
+                border-left: 0.25rem dashed white;
                 padding-top: 0.25rem;
                 text-align: center;
             }
         }
         article {
-            width: 96%;
+            width: 97%;
             margin-left: auto;
             margin-right: auto;
             border-top-left-radius: 1rem;
-            border-left: 0.5rem dashed white;
+            border-left: 0.25rem dashed white;
             height: auto;
             margin-bottom: 1rem;
+            padding: 0.5rem;
+            margin-top: 0;
             h4 {
                 font-size: 1.5rem;
             }
             p {
                 font-size: 1rem;
+                margin: 0;
             }
         }
     }
@@ -343,7 +347,7 @@ $font: 'Poppins', sans-serif;
         height: auto;
     }
     }
-    .reviews {
+    .reviews, #leave-review {
         width: 100%;
     }
 }
@@ -449,7 +453,7 @@ body {
             padding-bottom: 1rem;
             font-family: $font;
             h3 {
-                font-size: 2rem;
+                font-size: 1.4rem;
                 // background-color: $green;
                 padding: 0.5rem 1rem 0.5rem 1rem;
                 // border-radius: 1rem;
@@ -464,7 +468,7 @@ body {
             }
             p {
                 margin-bottom: 0;
-                font-size: 2rem;
+                font-size: 1.1rem;
                 // background-color: rgba(0, 0, 0, 0.05);
                 padding: 0rem 1rem 0rem 1rem;
                 // border-radius: 1rem;
@@ -481,7 +485,7 @@ body {
         p {
             font-family: $font;
             color: $red;
-            font-size: 1.1rem;
+            font-size: 1rem;
             text-align: justify;
             margin: 0;
             padding: 1rem;
@@ -604,6 +608,7 @@ hr:last-of-type {
                 margin-top: 1rem;
                 margin-left: auto;
                 margin-right: auto;
+                font-size: 1rem;
             }
         }
         div:nth-of-type(2) {
@@ -619,11 +624,31 @@ hr:last-of-type {
     margin-top: 1rem;
     display: flex;
     flex-direction: column;
+    border: 1rem double rgba(0, 0, 0, 0.4);
+    background-color: rgba(35, 79, 87, 0.2);
+    padding: 1rem;
+    margin-bottom: 1rem;
+    color: $red;
+    input, textarea {
+        border: 0.5 solid rgba(0, 0, 0, 0.4);
+        padding: 0.5rem;
+        border-radius: 1rem;
+    }
+    label {
+        font-size: 1.2rem;
+        font-weight: 400;
+    }
     #score {
         opacity: 0;
         width: 10px;
     }
     textarea {
         resize: none;
+    }
+    button {
+        margin-top: 1rem;
+    }
+    a {
+        margin-top: 1rem;
     }
 }
