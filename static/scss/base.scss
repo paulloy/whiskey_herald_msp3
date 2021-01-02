@@ -1,4 +1,13 @@
 
+
+$green: #CAD4C0;
+$red: rgb(199, 44, 68);
+$cream: rgba(124, 96, 77, 0.59);
+$desert: #C7AD9B;
+$black: #212529;
+$padding: 0.5rem 1rem 0.5rem 1rem;
+$font: 'Poppins', sans-serif;
+
 body {
     position: relative;
     overflow-x: hidden;
@@ -16,21 +25,24 @@ body {
     }
 }
 
+
 // Header
 $header-height: 4rem;
 #header {
-    border: 1px solid black;
-    width: 80%;
+    width: 100%;
+    padding-left: 10%;
+    padding-right: 10%;
     margin-left: auto;
     margin-right: auto;
     height: $header-height;
+    background-color: $desert;
     div:first-of-type {
         span {
             display: inline-block;
             a {
                 text-decoration: none;
                 h1 {
-                    color: red;
+                    color: $red;
                 }
             }
         }
@@ -45,22 +57,30 @@ $header-height: 4rem;
             flex-wrap: nowrap;
             input {
                 width: 90%;
+                border: 0.1rem solid $red;
+                border-radius: 1rem;
+                padding: 0.5rem;
             }
             button {
                 height: $header-height * 0.75;
                 width: $header-height * 0.75;
                 border-radius: 50%;
                 margin-left: 1rem;
+                border: 0.1rem solid $red;
+                background-color: rgb(255, 255, 255);
+                color: $red;
             }
         }
         #navbar-toggle {
             display: flex;
             margin-left: 2rem;
             font-size: 1.8rem;
-            border: 1px solid black;
+            border: 0.1rem solid $red;
             height: $header-height * 0.75;
             border-radius: 50%;
             width: $header-height * 0.75;
+            background-color: white;
+            color: $red;
             i {
                 width: 100%;
                 text-align: center;
@@ -68,7 +88,22 @@ $header-height: 4rem;
         }
     }
 }
-
+@media only screen and (max-width: 1000px) {
+    #header {
+        height: 8rem;
+        padding: 0;
+        div:first-of-type {
+            width: 100%;
+            text-align: center;
+            h1 {
+                font-size: 2rem;
+                width: 100%;
+                margin-top: 0.5rem;
+                margin-bottom: 0;
+            }
+        }
+    }
+}
 // Sidenav
 $sidenav-width: 15rem;
 #navbar-background {
@@ -79,17 +114,19 @@ $sidenav-width: 15rem;
     height: 100vh;
     background-color: rgba(0, 0, 0, 0.5);
     display: none;
+    z-index: 2;
 } #navbar-background:hover {
     cursor: pointer;
 }
 #sidenav {
-    z-index: 1;
+    z-index: 3;
     position: absolute;
     top: 0;
     right: - $sidenav-width;
     width: $sidenav-width;
     height: 100vh;
-    background-color: rgb(62, 85, 88);
+    background-color: $green;
+    color: $red;
     #close-navbar {
         display: flex;
         align-items: center;
@@ -99,7 +136,7 @@ $sidenav-width: 15rem;
         font-size: 2rem;
         background-color: white;
         border-radius: 50%;
-        border: 1px solid black;
+        border: 1px solid $red;
         margin-left: auto;
         margin-right: 0.5rem;
         margin-top: 0.5rem;
@@ -118,15 +155,16 @@ $sidenav-width: 15rem;
         margin-top: 1rem;
         padding: 0;
         li {
-            background-color: white;
+            background-color: rgba(255, 255, 255, 0.5);
             margin-bottom: 0.5rem;
             padding: 0.25rem 0.5rem 0.25rem 0.5rem;
             width: 90%;
             text-align: center;
             font-size: 1.5rem;
             list-style-type: none;
+            border: 0.3rem double rgba(0, 0, 0, 0.2);
             a {
-                color: black;
+                color: $red;
             }
         }
     }
