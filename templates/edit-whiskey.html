@@ -5,10 +5,10 @@
     <form id="add-whiskey" method="POST" action="{{ url_for('edit_whiskey', whiskey_name = whiskey_name) }}">
         <h2>Update Whiskey Details</h2>
         <div class="row">
-            <div class="col-sm-6">
+            <div class="col-lg-6 col-12">
                 <img id="img" src="{{ find_drink['image_location'] }}" alt="Image of {{ find_drink['drink'] }} whiskey">
             </div>
-            <div class="col-sm-6">
+            <div class="col-lg-6 col-12">
                 <label for="whiskey-name">Whiskey Name</label>
                 <input id="whiskey-name" name="whiskey-name" type="text" value="{{ find_drink['drink'] }}" required>
 

@@ -1,12 +1,30 @@
+$green: #CAD4C0;
+$red: rgb(199, 44, 68);
+$cream: rgba(124, 96, 77, 0.59);
+$desert: #C7AD9B;
+$black: #212529;
+$padding: 0.5rem 1rem 0.5rem 1rem;
+$font: 'Poppins', sans-serif;
+
 #add-whiskey {
     width: 80%;
     margin-left: auto;
     margin-right: auto;
-    border: 1px solid black;
+    border: 1rem double rgba(0, 0, 0, 0.2);
     margin-top: 1rem;
+    padding: 1rem;
+    background-color: $green;
+    color: $red;
+    text-align: center;
+    font-weight: 400;
+    border-radius: 1rem;
     h2 {
         text-align: center;
         width: 100%;
+        margin-bottom: 1rem;
+        background-color: rgba(0, 0, 0, 0.2);
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
     }
     div:first-of-type {
         div:first-of-type {
@@ -14,8 +32,9 @@
             flex-direction: column;
             img {
                 height: 20rem;
-                border: 1px solid black;
+                border: 0.5rem double rgba(0, 0, 0, 0.2);
                 object-fit: scale-down;
+                background-color: rgba(0, 0, 0, 0.1);
             }
             button {
                 width: 50%;
@@ -36,6 +55,9 @@
                 width: 80%;
                 margin-left: auto;
                 margin-right: auto;
+                border: 0.1rem solid rgba(0, 0, 0, 0.8);
+                border-radius: 1rem;
+                padding: 0.5rem;
             }
         }
     }
@@ -47,13 +69,55 @@
         margin-right: auto;
         label {
             margin-top: 1rem;
+            font-size: 1.1rem;
         }
         textarea {
             resize: none;
+            border: 0.1rem solid rgba(0, 0, 0, 0.8);
+            border-radius: 1rem;
+            padding: 0.5rem;
         }
         button {
             margin-top: 1rem;
             margin-bottom: 1rem;
+            width: 10rem;
+            height: 3rem;
+            border-radius: 1rem;
+            border: 0.1rem solid rgba(0, 0, 0, 0.8);
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    #add-whiskey {
+        width: 100%;
+        border-radius: 0;
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+        div:first-of-type {
+            width: 100%;
+            margin-right: auto;
+            margin-left: auto;
+            div:first-of-type {
+                width: 100%;
+                margin-right: auto;
+                margin-left: auto;
+            }
+            div:last-of-type {
+                padding: 0;
+                label {
+                    width: 100%;
+                }
+                input {
+                    width: 100%;
+                }
+            }
+        }
+        div:last-of-type {
+            width: 100%;
+            padding: 0;
         }
     }
 }

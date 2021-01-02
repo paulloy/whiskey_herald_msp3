@@ -5,10 +5,10 @@
     <form id="add-whiskey" method="POST" action="{{ url_for('add_whiskey') }}">
         <h2>Add a whiskey</h2>
         <div class="row">
-            <div class="col-sm-6">
+            <div class="col-lg-6 col-12">
                 <img id="img" src="#" alt="whiskey image goes here">
             </div>
-            <div class="col-sm-6">
+            <div class="col-lg-6 col-12">
                 <label for="whiskey-name">Whiskey Name</label>
                 <input id="whiskey-name" name="whiskey-name" type="text" placeholder="e.g. Mourne Irish Whiskey" required>
 
@@ -16,7 +16,7 @@
                 <input id="whiskey-type" name="whiskey-type" type="text" placeholder="e.g. Irish" required>  
                 
                 <label for="image-url">Whiskey Image Url: <span>Image must be .jpg, .jpeg, or .png</span></label>
-                <input id="image-url" name="image-url" type="text" required>
+                <input id="image-url" name="image-url" type="text" placeholder="https://whiskey.jpg" required>
 
             </div>
         </div>
