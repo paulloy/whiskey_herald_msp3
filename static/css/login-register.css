@@ -12,17 +12,44 @@
 }
 .form label {
   width: 75%;
+  font-weight: 400;
 }
 .form input {
   width: 75%;
   margin-bottom: 1rem;
+  border: 0.1rem solid black;
+  border-radius: 1rem;
+  padding: 0.5rem;
 }
 .form button {
   width: 25%;
   margin-bottom: 1rem;
+  border: 0.1rem solid black;
+  border-radius: 1rem;
+  padding: 0.5rem;
+  background-color: transparent;
 }
 .form a {
   margin-bottom: 1rem;
+  margin-top: 1rem;
+}
+
+@media only screen and (max-width: 1180px) {
+  .form {
+    width: 80%;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .form {
+    width: 100%;
+    border-radius: 0;
+  }
+  .form input {
+    width: 100%;
+  }
+  .form button {
+    width: 90%;
+  }
 }
 
 /*# sourceMappingURL=login-register.css.map */

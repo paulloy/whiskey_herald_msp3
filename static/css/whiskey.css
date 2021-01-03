@@ -262,5 +262,11 @@ hr:last-of-type {
   margin-top: 1rem;
   margin-bottom: 1rem;
 }
+#leave-review button {
+  margin-top: 1rem;
+}
+#leave-review a {
+  margin-top: 1rem;
+}
 
 /*# sourceMappingURL=whiskey.css.map */

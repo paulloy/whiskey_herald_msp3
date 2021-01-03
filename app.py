@@ -135,19 +135,26 @@ def register():
             flash("This email is unavailable, please try another.", "error")
             return redirect(url_for("register"))
 
-        # dictionary for inserting a new user to users collection
-        newUser = {
-            "email": request.form.get("email").lower(),
-            "username": request.form.get("username"),
-            "password": generate_password_hash(request.form.get("password")),
-            "bio": "Tell us more about yourself :)",
-            "profile_pic": "DEFAULT"
-        }
+        password = generate_password_hash(request.form.get("password"))
+        password_repeat = check_password_hash(password, request.form.get("repeat-password"))
 
-        coll.users.insert_one(newUser)
+        if password_repeat:
+            # dictionary for inserting a new user to users collection
+            newUser = {
+                "email": request.form.get("email").lower(),
+                "username": request.form.get("username"),
+                "password": generate_password_hash(request.form.get("password")),
+                "bio": "Tell us more about yourself :)",
+                "profile_pic": "DEFAULT"
+            }
 
-        flash("Registration successful, thanks for joining! \
-            You can now login.", "success")
+            coll.users.insert_one(newUser)
+
+            flash("Registration successful, thanks for joining! \
+                You can now login.", "success")
+        else:
+            flash("Passwords do not match. Please try again.", "error")
+            return redirect(url_for("register"))
 
         return redirect(url_for("login"))
 

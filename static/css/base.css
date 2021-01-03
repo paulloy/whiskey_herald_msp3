@@ -36,6 +36,11 @@ body {
   border: 0.2rem solid white;
 }
 
+@media only screen and (max-width: 750px) {
+  .width {
+    width: 100%;
+  }
+}
 .dot:first-of-type {
   color: white;
   width: 3rem;

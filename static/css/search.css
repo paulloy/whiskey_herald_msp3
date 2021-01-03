@@ -1,25 +1,59 @@
+p:last-of-type {
+  border: 0.5rem double rgba(0, 0, 0, 0.2);
+  background-color: #CAD4C0;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  color: #c72c44;
+  font-size: 1.2rem;
+  padding: 0.5rem;
+  text-align: center;
+}
+
+#searched {
+  border: 0.5rem double rgba(0, 0, 0, 0.2);
+  background-color: #CAD4C0;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
 #searched h2 {
   margin-left: auto;
   margin-right: auto;
+  color: #c72c44;
 }
 
+#results {
+  border: 0.5rem double rgba(0, 0, 0, 0.2);
+}
 #results div {
   height: 25rem;
-  border: 1px solid black;
-}
-#results div img {
-  height: 80%;
-  width: 100%;
-  object-fit: scale-down;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  padding: 0.5rem;
+  background-color: #CAD4C0;
 }
 #results div a {
   width: 100%;
   text-align: center;
-  height: 15%;
+  height: 100%;
+}
+#results div a img {
+  height: 80%;
+  width: 100%;
+  object-fit: scale-down;
+  border: 0.5rem double rgba(0, 0, 0, 0.2);
 }
 #results div a p {
+  height: 20%;
   margin: 0;
   font-size: 1.8rem;
+  background-color: transparent;
+  border: 0;
+  text-align: center;
+  font-size: 1.2rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
 }
 
 /*# sourceMappingURL=search.css.map */
