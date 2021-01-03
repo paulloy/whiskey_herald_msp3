@@ -1,143 +1,184 @@
 
 body {
     position: relative;
-    overflow-x: hidden;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+#body {
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    padding: 0;
+    margin: 0;
+    padding-left: 0.25rem;
+    padding-right: 0.25rem;
+    overflow: hidden;
 }
 
-.width {
-    width: 80%;
-    margin-left: auto;
-    margin-right: auto;
-    border: 1px solid black;
+$green: #CAD4C0;
+$red: rgb(199, 44, 68);
+$cream: rgba(124, 96, 77, 0.59);
+$desert: #C7AD9B;
+$black: #212529;
+$padding: 0.5rem 1rem 0.5rem 1rem;
+$font: 'Poppins', sans-serif;
+
+.flickity-page-dots {
+    position: absolute;
+    bottom: 0;
+    background-color: $desert;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .dot {
+        width: 1.5rem;
+        height: 1.5rem;
+        margin-left: 2rem;
+        margin-right: 2rem;
+        opacity: 1;
+    }
+    .dot.is-selected {
+        border: 0.2rem solid white;
+    }
 }
 
+.dot:first-of-type {
+    color: white;
+    width: 3rem;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    position: fixed;
+    top: 0.5rem;
+    right: 1rem;
+    z-index: 10;
+    opacity: 1;
+    margin: 0;
+    i {
+        font-size: 1.5rem;
+        width: 100%;
+
+        pointer-events: none;
+    }
+}
 // Header
 $header-height: 4rem;
 #header {
-    border: 1px solid black;
-    width: 80%;
+    background-color: $desert;
+    width: 100%;
     margin-left: auto;
     margin-right: auto;
     height: $header-height;
-    div:first-of-type {
-        span {
-            display: inline-block;
-            a {
-                text-decoration: none;
-                h1 {
-                    color: red;
-                }
-            }
-        }
-    }
-    div:last-of-type {
-        display: flex;
-        align-items: center;
-        form {
-            margin-left: auto;
-            width: 100%;
-            display: flex;
-            flex-wrap: nowrap;
-            input {
-                width: 90%;
-            }
-            button {
-                height: $header-height * 0.75;
-                width: $header-height * 0.75;
-                border-radius: 50%;
-                margin-left: 1rem;
-            }
-        }
-        #navbar-toggle {
-            display: flex;
-            margin-left: 2rem;
-            font-size: 1.8rem;
-            border: 1px solid black;
-            height: $header-height * 0.75;
-            border-radius: 50%;
-            width: $header-height * 0.75;
-            i {
-                width: 100%;
-                text-align: center;
-            }
-        }
-    }
-}
-
-// Sidenav
-$sidenav-width: 15rem;
-#navbar-background {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100vw;
-    height: 100vh;
-    background-color: rgba(0, 0, 0, 0.5);
-    display: none;
-} #navbar-background:hover {
-    cursor: pointer;
+    z-index: 10;
+    div:first-of-type {
+            display: flex;
+            align-items: center;
+            a {
+                text-decoration: none;
+                h1 {
+                    color: $red;
+                    font-family: $font;
+                    font-size: 2rem;
+                    width: 100%;
+                    text-align: left;
+                    margin: 0;
+                }
+            }
+        
+    }
 }
+
+// sidenav
 #sidenav {
-    z-index: 1;
-    position: absolute;
-    top: 0;
-    right: - $sidenav-width;
-    width: $sidenav-width;
-    height: 100vh;
-    background-color: rgb(62, 85, 88);
-    #close-navbar {
+    display: block;
+    height: 100%;
+    width: 100%;
+    background-color: lightblue;   
+    margin: 0;
+    padding: 0;  
+    padding-top: 5rem;
+    padding-bottom: 4rem;
+    position: relative;
+    #search {
+        width: 100%;
+        padding-left: 1rem;
+        padding-right: 1rem;
         display: flex;
         align-items: center;
-        justify-items: center;
-        width: 2.5rem;
-        height: 2.5rem;
-        font-size: 2rem;
-        background-color: white;
-        border-radius: 50%;
-        border: 1px solid black;
-        margin-left: auto;
-        margin-right: 0.5rem;
-        margin-top: 0.5rem;
-        i {
-            width: 100%;
-            text-align: center;
+        flex-wrap: nowrap;
+        input {
+            width: 80%;
+            height: 2rem;
+            padding: 0.5rem;
+            border: 0.15rem solid rgba(0, 0, 0, 0.5);
+            margin-left: 0.5rem;
         }
-    } #close-navbar:hover {
-        cursor: pointer;
+        button {
+            width: 10%;
+            padding: 0.5rem;
+            border: 0.15rem solid rgba(0, 0, 0, 0.5);
+            height: 2rem;
+            margin-left: auto;
+            margin-right: 0.5rem;
+            display: flex;
+            align-items: center;
+        }
     }
     ul {
         width: 100%;
+        height: auto;
+        background-color: rgba(0, 0, 0, 0.1);
+        margin-top: 1rem;
         display: flex;
         flex-direction: column;
-        align-items: center;
-        margin-top: 1rem;
+        list-style-type: none;
         padding: 0;
+        align-items: center;
         li {
-            background-color: white;
-            margin-bottom: 0.5rem;
-            padding: 0.25rem 0.5rem 0.25rem 0.5rem;
-            width: 90%;
-            text-align: center;
             font-size: 1.5rem;
-            list-style-type: none;
+            margin-bottom: 1rem;    
+            background-color: rgba(0, 0, 0, 0.1);
+            width: 80%;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+            padding-top: 0.5rem;
+            padding-bottom: 0.5rem;
             a {
                 color: black;
+                font-family: $font;
             }
+
+        }
+        li:first-of-type {
+            margin-top: 1rem;
         }
     }
 }
 
 // Flashed messages
 #flash {
-    width: 80%;
-    margin-left: auto;
-    margin-right: auto;
+    width: 100%;
     height: 4rem;
     border-radius: 10px;
-    margin-top: 1rem;
     border: 2px solid #155724;
+    position: fixed;
+    left: 50%;
+    margin-left: -50%;
+    bottom: 0;
+    z-index: 20;
+    display: none;
+    h3 {
+        font-size: 1rem;
+    }
     i {
-        font-size: 2.2rem;
+        font-size: 1rem;
     }
     i:first-of-type {
         margin-right: 1rem;
@@ -146,3 +187,4 @@ $sidenav-width: 15rem;
         margin-left: auto;
     }
 }
+
