@@ -3,32 +3,18 @@
 {% block content %}
     
 
-    <div id="whiskey-details" class="row">
+
+    <div id="whiskey-details" class="row carousel-cell">
+        <div>
+            <h3>{{ whiskeyDetails.drink }}</h3>
+        </div> 
         <div>
             <img src="{{ whiskeyDetails.image_location }}" alt="Image of {{ whiskeyDetails.drink }} whiskey">
         </div>
 
         <div>
-            <div>
-                <h3>{{ whiskeyDetails.drink }}</h3>
-                <!-- <p>
-                    {% if average_score == 0 %}
-                        No rating yet
-                    {% elif average_score == 1 %}
-                        <i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>
-                    {% elif average_score == 2 %}
-                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>
-                    {% elif average_score == 3 %}
-                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>
-                    {% elif average_score == 4 %}
-                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
-                    {% elif average_score == 5 %}
-                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                    {% endif %}
-                </p> -->
-            </div> 
             <article>
-                <h4>Whiskey Description</h4>
+                <!-- <h4>Whiskey Description</h4> -->
                 <p>{{ whiskeyDetails.description }}</p>
             </article>
         </div>
@@ -59,54 +45,67 @@
         </div>
     </div>
 
+<div class="carousel-cell" id="right-side">
     <!-- comments row  -->
     <div id="comments" class="row width">
         <p>REVIEWS</p>
-        <a href="#leave-review">Leave a comment?</a>
+        <a href="#leave-review">Leave a review?</a>
         <span>
             <span><i class="far fa-comment-alt"></i></span>
             <p>{{ find_reviews.count() }}</p>
         </span>
     </div>
+
+    <!-- <div id="filters">
+        <p>insert filters here for comments. highest rating, lowest. etc.</p>
+    </div> -->
     <hr>
 
+   
     <!-- reviews -->
+
     {% if find_reviews.count() > 0 %}
         {% for review in find_reviews %}
         <div class="reviews width">
             <div>
-                <div>
-                    <h3>{{ review['title'] }}</h3>
+                <div>   
+                    <span>                 
+                        <p><a href="{{ url_for('profile', username = review['username']) }}"><i class="fas fa-user-alt"></i> {{ review['username'] }}</a></p>                        
+                        {% if session['username'] == review['username'] %}
+                        <div id="edit-delete">
+                            <div>
+                                <a id="edit-review" href="#leave-review" type="button" class="btn btn-primary">EDIT</a>
+                                <a href="{{ url_for('delete_review', whiskey_name = whiskeyDetails.drink) }}" type="button"
+                                    class="btn btn-danger">DELETE</a>
+                            </div>
+                        </div>                           
+                        {% endif %}                     
+                    </span>
+
+                    <span>
+                        <p id="user-rating">
+                            {% if review["score"] == 0 %}
+                                No rating yet
+                            {% elif review["score"] == 1 %}
+                                <i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>
+                            {% elif review["score"] == 2 %}
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>
+                            {% elif review["score"] == 3 %}
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>
+                            {% elif review["score"] == 4 %}
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
+                            {% elif review["score"] == 5 %}
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            {% endif %}
+                        </p>
+                        <h4>{{ review['title'] }}</h4>
+                    </span>
                     <!-- <p>Added some time ago</p> -->
-                    <p id="user-rating">
-                        {% if review["score"] == 0 %}
-                            No rating yet
-                        {% elif review["score"] == 1 %}
-                            <i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>
-                        {% elif review["score"] == 2 %}
-                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>
-                        {% elif review["score"] == 3 %}
-                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>
-                        {% elif review["score"] == 4 %}
-                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
-                        {% elif review["score"] == 5 %}
-                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                        {% endif %}
-                    </p>
                 </div>
                 <p>{{ review['review'] }}</p>
             </div>
             <div class="user">
-                <h3><a href="{{ url_for('profile', username = review['username']) }}">{{ review['username'] }}</a></h3>
-                <i class="fas fa-user-alt"></i>
-                {% if session['username'] == review['username'] %}
-                <div id="edit-delete">
-                    <div>
-                        <a id="edit-review" href="#leave-review" type="button" class="btn btn-primary">EDIT</a>
-                        <a href="{{ url_for('delete_review', whiskey_name = whiskeyDetails.drink) }}" type="button"
-                            class="btn btn-danger">DELETE</a>
-                    </div>
-                </div>
+                
 
                 <script>
                     let userReview = {
@@ -133,10 +132,9 @@
                     });
                 </script>
 
-                {% endif %}
             </div>
         </div>
-    <hr>
+    
 
         {% endfor %}
     {% else %}
@@ -144,7 +142,6 @@
             <p>This drink has no reviews yet</p>
         </div>
     {% endif %}
-
     <!-- leave-review -->
     <form id="leave-review" class="width" method="POST" action="{{ url_for('review', whiskey_name = whiskeyDetails.drink) }}">
         <h3>LEAVE A REVIEW?</h3>
@@ -168,5 +165,6 @@
             <a href="{{ url_for('register') }}">Register an account to review this whiskey.</a>
         {% endif %}
     </form>
+</div>
 
 {% endblock %}

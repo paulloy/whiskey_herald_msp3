@@ -9,6 +9,8 @@
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <!-- font awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
+    <!-- Flickity  -->
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
     <!-- custom stylesheets -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}" />
     <link rel="stylesheet" href="{{ url_for('static', filename='css/login-register.css') }}" />
@@ -21,28 +23,25 @@
     <!-- Header  -->
     <header id="header" class="row">
         <div class="col-lg-6">
-            <span>
-                <a href="{{ url_for('index') }}">
-                    <h1>Whiskey Herald</h1>
-                </a>
-            </span>
-        </div>
-        <div class="col-lg-6">
-            <form id="search" action="{{ url_for('search') }}" method="POST">
-                <input type="text" name="search" placeholder="Search Whiskeys"/>
-                <button type="submit"><i class="fas fa-search"></i></button>
-            </form>
-            <div id="navbar-toggle">
-                <i i class="fas fa-bars"></i>
-            </div>
-        </div>
+            <a href="{{ url_for('index') }}">
+                <h1>Whiskey Herald</h1>
+            </a>
+        </div>        
     </header>
 
     <div id="background-image"></div>
     <!-- sidenav -->
     <div id="navbar-background"></div>
-    <nav id="sidenav">
-        <span id="close-navbar"><i class="far fa-times-circle"></i></span>
+
+
+<div id="body" class="main-carousel">
+    <nav class="carousel-cell" id="sidenav">
+        <div>
+            <form id="search" action="{{ url_for('search') }}" method="POST">
+                <input type="text" name="search" placeholder="Search Whiskeys"/>
+                <button type="submit"><i class="fas fa-search"></i></button>
+            </form>
+        </div>
         <ul>
             {% if session["username"] %}
                 <li><a href="{{ url_for('profile', username = session['username']) }}"><i class="fas fa-user"></i> {{ session["username"] }}</a></li>
@@ -56,7 +55,6 @@
             <li><a href="{{ url_for('add_whiskey') }}">ADD A WHISKEY</a></li>
         </ul>
     </nav>
-
     <!-- flashed messages -->
     {% with success = get_flashed_messages(category_filter=["success"]) %}
         {% if success %}
@@ -85,15 +83,19 @@
     <!-- block content -->
     {% block content %}
     {% endblock %}
+</div>
 
     <!-- jQuery  -->
     <script src="https://code.jquery.com/jquery-3.5.1.js"
         integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <!-- Flickity -->
+    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
     <!-- custom JS -->
     <script src="{{ url_for('static', filename='js/base.js') }}"></script>
     <script src="{{ url_for('static', filename='js/register.js') }}"></script>
     <script src="{{ url_for('static', filename='js/whiskey.js') }}"></script>
     <script src="{{ url_for('static', filename='js/add-whiskey.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/flickity.js') }}"></script>
 
 </body>
 </html>
