@@ -1,5 +1,9 @@
 {% extends "base.html" %}
 
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/login-register.css') }}" />
+{% endblock %}
+
 {% block content %}
     
     <form id="login" class="form" method="POST" action="{{ url_for('login') }}">

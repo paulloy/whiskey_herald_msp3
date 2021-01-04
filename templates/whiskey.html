@@ -1,5 +1,9 @@
 {% extends "base.html" %}
 
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/whiskey.css') }}" />
+{% endblock %}
+
 {% block content %}
     
 
@@ -169,4 +173,8 @@
         {% endif %}
     </form>
 
+{% endblock %}
+
+{% block scripts %}
+    <script src="{{ url_for('static', filename='js/whiskey.js') }}"></script>
 {% endblock %}

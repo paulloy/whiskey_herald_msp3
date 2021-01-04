@@ -11,11 +11,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
     <!-- custom stylesheets -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}" />
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/login-register.css') }}" />
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/profile.css') }}" />
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/add-whiskey.css') }}" />
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/whiskey.css') }}" />
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/search.css') }}" />
+    {% block stylesheets %}
+    {% endblock %}
 </head>
 <body>
     <!-- Header  -->
@@ -91,9 +88,7 @@
         integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
     <!-- custom JS -->
     <script src="{{ url_for('static', filename='js/base.js') }}"></script>
-    <script src="{{ url_for('static', filename='js/register.js') }}"></script>
-    <script src="{{ url_for('static', filename='js/whiskey.js') }}"></script>
-    <script src="{{ url_for('static', filename='js/add-whiskey.js') }}"></script>
-
+    {% block scripts %}
+    {% endblock %}
 </body>
 </html>

@@ -1,5 +1,9 @@
 {% extends "base.html" %}
 
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/add-whiskey.css') }}" />
+{% endblock %}
+
 {% block content %}
     
     <form id="add-whiskey" method="POST" action="{{ url_for('edit_whiskey', whiskey_name = whiskey_name) }}">
@@ -27,4 +31,8 @@
         </div>
     </form>
 
+{% endblock %}
+
+{% block scripts %}
+    <script src="{{ url_for('static', filename='js/add-whiskey.js') }}"></script>
 {% endblock %}

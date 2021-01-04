@@ -1,5 +1,9 @@
 {% extends "base.html" %}
 
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/login-register.css') }}" />
+{% endblock %}
+
 {% block content %}
 
 <form id="register" class="form" method="POST" action="{{ url_for('register') }}">
@@ -34,4 +38,8 @@
     <a href="{{ url_for('login') }}">Already a user? LOGIN</a>
 </form>
 
+{% endblock %}
+
+{% block scripts %}
+    <script src="{{ url_for('static', filename='js/register.js') }}"></script>
 {% endblock %}
