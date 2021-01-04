@@ -86,6 +86,8 @@
     <!-- jQuery  -->
     <script src="https://code.jquery.com/jquery-3.5.1.js"
         integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <!-- flask moment -->
+    {{ moment.include_moment() }}
     <!-- custom JS -->
     <script src="{{ url_for('static', filename='js/base.js') }}"></script>
     {% block scripts %}

@@ -81,7 +81,7 @@
             <div>
                 <div>
                     <h3>{{ review['title'] }}</h3>
-                    <!-- <p>Added some time ago</p> -->
+                    <p>{{ moment(review['time']).format('Do MMMM YYYY, h:mm a') }}</p>
                     <p id="user-rating">
                         {% if review["score"] == 0 %}
                             No rating yet

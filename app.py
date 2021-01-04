@@ -4,6 +4,8 @@ from flask import (
 )
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
+from flask_moment import Moment
+from datetime import datetime
 from werkzeug.security import generate_password_hash, check_password_hash
 if os.path.exists("env.py"):
     import env
@@ -16,9 +18,10 @@ app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
 app.secret_key = os.environ.get("SECRET_KEY")
 
 mongo = PyMongo(app)
+moment = Moment(app)
 
 # get collections
-coll = mongo.db
+data = mongo.db
 
 
 @app.route("/")
@@ -37,7 +40,7 @@ def add_whiskey():
         flash("You must register an account if you want to add a whiskey", "error")
 
     if request.method == "POST":
-        existing_drink = coll.drinks.find_one(
+        existing_drink = data.drinks.find_one(
             {"drink": request.form.get("whiskey-name").lower()}
         )
 
@@ -59,7 +62,7 @@ def add_whiskey():
                 "average_score": "number"
             }
 
-            coll.drinks.insert_one(formSubmission)
+            data.drinks.insert_one(formSubmission)
             flash("This drink has been added to Whiskey Herald", "success")
 
         else:
@@ -73,7 +76,7 @@ def add_whiskey():
 
 @app.route("/edit_whiskey/<whiskey_name>", methods=["GET", "POST"])
 def edit_whiskey(whiskey_name):
-    find_drink = coll.drinks.find_one({"drink": whiskey_name})
+    find_drink = data.drinks.find_one({"drink": whiskey_name})
 
     if not session:
         return abort(403)
@@ -92,7 +95,7 @@ def edit_whiskey(whiskey_name):
                 "description": request.form.get("description")
             }
 
-            find_reviews = coll.reviews.find({"drink": whiskey_name})
+            find_reviews = data.reviews.find({"drink": whiskey_name})
             for doc in find_reviews:
                 reviewUpdate = {
                     "username": doc["username"],
@@ -102,13 +105,13 @@ def edit_whiskey(whiskey_name):
                     "score": doc["score"]
                 }
 
-                coll.reviews.update({"drink": whiskey_name}, reviewUpdate)
+                data.reviews.update({"drink": whiskey_name}, reviewUpdate)
 
         else:
             flash("Url must end with .jpg, .jpeg, or .png", "error")
             return redirect(url_for("edit_whiskey", whiskey_name=whiskey_name))
 
-        coll.drinks.update({"drink": whiskey_name}, whiskeyUpdate)
+        data.drinks.update({"drink": whiskey_name}, whiskeyUpdate)
         flash("Whiskey has been updated", "success")
         return redirect(url_for("whiskey", whiskey_name=whiskeyUpdate["drink"]))
 
@@ -119,8 +122,8 @@ def edit_whiskey(whiskey_name):
 def delete_whiskey(whiskey_name):
     if session:
         if session["username"] == "admin":
-            coll.drinks.remove({"drink": whiskey_name})
-            coll.reviews.remove({"drink": whiskey_name})
+            data.drinks.remove({"drink": whiskey_name})
+            data.reviews.remove({"drink": whiskey_name})
             flash("Whiskey has been removed from the database", "success")
         else:
             return abort(403)
@@ -133,10 +136,10 @@ def delete_whiskey(whiskey_name):
 @app.route("/register", methods=["GET", "POST"])
 def register():
     if request.method == "POST":
-        existing_username = coll.users.find_one(
+        existing_username = data.users.find_one(
             {"username": request.form.get("username").lower()}
         )
-        existing_email = coll.users.find_one(
+        existing_email = data.users.find_one(
             {"email": request.form.get("email").lower()}
         )
 
@@ -160,7 +163,7 @@ def register():
                 "profile_pic": "DEFAULT"
             }
 
-            coll.users.insert_one(newUser)
+            data.users.insert_one(newUser)
 
             flash("Registration successful, thanks for joining! \
                 You can now login.", "success")
@@ -176,7 +179,7 @@ def register():
 @app.route("/login", methods=["GET", "POST"])
 def login():
     if request.method == "POST":
-        existing_user = coll.users.find_one(
+        existing_user = data.users.find_one(
             {"email": request.form.get("email")}
         )
 
@@ -211,7 +214,7 @@ def logout():
 
 @app.route("/profile/<username>")
 def profile(username):
-    user = coll.users.find_one(
+    user = data.users.find_one(
         {"username": username}
     )
 
@@ -221,7 +224,7 @@ def profile(username):
         "profile_pic": user["profile_pic"]
     }
 
-    user_reviews = coll.reviews.find({"username": username})
+    user_reviews = data.reviews.find({"username": username})
 
     return render_template("profile.html", username=username, userDetails=userDetails, user_reviews=user_reviews)
 
@@ -229,7 +232,7 @@ def profile(username):
 @app.route("/search", methods=["GET", "POST"])
 def search():
     query = request.form.get("search")
-    results = list(coll.drinks.find({"$text": {"$search": query}}))
+    results = list(data.drinks.find({"$text": {"$search": query}}))
 
     searched_value = request.form.get("search")
 
@@ -238,9 +241,9 @@ def search():
 
 @app.route("/whiskey/<whiskey_name>")
 def whiskey(whiskey_name):
-    find_whiskey = coll.drinks.find_one({"drink": whiskey_name})
-    find_reviews = coll.reviews.find({"drink": whiskey_name})
-    find_average_score = coll.reviews.find({"drink": whiskey_name})
+    find_whiskey = data.drinks.find_one({"drink": whiskey_name})
+    find_reviews = data.reviews.find({"drink": whiskey_name})
+    find_average_score = data.reviews.find({"drink": whiskey_name})
 
     if find_whiskey is None:
         return abort(404)
@@ -263,7 +266,11 @@ def whiskey(whiskey_name):
 
 @app.route("/review/<whiskey_name>", methods=["GET", "POST"])
 def review(whiskey_name):
-    existing_review = coll.reviews.find_one({"username": session["username"], "drink": whiskey_name})
+    if not session:
+        return abort(403)
+
+    existing_review = data.reviews.find_one({"username": session["username"], "drink": whiskey_name})
+    current_time = datetime.utcnow()
 
     if request.method == "POST":
         if existing_review:
@@ -272,10 +279,11 @@ def review(whiskey_name):
                 "drink": whiskey_name,
                 "title": request.form.get("review-title"),
                 "review": request.form.get("review"),
-                "score": int(request.form.get("score"))
+                "score": int(request.form.get("score")),
+                "time": current_time
             }
 
-            coll.reviews.update({"username": session["username"], "drink": whiskey_name}, reviewUpdate)
+            data.reviews.update({"username": session["username"], "drink": whiskey_name}, reviewUpdate)
             flash("Your review has been updated", "success")
 
         else:
@@ -284,10 +292,11 @@ def review(whiskey_name):
                 "drink": whiskey_name,
                 "title": request.form.get("review-title"),
                 "review": request.form.get("review"),
-                "score": int(request.form.get("score"))
+                "score": int(request.form.get("score")),
+                "time": current_time
             }
 
-            coll.reviews.insert_one(newReview)
+            data.reviews.insert_one(newReview)
             flash("Your review has been submitted", "success")
 
     return redirect(url_for("whiskey", whiskey_name=whiskey_name))
@@ -295,7 +304,10 @@ def review(whiskey_name):
 
 @app.route("/delete_review/<whiskey_name>")
 def delete_review(whiskey_name):
-    coll.reviews.remove({"username": session["username"], "drink": whiskey_name})
+    if not session:
+        return abort(403)
+
+    data.reviews.remove({"username": session["username"], "drink": whiskey_name})
     flash("Your review has been deleted", "success")
     return redirect(url_for("whiskey", whiskey_name=whiskey_name))
 
@@ -306,7 +318,7 @@ def page_not_found(e):
 
 
 @app.errorhandler(403)
-def page_not_found(e):
+def forbidden(e):
     return render_template("403.html"), 403
 
 
