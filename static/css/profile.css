@@ -1,18 +1,9 @@
-#container {
-  width: 100vw;
-  height: 100vh;
-  overflow-y: scroll;
-  background-color: rgba(0, 0, 0, 0.1);
-  padding-top: 5rem;
-  padding-bottom: 4rem;
-}
-
 #bio {
-  width: 100%;
+  width: 80%;
+  border: 1px solid black;
   margin-left: auto;
   margin-right: auto;
-  height: 100vh;
-  overflow-y: scroll;
+  margin-top: 1rem;
 }
 #bio h3 {
   text-align: center;

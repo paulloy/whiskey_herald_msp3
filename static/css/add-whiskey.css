@@ -1,14 +1,15 @@
 #add-whiskey {
-  width: 100%;
+  width: 80%;
   margin-left: auto;
   margin-right: auto;
-  padding-top: 5rem;
-  overflow-y: scroll;
-  display: block;
-  position: fixed;
-  height: 100vh;
-  padding-bottom: 4rem;
-  background-color: rgba(0, 0, 0, 0.1);
+  border: 1rem double rgba(0, 0, 0, 0.2);
+  margin-top: 1rem;
+  padding: 1rem;
+  background-color: #CAD4C0;
+  color: #c72c44;
+  text-align: center;
+  font-weight: 400;
+  border-radius: 1rem;
 }
 #add-whiskey h2 {
   text-align: center;

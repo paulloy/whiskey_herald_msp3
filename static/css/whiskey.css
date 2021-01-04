@@ -1,203 +1,490 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-body {
+#whiskey-details {
+  border: 1.75rem solid rgba(138, 138, 138, 0.1);
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 4rem;
+  height: 32rem;
+  background-color: #c8cfcf;
+  outline: 2.5rem double #3c2f27;
+  margin-bottom: 5rem;
   position: relative;
 }
-
-body {
-  overflow: hidden;
-  background-color: #C7AD9B;
-}
-
-#right-side {
-  position: block;
-  padding-top: 4.5rem;
-  left: 100vh;
-  width: 100vw;
-  background-color: #c0d3d4;
-  height: 100%;
-  overflow-y: scroll;
-}
-
-#whiskey-details {
-  position: absolute;
-  overflow-y: scroll;
-  height: 100vh;
-  width: 100vw;
-  background-color: #CAD4C0;
-  padding-top: 4.5rem;
-}
 #whiskey-details div:nth-of-type(1) {
-  width: 100%;
-  height: auto;
-  background-color: rgba(0, 0, 0, 0.1);
-  border: 0.5rem double rgba(0, 0, 0, 0.1);
-  padding: 0.5rem;
-  margin-left: 0.5rem;
-  margin-right: 0.5rem;
-  text-align: center;
+  width: 20%;
+  padding: 0;
+  background-color: #CAD4C0;
+  box-shadow: inset 50rem 50rem rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  max-height: 100%;
 }
-#whiskey-details div:nth-of-type(1) h3 {
-  margin: 0;
-}
-#whiskey-details div:nth-of-type(2) {
-  width: 100%;
-  height: 50vh;
-  background-color: rgba(0, 0, 0, 0.1);
-  border: 0.5rem double rgba(0, 0, 0, 0.1);
-  padding: 0.5rem;
-  margin-left: 0.5rem;
-  margin-right: 0.5rem;
-  margin-top: 0.5rem;
-}
-#whiskey-details div:nth-of-type(2) img {
-  width: 100%;
+#whiskey-details div:nth-of-type(1) img {
   height: 100%;
   object-fit: scale-down;
+  width: 100%;
+  border: 0.5rem rgba(255, 255, 255, 0.7) double;
+  max-height: 100%;
+  box-shadow: inset 100rem 100rem rgba(0, 0, 0, 0.1);
+  border-right: 0;
+}
+#whiskey-details div:nth-of-type(2) {
+  width: 60%;
+  margin-right: 1rem;
+  height: 100%;
+  box-shadow: inset 2rem 2rem rgba(0, 0, 0, 0.1);
+  background-color: rgba(124, 96, 77, 0.59);
+  border-top: 0.5rem double rgba(255, 255, 255, 0.7);
+  border-bottom: 0.5rem double rgba(255, 255, 255, 0.7);
+  box-shadow: inset 2rem 2rem rgba(0, 0, 0, 0.1);
+}
+#whiskey-details div:nth-of-type(2) div {
+  height: auto;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  padding: 0;
+  width: auto;
+}
+#whiskey-details div:nth-of-type(2) div h3 {
+  color: #c72c44;
+  background-color: #CAD4C0;
+  margin-top: 1rem;
+  padding: 0.5rem 1rem 0.5rem 1rem;
+  font-size: 2.5rem;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  letter-spacing: -1px;
+  box-shadow: 0.5rem 0.5rem rgba(0, 0, 0, 0.1);
+  padding-top: 0;
+  border-bottom: 0.25rem dashed white;
+  border-right: 0.25rem dashed white;
+  border-top: 0.5rem solid rgba(0, 0, 0, 0.1);
+  border-top-right-radius: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+  border-left: 0.25rem dashed white;
+  border-top-left-radius: 1rem;
+  border-radius: 1rem;
+}
+#whiskey-details div:nth-of-type(2) div h3 span {
+  color: rgba(124, 96, 77, 0.59);
+}
+#whiskey-details div:nth-of-type(2) div p {
+  background-color: #CAD4C0;
+  color: #c72c44;
+  font-size: 2rem;
+  padding: 0.5rem 1rem 0.5rem 1rem;
+  margin-top: 2rem;
+  border-radius: 1rem;
+  margin-left: auto;
+  border-right: 0.5rem dashed white;
+  border-top: 0.5rem solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0.5rem 0.5rem rgba(0, 0, 0, 0.1);
+  border-left: 0.5rem solid rgba(0, 0, 0, 0.1);
+  padding-top: 0;
+  border-bottom: 0.5rem dashed white;
+  margin-right: auto;
+}
+#whiskey-details div:nth-of-type(2) article {
+  height: auto;
+  color: #c72c44;
+  background-color: #CAD4C0;
+  margin-top: 1rem;
+  padding: 0.5rem 1rem 0.5rem 1rem;
+  letter-spacing: -1px;
+  box-shadow: 0.5rem 0.5rem rgba(0, 0, 0, 0.1);
+  padding-top: 0;
+  border-bottom: 0.25rem dashed white;
+  border-right: 0.25rem dashed white;
+  border-left: 0.25rem dashed white;
+  border-top: 0.5rem solid rgba(0, 0, 0, 0.1);
+  border-top-right-radius: 1rem;
+  border-top-left-radius: 1rem;
+  width: 94%;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: inset 100rem 100rem rgba(255, 255, 255, 0.1);
+  position: relative;
+  margin-bottom: 0.5rem;
+}
+#whiskey-details div:nth-of-type(2) article h4 {
+  margin-top: 0.5rem;
+  font-size: 1.7rem;
+  font-weight: 500;
+  font-family: "Poppins", sans-serif;
+  text-decoration: underline;
+  text-align: center;
+  padding: 0.25rem 0.5rem 0.25rem 0.5rem;
+  width: 100%;
+  letter-spacing: 1px;
+}
+#whiskey-details div:nth-of-type(2) article p {
+  font-size: 1.1rem;
+  font-weight: 500;
+  font-family: "Poppins", sans-serif;
+  letter-spacing: 0.1px;
+  text-align: justify;
+  padding: 0.25rem 0.5rem 0.25rem 0.5rem;
 }
 #whiskey-details div:nth-of-type(3) {
-  background-color: rgba(0, 0, 0, 0.1);
-  border: 0.5rem double rgba(0, 0, 0, 0.1);
-  padding: 0.5rem;
-  margin-left: 0.5rem;
-  margin-right: 0.5rem;
-  margin-top: 0.5rem;
-  width: 100%;
-}
-#whiskey-details div:nth-of-type(4) {
-  background-color: rgba(0, 0, 0, 0.1);
-  border: 0.5rem double rgba(0, 0, 0, 0.1);
-  padding: 0.5rem;
-  margin-left: 0.5rem;
-  margin-right: 0.5rem;
-  width: 100%;
-  margin-top: 0.5rem;
+  width: 20%;
+  margin-left: auto;
   display: flex;
   flex-direction: column;
-  margin-bottom: 3.5rem;
-  text-align: center;
+  background-color: #C7AD9B;
+  box-shadow: inset 50rem 50rem rgba(255, 255, 255, 0.05);
+  border: 0.5rem double rgba(255, 255, 255, 0.7);
+  align-items: center;
+  margin-left: -1rem;
+  border-left: 0;
 }
-#whiskey-details div:nth-of-type(4) p:first-of-type {
-  font-size: 2rem;
-}
-#whiskey-details div:nth-of-type(4) p:last-of-type {
+#whiskey-details div:nth-of-type(3) p:first-of-type {
+  margin-top: 3rem;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 1rem 0.5rem 1rem;
+  border-radius: 1rem;
+  color: #212529;
+  font-family: "Poppins", sans-serif;
+  background-color: #21252935;
   font-size: 1.2rem;
 }
-#whiskey-details div:nth-of-type(4) a {
-  margin-bottom: 0.5rem;
+#whiskey-details div:nth-of-type(3) p:first-of-type i {
+  font-size: 2rem;
+  color: #c72c44;
 }
-
-#filters {
-  display: none;
-}
-
-#comments {
-  width: 100%;
-  height: 3rem;
-  margin: 0;
-  border: 0;
+#whiskey-details div:nth-of-type(3) p:last-of-type {
   display: flex;
-  background-color: #c0d3d4;
-  box-shadow: inset 50rem 50rem rgba(0, 0, 0, 0.1);
-  border: 0.5rem double rgba(0, 0, 0, 0.1);
+  flex-direction: column;
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: 500;
+  background-color: #21252935;
+  padding: 0.5rem 1rem 0.5rem 1rem;
+  border-radius: 1rem;
+  color: #212529;
+  margin-top: 1rem;
+}
+#whiskey-details div:nth-of-type(3) p:last-of-type em {
+  font-style: unset;
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+#whiskey-details div:nth-of-type(3) a {
+  margin-bottom: 1rem;
+  width: 80%;
+}
+#whiskey-details div:nth-of-type(3) a:first-of-type {
+  margin-top: auto;
+}
+
+@media only screen and (max-width: 1564px) {
+  #whiskey-details {
+    width: 90%;
+  }
+
+  .reviews, #leave-review {
+    width: 90%;
+  }
+}
+@media only screen and (max-width: 1380px) {
+  #whiskey-details {
+    width: 94%;
+    border: 0;
+    outline: 2rem double #3c2f27;
+  }
+
+  .reviews, #leave-review {
+    width: 94%;
+  }
+}
+@media only screen and (max-width: 1250px) {
+  #whiskey-details {
+    height: 55rem;
+    border-radius: 0;
+    border: 0;
+    outline: 2rem double #3c2f27;
+  }
+  #whiskey-details div:nth-of-type(1) {
+    width: 25%;
+    height: 65%;
+    border-top: 0.5rem rgba(255, 255, 255, 0.7) double;
+    border-left: 0.5rem rgba(255, 255, 255, 0.7) double;
+    margin-left: -1rem;
+    margin: 0;
+  }
+  #whiskey-details div:nth-of-type(1) img {
+    border: 0;
+    height: 60%;
+    height: 100%;
+  }
+  #whiskey-details div:nth-of-type(2) {
+    width: 75%;
+    height: 65%;
+    margin-right: -0.5rem;
+    border-bottom: 0;
+    border-right: 0.5rem rgba(255, 255, 255, 0.7) double;
+  }
+  #whiskey-details div:nth-of-type(2) div {
+    border: 0;
+  }
+  #whiskey-details div:nth-of-type(2) div h3 {
+    margin-top: 1rem;
+    width: 94%;
+  }
+  #whiskey-details div:nth-of-type(2) article {
+    margin-top: 1rem;
+  }
+  #whiskey-details div:nth-of-type(3) {
+    width: 100%;
+    height: 35%;
+    margin-top: 0;
+    border-top: 0;
+    margin: 0;
+    border-left: 0.5rem rgba(255, 255, 255, 0.7) double;
+    justify-items: flex-start;
+  }
+  #whiskey-details div:nth-of-type(3) p:first-of-type {
+    margin-top: 1rem;
+    font-size: 1.8rem;
+  }
+  #whiskey-details div:nth-of-type(3) p:last-of-type {
+    margin-top: 0;
+    flex-direction: row;
+    align-items: center;
+  }
+  #whiskey-details div:nth-of-type(3) p:last-of-type em {
+    margin-left: 0.5rem;
+  }
+  #whiskey-details div:nth-of-type(3) a {
+    width: 50%;
+  }
+}
+@media only screen and (max-width: 850px) {
+  #whiskey-details {
+    width: 100%;
+    height: auto;
+    border: 0.5rem solid #CAD4C0;
+    outline: 0;
+    border: 0.5rem rgba(145, 145, 145, 0.7) solid;
+    margin-bottom: 0;
+  }
+  #whiskey-details div:nth-of-type(1) {
+    width: 100%;
+    margin-right: 0;
+    margin-left: 0;
+    height: 25rem;
+    border-right: 0.5rem rgba(255, 255, 255, 0.7) double;
+  }
+  #whiskey-details div:nth-of-type(2) {
+    width: 100%;
+    margin-right: 0;
+    margin-left: 0;
+    border-top: 0;
+    border-left: 0.5rem rgba(255, 255, 255, 0.7) double;
+  }
+  #whiskey-details div:nth-of-type(2) div h3 {
+    font-size: 1.7rem;
+    margin-left: auto;
+    margin-right: auto;
+    border-top-left-radius: 1rem;
+    border-left: 0.25rem dashed white;
+    padding-top: 0.25rem;
+    text-align: center;
+  }
+  #whiskey-details div:nth-of-type(2) article {
+    width: 97%;
+    margin-left: auto;
+    margin-right: auto;
+    border-top-left-radius: 1rem;
+    border-left: 0.25rem dashed white;
+    height: auto;
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    margin-top: 0;
+  }
+  #whiskey-details div:nth-of-type(2) article h4 {
+    font-size: 1.5rem;
+  }
+  #whiskey-details div:nth-of-type(2) article p {
+    font-size: 1rem;
+    margin: 0;
+  }
+  #whiskey-details div:nth-of-type(3) {
+    height: auto;
+  }
+
+  .reviews, #leave-review {
+    width: 100%;
+  }
+}
+@media only screen and (max-width: 480px) {
+  #whiskey-details div:nth-of-type(2) div h3 {
+    width: 94%;
+  }
+  #whiskey-details div:nth-of-type(2) article {
+    width: 94%;
+  }
+}
+#comments {
+  border: 1rem double rgba(60, 47, 39, 0.5);
+  border-top-right-radius: 1rem;
+  border-top-left-radius: 1rem;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1rem;
+  background-color: #e3e6d9;
+  display: flex;
   align-items: center;
-  padding: 0.5rem;
-  margin-bottom: 0.5rem;
-  align-content: center;
+  box-shadow: inset 0.5rem 0.5rem rgba(0, 0, 0, 0.1);
 }
 #comments p:first-of-type {
-  margin-left: 1rem;
-  font-size: 1.5rem;
+  color: #c72c44;
+  margin: 0;
+  margin-left: 2rem;
+  font-size: 2rem;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
 }
 #comments a {
   margin-left: auto;
-  font-size: 1.2rem;
+  font-size: 1.4rem;
 }
 #comments span {
-  margin-right: 1rem;
   display: flex;
-  margin-left: 0.5rem;
-}
-#comments span i {
-  font-size: 1.1rem;
-  align-self: center;
+  margin-left: 1rem;
+  margin-right: 2rem;
+  color: #c72c44;
+  font-size: 1.8rem;
+  height: 100%;
+  align-items: center;
 }
 #comments span p:last-of-type {
-  margin: 0;
-  margin-left: -0.5rem;
+  margin-left: -1rem;
 }
 
-#comments > * {
-  margin: 0;
-  padding: 0;
-}
-
-#filters {
-  height: 8%;
-  width: 100%;
-  display: block;
-  margin-bottom: 1rem;
+#background-image {
+  height: 110vh;
+  width: 110vw;
+  z-index: -1;
+  position: fixed;
+  top: 0;
+  left: -5vw;
+  top: -5vh;
+  box-shadow: inset 100rem 100rem rgba(17, 38, 39, 0.1);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .reviews {
-  width: 100%;
-  border: 0.5rem double rgba(0, 0, 0, 0.1);
-}
-.reviews div:nth-of-type(1) div:first-of-type {
   display: flex;
-  align-items: center;
-  width: 100%;
-  flex-direction: column;
-}
-.reviews div:nth-of-type(1) div:first-of-type #edit-delete {
-  width: 50%;
+  border: 1rem double rgba(60, 47, 39, 0.5);
+  width: 80%;
   margin-left: auto;
-}
-.reviews div:nth-of-type(1) div:first-of-type #edit-delete div {
-  display: flex;
-  flex-direction: row;
-  margin-right: 1rem;
-}
-.reviews div:nth-of-type(1) div:first-of-type #edit-delete div a {
-  width: 50%;
-  margin: 0.25rem;
-  height: 2rem;
-}
-.reviews div:nth-of-type(1) div:first-of-type span {
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-  height: 2rem;
-  align-items: center;
-}
-.reviews div:nth-of-type(1) div:first-of-type span a {
-  width: 100%;
+  margin-right: auto;
+  background-color: #e3e6d9;
   display: flex;
   align-items: center;
+  box-shadow: inset 0.5rem 0.5rem rgba(0, 0, 0, 0.1);
+  height: 23rem;
 }
-.reviews div:nth-of-type(1) div:first-of-type span a i {
-  margin-right: 0.5rem;
-  border: 1px solid #0468ff;
-  border-radius: 50%;
-  padding: 0.25rem;
-  overflow: hidden;
-}
-.reviews div:nth-of-type(1) div:first-of-type span p {
-  font-size: 1rem;
-}
-.reviews div:nth-of-type(1) div:first-of-type h4 {
-  margin: 0;
-  margin-left: 1rem;
-  font-size: 1.1rem;
-}
-.reviews div:nth-of-type(1) div:first-of-type p {
-  font-size: 1rem;
-  color: #c72c44;
-  margin: 0;
-}
-.reviews div:nth-of-type(1) p {
+.reviews div:nth-of-type(1) {
+  width: 80%;
   padding-left: 1rem;
   padding-right: 1rem;
+}
+.reviews div:nth-of-type(1) div:first-of-type {
+  width: 100%;
+  display: flex;
+  color: #c72c44;
+  align-items: center;
+  margin-top: 1rem;
+  padding-bottom: 1rem;
+  font-family: "Poppins", sans-serif;
+}
+.reviews div:nth-of-type(1) div:first-of-type h3 {
+  font-size: 1.4rem;
+  padding: 0.5rem 1rem 0.5rem 1rem;
+  margin: 0;
+  background-color: #c0d3d4;
+  box-shadow: 0.25rem 0.25rem rgba(0, 0, 0, 0.1);
+  border-top: 0.25rem rgba(0, 0, 0, 0.2) solid;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+}
+.reviews div:nth-of-type(1) div:first-of-type p {
+  margin-bottom: 0;
+  font-size: 1.1rem;
+  padding: 0rem 1rem 0rem 1rem;
+  background-color: #c0d3d4;
+  box-shadow: 0.25rem 0.25rem rgba(0, 0, 0, 0.1);
+  margin-left: auto;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.reviews div:nth-of-type(1) p {
+  font-family: "Poppins", sans-serif;
+  color: #c72c44;
+  font-size: 1rem;
   text-align: justify;
+  margin: 0;
+  padding: 1rem;
+  background-color: #c0d3d4;
+  box-shadow: 0.25rem 0.25rem rgba(0, 0, 0, 0.1);
+  border-top: 0.25rem rgba(0, 0, 0, 0.2) solid;
+  margin-bottom: 1rem;
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+}
+.reviews div:nth-of-type(2) {
+  font-family: "Poppins", sans-serif;
+  color: #212529;
+  background-color: #C7AD9B;
+  width: 20%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.reviews div:nth-of-type(2) h3 {
+  margin-top: 1rem;
+  text-align: center;
+  align-self: center;
+  font-size: 2rem;
+}
+.reviews div:nth-of-type(2) i {
+  width: 100%;
+  text-align: center;
+  font-size: 4rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+.reviews div:nth-of-type(2) div:last-of-type {
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
+.reviews div:nth-of-type(2) div:last-of-type a:first-of-type {
+  margin-top: auto;
+}
+.reviews div:nth-of-type(2) div:last-of-type a {
+  margin-top: 1rem;
+  width: 100%;
+}
+
+.reviews:last-of-type {
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  margin-bottom: 0.5rem;
 }
 
 hr {
@@ -213,54 +500,100 @@ hr:last-of-type {
   display: none;
 }
 
+@media only screen and (max-width: 1564px) {
+  #comments {
+    width: 90%;
+  }
+
+  hr {
+    width: 90%;
+  }
+
+  .reviews {
+    width: 90%;
+  }
+}
+@media only screen and (max-width: 1250px) {
+  #comments {
+    width: 100%;
+  }
+
+  hr {
+    width: 100%;
+  }
+
+  .reviews {
+    width: 100%;
+  }
+}
+@media only screen and (max-width: 970px) {
+  #comments {
+    flex-direction: column;
+  }
+  #comments p:first-of-type {
+    margin-left: 0;
+  }
+  #comments a {
+    margin-right: auto;
+    text-align: center;
+  }
+  #comments span {
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    width: 4rem;
+  }
+
+  .reviews {
+    height: auto;
+    width: 100%;
+    flex-wrap: wrap;
+  }
+  .reviews div:nth-of-type(1) {
+    width: 100%;
+    height: auto;
+    padding-bottom: 1rem;
+    flex-direction: column;
+  }
+  .reviews div:nth-of-type(1) div:first-of-type {
+    height: auto;
+  }
+  .reviews div:nth-of-type(1) p {
+    margin-top: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 1rem;
+  }
+  .reviews div:nth-of-type(2) {
+    width: 100%;
+    height: auto;
+  }
+}
 #leave-review {
+  margin-top: 1rem;
   display: flex;
   flex-direction: column;
-  height: auto;
-  height: 80vh;
-  background-color: #CAD4C0;
-  margin: 0;
-  width: 100%;
-  border: 0;
-  align-items: center;
-  margin-top: 0.5rem;
-  border: 0.5rem double rgba(0, 0, 0, 0.1);
-  margin-bottom: 3.5rem;
+  border: 1rem double rgba(0, 0, 0, 0.4);
+  background-color: rgba(35, 79, 87, 0.2);
+  padding: 1rem;
+  margin-bottom: 1rem;
+  color: #c72c44;
 }
-#leave-review input {
-  width: 80%;
-  background-color: transparent;
-  border: 0.1rem rgba(0, 0, 0, 0.5) solid;
-  border-radius: 1rem;
+#leave-review input, #leave-review textarea {
+  border: 0.5 solid rgba(0, 0, 0, 0.4);
   padding: 0.5rem;
+  border-radius: 1rem;
 }
 #leave-review label {
-  font-weight: 400;
   font-size: 1.2rem;
-}
-#leave-review #rating {
-  font-size: 1.5rem;
-  color: #c72c44;
+  font-weight: 400;
 }
 #leave-review #score {
   opacity: 0;
   width: 10px;
 }
 #leave-review textarea {
-  border-radius: 1rem;
-  padding: 0.5rem;
   resize: none;
-  width: 80%;
-  background-color: transparent;
-  border: 0.1rem rgba(0, 0, 0, 0.5) solid;
-}
-#leave-review button {
-  margin-bottom: 1rem;
-  margin-top: 1rem;
-}
-#leave-review a {
-  margin-top: 1rem;
-  margin-bottom: 1rem;
 }
 #leave-review button {
   margin-top: 1rem;
