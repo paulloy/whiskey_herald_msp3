@@ -23,7 +23,11 @@
         <div class="row">
             <label for="description">Description</label>
             <textarea name="description" minlength="100" maxlength="580" id="descript" cols="30" rows="10" placeholder="What's important to know about this whiskey?" required></textarea>
-            <button type="submit">SUBMIT</button>
+            {% if session['username'] %}
+                <button type="submit" class="btn btn-primary">SUBMIT</button>
+            {% else %}
+                <a href="{{ url_for('register') }}">Register an account to add a whiskey.</a>
+            {% endif %}                
         </div>
     </form>
 

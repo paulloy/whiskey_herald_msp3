@@ -1,6 +1,6 @@
 import os
 from flask import (
-    Flask, render_template, flash, redirect, request, session, url_for, json
+    Flask, render_template, flash, redirect, request, session, url_for, json, abort
 )
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
@@ -33,6 +33,9 @@ def about():
 
 @app.route("/add_whiskey", methods=["GET", "POST"])
 def add_whiskey():
+    if not session:
+        flash("You must register an account if you want to add a whiskey", "error")
+
     if request.method == "POST":
         existing_drink = coll.drinks.find_one(
             {"drink": request.form.get("whiskey-name").lower()}
@@ -71,6 +74,9 @@ def add_whiskey():
 @app.route("/edit_whiskey/<whiskey_name>", methods=["GET", "POST"])
 def edit_whiskey(whiskey_name):
     find_drink = coll.drinks.find_one({"drink": whiskey_name})
+
+    if not session:
+        return abort(403)
 
     if request.method == "POST":
         allow_exten = ["jpg", "jpeg", "png"]
@@ -111,9 +117,15 @@ def edit_whiskey(whiskey_name):
 
 @app.route("/delete_whiskey/<whiskey_name>")
 def delete_whiskey(whiskey_name):
-    coll.drinks.remove({"drink": whiskey_name})
-    coll.reviews.remove({"drink": whiskey_name})
-    flash("Whiskey has been removed from the database", "success")
+    if session:
+        if session["username"] == "admin":
+            coll.drinks.remove({"drink": whiskey_name})
+            coll.reviews.remove({"drink": whiskey_name})
+            flash("Whiskey has been removed from the database", "success")
+        else:
+            return abort(403)
+    else:
+        return abort(403)
 
     return redirect(url_for("add_whiskey"))
 
@@ -230,6 +242,9 @@ def whiskey(whiskey_name):
     find_reviews = coll.reviews.find({"drink": whiskey_name})
     find_average_score = coll.reviews.find({"drink": whiskey_name})
 
+    if find_whiskey is None:
+        return abort(404)
+
     average_score = 0
     if find_average_score.count() != 0:
         for doc in find_average_score:
@@ -283,6 +298,17 @@ def delete_review(whiskey_name):
     coll.reviews.remove({"username": session["username"], "drink": whiskey_name})
     flash("Your review has been deleted", "success")
     return redirect(url_for("whiskey", whiskey_name=whiskey_name))
+
+
+@app.errorhandler(404)
+def page_not_found(e):
+    return render_template("404.html"), 404
+
+
+@app.errorhandler(403)
+def page_not_found(e):
+    return render_template("403.html"), 403
+
 
 
 if __name__ == "__main__":
