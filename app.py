@@ -79,7 +79,8 @@ def edit_whiskey(whiskey_name):
     find_drink = data.drinks.find_one({"drink": whiskey_name})
 
     if not session:
-        return abort(403)
+        flash("You must be logged in to update a whiskey", "error")
+        return redirect(url_for("login"))
 
     if request.method == "POST":
         allow_exten = ["jpg", "jpeg", "png"]
