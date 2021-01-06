@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500&display=swap');
+
 $green: #CAD4C0;
 $red: rgb(199, 44, 68);
 $cream: rgba(124, 96, 77, 0.59);
@@ -5,6 +7,11 @@ $desert: #C7AD9B;
 $black: #212529;
 $padding: 0.5rem 1rem 0.5rem 1rem;
 $font: 'Poppins', sans-serif;
+
+$color1: rgba(255, 255, 255, 0.4);
+$color2: white;
+$color3: #BDAAA6;
+$color4: rgba(153, 122, 115);
 
 body {
     position: relative;
@@ -15,7 +22,6 @@ body {
     width: 80%;
     margin-left: auto;
     margin-right: auto;
-    border: 1px solid black;
 }
 @media only screen and (max-width: 750px) {
     .width {
@@ -23,24 +29,56 @@ body {
     }
 }
 
+// background image
+
+#background-image {
+    height: 100vh;
+    width: 100vw;
+    z-index: -1;
+    position: fixed;
+    top: 0;
+    left: 0;
+    box-shadow: inset 100rem 100rem rgba(17, 38, 39, 0.1);
+    // background-image: url("https://media.istockphoto.com/photos/starburst-on-lights-in-bourbon-aging-warehouse-picture-id859708976?k=6&m=859708976&s=612x612&w=0&h=23DFdTFiN-0Rv7dHtK6LD5whSmlbNFK-Hb_d7QS6aEU=");
+    background-repeat: no-repeat;
+    background-size: cover;
+    // filter: blur(4px);
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
 
 // Header
-$header-height: 4rem;
+$header-height: 5rem;
 #header {
+    position: relative;
     width: 100%;
     padding-left: 10%;
     padding-right: 10%;
     margin-left: auto;
     margin-right: auto;
     height: $header-height;
-    background-color: $desert;
+    background-color: $color3;
+    border-bottom: 0.5rem double $color2;
+    border-top: 0.5rem double $color2;
     div:first-of-type {
+        display: flex;
+        align-items: center;
         span {
             display: inline-block;
             a {
                 text-decoration: none;
                 h1 {
-                    color: $red;
+                    color: #741B07;
+                    font-family: 'Raleway', sans-serif;
+                    font-size: 500;
+                    background-color: $color3;
+                    padding-left: 0.5rem;
+                    padding-right: 0.5rem;
+                    height: 100%;
+                    margin: 0;
                 }
             }
         }
@@ -53,39 +91,54 @@ $header-height: 4rem;
             width: 100%;
             display: flex;
             flex-wrap: nowrap;
+            position: relative;
+            background-color: $color3;
+            padding: 0.25rem 0.5rem 0.25rem 0.5rem;
             input {
-                width: 90%;
-                border: 0.1rem solid $red;
-                border-radius: 1rem;
+                width: 80%;
+                border: 0.2rem solid #741B07;
+                border-radius: 5rem;
                 padding: 0.5rem;
+                height: 2.8rem;
+                padding-right: 4rem;
             }
             button {
-                height: $header-height * 0.75;
-                width: $header-height * 0.75;
-                border-radius: 50%;
-                margin-left: 1rem;
-                border: 0.1rem solid $red;
-                background-color: rgb(255, 255, 255);
+                height: 2.8rem;
+                width: 2.8rem;
+                background-color: transparent;
                 color: $red;
+                position: absolute;
+                right: 22%;
+                color: #741B07;
+                font-size: 1.5rem;
+                border: 0;
+                border-left: solid 0.2rem #741B07;
             }
         }
         #navbar-toggle {
             display: flex;
             margin-left: 2rem;
-            font-size: 1.8rem;
-            border: 0.1rem solid $red;
-            height: $header-height * 0.75;
+            font-size: 1.6rem;
+            border: 0.2rem solid #741B07;
+            height: 2.8rem;
             border-radius: 50%;
-            width: $header-height * 0.75;
+            width: 2.8rem;
             background-color: white;
-            color: $red;
+            color: #741B07;
+            position: absolute;
+            right: 10%;
+            top: 0.5rem;
             i {
                 width: 100%;
                 text-align: center;
             }
         }
+        #navbar-toggle:hover {
+            cursor: pointer;
+        }
     }
 }
+
 @media only screen and (max-width: 1000px) {
     #header {
         height: 8rem;
@@ -125,6 +178,7 @@ $sidenav-width: 15rem;
     height: 100vh;
     background-color: $green;
     color: $red;
+    display: none;
     #close-navbar {
         display: flex;
         align-items: center;
