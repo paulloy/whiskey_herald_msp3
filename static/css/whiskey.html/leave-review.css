@@ -1,0 +1,96 @@
+#leave-review {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  border: 0.5rem double white;
+  outline: 0.25rem white solid;
+  background-color: #997a73;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  color: #c72c44;
+  text-align: center;
+  color: #212529;
+}
+#leave-review h3 {
+  background-color: rgba(255, 255, 255, 0.4);
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+}
+#leave-review input, #leave-review textarea {
+  border: 0.5 solid rgba(0, 0, 0, 0.4);
+  padding: 0.5rem;
+  border-radius: 1rem;
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 1.2rem;
+}
+#leave-review label {
+  font-size: 1.3rem;
+  margin-top: 1rem;
+  font-weight: 600;
+  font-family: "Montserrat", sans-serif;
+}
+#leave-review #rating {
+  font-size: 2rem;
+  color: #c72c44;
+  margin: 0;
+}
+#leave-review #score {
+  opacity: 0;
+  height: 0;
+  width: 10px;
+}
+#leave-review textarea {
+  resize: none;
+  height: 10rem;
+}
+#leave-review button {
+  margin-top: 1rem;
+  width: 15rem;
+  height: 4rem;
+  font-family: "Montserrat", sans-serif;
+  color: #212529;
+  background-color: lightblue;
+  font-size: 1.8rem;
+  font-weight: 600;
+  border: 0.25rem solid white;
+  border-radius: 1rem;
+  margin-right: auto;
+  margin-left: auto;
+}
+#leave-review a {
+  margin-top: 1rem;
+  background-color: rgba(255, 255, 255, 0.4);
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+  font-size: 1.5rem;
+}
+
+@media only screen and (max-width: 1564px) {
+  #leave-review {
+    width: 90%;
+  }
+}
+@media only screen and (max-width: 1380px) {
+  #leave-review {
+    width: 90%;
+  }
+}
+@media only screen and (max-width: 850px) {
+  #leave-review {
+    width: 100%;
+  }
+
+  #leave-review input, #leave-review textarea {
+    width: 90%;
+  }
+  #leave-review textarea {
+    height: 15rem;
+  }
+}
+
+/*# sourceMappingURL=leave-review.css.map */

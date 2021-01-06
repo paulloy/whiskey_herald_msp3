@@ -1,0 +1,111 @@
+$green: #CAD4C0;
+$red: rgb(199, 44, 68);
+$cream: rgba(124, 96, 77, 0.59);
+$desert: #C7AD9B;
+$black: #212529;
+$padding: 0.5rem 1rem 0.5rem 1rem;
+$font: 'Poppins', sans-serif;
+
+$color1: rgba(255, 255, 255, 0.4);
+$color2: white;
+$color3: #BDAAA6;
+$color4: rgba(153, 122, 115);
+$color5: #C2AFAB;
+
+#leave-review {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    border: 0.5rem double white;
+    outline: 0.25rem white solid;
+    background-color: $color4;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    color: $red;
+    text-align: center;
+    color: $black;
+    h3 {
+        background-color: $color1;        
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 600;
+        padding-top: 0.25rem;
+        padding-bottom: 0.25rem;
+    }
+    input, textarea {
+        border: 0.5 solid rgba(0, 0, 0, 0.4);
+        padding: 0.5rem;
+        border-radius: 1rem;
+        width: 60%;
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 1.2rem;
+        
+    }
+    label {
+        font-size: 1.3rem;
+        margin-top: 1rem;
+        font-weight: 600;
+        font-family: 'Montserrat', sans-serif;
+    }
+    #rating {
+        font-size: 2rem;
+        color: $red;
+        margin: 0;
+    }
+    #score {
+        opacity: 0;
+        height: 0;
+        width: 10px;
+    }
+    textarea {
+        resize: none;
+        height: 10rem;
+    }
+    button {
+        margin-top: 1rem;
+        width: 15rem;
+        height: 4rem;
+        font-family: 'Montserrat', sans-serif;
+        color: $black;
+        background-color: lightblue;
+        font-size: 1.8rem;
+        font-weight: 600;
+        border: 0.25rem solid white;
+        border-radius: 1rem;
+        margin-right: auto;
+        margin-left: auto;
+
+    }
+    a {
+        margin-top: 1rem;
+        background-color: $color1;
+        padding-top: 0.25rem;
+        padding-bottom: 0.25rem;
+        font-size: 1.5rem;
+    }
+}
+
+@media only screen and (max-width: 1564px) {
+    #leave-review {
+        width: 90%;
+    }
+}
+@media only screen and (max-width: 1380px) {
+    #leave-review {
+        width: 90%;
+    }
+}
+@media only screen and (max-width: 850px) {
+    #leave-review {
+        width: 100%;
+    }
+    #leave-review {
+        input, textarea {
+            width: 90%;
+        }
+        textarea {
+            height: 15rem;
+        }
+    }
+}

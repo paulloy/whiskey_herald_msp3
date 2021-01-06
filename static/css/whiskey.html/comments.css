@@ -1,0 +1,68 @@
+#comments {
+  border: 0.5rem double white;
+  outline: 0.25rem solid white;
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1rem;
+  background-color: #BDAAA6;
+  display: flex;
+  align-items: center;
+}
+#comments p:first-of-type {
+  color: #212529;
+  margin: 0;
+  margin-left: 2rem;
+  font-size: 2rem;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+}
+#comments a {
+  margin-left: auto;
+  font-size: 1.4rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+#comments span {
+  display: flex;
+  margin-left: 1rem;
+  margin-right: 2rem;
+  color: #212529;
+  font-size: 1.8rem;
+  height: 100%;
+  align-items: center;
+}
+#comments span p:last-of-type {
+  margin-left: -1rem;
+}
+
+@media only screen and (max-width: 1564px) {
+  #comments {
+    width: 90%;
+  }
+}
+@media only screen and (max-width: 1250px) {
+  #comments {
+    width: 100%;
+  }
+}
+@media only screen and (max-width: 970px) {
+  #comments {
+    flex-direction: column;
+  }
+  #comments p:first-of-type {
+    margin-left: 0;
+  }
+  #comments a {
+    margin-right: auto;
+    text-align: center;
+  }
+  #comments span {
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    width: 4rem;
+  }
+}
+
+/*# sourceMappingURL=comments.css.map */

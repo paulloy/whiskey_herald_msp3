@@ -1,0 +1,80 @@
+$green: #CAD4C0;
+$red: rgb(199, 44, 68);
+$cream: rgba(124, 96, 77, 0.59);
+$desert: #C7AD9B;
+$black: #212529;
+$padding: 0.5rem 1rem 0.5rem 1rem;
+$font: 'Poppins', sans-serif;
+
+$color1: rgba(255, 255, 255, 0.4);
+$color2: white;
+$color3: #BDAAA6;
+$color4: rgba(153, 122, 115);
+$color5: #C2AFAB;
+
+#comments {   
+    border: 0.5rem double $color2;
+    outline: 0.25rem solid $color2;
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1rem;
+    background-color: $color3;
+    display: flex;
+    align-items: center;
+    p:first-of-type {
+        color: $black;
+        margin: 0;
+        margin-left: 2rem;
+        font-size: 2rem;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 500;
+    }
+    a {
+        margin-left: auto;
+        font-size: 1.4rem;
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+    }
+    span {
+        display: flex;
+        margin-left: 1rem;
+        margin-right: 2rem;
+        color: $black;
+        font-size: 1.8rem;
+        height: 100%;
+        align-items: center;
+        p:last-of-type {
+            margin-left: -1rem;
+        }
+    }
+}
+
+@media only screen and (max-width: 1564px) {
+    #comments {
+        width: 90%;
+    }
+}
+@media only screen and (max-width: 1250px) {
+    #comments {
+        width: 100%;
+    }
+}
+@media only screen and (max-width: 970px) {
+    #comments {
+        flex-direction: column;
+        p:first-of-type {
+            margin-left: 0;
+        }
+        a {
+            margin-right: auto;
+            text-align: center;
+        }
+        span {
+            margin-left: auto;
+            margin-right: auto;
+            display: flex;
+            width: 4rem;
+        }
+    }
+}

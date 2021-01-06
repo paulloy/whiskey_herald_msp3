@@ -1,0 +1,307 @@
+#whiskey-details {
+  width: 70%;
+  height: 40rem;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 4rem;
+  margin-bottom: 5rem;
+  border: 3rem solid rgba(255, 255, 255, 0.4);
+  outline: solid white 0.5rem;
+  position: relative;
+  background-color: #997a73;
+}
+#whiskey-details div:nth-of-type(1) {
+  width: 25%;
+  max-height: 100%;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+#whiskey-details div:nth-of-type(1) img {
+  height: 100%;
+  width: 100%;
+  padding-left: 1rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  object-fit: scale-down;
+  border: 0.5rem white double;
+  border-right: 0;
+  z-index: 1;
+}
+#whiskey-details div:nth-of-type(2) {
+  width: 50%;
+  height: 100%;
+  border-top: 0.5rem double white;
+  border-bottom: 0.5rem double white;
+  padding-top: 1rem;
+  z-index: 1;
+}
+#whiskey-details div:nth-of-type(2) div {
+  height: auto;
+  width: auto;
+  background-color: transparent;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+#whiskey-details div:nth-of-type(2) div h3 {
+  color: #100802;
+  background-color: #BDAAA6;
+  margin: 0;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+  font-size: 2rem;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  text-align: center;
+  letter-spacing: -1px;
+  padding-top: 0;
+  border: 0.2rem dashed white;
+  border-top: 0.4rem solid rgba(255, 255, 255, 0.562);
+  border-radius: 0.2rem;
+  padding: 0.2rem 0.5rem 0.2rem 0.5rem;
+  z-index: 1;
+}
+#whiskey-details div:nth-of-type(2) div h3 span {
+  color: rgba(124, 96, 77, 0.59);
+}
+#whiskey-details div:nth-of-type(2) div p {
+  background-color: #CAD4C0;
+  color: #c72c44;
+  font-size: 2rem;
+  padding: 0.5rem 1rem 0.5rem 1rem;
+  margin-top: 2rem;
+  border-radius: 1rem;
+  margin-left: auto;
+  border-right: 0.5rem dashed white;
+  border-top: 0.5rem solid rgba(0, 0, 0, 0.1);
+  border-left: 0.5rem solid rgba(0, 0, 0, 0.1);
+  padding-top: 0;
+  border-bottom: 0.5rem dashed white;
+  margin-right: auto;
+}
+#whiskey-details div:nth-of-type(2) article {
+  max-width: 100%;
+  min-width: 90%;
+}
+#whiskey-details div:nth-of-type(2) article p {
+  color: #100802;
+  background-color: #BDAAA6;
+  margin: 1rem;
+  font-size: 1.1rem;
+  font-family: "Noto Sans", sans-serif;
+  font-weight: 400;
+  padding-top: 0;
+  border: 0.2rem dashed white;
+  border-top: 0.4rem solid rgba(255, 255, 255, 0.562);
+  border-radius: 0.2rem;
+  padding: 0.2rem 0.5rem 0.2rem 0.5rem;
+  text-align: justify;
+  z-index: 1;
+}
+#whiskey-details div:nth-of-type(3) {
+  width: 25%;
+  margin-left: auto;
+  display: flex;
+  flex-direction: column;
+  border: 0.5rem double white;
+  align-items: center;
+  border-left: 0;
+  justify-items: flex-end;
+  z-index: 1;
+}
+#whiskey-details div:nth-of-type(3) p:first-of-type {
+  margin-top: 3rem;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  color: #212529;
+  font-family: "Poppins", sans-serif;
+  background-color: #BDAAA6;
+  font-size: 1.2rem;
+  border: 0.2rem rgba(0, 0, 0, 0.1) solid;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+#whiskey-details div:nth-of-type(3) p:first-of-type i {
+  font-size: 2.5rem;
+  color: #c72c44;
+}
+#whiskey-details div:nth-of-type(3) p:last-of-type {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-top: 3rem;
+  display: flex;
+  align-items: center;
+  color: #212529;
+  font-family: "Poppins", sans-serif;
+  background-color: #BDAAA6;
+  font-size: 1.2rem;
+  padding: 0.5rem 1rem 0.5rem 1rem;
+  border: 0.2rem rgba(0, 0, 0, 0.1) solid;
+  color: #212529;
+  margin-top: 1rem;
+}
+#whiskey-details div:nth-of-type(3) p:last-of-type em {
+  font-style: unset;
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+#whiskey-details div:nth-of-type(3) a {
+  margin-bottom: 1rem;
+  width: 80%;
+  margin-left: auto;
+  margin-right: 1rem;
+  border: 0.2rem solid rgba(0, 0, 0, 0.3);
+  font-size: 1.3rem;
+  font-family: "Noto Sans", sans-serif;
+  letter-spacing: 1px;
+  background-color: #DC3545;
+}
+#whiskey-details div:nth-of-type(3) a:first-of-type {
+  margin-top: auto;
+  background-color: #007BFF;
+}
+
+#whiskey-details::after {
+  content: "";
+  background: url("https://c.stocksy.com/a/H4L900/z9/2225941.jpg");
+  opacity: 0.05;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: 0;
+}
+
+@media only screen and (max-width: 1564px) {
+  #whiskey-details {
+    width: 90%;
+  }
+}
+@media only screen and (max-width: 1380px) {
+  #whiskey-details {
+    width: 90%;
+  }
+}
+@media only screen and (max-width: 1250px) {
+  #whiskey-details {
+    height: 55rem;
+    border-radius: 0;
+    border: 0;
+  }
+  #whiskey-details div:nth-of-type(1) {
+    width: 40%;
+    height: 65%;
+    border-top: 0.5rem rgba(255, 255, 255, 0.7) double;
+    border-left: 0.5rem rgba(255, 255, 255, 0.7) double;
+    margin-left: -1rem;
+    margin: 0;
+  }
+  #whiskey-details div:nth-of-type(1) img {
+    border: 0;
+    height: 60%;
+    height: 100%;
+  }
+  #whiskey-details div:nth-of-type(2) {
+    width: 60%;
+    height: 65%;
+    margin-right: -0.5rem;
+    border-bottom: 0;
+    border-right: 0.5rem rgba(255, 255, 255, 0.7) double;
+  }
+  #whiskey-details div:nth-of-type(2) div {
+    border: 0;
+  }
+  #whiskey-details div:nth-of-type(2) div h3 {
+    width: 100%;
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+  #whiskey-details div:nth-of-type(2) article {
+    margin-top: 1rem;
+  }
+  #whiskey-details div:nth-of-type(3) {
+    width: 100%;
+    height: 35%;
+    margin-top: 0;
+    border-top: 0;
+    margin: 0;
+    border-left: 0.5rem rgba(255, 255, 255, 0.7) double;
+    justify-items: flex-start;
+  }
+  #whiskey-details div:nth-of-type(3) p:first-of-type {
+    margin-top: 1rem;
+    font-size: 1.8rem;
+  }
+  #whiskey-details div:nth-of-type(3) p:last-of-type {
+    margin-top: 0;
+    flex-direction: row;
+    align-items: center;
+  }
+  #whiskey-details div:nth-of-type(3) p:last-of-type em {
+    margin-left: 0.5rem;
+  }
+  #whiskey-details div:nth-of-type(3) a {
+    width: 50%;
+    margin-right: auto;
+  }
+}
+@media only screen and (max-width: 850px) {
+  #whiskey-details {
+    width: 100%;
+    height: auto;
+    margin-bottom: 0;
+    margin: 0;
+    margin-top: 1rem;
+  }
+  #whiskey-details div:nth-of-type(1) {
+    width: 100%;
+    margin-right: 0;
+    margin-left: 0;
+    height: 25rem;
+    border-right: 0.5rem rgba(255, 255, 255, 0.7) double;
+  }
+  #whiskey-details div:nth-of-type(2) {
+    width: 100%;
+    margin-right: 0;
+    margin-left: 0;
+    border-top: 0;
+    border-left: 0.5rem rgba(255, 255, 255, 0.7) double;
+  }
+  #whiskey-details div:nth-of-type(2) div {
+    padding: 0;
+  }
+  #whiskey-details div:nth-of-type(2) div h3 {
+    font-size: 1.7rem;
+    max-width: 100%;
+    margin-right: 1rem;
+    margin-left: 1rem;
+    border-left: 0.25rem dashed white;
+    padding-top: 0.25rem;
+    text-align: center;
+  }
+  #whiskey-details div:nth-of-type(2) article {
+    width: 100%;
+    height: auto;
+    margin-top: 1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  #whiskey-details div:nth-of-type(2) article p {
+    font-size: 1rem;
+    margin: 0;
+    width: 100%;
+  }
+  #whiskey-details div:nth-of-type(3) {
+    height: auto;
+  }
+}
+
+/*# sourceMappingURL=whiskey-details.css.map */
