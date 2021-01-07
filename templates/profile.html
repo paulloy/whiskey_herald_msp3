@@ -6,6 +6,7 @@
 
 {% block content %}
 
+    {% if session["username"] == userDetails["username"] %}
     <div id="modal">
         <form id="update-profile" method="POST" action="{{ url_for('update_profile', username = session['username']) }}">
             <label for="username">Username</label>
@@ -74,6 +75,7 @@
             <a href="{{ url_for('delete_account', username = session['username']) }}" class="btn btn-danger">DELETE</a>
         </div>
     </div>
+    {% endif %}
 
     <div id="bio" class="row">
         <h3 class="col-12">{{ userDetails["username"] }}</h3>
@@ -83,6 +85,7 @@
         <div class="col-8">
             {{ userDetails["bio"] }}
         </div>
+        {% if session["username"] == userDetails["username"] %}
         <div class="dropdown">
             <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
                 Dropdown button
@@ -91,28 +94,9 @@
                 <li id="open-update-profile">update profile</li>
                 <li id="open-update-password">update password</li>
                 <li id="open-delete-account">delete account</li>
-                <!-- <li><i class="far fa-user"></i></li>
-                <li><i class="fas fa-user-tie"></i></li>
-                <li><i class="fas fa-user-secret"></i></li>
-                <li><i class="fas fa-user-ninja"></i></li>
-                <li><i class="fas fa-user-circle"></i></li>
-                <li><i class="fas fa-snowboarding"></i></li>
-                <li><i class="fas fa-smile"></i></li>
-                <li><i class="far fa-smile"></i></li>
-                <li><i class="fas fa-skiing"></i></li>
-                <li><i class="fas fa-poo"></i></li>
-                <li><i class="fas fa-taxi"></i></li>
-                <li><i class="fab fa-suse"></i></li>
-                <li><i class="fas fa-dragon"></i></li>
-                <li><i class="fas fa-chess"></i></li>
-                <li><i class="fas fa-radiation"></i></li>
-                <li><i class="fas fa-atom"></i></li>
-                <li><i class="fas fa-dice"></i></li>
-                <li><i class="fas fa-dice-d20"></i></li>
-                <li><i class="fas fa-ghost"></i></li>
-                <li><i class="fas fa-wave-square"></i></li> -->
             </ul>
         </div>
+        {% endif %}
     </div>
 
     {% if user_reviews.count() > 0 %}
