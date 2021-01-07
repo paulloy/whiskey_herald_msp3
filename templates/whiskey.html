@@ -79,7 +79,7 @@
                     <div>
                         <div>                            
                             <a href="{{ url_for('profile', username = review['username']) }}">{{ review['profile_pic']|safe }} {{ review['username'] }}</a>
-                            <p id="time">{{ moment(review['time']).format('h:mm a. Do MMM YYYY') }}</p>
+                            <p class="time">{{ moment(review['time']).format('h:mm a. Do MMM YYYY') }}</p>
                         {% if session['username'] == review['username'] %}
                             <div id="edit-delete" class="dropdown">
                                 <button class="btn btn-secondary" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
@@ -96,7 +96,11 @@
                         </div>    
                     </div>
                     <div>
-                        <p id="user-rating">
+                        {% if session["username"]  == review["username"] %}
+                            <p id="user-rating">
+                        {% else %}
+                            <p>
+                        {% endif %}
                             {% if review["score"] == 0 %}
                                 No rating yet
                             {% elif review["score"] == 1 %}
