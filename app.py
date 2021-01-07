@@ -256,6 +256,7 @@ def update_profile(username):
                 for doc in user_reviews:
                     updateReviews = {
                         "username": user["username"],
+                        "profile_pic": user["profile_pic"],
                         "drink": doc["drink"],
                         "title": doc["title"],
                         "review": doc["review"],
@@ -366,6 +367,7 @@ def review(whiskey_name):
         if existing_review:
             reviewUpdate = {
                 "username": session["username"],
+                "profile_pic": data.users.find_one({"username": session["username"]})["profile_pic"],
                 "drink": whiskey_name,
                 "title": request.form.get("review-title"),
                 "review": request.form.get("review"),
@@ -379,6 +381,7 @@ def review(whiskey_name):
         else:
             newReview = {
                 "username": session["username"],
+                "profile_pic": data.users.find_one({"username": session["username"]})["profile_pic"],
                 "drink": whiskey_name,
                 "title": request.form.get("review-title"),
                 "review": request.form.get("review"),

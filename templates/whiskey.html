@@ -2,8 +2,10 @@
 
     <!-- stylesheets -->
     {% block stylesheets %}
-        <link rel="stylesheet" href="{{ url_for('static', filename='css/whiskey.css') }}" />
-        <!-- <link rel="stylesheet" href="{{ url_for('static', filename='css/whiskey/reviews.css') }}" /> -->
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/whiskey.html/whiskey-details.css') }}" />
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/whiskey.html/comments.css') }}" />
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/whiskey.html/reviews.css') }}" />
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/whiskey.html/leave-review.css') }}" />
     {% endblock %}
 
 {% block content %}
@@ -51,9 +53,9 @@
 
     <!-- comments row  -->
     <div id="comments" class="row width">
-        <p>REVIEWS</p>
-        <span><i class="far fa-comment-alt"></i></span>        
         <span>
+            <p>REVIEWS</p> 
+            <i class="far fa-comment-alt"></i> 
             <p>{{ find_reviews.count() }}</p>
         </span>
         <a href="#leave-review">Leave a comment?</a>
@@ -76,22 +78,22 @@
                 <div>
                     <div>
                         <div>                            
-                            <h3><a href="{{ url_for('profile', username = review['username']) }}"><i class="fas fa-user-alt"></i> {{ review['username'] }}</a></h3>
+                            <a href="{{ url_for('profile', username = review['username']) }}">{{ review['profile_pic']|safe }} {{ review['username'] }}</a>
                             <p id="time">{{ moment(review['time']).format('h:mm a. Do MMM YYYY') }}</p>
-                        </div>
                         {% if session['username'] == review['username'] %}
-                        <div id="edit-delete" class="dropdown">
-                            <button class="btn btn-secondary" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
-                                <i class="fas fa-ellipsis-h"></i>
-                            </button>
-                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                <li><a id="edit-review" href="#leave-review" type="button" class="btn btn-primary">EDIT</a></li>
-                                <li><a id="delete" type="button"
-                                    class="btn btn-danger">DELETE</a></li>                         
-                                
-                            </ul>
-                        </div>                        
-                        {% endif %}
+                            <div id="edit-delete" class="dropdown">
+                                <button class="btn btn-secondary" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i class="fas fa-ellipsis-h"></i>
+                                </button>
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                    <li><a id="edit-review" href="#leave-review" type="button" class="btn btn-primary">EDIT</a></li>
+                                    <li><a id="delete" type="button"
+                                        class="btn btn-danger">DELETE</a></li>                         
+                                    
+                                </ul>
+                            </div>                                                 
+                        {% endif %}                       
+                        </div>    
                     </div>
                     <div>
                         <p id="user-rating">
@@ -115,7 +117,7 @@
                 <p>{{ review['review'] }}</p>
             </div>
                 
-
+                {% if session["username"] == review['username'] %}
                 <script>
                     let userReview = {
                         title: "{{ review['title'] }}",
@@ -140,6 +142,7 @@
                         starRating(5);
                     });
                 </script>
+                {% endif %}
 
             </div>
     <hr>
@@ -184,5 +187,5 @@
 
 {% block scripts %}
     <script src="{{ url_for('static', filename='js/whiskey.js') }}"></script>
-    <script src="{{ url_for('static', filename='js/edit-review.js') }}"></script>
+    <!-- <script src="{{ url_for('static', filename='js/edit-review.js') }}"></script> -->
 {% endblock %}
