@@ -5,35 +5,52 @@
   margin-left: auto;
   margin-right: auto;
   margin-top: 1rem;
-  background-color: #BDAAA6;
+  background-color: #A7ACB1;
   display: flex;
   align-items: center;
-}
-#comments p:first-of-type {
-  color: #212529;
-  margin: 0;
-  margin-left: 2rem;
-  font-size: 2rem;
-  font-family: "Montserrat", sans-serif;
-  font-weight: 500;
+  justify-content: center;
+  margin-bottom: 1rem;
 }
 #comments a {
   margin-left: auto;
+  margin-right: auto;
   font-size: 1.4rem;
   padding-left: 0.5rem;
   padding-right: 0.5rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  color: #0051ff;
+  background-color: rgba(255, 255, 255, 0.7);
 }
 #comments span {
   display: flex;
-  margin-left: 1rem;
-  margin-right: 2rem;
+  width: 100%;
   color: #212529;
   font-size: 1.8rem;
   height: 100%;
   align-items: center;
+  justify-content: center;
+}
+#comments span p:first-of-type {
+  color: #212529;
+  margin: 0;
+  font-size: 2rem;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  letter-spacing: 3px;
+  margin-left: 1rem;
+  margin-left: auto;
+}
+#comments span i {
+  margin-left: 1rem;
 }
 #comments span p:last-of-type {
-  margin-left: -1rem;
+  margin: 0;
+  font-family: monospace;
+  font-weight: 800;
+  font-size: 2.2rem;
+  margin-left: 0.5rem;
+  margin-right: auto;
 }
 
 @media only screen and (max-width: 1564px) {
@@ -58,10 +75,7 @@
     text-align: center;
   }
   #comments span {
-    margin-left: auto;
-    margin-right: auto;
     display: flex;
-    width: 4rem;
   }
 }
 
