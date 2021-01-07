@@ -7,7 +7,7 @@
 {% block content %}
 
     <div id="modal">
-        <form id="update-profile" method="POST" action="{{ url_for('update_profile', username = userDetails['username']) }}">
+        <form id="update-profile" method="POST" action="{{ url_for('update_profile', username = session['username']) }}">
             <label for="username">Username</label>
             <input id="username" name="username" type="text" value="{{ userDetails['username'] }}">
 
@@ -45,16 +45,33 @@
             <a class="btn btn-secondary cancel">CANCEL</a>
             <button class="btn btn-primary"type="submit">SUBMIT</button>
         </form>
-        <form id="update-password" method="POST" action="{{ url_for('update_password', username = userDetails['username']) }}">
-            <input type="password">
-            <input type="password">
+        <form id="update-password" method="POST" action="{{ url_for('update_password', username = session['username']) }}">
+            <label for="password">YOUR NEW PASSWORD</label>
+            <input id="password"
+            name="password"
+            type="password"
+            minlength="5" maxlength="15" 
+            pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,15}"
+            placeholder="Password"
+            title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 and fewer than 15 characters."
+            required>
+
+            <label for="repeat-password">REPEAT PASSWORD</label>
+            <input id="repeat-password" 
+            name="repeat-password"
+            type="password"
+            minlength="5" maxlength="15" 
+            pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,15}"
+            placeholder="Password"
+            title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 and fewer than 15 characters."
+            required>
             <a class="btn btn-secondary cancel">CANCEL</a>
             <button class="btn btn-primary">SUBMIT</button>
         </form>
         <div id="delete-account" method="POST" action="{{ url_for('delete_account', username = userDetails['username']) }}">
             Are you sure you would like to delete your account? This will permanently delete your account details and reviews.
             <a class="btn btn-secondary cancel">CANCEL</a>
-            <a class="btn btn-danger">DELETE</a>
+            <a href="{{ url_for('delete_account', username = session['username']) }}" class="btn btn-danger">DELETE</a>
         </div>
     </div>
 
