@@ -9,7 +9,7 @@ $font: 'Poppins', sans-serif;
 $color1: rgba(255, 255, 255, 0.4);
 $color2: white;
 $color3: #BDAAA6;
-$color4: rgba(153, 122, 115);
+$color4: #ffffff;
 $color5: #C2AFAB;
 
 .no-reviews {
@@ -33,8 +33,9 @@ $color5: #C2AFAB;
     }
 }
 .reviews {
-    display: flex;
-    background-color: $color4;
+    display: flex;       
+     background-color: #A7ACB1;
+
     width: 70%;
     margin-left: auto;
     margin-right: auto;
@@ -43,15 +44,21 @@ $color5: #C2AFAB;
     display: flex;
     align-items: center;
     height: auto;
+    margin-bottom: -1rem;
+    padding-top: 1rem;
     div:nth-of-type(1) {
         height: 100%;
         width: 100%;
+                    background-color: transparent;
+
         div:first-of-type {
             height: auto;
             width: 100%;
+                    background-color: transparent;
             div:first-of-type {
                 display: flex;
-                    background-color: $color5;
+                    position: relative;
+                    background-color: transparent;
                 div:first-of-type {
                     display: flex;
                     flex-direction: row;
@@ -59,92 +66,123 @@ $color5: #C2AFAB;
                     background-color: transparent;
                     padding: 0;
                     position: relative;
-                    margin: 0;                    
-                    #time {
-                    }
-                    h3 {
+                    margin: 0;    
+                    background-color: transparent;
+                    align-content: center;
+                    a {
                         margin: 0;
                         font-family: 'Montserrat', sans-serif;
-                        left: 0;
-                        top: 0;
                         padding: 0;
-                        a {                            
-                            background-color: $color5;
-                            padding: 0.5rem;
+                        display: inline-block;  
+                        width: auto;                   
+                    background-color: transparent;
+                            padding: 0.5rem 0.75rem 0.5rem 0.75rem;
                             display: inline-block;
                             font-size: 1.6rem;
-                            top: 0;
-                            left: 0;
+                        left: 0;
+                        top: 0;
                             margin-right: auto;
-                        }
+                            color: rgb(0, 81, 255);
+                            white-space: nowrap;
+                            margin-left: 5rem;
+                        
                         i {
                             padding: 0.25rem;
-                            border: 0.2rem solid #007BFF;
+                            border: 0.2rem solid rgb(0, 81, 255);
                             border-radius: 50%;
                         }
                     }
-                    a:hover i {                        
-                        border: 0.2rem solid #0056b3;
+                    .time {
+                        margin-left: auto;
+                        width: 50%;
+                        background-color: transparent;
+                        padding: 0;
+                        display: flex;
+                        align-items: center;
+                        position: absolute;
+                        left: 4.2rem;
+                        top: 2.7rem;
+                        font-weight: 500;
+                        letter-spacing: 1px;
+                        font-style: italic;
+                        color: rgba(0, 0, 0, 0.7);
+                            margin-left: 5rem;
+                            white-space: nowrap;
                     }
-                }
-                #edit-delete {
+                    a:hover i {                        
+                        border: 0.2rem solid rgb(57, 122, 190);
+                    }
+                    #edit-delete {
                     background-color: transparent;
                     display: flex;
                     align-items: center;
                     margin: 0;
+                    top: 0rem;
+                    right: 0rem;
                     padding: 0;
-                    div {
-                        margin: 0;
-                        a {
-                            width: 8rem;
-                            height: 2.5rem;
-                            border: 0.2rem solid rgba(0, 0, 0, 0.3);
-                            margin-right: 1rem;
-                            font-size: 1.2rem;
-                            padding: 0;
-                            display: flex;
-                            align-items: center;
-                            justify-content: center;
-                        }
+                    position: absolute;
+                    margin-right: 5rem;
+                    button {
+                        background-color: #A7ACB1;
+                        // box-shadow: inset 50rem 50rem rgba(255, 255, 255, 0.5);
+                        border: 0.25rem solid rgb(63, 69, 70);
+                        border-top: 1px solid #A7ACB1;
+                        border-bottom: 1px solid #A7ACB1;
+                        color: rgb(63, 69, 70);
+                        border-radius: 50%;
+                        font-size: 1.2rem;
+                        position: absolute;
+                        top: 0.5rem;
+                        right: 0.5rem;
                     }
                 }
+                }
+                
             }            
             div:last-of-type {
                 display: flex;
-                flex-direction: row;
-                background-color: $color1;
+                flex-direction: column;
+                    background-color: transparent;
                 align-items: center;
-                margin-top: 1rem;
-                #user-rating {
-                    color: $red;
-                    font-size: 1.5rem;
+                margin-top: 0rem;
+                .user-rating {
+                    color: #c72c43;
+                    font-size: 1.8rem;
                     padding-left: 0.5rem;
                     padding-right: 0.5rem;
                     margin: 0;
-                    margin-left: 1rem;
+                    margin-left: auto;
+                    margin-right: auto;
                     white-space: nowrap;
+                    margin-top: 0.5rem;
                 }
                 h3 {
                     margin: 0;
-                    margin-left: 1rem;
                     font-size: 1.3rem;
                     padding: 0.5rem;
+                    margin-top: -1.5rem;
                 }
-                p:last-of-type {
-                    margin-right: 1rem;
-                    margin-left: auto;
-                    font-style: italic;
-                    background-color: transparent;
-                    font-weight: 500;
-                    white-space: nowrap;
-                }
+                // p:last-of-type {
+                //     margin-right: 1rem;
+                //     margin-left: auto;
+                //     font-style: italic;
+                //     background-color: transparent;
+                //     font-weight: 500;
+                //     white-space: nowrap;
+                //     padding-right: 0.5rem;
+                //     padding-left: 0.5rem;
+                // }
             }
         }        
         p:last-of-type {
             padding: 1rem;
             background-color: $color1;
+                    background-color: transparent;
             margin: 0;
             text-align: justify;
+            padding-left: 5rem;
+            padding-right: 5rem;
+            padding-bottom: 2rem;
         }
     }
 }
@@ -194,45 +232,86 @@ $color5: #C2AFAB;
         width: 100%;
     }
 }
-
-@media only screen and (max-width: 850px) {
+@media only screen and (max-width: 560px) {
     
-    .reviews, .no-reviews {
-        width: 100%;
-    }
-    .reviews {
+.reviews {
+    padding-top: 0;
     div:nth-of-type(1) {
+
         div:first-of-type {
             div:first-of-type {
-                flex-direction: column;
-                justify-content: center;
-                #edit-delete {
-                    margin-top: 1rem;
-                    div {
-                        a {
+                div:first-of-type {
+                    a {
+                        margin-left: 0;
+                        i {
                         }
                     }
+                    .time {
+                        margin-left: 0;
+                    }
+                    a:hover i {                        
+                    }
+                    #edit-delete {
+                        margin-right: 0;
+                    button {
+                    }
                 }
+                }
+                
             }            
             div:last-of-type {
-                flex-wrap: wrap;
-                #user-rating {
-                    width: 100%;
-                    text-align: center;
-                    margin-right: 1rem;
+                .user-rating {
                 }
                 h3 {
-                    width: 100%;
-                    text-align: center;
-                    margin-right: 1rem;
-                }
-                p:last-of-type {
-                    width: 100%;
-                    text-align: right;
-                    margin-left: 1rem;
                 }
             }
         }        
+        p:last-of-type {
+            padding-left: 1rem;
+            padding-right: 1rem;
+            padding-bottom: 1rem;
+        }
     }
 }
 }
+
+
+// @media only screen and (max-width: 850px) {
+    
+//     .reviews, .no-reviews {
+//         width: 100%;
+//     }
+//     .reviews {
+//     div:nth-of-type(1) {
+//         div:first-of-type {
+//             div:first-of-type {
+//                 #edit-delete {
+//                     margin-top: 1rem;
+//                     div {
+//                         a {
+//                         }
+//                     }
+//                 }
+//             }            
+//             div:last-of-type {
+//                 flex-wrap: wrap;
+//                 #user-rating {
+//                     width: 100%;
+//                     text-align: center;
+//                     margin-right: 1rem;
+//                 }
+//                 h3 {
+//                     width: 100%;
+//                     text-align: center;
+//                     margin-right: 1rem;
+//                 }
+//                 p:last-of-type {
+//                     width: 100%;
+//                     text-align: right;
+//                     margin-left: 1rem;
+//                 }
+//             }
+//         }        
+//     }
+// }
+// }
