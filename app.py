@@ -193,6 +193,7 @@ def login():
 
                 session["email"] = current_user["email"]
                 session["username"] = current_user["username"]
+                session["profile_pic"] = current_user["profile_pic"]
 
                 flash("You have logged in. Welcome " + session["username"], "success")
                 return redirect(url_for("profile", username=session["username"]))
