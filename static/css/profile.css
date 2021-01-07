@@ -1,9 +1,97 @@
+#modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+  display: none;
+}
+#modal #update-profile {
+  background-color: white;
+  height: 50%;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  text-align: center;
+  display: none;
+}
+#modal #update-profile label {
+  margin-top: 1rem;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+#modal #update-profile #profile-pic {
+  display: none;
+}
+#modal #update-profile div {
+  margin-top: 1rem;
+}
+#modal #update-profile div ul li {
+  width: 33%;
+  margin: 0;
+  font-size: 2rem;
+}
+#modal #update-profile a {
+  margin-top: 1rem;
+}
+#modal #update-profile button {
+  margin-top: 1rem;
+}
+#modal #update-profile textarea {
+  resize: none;
+}
+#modal #update-profile > * {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+#modal #update-password {
+  background-color: white;
+  height: 50%;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  text-align: center;
+  display: none;
+}
+#modal #update-password > * {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+#modal #delete-account {
+  background-color: white;
+  height: 50%;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  text-align: center;
+  display: none;
+}
+#modal #delete-account > * {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 #bio {
   width: 80%;
   border: 1px solid black;
   margin-left: auto;
   margin-right: auto;
   margin-top: 1rem;
+  background-color: white;
 }
 #bio h3 {
   text-align: center;
