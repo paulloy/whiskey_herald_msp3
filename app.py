@@ -138,7 +138,7 @@ def delete_whiskey(whiskey_name):
 def register():
     if request.method == "POST":
         existing_username = data.users.find_one(
-            {"username": request.form.get("username").lower()}
+            {"username_lower": request.form.get("username").lower()}
         )
         existing_email = data.users.find_one(
             {"email": request.form.get("email").lower()}
@@ -157,8 +157,9 @@ def register():
         if password_repeat:
             # dictionary for inserting a new user to users collection
             newUser = {
-                "email": request.form.get("email").lower(),
-                "username": request.form.get("username"),
+                "email": str(request.form.get("email")).lower(),
+                "username": str(request.form.get("username")),
+                "username_lower": str(request.form.get("username")).lower(),
                 "password": generate_password_hash(request.form.get("password")),
                 "bio": "Tell us more about yourself :)",
                 "profile_pic": "DEFAULT"
@@ -228,6 +229,93 @@ def profile(username):
     user_reviews = data.reviews.find({"username": username})
 
     return render_template("profile.html", username=username, userDetails=userDetails, user_reviews=user_reviews)
+
+
+@app.route("/update_profile/<username>", methods=["GET", "POST"])
+def update_profile(username):
+    if not session or session["username"] != username:
+        return abort(403)
+
+    if request.method == "POST":
+        user_record = data.users.find_one({"username": username})
+        user_reviews = data.reviews.find({"username": username})
+        existing_username = data.users.find_one({"username_lower": str(request.form.get("username")).lower()})
+
+        if (existing_username is None) or (existing_username["username_lower"] == session["username"].lower()):
+            user = {
+                "email": user_record["email"],
+                "username": str(request.form.get("username")),
+                "username_lower": str(request.form.get("username")).lower(),
+                "password": user_record["password"],
+                "bio": request.form.get("biography"),
+                "profile_pic": request.form.get("profile-pic"),
+            }
+
+            if user_reviews is not None:
+                for doc in user_reviews:
+                    updateReviews = {
+                        "username": user["username"],
+                        "drink": doc["drink"],
+                        "title": doc["title"],
+                        "review": doc["review"],
+                        "score": doc["score"],
+                        "time": doc["time"]
+                    }
+                    data.reviews.update({"username": username, "drink": updateReviews["drink"]}, updateReviews)
+        else:
+            flash("This username already exists. Please try another", "error")
+            return redirect(url_for("profile", username=username))
+
+        data.users.update({"username": username}, user)
+
+        session["username"] = user["username"]
+
+        flash("profile successfully updated", "success")
+
+        return redirect(url_for("profile", username=user["username"]))
+
+
+@app.route("/update_password/<username>", methods=["GET", "POST"])
+def update_password(username):
+    if not session or session["username"] != username:
+        return abort(403)
+
+    if request.method == "POST":
+        find_user = data.users.find_one({"username_lower": session["username"].lower()})
+
+        password = generate_password_hash(request.form.get("password"))
+        password_repeat = check_password_hash(password, request.form.get("repeat-password"))
+
+        if password_repeat:
+            user = {
+                    "email": find_user["email"],
+                    "username": find_user["username"],
+                    "username_lower": find_user["username_lower"],
+                    "password": generate_password_hash(request.form.get("password")),
+                    "bio": find_user["bio"],
+                    "profile_pic": find_user["profile_pic"],
+                }
+
+            data.users.update({"username": session["username"]}, user)
+            flash("Your password has been updated", "success")
+        else:
+            flash("Your passwords do not match. Please try again.", "error")
+
+
+
+    return redirect(url_for("profile", username=username))
+
+
+@app.route("/delete_account/<username>", methods=["GET", "POST"])
+def delete_account(username):
+    if not session or session["username"] != username:
+        return abort(403)
+
+    data.users.remove({"username": session["username"]})
+    data.reviews.remove({"username": session["username"]})
+    flash("Your account has been successfully deleted", "success")
+
+    return redirect(url_for("register"))
 
 
 @app.route("/search", methods=["GET", "POST"])
