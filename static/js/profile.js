@@ -1,10 +1,26 @@
 $("#select-pic li").click(function() {
     let img = $(this).html();
-    document.getElementById("profile-pic").value = img;
+    $(this).attr("class", "selected");
+    $(this).siblings().removeAttr("class");
+    document.getElementById("profile-pic").setAttribute("value", img);
+    document.getElementById("current-icon").innerHTML = img;
+});
+
+
+for (let i = 0; i < $("#select-pic").children().length; i++) {
+    if ($("#select-pic").children()[i].innerHTML === document.getElementById("profile-pic").value) {
+        $("#select-pic").children()[i].setAttribute("class", "selected");
+        $("#select-pic").prepend($("#select-pic").children()[i]);
+    }
+}
+
+document.getElementById("username").addEventListener("input", function() {
+    document.getElementById("current-username").innerText = document.getElementById("username").value;
 });
 
 $("#open-update-profile").click(function() {
     $("#modal, #update-profile").css({"display": "flex"});
+    $("#select-pic").show();
     $("#update-password, #delete-account").hide();
 });
 $("#open-update-password").click(function() {
