@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 
 {% block stylesheets %}
+    <!-- custom stylesheet -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/profile.css') }}" />
 {% endblock %}
 
@@ -9,19 +10,14 @@
     {% if session["username"] == userDetails["username"] %}
     <div id="modal">
         <form id="update-profile" method="POST" action="{{ url_for('update_profile', username = session['username']) }}">
-            <label for="username">Username</label>
-            <input id="username" name="username" type="text" value="{{ userDetails['username'] }}">
-
-            <label for="biography">Bio</label>
-            <textarea id="biography" name="biography">{{ userDetails['bio'] }}</textarea>
-
-            <div class="dropdown">
-                <input id="profile-pic" name="profile-pic" type="text" value="{{ userDetails['profile_pic'] }}">
-                <button class="btn btn-secondary dropdown-toggle" type="button" id="profile" data-bs-toggle="dropdown" aria-expanded="false">
-                    {{ userDetails['profile_pic']|safe }}
-                </button>
-                <ul id="select-pic" class="dropdown-menu" aria-labelledby="profile">
-                    <li><i class="far fa-user"></i></li>
+            <div>
+                <p id="current-icon">{{ userDetails['profile_pic']|safe }}</p>
+                <p id="current-username">{{ userDetails['username'] }}</p>
+            </div>            
+            <input id="profile-pic" name="profile-pic" type="hidden" value="{{ userDetails['profile_pic'] }}">
+            <p>Profile Icon</p>               
+                <ul id="select-pic">
+                    <li><i class="fas fa-user"></i></li>
                     <li><i class="fas fa-user-tie"></i></li>
                     <li><i class="fas fa-user-secret"></i></li>
                     <li><i class="fas fa-user-ninja"></i></li>
@@ -42,9 +38,17 @@
                     <li><i class="fas fa-ghost"></i></li>
                     <li><i class="fas fa-wave-square"></i></li>
                 </ul>
-            </div>
+
+            <label for="username">Username</label>
+            <input id="username" name="username" type="text" value="{{ userDetails['username'] }}">
+
+            <label for="biography">Bio</label>
+            <textarea id="biography" name="biography">{{ userDetails['bio'] }}</textarea>
+
+            
+                
             <a class="btn btn-secondary cancel">CANCEL</a>
-            <button class="btn btn-primary"type="submit">SUBMIT</button>
+            <button class="btn btn-primary" type="submit">SUBMIT</button>
         </form>
         <form id="update-password" method="POST" action="{{ url_for('update_password', username = session['username']) }}">
             <label for="password">YOUR NEW PASSWORD</label>
@@ -70,7 +74,7 @@
             <button class="btn btn-primary">SUBMIT</button>
         </form>
         <div id="delete-account" method="POST" action="{{ url_for('delete_account', username = userDetails['username']) }}">
-            Are you sure you would like to delete your account? This will permanently delete your account details and reviews.
+            <strong>Are you sure you would like to delete your account?</strong> This will permanently delete your account details and reviews.
             <a class="btn btn-secondary cancel">CANCEL</a>
             <a href="{{ url_for('delete_account', username = session['username']) }}" class="btn btn-danger">DELETE</a>
         </div>
@@ -78,17 +82,15 @@
     {% endif %}
 
     <div id="bio" class="row">
-        <h3 class="col-12">{{ userDetails["username"] }}</h3>
-        <div class="col-4">
-            {{ userDetails['profile_pic']|safe }}
-        </div>
-        <div class="col-8">
-            {{ userDetails["bio"] }}
+        <h3 class="col-12">{{ userDetails['profile_pic']|safe }} {{ userDetails["username"] }}</h3>
+        
+        <div class="col-12">
+            <p>{{ userDetails["bio"] }}</p>
         </div>
         {% if session["username"] == userDetails["username"] %}
         <div class="dropdown">
-            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
-                Dropdown button
+            <button class="btn btn-primary" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="fas fa-cogs"></i>
             </button>
             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                 <li id="open-update-profile">update profile</li>
@@ -99,19 +101,28 @@
         {% endif %}
     </div>
 
+    <div id="reviews">
     {% if user_reviews.count() > 0 %}
         {% for doc in user_reviews %}
             <div class="width row">
-                <div class="col-4">
-                    <img src="#" alt="#">
-                    <p><a href="{{ url_for('whiskey', whiskey_name = doc['drink']) }}">{{ doc['drink'] }}</a></p>
-                </div>
-                <div class="col-8">
+                <div class="col-12">
+                    <a href="{{ url_for('whiskey', whiskey_name = doc['drink']) }}">{{ doc['drink'] }}</a>
                     <h3>{{ doc['title'] }}</h3>
-                    <p>{{ doc['score'] }}
-                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
+                    <p>
+                        {% if doc['score'] == 0 %}
+                            No rating yet
+                        {% elif doc['score'] == 1 %}
+                            <i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>
+                        {% elif doc['score'] == 2 %}
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>
+                        {% elif doc['score'] == 3 %}
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>
+                        {% elif doc['score'] == 4 %}
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
+                        {% elif doc['score'] == 5 %}
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        {% endif %}
                     </p>
-                    <p>{{ doc['review'] }}</p>
                 </div>
             </div>
         {% endfor %}
@@ -120,9 +131,11 @@
                 <p>This user has not left any reviews :(</p>
             </div>
     {% endif %}
+    </div>
 
 {% endblock %}
 
 {% block scripts %}
+    <!-- custom js -->
     <script src="{{ url_for('static', filename='js/profile.js') }}"></script>
 {% endblock %}
