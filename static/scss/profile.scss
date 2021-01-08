@@ -1,3 +1,17 @@
+$green: #CAD4C0;
+$red: rgb(199, 44, 68);
+$cream: rgba(124, 96, 77, 0.59);
+$desert: #C7AD9B;
+$black: #212529;
+$padding: 0.5rem 1rem 0.5rem 1rem;
+$font: 'Poppins', sans-serif;
+
+$color1: rgba(255, 255, 255, 0.4);
+$color2: white;
+$color3: #BDAAA6;
+$color4: #ffffff;
+$color5: #C2AFAB;
+
 #modal {
     position: fixed;
     top: 0;
@@ -12,40 +26,70 @@
     display: none;
     #update-profile {
         background-color: white;
-        height: 50%;
-        width: 50%;
+        height: 100%;
+        width: 100%;
         display: flex;
         flex-direction: column;
         padding-top: 1rem;
         padding-bottom: 1rem;
         text-align: center;
         display: none;
+        align-items: center;
+        justify-content: center;
+        div:first-of-type {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            p {
+                font-size: 2rem;
+            }
+            p:last-of-type {
+                margin-left: 0.5rem;
+            }
+        }
         label {
             margin-top: 1rem;
             font-size: 1.2rem;
             font-weight: 500;
         }
-        #profile-pic {
+        ul {
+            padding: 0;
             display: none;
-        }
-        div {
-            margin-top: 1rem;
-            ul {
-                li {
-                    width: 33%;
-                    margin: 0;
-                    font-size: 2rem;
+            display: flex;
+            flex-direction: row;
+            overflow-y: scroll;
+            li {
+                list-style-type: none;
+                border: 1px solid black;                
+                i {
+                        margin: 0;
+                        font-size: 3rem;
+                        padding: 0.5rem;
+                        padding-left: 1rem;
+                        padding-right: 1rem;
                 }
             }
+            .selected {
+                border: 1px solid red;
+            }
         }
-        a {
+        p {            
             margin-top: 1rem;
+            font-size: 1.2rem;
+            font-weight: 500;
+        }
+                
+        a {
+            width: 20rem;
+            margin-top: 2rem;
         }
         button {
+            width: 20rem;
             margin-top: 1rem;
         }
         textarea {
             resize: none;
+            height: 10rem;
         }
     }
     #update-profile > * {
@@ -54,15 +98,29 @@
         margin-right: auto;
     }
     #update-password {        
-        background-color: white;
-        height: 50%;
-        width: 50%;
+        background-color: white;        
+        height: 80%;
+        width: 100%;
         display: flex;
         flex-direction: column;
         padding-top: 1rem;
         padding-bottom: 1rem;
         text-align: center;
         display: none;
+        align-items: center;
+        justify-content: center;
+        button {
+            width: 20rem;
+            margin-top: 1rem;
+        }
+        a {
+            margin-top: 2rem;
+            width: 20rem;
+        }
+        label {
+            margin-top: 1rem;
+            font-weight: 500;
+        }
     }
     #update-password > * {
         width: 90%;
@@ -71,14 +129,27 @@
     }
     #delete-account {        
         background-color: white;
-        height: 50%;
-        width: 50%;
+        height: 80%;
+        width: 100%;
         display: flex;
         flex-direction: column;
         padding-top: 1rem;
         padding-bottom: 1rem;
         text-align: center;
         display: none;
+        align-items: center;
+        justify-content: center;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        a {
+            width: 20rem;
+        }
+        a:first-of-type {
+            margin-top: 2rem;
+        }
+        a:last-of-type {
+            margin-top: 1rem;
+        }
     }
     #delete-account > * {
         width: 90%;
@@ -88,16 +159,22 @@
 }
 
 #bio {
-    width: 80%;
-    border: 1px solid black;
+    width: 100%;
     margin-left: auto;
     margin-right: auto;
     margin-top: 1rem;
-    background-color: white;
+    background-color: $color5;
     h3 {
+        margin-top: 1rem;
         text-align: center;
+        font-size: 2.2rem;
+        margin-bottom: 1rem;
     }
     div:first-of-type {
+        p {
+            text-align: center;
+            background-color: white;
+        }
         i {
             font-size: 15rem;
             width: 100%;
@@ -105,6 +182,98 @@
         }
     }
     div:last-of-type {
-        text-align: justify;
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        display: flex;
+        justify-content: center;
+        button {
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+        ul {
+            border: 0.1rem solid black;
+            padding-left: 0.5rem;
+            padding-right: 0.5rem;
+            background-color: lightblue;
+            width: 100vw;
+
+            li {
+                background-color: rgb(255, 255, 255);
+                padding-top: 0.5rem;
+                padding-bottom: 0.5rem;
+                margin-top: 1rem;
+                margin-bottom: 1rem;
+                text-align: center;
+                text-transform: capitalize;
+                font-size: 1.2rem;
+                font-weight: 500;
+                font-family: $font;
+            }
+        }
+    }
+}
+
+#reviews {
+    width: 100%;
+    background-color: $color5;
+    margin-top: 1rem;
+    text-align: center;
+    div {
+        div {
+            margin-top: 0.5rem;
+            border: 0.5rem double white;
+            a {
+                display: inline-block;
+                font-size: 1.5rem;
+                background-color: white;
+                padding-left: 0.5rem;
+                padding-right: 0.5rem;
+                margin-top: 0.5rem;
+            }
+            h3 {
+                margin-top: 0.5rem
+            }
+            p {
+                margin-top: 0.5rem;
+                color: $red;
+                font-size: 1.2rem;
+            }
+        }
+        div:last-of-type {
+            margin-bottom: 0.5rem;
+        }
+    }
+    a {
+        font-size: 1.2rem;
+    }
+}
+
+@media only screen and (min-width: 1000px) {
+    #modal {
+        #update-profile {
+            width: 80%;
+        }
+        #update-password {
+            width: 80%;
+        }
+        #delete-account {
+            width: 80%;
+        }
+    }
+    #bio {
+        width: 80%;
+        div:last-of-type {
+        ul {
+            width: 30rem;
+        }
+    }
+    }
+    #reviews {
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
     }
 }

@@ -13,39 +13,70 @@
 }
 #modal #update-profile {
   background-color: white;
-  height: 50%;
-  width: 50%;
+  height: 100%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   padding-top: 1rem;
   padding-bottom: 1rem;
   text-align: center;
   display: none;
+  align-items: center;
+  justify-content: center;
+}
+#modal #update-profile div:first-of-type {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#modal #update-profile div:first-of-type p {
+  font-size: 2rem;
+}
+#modal #update-profile div:first-of-type p:last-of-type {
+  margin-left: 0.5rem;
 }
 #modal #update-profile label {
   margin-top: 1rem;
   font-size: 1.2rem;
   font-weight: 500;
 }
-#modal #update-profile #profile-pic {
+#modal #update-profile ul {
+  padding: 0;
   display: none;
+  display: flex;
+  flex-direction: row;
+  overflow-y: scroll;
 }
-#modal #update-profile div {
-  margin-top: 1rem;
+#modal #update-profile ul li {
+  list-style-type: none;
+  border: 1px solid black;
 }
-#modal #update-profile div ul li {
-  width: 33%;
+#modal #update-profile ul li i {
   margin: 0;
-  font-size: 2rem;
+  font-size: 3rem;
+  padding: 0.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+#modal #update-profile ul .selected {
+  border: 1px solid red;
+}
+#modal #update-profile p {
+  margin-top: 1rem;
+  font-size: 1.2rem;
+  font-weight: 500;
 }
 #modal #update-profile a {
-  margin-top: 1rem;
+  width: 20rem;
+  margin-top: 2rem;
 }
 #modal #update-profile button {
+  width: 20rem;
   margin-top: 1rem;
 }
 #modal #update-profile textarea {
   resize: none;
+  height: 10rem;
 }
 #modal #update-profile > * {
   width: 90%;
@@ -54,14 +85,28 @@
 }
 #modal #update-password {
   background-color: white;
-  height: 50%;
-  width: 50%;
+  height: 80%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   padding-top: 1rem;
   padding-bottom: 1rem;
   text-align: center;
   display: none;
+  align-items: center;
+  justify-content: center;
+}
+#modal #update-password button {
+  width: 20rem;
+  margin-top: 1rem;
+}
+#modal #update-password a {
+  margin-top: 2rem;
+  width: 20rem;
+}
+#modal #update-password label {
+  margin-top: 1rem;
+  font-weight: 500;
 }
 #modal #update-password > * {
   width: 90%;
@@ -70,14 +115,27 @@
 }
 #modal #delete-account {
   background-color: white;
-  height: 50%;
-  width: 50%;
+  height: 80%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   padding-top: 1rem;
   padding-bottom: 1rem;
   text-align: center;
   display: none;
+  align-items: center;
+  justify-content: center;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+#modal #delete-account a {
+  width: 20rem;
+}
+#modal #delete-account a:first-of-type {
+  margin-top: 2rem;
+}
+#modal #delete-account a:last-of-type {
+  margin-top: 1rem;
 }
 #modal #delete-account > * {
   width: 90%;
@@ -86,15 +144,21 @@
 }
 
 #bio {
-  width: 80%;
-  border: 1px solid black;
+  width: 100%;
   margin-left: auto;
   margin-right: auto;
   margin-top: 1rem;
-  background-color: white;
+  background-color: #C2AFAB;
 }
 #bio h3 {
+  margin-top: 1rem;
   text-align: center;
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+}
+#bio div:first-of-type p {
+  text-align: center;
+  background-color: white;
 }
 #bio div:first-of-type i {
   font-size: 15rem;
@@ -102,7 +166,94 @@
   text-align: center;
 }
 #bio div:last-of-type {
-  text-align: justify;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: center;
+}
+#bio div:last-of-type button {
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+#bio div:last-of-type ul {
+  border: 0.1rem solid black;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  background-color: lightblue;
+  width: 100vw;
+}
+#bio div:last-of-type ul li {
+  background-color: white;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  text-align: center;
+  text-transform: capitalize;
+  font-size: 1.2rem;
+  font-weight: 500;
+  font-family: "Poppins", sans-serif;
+}
+
+#reviews {
+  width: 100%;
+  background-color: #C2AFAB;
+  margin-top: 1rem;
+  text-align: center;
+}
+#reviews div div {
+  margin-top: 0.5rem;
+  border: 0.5rem double white;
+}
+#reviews div div a {
+  display: inline-block;
+  font-size: 1.5rem;
+  background-color: white;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  margin-top: 0.5rem;
+}
+#reviews div div h3 {
+  margin-top: 0.5rem;
+}
+#reviews div div p {
+  margin-top: 0.5rem;
+  color: #c72c44;
+  font-size: 1.2rem;
+}
+#reviews div div:last-of-type {
+  margin-bottom: 0.5rem;
+}
+#reviews a {
+  font-size: 1.2rem;
+}
+
+@media only screen and (min-width: 1000px) {
+  #modal #update-profile {
+    width: 80%;
+  }
+  #modal #update-password {
+    width: 80%;
+  }
+  #modal #delete-account {
+    width: 80%;
+  }
+
+  #bio {
+    width: 80%;
+  }
+  #bio div:last-of-type ul {
+    width: 30rem;
+  }
+
+  #reviews {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
 /*# sourceMappingURL=profile.css.map */
