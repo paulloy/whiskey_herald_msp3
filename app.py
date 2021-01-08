@@ -162,7 +162,7 @@ def register():
                 "username_lower": str(request.form.get("username")).lower(),
                 "password": generate_password_hash(request.form.get("password")),
                 "bio": "Tell us more about yourself :)",
-                "profile_pic": "DEFAULT"
+                "profile_pic": '<li><i class="fas fa-user"></i></li>'
             }
 
             data.users.insert_one(newUser)
@@ -249,7 +249,7 @@ def update_profile(username):
                 "username_lower": str(request.form.get("username")).lower(),
                 "password": user_record["password"],
                 "bio": request.form.get("biography"),
-                "profile_pic": request.form.get("profile-pic"),
+                "profile_pic": str(request.form.get("profile-pic")),
             }
 
             if user_reviews is not None:
