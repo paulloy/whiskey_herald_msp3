@@ -6,52 +6,53 @@ $black: #212529;
 $padding: 0.5rem 1rem 0.5rem 1rem;
 $font: 'Poppins', sans-serif;
 
-// #header {
-//     display: none !important;
-// }
+$color1: #dae8ec;
+$color2: #dac5bc;
+$color3: #b48464;
+$color4: #572313;
+$color5: #1d1611;
 
 p:last-of-type {    
-    border: 0.5rem double rgba(0, 0, 0, 0.2);
-    background-color: $green;
+    background-color: $color1;
     margin-top: 1rem;
     margin-bottom: 1rem;
-    color: $red;
+    color: $color5;
     font-size: 1.2rem;
     padding: 0.5rem;
     text-align: center;
 }
 
 #searched {
-    border: 0.5rem double rgba(0, 0, 0, 0.2);
-    background-color: $green;
+    background-color: $color1;
     margin-top: 1rem;
     margin-bottom: 1rem;
+    padding: 1rem;
     h2 {
         margin-left: auto;
         margin-right: auto;
-        color: $red;
+        color: $color5;
     }
 }
 
 #results {
-    border: 0.5rem double rgba(0, 0, 0, 0.2);
     div {
         height: 25rem;
         border: 1px solid rgba(0, 0, 0, 0.2);
         padding: 0.5rem;
-        background-color: $green;
+        background-color: $color1;
         a {
             width: 100%;
             text-align: center;
             height: 100%;
+            text-decoration: none;
             img {
-                height: 80%;
+                height: 70%;
                 width: 100%;
                 object-fit: scale-down;
-                border: 0.5rem double rgba(0, 0, 0, 0.2);
+                padding: 0.5rem;
             }
             p {
-                height: 20%;
+                height: 15%;
                 margin: 0;
                 font-size: 1.8rem;
                 background-color: transparent;
@@ -63,7 +64,19 @@ p:last-of-type {
                 align-items: center;
                 justify-content: center;
                 width: 100%;
+                color: $red;
+            }
+            p:last-of-type {
+                color: $black;
+                font-size: 1.2rem;
+                font-weight: 500;
             }
         }
+        a:hover p:last-of-type {
+            text-decoration: underline;
+        }
+    }
+    div:hover {
+        box-shadow: inset 50rem 50rem rgba(0, 0, 0, 0.1);
     }
 }

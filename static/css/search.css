@@ -1,48 +1,45 @@
 p:last-of-type {
-  border: 0.5rem double rgba(0, 0, 0, 0.2);
-  background-color: #CAD4C0;
+  background-color: #dae8ec;
   margin-top: 1rem;
   margin-bottom: 1rem;
-  color: #c72c44;
+  color: #1d1611;
   font-size: 1.2rem;
   padding: 0.5rem;
   text-align: center;
 }
 
 #searched {
-  border: 0.5rem double rgba(0, 0, 0, 0.2);
-  background-color: #CAD4C0;
+  background-color: #dae8ec;
   margin-top: 1rem;
   margin-bottom: 1rem;
+  padding: 1rem;
 }
 #searched h2 {
   margin-left: auto;
   margin-right: auto;
-  color: #c72c44;
+  color: #1d1611;
 }
 
-#results {
-  border: 0.5rem double rgba(0, 0, 0, 0.2);
-}
 #results div {
   height: 25rem;
   border: 1px solid rgba(0, 0, 0, 0.2);
   padding: 0.5rem;
-  background-color: #CAD4C0;
+  background-color: #dae8ec;
 }
 #results div a {
   width: 100%;
   text-align: center;
   height: 100%;
+  text-decoration: none;
 }
 #results div a img {
-  height: 80%;
+  height: 70%;
   width: 100%;
   object-fit: scale-down;
-  border: 0.5rem double rgba(0, 0, 0, 0.2);
+  padding: 0.5rem;
 }
 #results div a p {
-  height: 20%;
+  height: 15%;
   margin: 0;
   font-size: 1.8rem;
   background-color: transparent;
@@ -54,6 +51,18 @@ p:last-of-type {
   align-items: center;
   justify-content: center;
   width: 100%;
+  color: #c72c44;
+}
+#results div a p:last-of-type {
+  color: #212529;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+#results div a:hover p:last-of-type {
+  text-decoration: underline;
+}
+#results div:hover {
+  box-shadow: inset 50rem 50rem rgba(0, 0, 0, 0.1);
 }
 
 /*# sourceMappingURL=search.css.map */
