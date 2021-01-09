@@ -37,6 +37,16 @@
                     <li><i class="fas fa-dice-d20"></i></li>
                     <li><i class="fas fa-ghost"></i></li>
                     <li><i class="fas fa-wave-square"></i></li>
+                    <li><i class="fas fa-hippo"></i></li>
+                    <li><i class="fas fa-paw"></i></li>
+                    <li><i class="fas fa-dove"></i></li>
+                    <li><i class="fas fa-cat"></i></li>
+                    <li><i class="fas fa-beer"></i></li>
+                    <li><i class="fas fa-glass-whiskey"></i></li>
+                    <li><i class="fas fa-snowman"></i></li>
+                    <li><i class="fas fa-hat-wizard"></i></li>
+                    <li><i class="fas fa-microphone-alt"></i></li>
+                    <li><i class="fas fa-code"></i></li>
                 </ul>
 
             <label for="username">Username</label>
@@ -107,7 +117,6 @@
             <div class="width row">
                 <div class="col-12">
                     <a href="{{ url_for('whiskey', whiskey_name = doc['drink']) }}">{{ doc['drink'] }}</a>
-                    <h3>{{ doc['title'] }}</h3>
                     <p>
                         {% if doc['score'] == 0 %}
                             No rating yet
@@ -122,7 +131,8 @@
                         {% elif doc['score'] == 5 %}
                             <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                         {% endif %}
-                    </p>
+                    </p>                    
+                    <a href="{{ url_for('whiskey', whiskey_name = doc['drink']) }}#edit-delete">{{ doc['title'] }}</a>
                 </div>
             </div>
         {% endfor %}
