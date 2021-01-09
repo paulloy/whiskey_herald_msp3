@@ -6,23 +6,25 @@ $black: #212529;
 $padding: 0.5rem 1rem 0.5rem 1rem;
 $font: 'Poppins', sans-serif;
 
+$color1: #dae8ec;
+$color2: #dac5bc;
+$color3: #b48464;
+$color4: #572313;
+$color5: #1d1611;
+
 #add-whiskey {
     width: 80%;
     margin-left: auto;
     margin-right: auto;
-    border: 1rem double rgba(0, 0, 0, 0.2);
     margin-top: 1rem;
     padding: 1rem;
-    background-color: $green;
-    color: $red;
+    background-color: $color1;
+    color: $color5;
     text-align: center;
-    font-weight: 400;
-    border-radius: 1rem;
     h2 {
         text-align: center;
         width: 100%;
         margin-bottom: 1rem;
-        background-color: rgba(0, 0, 0, 0.2);
         padding-top: 0.5rem;
         padding-bottom: 0.5rem;
     }
@@ -32,9 +34,9 @@ $font: 'Poppins', sans-serif;
             flex-direction: column;
             img {
                 height: 20rem;
-                border: 0.5rem double rgba(0, 0, 0, 0.2);
                 object-fit: scale-down;
                 background-color: rgba(0, 0, 0, 0.1);
+                padding: 1rem;
             }
             button {
                 width: 50%;
@@ -50,14 +52,21 @@ $font: 'Poppins', sans-serif;
                 width: 80%;
                 margin-left: auto;
                 margin-right: auto;
+                font-weight: 600;
+                font-size: 1.2rem;
+                em {
+                    font-weight: 400;
+                    font-size: 1rem;
+                }
             }
             input {
                 width: 80%;
                 margin-left: auto;
                 margin-right: auto;
-                border: 0.1rem solid rgba(0, 0, 0, 0.8);
-                border-radius: 1rem;
+                border-radius: 5rem;
                 padding: 0.5rem;
+                padding-left: 1rem;
+                padding-right: 1rem;
             }
         }
     }
@@ -69,13 +78,16 @@ $font: 'Poppins', sans-serif;
         margin-right: auto;
         label {
             margin-top: 1rem;
-            font-size: 1.1rem;
+            font-size: 1.2rem;
+            font-weight: 600;
         }
         textarea {
             resize: none;
             border: 0.1rem solid rgba(0, 0, 0, 0.8);
             border-radius: 1rem;
             padding: 0.5rem;
+            padding-left: 1rem;
+            padding-right: 1rem;
         }
         button {
             margin-top: 1rem;
@@ -86,6 +98,11 @@ $font: 'Poppins', sans-serif;
             border: 0.1rem solid rgba(0, 0, 0, 0.8);
             margin-left: auto;
             margin-right: auto;
+        }
+        a {
+            margin-top: 1rem;
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
         }
     }
 }
@@ -109,15 +126,24 @@ $font: 'Poppins', sans-serif;
                 padding: 0;
                 label {
                     width: 100%;
+                    margin-top: 1rem;
                 }
                 input {
-                    width: 100%;
+                    width: 90%;
                 }
             }
         }
         div:last-of-type {
             width: 100%;
             padding: 0;
+            label {
+                margin-top: 1rem;
+            }
+            textarea {
+                width: 90%;
+                margin-left: auto;
+                margin-right: auto;
+            }
         }
     }
 }

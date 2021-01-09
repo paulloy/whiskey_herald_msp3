@@ -2,20 +2,16 @@
   width: 80%;
   margin-left: auto;
   margin-right: auto;
-  border: 1rem double rgba(0, 0, 0, 0.2);
   margin-top: 1rem;
   padding: 1rem;
-  background-color: #CAD4C0;
-  color: #c72c44;
+  background-color: #dae8ec;
+  color: #1d1611;
   text-align: center;
-  font-weight: 400;
-  border-radius: 1rem;
 }
 #add-whiskey h2 {
   text-align: center;
   width: 100%;
   margin-bottom: 1rem;
-  background-color: rgba(0, 0, 0, 0.2);
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
 }
@@ -25,9 +21,9 @@
 }
 #add-whiskey div:first-of-type div:first-of-type img {
   height: 20rem;
-  border: 0.5rem double rgba(0, 0, 0, 0.2);
   object-fit: scale-down;
   background-color: rgba(0, 0, 0, 0.1);
+  padding: 1rem;
 }
 #add-whiskey div:first-of-type div:first-of-type button {
   width: 50%;
@@ -43,14 +39,21 @@
   width: 80%;
   margin-left: auto;
   margin-right: auto;
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+#add-whiskey div:first-of-type div:last-of-type label em {
+  font-weight: 400;
+  font-size: 1rem;
 }
 #add-whiskey div:first-of-type div:last-of-type input {
   width: 80%;
   margin-left: auto;
   margin-right: auto;
-  border: 0.1rem solid rgba(0, 0, 0, 0.8);
-  border-radius: 1rem;
+  border-radius: 5rem;
   padding: 0.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 #add-whiskey div:last-of-type {
   display: flex;
@@ -61,13 +64,16 @@
 }
 #add-whiskey div:last-of-type label {
   margin-top: 1rem;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
+  font-weight: 600;
 }
 #add-whiskey div:last-of-type textarea {
   resize: none;
   border: 0.1rem solid rgba(0, 0, 0, 0.8);
   border-radius: 1rem;
   padding: 0.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 #add-whiskey div:last-of-type button {
   margin-top: 1rem;
@@ -78,6 +84,11 @@
   border: 0.1rem solid rgba(0, 0, 0, 0.8);
   margin-left: auto;
   margin-right: auto;
+}
+#add-whiskey div:last-of-type a {
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
 }
 
 @media only screen and (max-width: 900px) {
@@ -102,13 +113,22 @@
   }
   #add-whiskey div:first-of-type div:last-of-type label {
     width: 100%;
+    margin-top: 1rem;
   }
   #add-whiskey div:first-of-type div:last-of-type input {
-    width: 100%;
+    width: 90%;
   }
   #add-whiskey div:last-of-type {
     width: 100%;
     padding: 0;
+  }
+  #add-whiskey div:last-of-type label {
+    margin-top: 1rem;
+  }
+  #add-whiskey div:last-of-type textarea {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 

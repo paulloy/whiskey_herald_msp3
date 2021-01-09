@@ -14,19 +14,19 @@
             </div>
             <div class="col-lg-6 col-12">
                 <label for="whiskey-name">Whiskey Name</label>
-                <input id="whiskey-name" name="whiskey-name" type="text" placeholder="e.g. Mourne Irish Whiskey" required>
+                <input id="whiskey-name" name="whiskey-name" type="text" placeholder="e.g. Jack Daniel's, Powers..." required>
 
                 <label for="whiskey-type">Whiskey Type</label>
-                <input id="whiskey-type" name="whiskey-type" type="text" placeholder="e.g. Irish" required>  
+                <input id="whiskey-type" name="whiskey-type" type="text" placeholder="e.g. Scotch, Malt..." required>  
                 
-                <label for="image-url">Whiskey Image Url: <span>Image must be .jpg, .jpeg, or .png</span></label>
+                <label for="image-url">Whiskey Image Url<br><em>Image must be .jpg, .jpeg, or .png</em></label>
                 <input id="image-url" name="image-url" type="text" placeholder="https://whiskey.jpg" required>
 
             </div>
         </div>
         <div class="row">
             <label for="description">Description</label>
-            <textarea name="description" minlength="100" maxlength="580" id="descript" cols="30" rows="10" placeholder="What's important to know about this whiskey?" required></textarea>
+            <textarea name="description" minlength="100" maxlength="600" id="descript" cols="30" rows="10" placeholder="What's important to know about this whiskey?" required></textarea>
             {% if session['username'] %}
                 <button type="submit" class="btn btn-primary">SUBMIT</button>
             {% else %}
