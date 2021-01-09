@@ -16,13 +16,29 @@
             <div class="col-lg-3 col-md-6 col-12">
                 <a href="{{ url_for('whiskey', whiskey_name = whiskey.drink) }}">
                     <img src="{{ whiskey.image_location }}" alt="Image of {{ whiskey.drink }} Whiskey">
+                    <p>
+                        {% if whiskey['average_score'] == 0 %}
+                            No rating yet
+                        {% elif whiskey['average_score'] == 1 %}
+                            <i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>
+                        {% elif whiskey['average_score'] == 2 %}
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>
+                        {% elif whiskey['average_score'] == 3 %}
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>
+                        {% elif whiskey['average_score'] == 4 %}
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
+                        {% elif whiskey['average_score'] == 5 %}
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        {% endif %}
+                    </p>  
                     <p name="whiskey_name">{{ whiskey.drink }}</p>
                 </a>
             </div>
             {% endfor %}
         </div>
     {% else %}
-        <p class="width">Sorry... we could not find anything that matches "{{ searched_value }}"</p>
+        <p class="width">Sorry... we could not find anything that matches "{{ searched_value }}"<br>
+        If your favourite whiskey isn't here, you can <a href="{{ url_for('add_whiskey') }}">share it with the Whiskey Herald community <i class="far fa-smile"></i></a></p>
     {% endif %}
 
 {% endblock %}
