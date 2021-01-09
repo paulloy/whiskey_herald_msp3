@@ -255,15 +255,15 @@ def delete_review(whiskey_name):
 
         average_score = int(round(average_score / whiskey_reviews.count()))
 
-        whiskeyDetails = {
-            "drink": whiskey["drink"],
-            "image_location": whiskey["image_location"],
-            "type": whiskey["type"],
-            "description": whiskey["description"],
-            "average_score": average_score
-        }
+    whiskeyDetails = {
+        "drink": whiskey["drink"],
+        "image_location": whiskey["image_location"],
+        "type": whiskey["type"],
+        "description": whiskey["description"],
+        "average_score": average_score
+    }
 
-        data.drinks.update({"drink": whiskey_name}, whiskeyDetails)
+    data.drinks.update({"drink": whiskey_name}, whiskeyDetails)
 
     flash("Your review has been deleted", "success")
     return redirect(url_for("whiskey", whiskey_name=whiskey_name))
