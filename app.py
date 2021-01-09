@@ -278,7 +278,7 @@ def register():
                 "password": generate_password_hash(
                     str(request.form.get("password"))),
                 "bio": "Tell us more about yourself :)",
-                "profile_pic": '<li><i class="fas fa-user"></i></li>'
+                "profile_pic": '<i class="fas fa-user"></i>'
             }
 
             data.users.insert_one(newUser)
@@ -461,6 +461,8 @@ def delete_account(username):
     # remove user and all reviews by them
     data.users.remove({"username": session["username"]})
     data.reviews.remove({"username": session["username"]})
+    # clear session
+    session.clear()
     flash("Your account has been successfully deleted", "success")
 
     return redirect(url_for("register"))
