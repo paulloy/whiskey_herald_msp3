@@ -8,10 +8,11 @@ $black: #212529;
 $padding: 0.5rem 1rem 0.5rem 1rem;
 $font: 'Poppins', sans-serif;
 
-$color1: rgba(255, 255, 255, 0.4);
-$color2: white;
-$color3: #BDAAA6;
-$color4: rgba(153, 122, 115);
+$color1: #dae8ec;
+$color2: #dac5bc;
+$color3: #b48464;
+$color4: #572313;
+$color5: #1d1611;
 
 body {
     position: relative;
@@ -38,31 +39,30 @@ body {
     position: fixed;
     top: 0;
     left: 0;
+    background-color: $color5;
     box-shadow: inset 100rem 100rem rgba(17, 38, 39, 0.1);
-    // background-image: url("https://media.istockphoto.com/photos/starburst-on-lights-in-bourbon-aging-warehouse-picture-id859708976?k=6&m=859708976&s=612x612&w=0&h=23DFdTFiN-0Rv7dHtK6LD5whSmlbNFK-Hb_d7QS6aEU=");
     background-repeat: no-repeat;
     background-size: cover;
-    // filter: blur(4px);
     img {
         width: 100%;
         height: 100%;
         object-fit: cover;
+        filter: blur(5px);
+        opacity: 0.5;
     }
 }
 
 // Header
-$header-height: 5rem;
+$header-height: 9.6rem;
 #header {
     position: relative;
     width: 100%;
-    padding-left: 10%;
-    padding-right: 10%;
+    padding-left: 8rem;
+    padding-right: 8rem;
     margin-left: auto;
     margin-right: auto;
-    height: $header-height;
-    background-color: $color3;
-    border-bottom: 0.5rem double $color2;
-    border-top: 0.5rem double $color2;
+    height: 5rem;
+    background-color: $color2;
     div:first-of-type {
         display: flex;
         align-items: center;
@@ -71,15 +71,23 @@ $header-height: 5rem;
             a {
                 text-decoration: none;
                 h1 {
-                    color: #741B07;
+                    color: $color5;
                     font-family: 'Raleway', sans-serif;
-                    font-size: 500;
-                    background-color: $color3;
+                    font-weight: 600;
+                    letter-spacing: 1px;
                     padding-left: 0.5rem;
                     padding-right: 0.5rem;
                     height: 100%;
                     margin: 0;
                 }
+            }
+            a:hover {
+                text-decoration: underline;
+                color: $color5;
+            }
+            a:focus {
+                text-decoration: underline;
+                color: $color5;
             }
         }
     }
@@ -92,15 +100,19 @@ $header-height: 5rem;
             display: flex;
             flex-wrap: nowrap;
             position: relative;
-            background-color: $color3;
             padding: 0.25rem 0.5rem 0.25rem 0.5rem;
             input {
-                width: 80%;
-                border: 0.2rem solid #741B07;
+                width: 100%;
+                border: 0.2rem solid $color5;
                 border-radius: 5rem;
                 padding: 0.5rem;
+                padding-left: 1rem;
                 height: 2.8rem;
-                padding-right: 4rem;
+                padding-right: 4.5rem;
+                background-color: white;
+            }
+            input::placeholder {
+                color: $black;
             }
             button {
                 height: 2.8rem;
@@ -108,26 +120,28 @@ $header-height: 5rem;
                 background-color: transparent;
                 color: $red;
                 position: absolute;
-                right: 22%;
-                color: #741B07;
+                right: 3%;
+                color: $color5;
                 font-size: 1.5rem;
                 border: 0;
-                border-left: solid 0.2rem #741B07;
+                border-left: solid 0.2rem $color5;
             }
         }
         #navbar-toggle {
             display: flex;
             margin-left: 2rem;
-            font-size: 1.6rem;
-            border: 0.2rem solid #741B07;
+            font-size: 1.2rem;
+            border: 0.5rem double $black;
             height: 2.8rem;
             border-radius: 50%;
             width: 2.8rem;
-            background-color: white;
-            color: #741B07;
-            position: absolute;
-            right: 10%;
-            top: 0.5rem;
+            background-color: $color1;
+            box-shadow: inset 50rem 50rem rgba(0, 0, 0, 0.2);
+            color: $black;
+            position: fixed;
+            right: 1rem;
+            top: 1rem;
+            z-index: 10;
             i {
                 width: 100%;
                 text-align: center;
@@ -139,15 +153,15 @@ $header-height: 5rem;
     }
 }
 
-@media only screen and (max-width: 1000px) {
+@media only screen and (max-width: 992px) {
     #header {
-        height: 8rem;
+        height: 9rem;
         padding: 0;
         div:first-of-type {
             width: 100%;
             text-align: center;
-            h1 {
-                font-size: 2rem;
+            span a h1 {
+                font-size: 2.25rem;
                 width: 100%;
                 margin-top: 0.5rem;
                 margin-bottom: 0;
@@ -155,8 +169,18 @@ $header-height: 5rem;
         }
     }
 }
+@media only screen and (max-width: 375px) {
+    #header div:first-of-type {
+        padding: 0;
+        span a h1 {
+            font-size: 1.7rem;
+            padding-left: 1rem;
+        }
+    }
+}
+
 // Sidenav
-$sidenav-width: 15rem;
+$sidenav-width: 600px;
 #navbar-background {
     position: fixed;
     top: 0;
@@ -171,68 +195,65 @@ $sidenav-width: 15rem;
 }
 #sidenav {
     z-index: 3;
-    position: absolute;
+    position: fixed;
     top: 0;
     right: - $sidenav-width;
     width: $sidenav-width;
     height: 100vh;
-    background-color: $green;
+    background-color: $color2;
     color: $red;
     display: none;
-    #close-navbar {
-        display: flex;
-        align-items: center;
-        justify-items: center;
-        width: 2.5rem;
-        height: 2.5rem;
-        font-size: 2rem;
-        background-color: white;
-        border-radius: 50%;
-        border: 1px solid $red;
-        margin-left: auto;
-        margin-right: 0.5rem;
-        margin-top: 0.5rem;
-        i {
-            width: 100%;
-            text-align: center;
-        }
-    } #close-navbar:hover {
-        cursor: pointer;
-    }
     ul {
         width: 100%;
         display: flex;
         flex-direction: column;
         align-items: center;
-        margin-top: 1rem;
+        margin-top: 5rem;
         padding: 0;
+        z-index: 4;
         li {
-            background-color: rgba(255, 255, 255, 0.5);
+            background-color: $color1;
             margin-bottom: 0.5rem;
             padding: 0.25rem 0.5rem 0.25rem 0.5rem;
             width: 90%;
             text-align: center;
             font-size: 1.5rem;
             list-style-type: none;
-            border: 0.3rem double rgba(0, 0, 0, 0.2);
             a {
-                color: $red;
+                color: $color5;
             }
         }
+        li:nth-of-type(1) {
+            a {
+                color: $color5;
+            }
+        }
+        li:nth-of-type(2) {
+            margin-bottom: 5rem;
+        }
+    }
+}
+@media only screen and (max-width: 600px) {
+    #sidenav {
+        width: 100vw;
     }
 }
 
 // Flashed messages
 #flash {
-    width: 80%;
+    width: 100%;
     margin-left: auto;
     margin-right: auto;
     height: 4rem;
-    border-radius: 10px;
     margin-top: 1rem;
-    border: 2px solid #155724;
+    display: flex;
+    align-items: center;
+    p {
+        font-size: 1rem;
+        margin: 0;
+    }
     i {
-        font-size: 2.2rem;
+        font-size: 1.5rem;
     }
     i:first-of-type {
         margin-right: 1rem;

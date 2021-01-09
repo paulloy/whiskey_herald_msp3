@@ -1,19 +1,35 @@
 // Sidenav
-$('#navbar-toggle').click(function () {
-    $('#navbar-background').show();
-    $('#sidenav').show().animate({
-        right: "0"
-    }, 300);
-});
 
-$('#navbar-background, #close-navbar').click(function () {
-    $('#navbar-background').hide();
-    $('#sidenav').animate({
-        right: '-20rem'
-    }, 300, function() {
-        $('#sidenav').hide();
-    });
-});
+let i = 0;
+let open = '<i class="fas fa-bars"></i>';
+let close = '<i class="fas fa-times"></i>';
+let button = document.getElementById('navbar-toggle');
+
+function navbar() {
+    i++;
+    let j = i % 2;
+    if (j === 1) {
+        button.innerHTML = close;
+        $('#navbar-background').show();
+        $('#sidenav').show().animate({
+        right: "0"
+        }, 300);
+    } else {
+        button.innerHTML = open;
+        $('#navbar-background').hide();
+        $('#sidenav').animate({
+            right: '-600px'
+        }, 300, function() {
+            $('#sidenav').hide();
+        });
+    }
+}
+
+$('#navbar-toggle, #navbar-background').click(navbar);
+// KEY PRESS ACCESS 
+// $('#navbar-toggle, #navbar-background').keypress(function() {
+//     navbar();
+// );
 
 // close flashed messages
 $('#close-flash').click(function () {
