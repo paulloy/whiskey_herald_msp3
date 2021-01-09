@@ -12,7 +12,7 @@
   display: none;
 }
 #modal #update-profile {
-  background-color: white;
+  background-color: #dae8ec;
   height: 100%;
   width: 100%;
   display: flex;
@@ -23,6 +23,9 @@
   display: none;
   align-items: center;
   justify-content: center;
+}
+#modal #update-profile input {
+  width: 90%;
 }
 #modal #update-profile div:first-of-type {
   display: flex;
@@ -46,10 +49,12 @@
   display: flex;
   flex-direction: row;
   overflow-y: scroll;
+  width: 90%;
 }
 #modal #update-profile ul li {
   list-style-type: none;
   border: 1px solid black;
+  background-color: white;
 }
 #modal #update-profile ul li i {
   margin: 0;
@@ -70,13 +75,17 @@
   width: 20rem;
   margin-top: 2rem;
 }
+#modal #update-profile a:hover {
+  cursor: pointer;
+}
 #modal #update-profile button {
   width: 20rem;
-  margin-top: 1rem;
+  margin-top: 2rem;
 }
 #modal #update-profile textarea {
   resize: none;
   height: 10rem;
+  width: 90%;
 }
 #modal #update-profile > * {
   width: 90%;
@@ -84,7 +93,7 @@
   margin-right: auto;
 }
 #modal #update-password {
-  background-color: white;
+  background-color: #dae8ec;
   height: 80%;
   width: 100%;
   display: flex;
@@ -96,9 +105,12 @@
   align-items: center;
   justify-content: center;
 }
+#modal #update-password input {
+  width: 90%;
+}
 #modal #update-password button {
   width: 20rem;
-  margin-top: 1rem;
+  margin-top: 2rem;
 }
 #modal #update-password a {
   margin-top: 2rem;
@@ -114,7 +126,7 @@
   margin-right: auto;
 }
 #modal #delete-account {
-  background-color: white;
+  background-color: #dae8ec;
   height: 80%;
   width: 100%;
   display: flex;
@@ -133,9 +145,10 @@
 }
 #modal #delete-account a:first-of-type {
   margin-top: 2rem;
+  color: white;
 }
 #modal #delete-account a:last-of-type {
-  margin-top: 1rem;
+  margin-top: 3rem;
 }
 #modal #delete-account > * {
   width: 90%;
@@ -148,7 +161,7 @@
   margin-left: auto;
   margin-right: auto;
   margin-top: 1rem;
-  background-color: #C2AFAB;
+  background-color: #dae8ec;
 }
 #bio h3 {
   margin-top: 1rem;
@@ -200,43 +213,58 @@
 
 #reviews {
   width: 100%;
-  background-color: #C2AFAB;
+  background-color: #dac5bc;
   margin-top: 1rem;
   text-align: center;
 }
 #reviews div div {
   margin-top: 0.5rem;
-  border: 0.5rem double white;
 }
 #reviews div div a {
   display: inline-block;
   font-size: 1.5rem;
-  background-color: white;
   padding-left: 0.5rem;
   padding-right: 0.5rem;
-  margin-top: 0.5rem;
-}
-#reviews div div h3 {
-  margin-top: 0.5rem;
+  margin-top: 1rem;
 }
 #reviews div div p {
-  margin-top: 0.5rem;
+  margin-top: 1rem;
   color: #c72c44;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
+}
+#reviews div div a:last-of-type {
+  margin-top: 1rem;
 }
 #reviews div div:last-of-type {
-  margin-bottom: 0.5rem;
+  margin-bottom: 1rem;
 }
 #reviews a {
   font-size: 1.2rem;
+}
+
+.dropdown-menu li:hover {
+  cursor: pointer;
+  box-shadow: inset 50rem 50rem rgba(0, 0, 0, 0.1);
 }
 
 @media only screen and (min-width: 1000px) {
   #modal #update-profile {
     width: 80%;
   }
+  #modal #update-profile ul {
+    width: 50%;
+  }
+  #modal #update-profile input {
+    width: 50%;
+  }
+  #modal #update-profile textarea {
+    width: 50%;
+  }
   #modal #update-password {
     width: 80%;
+  }
+  #modal #update-password input {
+    width: 50%;
   }
   #modal #delete-account {
     width: 80%;

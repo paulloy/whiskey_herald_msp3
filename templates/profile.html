@@ -14,50 +14,51 @@
                 <p id="current-icon">{{ userDetails['profile_pic']|safe }}</p>
                 <p id="current-username">{{ userDetails['username'] }}</p>
             </div>            
-            <input id="profile-pic" name="profile-pic" type="hidden" value="{{ userDetails['profile_pic'] }}">
+            <input id="profile-pic" name="profile-pic" type="hidden" value="{{ userDetails['profile_pic'] }}" required>
             <p>Profile Icon</p>               
                 <ul id="select-pic">
-                    <li><i class="fas fa-user"></i></li>
-                    <li><i class="fas fa-user-tie"></i></li>
-                    <li><i class="fas fa-user-secret"></i></li>
-                    <li><i class="fas fa-user-ninja"></i></li>
-                    <li><i class="fas fa-user-circle"></i></li>
-                    <li><i class="fas fa-snowboarding"></i></li>
-                    <li><i class="fas fa-smile"></i></li>
-                    <li><i class="far fa-smile"></i></li>
-                    <li><i class="fas fa-skiing"></i></li>
-                    <li><i class="fas fa-poo"></i></li>
-                    <li><i class="fas fa-taxi"></i></li>
-                    <li><i class="fab fa-suse"></i></li>
-                    <li><i class="fas fa-dragon"></i></li>
-                    <li><i class="fas fa-chess"></i></li>
-                    <li><i class="fas fa-radiation"></i></li>
-                    <li><i class="fas fa-atom"></i></li>
-                    <li><i class="fas fa-dice"></i></li>
-                    <li><i class="fas fa-dice-d20"></i></li>
-                    <li><i class="fas fa-ghost"></i></li>
-                    <li><i class="fas fa-wave-square"></i></li>
-                    <li><i class="fas fa-hippo"></i></li>
-                    <li><i class="fas fa-paw"></i></li>
-                    <li><i class="fas fa-dove"></i></li>
-                    <li><i class="fas fa-cat"></i></li>
-                    <li><i class="fas fa-beer"></i></li>
-                    <li><i class="fas fa-glass-whiskey"></i></li>
-                    <li><i class="fas fa-snowman"></i></li>
-                    <li><i class="fas fa-hat-wizard"></i></li>
-                    <li><i class="fas fa-microphone-alt"></i></li>
-                    <li><i class="fas fa-code"></i></li>
+                    <li tabindex="0"><i class="fas fa-user"></i></li>
+                    <li tabindex="0"><i class="fas fa-user-tie"></i></li>
+                    <li tabindex="0"><i class="fas fa-user-secret"></i></li>
+                    <li tabindex="0"><i class="fas fa-user-ninja"></i></li>
+                    <li tabindex="0"><i class="fas fa-user-circle"></i></li>
+                    <li tabindex="0"><i class="fas fa-snowboarding"></i></li>
+                    <li tabindex="0"><i class="fas fa-smile"></i></li>
+                    <li tabindex="0"><i class="far fa-smile"></i></li>
+                    <li tabindex="0"><i class="fas fa-skiing"></i></li>
+                    <li tabindex="0"><i class="fas fa-poo"></i></li>
+                    <li tabindex="0"><i class="fas fa-taxi"></i></li>
+                    <li tabindex="0"><i class="fab fa-suse"></i></li>
+                    <li tabindex="0"><i class="fas fa-dragon"></i></li>
+                    <li tabindex="0"><i class="fas fa-chess"></i></li>
+                    <li tabindex="0"><i class="fas fa-radiation"></i></li>
+                    <li tabindex="0"><i class="fas fa-atom"></i></li>
+                    <li tabindex="0"><i class="fas fa-dice"></i></li>
+                    <li tabindex="0"><i class="fas fa-dice-d20"></i></li>
+                    <li tabindex="0"><i class="fas fa-ghost"></i></li>
+                    <li tabindex="0"><i class="fas fa-wave-square"></i></li>
+                    <li tabindex="0"><i class="fas fa-hippo"></i></li>
+                    <li tabindex="0"><i class="fas fa-paw"></i></li>
+                    <li tabindex="0"><i class="fas fa-dove"></i></li>
+                    <li tabindex="0"><i class="fas fa-cat"></i></li>
+                    <li tabindex="0"><i class="fas fa-beer"></i></li>
+                    <li tabindex="0"><i class="fas fa-glass-whiskey"></i></li>
+                    <li tabindex="0"><i class="fas fa-snowman"></i></li>
+                    <li tabindex="0"><i class="fas fa-hat-wizard"></i></li>
+                    <li tabindex="0"><i class="fas fa-microphone-alt"></i></li>
+                    <li tabindex="0"><i class="fas fa-code"></i></li>
                 </ul>
 
             <label for="username">Username</label>
-            <input id="username" name="username" type="text" value="{{ userDetails['username'] }}">
+            <input id="username" name="username" type="text" minlength="5" maxlength="20" value="{{ userDetails['username'] }}" required>
+            <em>Username must be between 5-20 characters, using only letters, numbers, hypens ( - ), or underscores ( _ ).</em>
 
             <label for="biography">Bio</label>
-            <textarea id="biography" name="biography">{{ userDetails['bio'] }}</textarea>
+            <textarea id="biography" name="biography" required>{{ userDetails['bio'] }}</textarea>
 
             
                 
-            <a class="btn btn-secondary cancel">CANCEL</a>
+            <a class="btn btn-secondary cancel" tabindex="0">CANCEL</a>
             <button class="btn btn-primary" type="submit">SUBMIT</button>
         </form>
         <form id="update-password" method="POST" action="{{ url_for('update_password', username = session['username']) }}">
@@ -68,8 +69,9 @@
             minlength="5" maxlength="15" 
             pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,15}"
             placeholder="Password"
-            title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 and fewer than 15 characters."
+            title="Password must contain at least 1 number and 1 uppercase letter, and between 8-20 characters."
             required>
+            <em>Password must contain at least 1 number and 1 uppercase letter, and between 8-20 characters.</em>
 
             <label for="repeat-password">REPEAT PASSWORD</label>
             <input id="repeat-password" 
@@ -78,7 +80,7 @@
             minlength="5" maxlength="15" 
             pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,15}"
             placeholder="Password"
-            title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 and fewer than 15 characters."
+            title="Password must contain at least 1 number and 1 uppercase letter, and between 8-20 characters."
             required>
             <a class="btn btn-secondary cancel">CANCEL</a>
             <button class="btn btn-primary">SUBMIT</button>
@@ -103,9 +105,9 @@
                 <i class="fas fa-cogs"></i>
             </button>
             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <li id="open-update-profile">update profile</li>
-                <li id="open-update-password">update password</li>
-                <li id="open-delete-account">delete account</li>
+                <li id="open-update-profile" tabindex="0">update profile</li>
+                <li id="open-update-password" tabindex="0">update password</li>
+                <li id="open-delete-account" tabindex="0">delete account</li>
             </ul>
         </div>
         {% endif %}
