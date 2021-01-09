@@ -65,7 +65,7 @@ def add_whiskey():
                 "image_location": str(request.form.get("image-url")),
                 "type": str(request.form.get("whiskey-type")),
                 "description": str(request.form.get("description")),
-                "average_score": 0
+                "average_score": int(0)
             }
 
             data.drinks.insert_one(formSubmission)
@@ -159,31 +159,13 @@ def delete_whiskey(whiskey_name):
 def whiskey(whiskey_name):
     find_whiskey = data.drinks.find_one({"drink": whiskey_name})
     find_reviews = data.reviews.find({"drink": whiskey_name})
-    find_average_score = data.reviews.find({"drink": whiskey_name})
 
     # An address may be changed or deleted
     if find_whiskey is None:
         return abort(404)
 
-    average_score = 0
-    # Find the average_score of the whiskey
-    # An average_score of 0 means there are no reviews yet
-    if find_average_score.count() != 0:
-        for doc in find_average_score:
-            average_score = average_score + int(doc["score"])
-
-        average_score = int(round(average_score / find_average_score.count()))
-
-    whiskeyDetails = {
-        "drink": find_whiskey["drink"],
-        "image_location": find_whiskey["image_location"],
-        "type": find_whiskey["type"],
-        "description": find_whiskey["description"],
-        "average_score": average_score
-    }
-
     return render_template("whiskey.html",
-                           whiskeyDetails=whiskeyDetails,
+                           whiskeyDetails=find_whiskey,
                            find_reviews=find_reviews)
 
 
@@ -199,6 +181,8 @@ def review(whiskey_name):
         "username": session["username"], "drink": whiskey_name
         })
     current_time = datetime.utcnow()
+    whiskey_reviews = data.reviews.find({"drink": whiskey_name})
+    whiskey = data.drinks.find_one({"drink": whiskey_name})
 
     if request.method == "POST":
         if existing_review:
@@ -231,6 +215,23 @@ def review(whiskey_name):
             data.reviews.insert_one(newReview)
             flash("Your review has been submitted", "success")
 
+        average_score = int(0)
+        if whiskey_reviews.count() != 0:
+            for doc in whiskey_reviews:
+                average_score = average_score + int(doc["score"])
+
+            average_score = int(round(average_score / whiskey_reviews.count()))
+
+            whiskeyDetails = {
+                "drink": whiskey["drink"],
+                "image_location": whiskey["image_location"],
+                "type": whiskey["type"],
+                "description": whiskey["description"],
+                "average_score": average_score
+            }
+
+            data.drinks.update({"drink": whiskey_name}, whiskeyDetails)
+
     return redirect(url_for("whiskey", whiskey_name=whiskey_name))
 
 
@@ -243,6 +244,27 @@ def delete_review(whiskey_name):
     data.reviews.remove({
         "username": session["username"], "drink": whiskey_name
         })
+
+    whiskey_reviews = data.reviews.find({"drink": whiskey_name})
+    whiskey = data.drinks.find_one({"drink": whiskey_name})
+
+    average_score = int(0)
+    if whiskey_reviews.count() != 0:
+        for doc in whiskey_reviews:
+            average_score = average_score + int(doc["score"])
+
+        average_score = int(round(average_score / whiskey_reviews.count()))
+
+        whiskeyDetails = {
+            "drink": whiskey["drink"],
+            "image_location": whiskey["image_location"],
+            "type": whiskey["type"],
+            "description": whiskey["description"],
+            "average_score": average_score
+        }
+
+        data.drinks.update({"drink": whiskey_name}, whiskeyDetails)
+
     flash("Your review has been deleted", "success")
     return redirect(url_for("whiskey", whiskey_name=whiskey_name))
 
