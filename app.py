@@ -270,6 +270,8 @@ def update_profile(username):
 
         data.users.update({"username": username}, user)
 
+# ADD PROFILE PIC TO SESSION FOR NAVBAR
+        session["profile_pic"] = user["profile_pic"]
         session["username"] = user["username"]
 
         flash("profile successfully updated", "success")
