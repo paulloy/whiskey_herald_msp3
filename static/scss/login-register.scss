@@ -6,11 +6,18 @@ $black: #212529;
 $padding: 0.5rem 1rem 0.5rem 1rem;
 $font: 'Poppins', sans-serif;
 
+$color1: #dae8ec;
+$color2: #dac5bc;
+$color3: #b48464;
+$color4: #572313;
+$color5: #1d1611;
+
+
 .form {
     display: flex;
     flex-direction: column;
     align-items: center;
-    border: 1rem double black;
+    background-color: $color1;
     width: 50%;
     margin-left: auto;
     margin-right: auto;
@@ -18,30 +25,38 @@ $font: 'Poppins', sans-serif;
     border-radius: 1rem;
     padding: 1rem;
     font-family: $font;
-    color: $red;
+    color: $color5;
     text-align: center;
+    h2 {
+        margin-bottom: 2rem;
+        font-weight: 600;
+        margin-top: 1rem;
+    }
     label {
         width: 75%;
-        font-weight: 400;
+        font-weight: 600;
+        font-size: 1.1rem;
+    }
+    em {
+        font-size: 0.9rem;
+        margin-bottom: 1.5rem;
+        margin-top: -0.5rem;
     }
     input {
         width: 75%;
         margin-bottom: 1rem;
-        border: 0.1rem solid black;
-        border-radius: 1rem;
-        padding: 0.5rem;
-    }
-    button {
-        width: 25%;
-        margin-bottom: 1rem;
-        border: 0.1rem solid black;
-        border-radius: 1rem;
-        padding: 0.5rem;
-        background-color: transparent;
+        border-radius: 5rem;
+        padding: 0.5rem 1rem 0.5rem 1rem;
     }
     a {
         margin-bottom: 1rem;
+        margin-top: 1.5rem;
+        font-size: 1.2rem;
+    }
+    button {
         margin-top: 1rem;
+        width: 12rem;
+        font-size: 1.2rem;
     }
 }
 

@@ -13,33 +13,31 @@
     <input id="email" name="email" type="email" placeholder="Email" required>
 
     <label for="username">Username</label>
-    <input id="username" name="username" type="text" pattern="^[a-zA-Z0-9]{5,15}$" placeholder="Username" required>
+    <input id="username" name="username" type="text" minlength="5" maxlength="20" pattern="[a-zA-Z][a-zA-Z0-9-_]{5,20}" placeholder="Username" required>
+    <em>Username must be between 5-20 characters long; using only letters, numbers, hypens ( - ), or underscores ( _ ).</em>
 
     <label for="password">Password</label>
     <input id="password" name="password"
         type="password"
-        minlength="5" maxlength="15" 
-        pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,15}"
+        minlength="5" maxlength="20" 
+        pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,20}"
         placeholder="Password"
-        title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 and fewer than 15 characters."
+        title="Password must contain at least 1 number and 1 uppercase letter, and between 8-20 characters."
         required>
+    <em>Password must contain at least 1 number and 1 uppercase letter, and between 8-20 characters.</em>
 
-    <label for="repeat-password">Repeat Password</label>
+    <label for="repeat-password">Confirm Password</label>
     <input id="repeat-password" name="repeat-password" 
         type="password"
-        minlength="5" maxlength="15"
-        pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,15}"  
+        minlength="5" maxlength="20"
+        pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,20}"  
         placeholder="Confirm Password"
-        title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 and fewer than 15 characters."
+        title="Password must contain at least 1 number and 1 uppercase letter, and between 8-20 characters."
         required>
 
-    <button id="submit" type="submit" disabled>REGISTER</button>
+    <button id="submit" class="btn btn-primary" type="submit">REGISTER</button>
 
     <a href="{{ url_for('login') }}">Already a user? LOGIN</a>
 </form>
 
-{% endblock %}
-
-{% block scripts %}
-    <script src="{{ url_for('static', filename='js/register.js') }}"></script>
 {% endblock %}
