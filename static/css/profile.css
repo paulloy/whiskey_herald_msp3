@@ -7,7 +7,7 @@
   background-color: rgba(0, 0, 0, 0.5);
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-content: center;
   z-index: 10;
   display: none;
 }
@@ -17,75 +17,103 @@
   width: 100%;
   display: flex;
   flex-direction: column;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
   text-align: center;
   display: none;
   align-items: center;
   justify-content: center;
 }
-#modal #update-profile input {
+#modal #update-profile div {
+  height: 100%;
+  width: 100%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+#modal #update-profile div input {
   width: 90%;
 }
-#modal #update-profile div:first-of-type {
+#modal #update-profile div div:first-of-type {
   display: flex;
+  height: auto;
   justify-content: center;
   align-items: center;
+  margin-top: 2rem;
+  overflow: auto;
 }
-#modal #update-profile div:first-of-type p {
+#modal #update-profile div div:first-of-type p {
   font-size: 2rem;
+  word-break: break-all;
 }
-#modal #update-profile div:first-of-type p:last-of-type {
+#modal #update-profile div div:first-of-type p:last-of-type {
   margin-left: 0.5rem;
 }
-#modal #update-profile label {
+#modal #update-profile div label {
   margin-top: 1rem;
   font-size: 1.2rem;
   font-weight: 500;
+  display: block;
 }
-#modal #update-profile ul {
+#modal #update-profile div ul {
   padding: 0;
   display: none;
   display: flex;
   flex-direction: row;
-  overflow-y: scroll;
+  overflow-y: hidden;
+  overflow-x: scroll;
   width: 90%;
+  min-height: 4.1rem;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
 }
-#modal #update-profile ul li {
+#modal #update-profile div ul li {
   list-style-type: none;
   border: 1px solid black;
   background-color: white;
 }
-#modal #update-profile ul li i {
+#modal #update-profile div ul li i {
   margin: 0;
   font-size: 3rem;
   padding: 0.5rem;
   padding-left: 1rem;
   padding-right: 1rem;
 }
-#modal #update-profile ul .selected {
+#modal #update-profile div ul .selected {
   border: 1px solid red;
+  background-color: rgba(255, 0, 0, 0.05);
 }
-#modal #update-profile p {
+#modal #update-profile div p {
   margin-top: 1rem;
   font-size: 1.2rem;
   font-weight: 500;
 }
-#modal #update-profile a {
-  width: 20rem;
+#modal #update-profile div a {
+  width: 18rem;
   margin-top: 2rem;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
-#modal #update-profile a:hover {
+#modal #update-profile div a:hover {
   cursor: pointer;
 }
-#modal #update-profile button {
-  width: 20rem;
+#modal #update-profile div button {
+  width: 18rem;
   margin-top: 2rem;
+  margin-bottom: 4rem;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
-#modal #update-profile textarea {
+#modal #update-profile div textarea {
   resize: none;
-  height: 10rem;
+  min-height: 10rem;
   width: 90%;
+}
+#modal #update-profile div em {
+  font-size: 0.9rem;
+  display: block;
 }
 #modal #update-profile > * {
   width: 90%;
@@ -94,31 +122,57 @@
 }
 #modal #update-password {
   background-color: #dae8ec;
-  height: 80%;
+  height: 100%;
   width: 100%;
   display: flex;
   flex-direction: column;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
   text-align: center;
   display: none;
   align-items: center;
   justify-content: center;
 }
-#modal #update-password input {
+#modal #update-password div {
+  height: 100%;
+  width: 100%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+#modal #update-password div em {
+  display: block;
+  font-size: 0.9rem;
+}
+#modal #update-password div input {
   width: 90%;
 }
-#modal #update-password button {
-  width: 20rem;
+#modal #update-password div button {
+  width: 18rem;
   margin-top: 2rem;
+  padding-left: 0;
+  padding-right: 0;
+  margin-bottom: 3rem;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
-#modal #update-password a {
+#modal #update-password div a {
   margin-top: 2rem;
-  width: 20rem;
+  width: 18rem;
+  padding-left: 0;
+  padding-right: 0;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  color: white;
 }
-#modal #update-password label {
+#modal #update-password div label {
   margin-top: 1rem;
   font-weight: 500;
+  display: block;
+}
+#modal #update-password div label:first-of-type {
+  margin-top: 3rem;
 }
 #modal #update-password > * {
   width: 90%;
@@ -127,12 +181,10 @@
 }
 #modal #delete-account {
   background-color: #dae8ec;
-  height: 80%;
+  height: 100%;
   width: 100%;
   display: flex;
   flex-direction: column;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
   text-align: center;
   display: none;
   align-items: center;
@@ -140,14 +192,32 @@
   padding-left: 1rem;
   padding-right: 1rem;
 }
-#modal #delete-account a {
-  width: 20rem;
+#modal #delete-account div {
+  height: 100%;
+  width: 100%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
 }
-#modal #delete-account a:first-of-type {
+#modal #delete-account div a {
+  width: 18rem;
+  padding-left: 0;
+  padding-right: 0;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+#modal #delete-account div a:first-of-type {
   margin-top: 2rem;
   color: white;
 }
-#modal #delete-account a:last-of-type {
+#modal #delete-account div a:last-of-type {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+#modal #delete-account div strong {
+  display: block;
   margin-top: 3rem;
 }
 #modal #delete-account > * {
@@ -217,6 +287,15 @@
   margin-top: 1rem;
   text-align: center;
 }
+#reviews div:last-of-type {
+  font-size: 1rem;
+  padding: 0.5rem;
+  font-weight: 400;
+}
+#reviews div:last-of-type p {
+  margin: 0;
+  color: #212529;
+}
 #reviews div div {
   margin-top: 0.5rem;
 }
@@ -227,13 +306,15 @@
   padding-right: 0.5rem;
   margin-top: 1rem;
 }
-#reviews div div p {
+#reviews div div p:first-of-type {
   margin-top: 1rem;
   color: #c72c44;
   font-size: 1.5rem;
 }
-#reviews div div a:last-of-type {
+#reviews div div p:last-of-type {
   margin-top: 1rem;
+  font-weight: 500;
+  font-size: 1.2rem;
 }
 #reviews div div:last-of-type {
   margin-bottom: 1rem;
@@ -251,23 +332,32 @@
   #modal #update-profile {
     width: 80%;
   }
-  #modal #update-profile ul {
+  #modal #update-profile div {
+    height: auto;
+  }
+  #modal #update-profile div ul {
     width: 50%;
   }
-  #modal #update-profile input {
+  #modal #update-profile div input {
     width: 50%;
   }
-  #modal #update-profile textarea {
+  #modal #update-profile div textarea {
     width: 50%;
   }
   #modal #update-password {
     width: 80%;
   }
-  #modal #update-password input {
+  #modal #update-password div {
+    height: auto;
+  }
+  #modal #update-password div input {
     width: 50%;
   }
   #modal #delete-account {
     width: 80%;
+  }
+  #modal #delete-account div {
+    height: auto;
   }
 
   #bio {

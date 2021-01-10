@@ -11,84 +11,90 @@
     <div id="modal">
         <form id="update-profile" method="POST" action="{{ url_for('update_profile', username = session['username']) }}">
             <div>
-                <p id="current-icon">{{ userDetails['profile_pic']|safe }}</p>
-                <p id="current-username">{{ userDetails['username'] }}</p>
-            </div>            
-            <input id="profile-pic" name="profile-pic" type="hidden" value="{{ userDetails['profile_pic'] }}" required>
-            <p>Profile Icon</p>               
-                <ul id="select-pic">
-                    <li tabindex="0"><i class="fas fa-user"></i></li>
-                    <li tabindex="0"><i class="fas fa-user-tie"></i></li>
-                    <li tabindex="0"><i class="fas fa-user-secret"></i></li>
-                    <li tabindex="0"><i class="fas fa-user-ninja"></i></li>
-                    <li tabindex="0"><i class="fas fa-user-circle"></i></li>
-                    <li tabindex="0"><i class="fas fa-snowboarding"></i></li>
-                    <li tabindex="0"><i class="fas fa-smile"></i></li>
-                    <li tabindex="0"><i class="far fa-smile"></i></li>
-                    <li tabindex="0"><i class="fas fa-skiing"></i></li>
-                    <li tabindex="0"><i class="fas fa-poo"></i></li>
-                    <li tabindex="0"><i class="fas fa-taxi"></i></li>
-                    <li tabindex="0"><i class="fab fa-suse"></i></li>
-                    <li tabindex="0"><i class="fas fa-dragon"></i></li>
-                    <li tabindex="0"><i class="fas fa-chess"></i></li>
-                    <li tabindex="0"><i class="fas fa-radiation"></i></li>
-                    <li tabindex="0"><i class="fas fa-atom"></i></li>
-                    <li tabindex="0"><i class="fas fa-dice"></i></li>
-                    <li tabindex="0"><i class="fas fa-dice-d20"></i></li>
-                    <li tabindex="0"><i class="fas fa-ghost"></i></li>
-                    <li tabindex="0"><i class="fas fa-wave-square"></i></li>
-                    <li tabindex="0"><i class="fas fa-hippo"></i></li>
-                    <li tabindex="0"><i class="fas fa-paw"></i></li>
-                    <li tabindex="0"><i class="fas fa-dove"></i></li>
-                    <li tabindex="0"><i class="fas fa-cat"></i></li>
-                    <li tabindex="0"><i class="fas fa-beer"></i></li>
-                    <li tabindex="0"><i class="fas fa-glass-whiskey"></i></li>
-                    <li tabindex="0"><i class="fas fa-snowman"></i></li>
-                    <li tabindex="0"><i class="fas fa-hat-wizard"></i></li>
-                    <li tabindex="0"><i class="fas fa-microphone-alt"></i></li>
-                    <li tabindex="0"><i class="fas fa-code"></i></li>
-                </ul>
+                <div>
+                    <p id="current-icon">{{ userDetails['profile_pic']|safe }}</p>
+                    <p id="current-username">{{ userDetails['username'] }}</p>
+                </div>            
+                <input id="profile-pic" name="profile-pic" type="hidden" value="{{ userDetails['profile_pic'] }}" required>
+                <p>Profile Icon</p>               
+                    <ul id="select-pic">
+                        <li tabindex="0"><i class="fas fa-user"></i></li>
+                        <li tabindex="0"><i class="fas fa-user-tie"></i></li>
+                        <li tabindex="0"><i class="fas fa-user-secret"></i></li>
+                        <li tabindex="0"><i class="fas fa-user-ninja"></i></li>
+                        <li tabindex="0"><i class="fas fa-user-circle"></i></li>
+                        <li tabindex="0"><i class="fas fa-snowboarding"></i></li>
+                        <li tabindex="0"><i class="fas fa-smile"></i></li>
+                        <li tabindex="0"><i class="far fa-smile"></i></li>
+                        <li tabindex="0"><i class="fas fa-skiing"></i></li>
+                        <li tabindex="0"><i class="fas fa-poo"></i></li>
+                        <li tabindex="0"><i class="fas fa-taxi"></i></li>
+                        <li tabindex="0"><i class="fab fa-suse"></i></li>
+                        <li tabindex="0"><i class="fas fa-dragon"></i></li>
+                        <li tabindex="0"><i class="fas fa-chess"></i></li>
+                        <li tabindex="0"><i class="fas fa-radiation"></i></li>
+                        <li tabindex="0"><i class="fas fa-atom"></i></li>
+                        <li tabindex="0"><i class="fas fa-dice"></i></li>
+                        <li tabindex="0"><i class="fas fa-dice-d20"></i></li>
+                        <li tabindex="0"><i class="fas fa-ghost"></i></li>
+                        <li tabindex="0"><i class="fas fa-wave-square"></i></li>
+                        <li tabindex="0"><i class="fas fa-hippo"></i></li>
+                        <li tabindex="0"><i class="fas fa-paw"></i></li>
+                        <li tabindex="0"><i class="fas fa-dove"></i></li>
+                        <li tabindex="0"><i class="fas fa-cat"></i></li>
+                        <li tabindex="0"><i class="fas fa-beer"></i></li>
+                        <li tabindex="0"><i class="fas fa-glass-whiskey"></i></li>
+                        <li tabindex="0"><i class="fas fa-snowman"></i></li>
+                        <li tabindex="0"><i class="fas fa-hat-wizard"></i></li>
+                        <li tabindex="0"><i class="fas fa-microphone-alt"></i></li>
+                        <li tabindex="0"><i class="fas fa-code"></i></li>
+                    </ul>
 
-            <label for="username">Username</label>
-            <input id="username" name="username" type="text" minlength="5" maxlength="20" value="{{ userDetails['username'] }}" required>
-            <em>Username must be between 5-20 characters, using only letters, numbers, hypens ( - ), or underscores ( _ ).</em>
+                <label for="username">Username</label>
+                <input id="username" name="username" type="text" minlength="5" maxlength="20" value="{{ userDetails['username'] }}" required>
+                <em>Username must be between 5-20 characters, using only letters, numbers, hypens ( - ), or underscores ( _ ).</em>
 
-            <label for="biography">Bio</label>
-            <textarea id="biography" name="biography" required>{{ userDetails['bio'] }}</textarea>
+                <label for="biography">Bio</label>
+                <textarea id="biography" name="biography" required>{{ userDetails['bio'] }}</textarea>
 
-            
                 
-            <a class="btn btn-secondary cancel" tabindex="0">CANCEL</a>
-            <button class="btn btn-primary" type="submit">SUBMIT</button>
+                    
+                <a class="btn btn-secondary cancel" tabindex="0">CANCEL</a>
+                <button class="btn btn-primary" type="submit">SUBMIT</button>
+            </div>
         </form>
         <form id="update-password" method="POST" action="{{ url_for('update_password', username = session['username']) }}">
-            <label for="password">YOUR NEW PASSWORD</label>
-            <input id="password"
-            name="password"
-            type="password"
-            minlength="5" maxlength="15" 
-            pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,15}"
-            placeholder="Password"
-            title="Password must contain at least 1 number and 1 uppercase letter, and between 8-20 characters."
-            required>
-            <em>Password must contain at least 1 number and 1 uppercase letter, and between 8-20 characters.</em>
+            <div>
+                <label for="password">YOUR NEW PASSWORD</label>
+                <input id="password"
+                name="password"
+                type="password"
+                minlength="5" maxlength="15" 
+                pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,15}"
+                placeholder="Password"
+                title="Password must contain at least 1 number and 1 uppercase letter, and between 8-20 characters."
+                required>
+                <em>Password must contain at least 1 number and 1 uppercase letter, and between 8-20 characters.</em>
 
-            <label for="repeat-password">REPEAT PASSWORD</label>
-            <input id="repeat-password" 
-            name="repeat-password"
-            type="password"
-            minlength="5" maxlength="15" 
-            pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,15}"
-            placeholder="Password"
-            title="Password must contain at least 1 number and 1 uppercase letter, and between 8-20 characters."
-            required>
-            <a class="btn btn-secondary cancel">CANCEL</a>
-            <button class="btn btn-primary">SUBMIT</button>
+                <label for="repeat-password">REPEAT PASSWORD</label>
+                <input id="repeat-password" 
+                name="repeat-password"
+                type="password"
+                minlength="5" maxlength="15" 
+                pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,15}"
+                placeholder="Password"
+                title="Password must contain at least 1 number and 1 uppercase letter, and between 8-20 characters."
+                required>
+                <a class="btn btn-secondary cancel">CANCEL</a>
+                <button class="btn btn-primary">SUBMIT</button>
+            </div>
         </form>
         <div id="delete-account" method="POST" action="{{ url_for('delete_account', username = userDetails['username']) }}">
-            <strong>Are you sure you would like to delete your account?</strong> This will permanently delete your account details and reviews.
-            <a class="btn btn-secondary cancel">CANCEL</a>
-            <a href="{{ url_for('delete_account', username = session['username']) }}" class="btn btn-danger">DELETE</a>
+            <div>
+                <strong>Are you sure you would like to delete your account?</strong> This will permanently delete your account details and reviews.
+                <a class="btn btn-secondary cancel">CANCEL</a>
+                <a href="{{ url_for('delete_account', username = session['username']) }}" class="btn btn-danger">DELETE</a>
+            </div>
         </div>
     </div>
     {% endif %}
@@ -134,13 +140,13 @@
                             <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                         {% endif %}
                     </p>                    
-                    <a href="{{ url_for('whiskey', whiskey_name = doc['drink']) }}#edit-delete">{{ doc['title'] }}</a>
+                    <p>{{ doc['title'] }}</p>
                 </div>
             </div>
         {% endfor %}
     {% else %}
             <div class="width">
-                <p>This user has not left any reviews :(</p>
+                <p>This user has not left any reviews yet.</p>
             </div>
     {% endif %}
     </div>

@@ -21,7 +21,7 @@ $color5: #1d1611;
     background-color: rgba(0, 0, 0, 0.5);
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-content: center;
     z-index: 10;
     display: none;
     #update-profile {
@@ -30,75 +30,103 @@ $color5: #1d1611;
         width: 100%;
         display: flex;
         flex-direction: column;
-        padding-top: 1rem;
-        padding-bottom: 1rem;
         text-align: center;
         display: none;
         align-items: center;
         justify-content: center;
-        input {
-            width: 90%;
-        }
-        div:first-of-type {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            p {
-                font-size: 2rem;
-            }
-            p:last-of-type {
-                margin-left: 0.5rem;
-            }
-        }
-        label {
-            margin-top: 1rem;
-            font-size: 1.2rem;
-            font-weight: 500;
-        }
-        ul {
-            padding: 0;
-            display: none;
-            display: flex;
-            flex-direction: row;
+        div {
+            height: 100%;
+            width: 100%;
             overflow-y: scroll;
-            width: 90%;
-            li {
-                list-style-type: none;
-                border: 1px solid black;
-                background-color: white;             
-                i {
-                        margin: 0;
-                        font-size: 3rem;
-                        padding: 0.5rem;
-                        padding-left: 1rem;
-                        padding-right: 1rem;
+            overflow-x: hidden;
+            padding-left: 0.5rem;
+            padding-right: 0.5rem;
+            input {
+                width: 90%;
+            }
+            div:first-of-type {
+                display: flex;
+                height: auto;
+                justify-content: center;
+                align-items: center;
+                margin-top: 2rem;
+                overflow: auto;
+                p {
+                    font-size: 2rem;
+                    word-break: break-all;
+                }
+                p:last-of-type {
+                    margin-left: 0.5rem;
                 }
             }
-            .selected {
-                border: 1px solid red;
+            label {
+                margin-top: 1rem;
+                font-size: 1.2rem;
+                font-weight: 500;
+                display: block;
             }
-        }
-        p {            
-            margin-top: 1rem;
-            font-size: 1.2rem;
-            font-weight: 500;
-        }
-                
-        a {
-            width: 20rem;
-            margin-top: 2rem;
-        }
-        a:hover {
-            cursor: pointer;
-        }
-        button {
-            width: 20rem;
-            margin-top: 2rem;
-        }
-        textarea {
-            resize: none;
-            height: 10rem;
-            width: 90%;
+            ul {
+                padding: 0;
+                display: none;
+                display: flex;
+                flex-direction: row;
+                overflow-y: hidden;
+                overflow-x: scroll;
+                width: 90%;
+                min-height: 4.1rem;
+                height: auto;
+                margin-left: auto;
+                margin-right: auto;
+                li {
+                    list-style-type: none;
+                    border: 1px solid black;
+                    background-color: white;             
+                    i {
+                            margin: 0;
+                            font-size: 3rem;
+                            padding: 0.5rem;
+                            padding-left: 1rem;
+                            padding-right: 1rem;
+                    }
+                }
+                .selected {
+                    border: 1px solid red;
+                    background-color: rgba(255, 0, 0, 0.05);
+                }
+            }
+            p {            
+                margin-top: 1rem;
+                font-size: 1.2rem;
+                font-weight: 500;
+            }
+                    
+            a {
+                width: 18rem;
+                margin-top: 2rem;
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            a:hover {
+                cursor: pointer;
+            }
+            button {
+                width: 18rem;
+                margin-top: 2rem;
+                margin-bottom: 4rem;
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            textarea {
+                resize: none;
+                min-height: 10rem;
+                width: 90%;
+            }
+            em {
+                font-size: 0.9rem;
+                display: block;
+            }
         }
     }
     #update-profile > * {
@@ -108,30 +136,56 @@ $color5: #1d1611;
     }
     #update-password {        
         background-color: $color1;        
-        height: 80%;
+        height: 100%;
         width: 100%;
         display: flex;
         flex-direction: column;
-        padding-top: 1rem;
-        padding-bottom: 1rem;
         text-align: center;
         display: none;
         align-items: center;
         justify-content: center;
-        input {
-            width: 90%;
-        }
-        button {
-            width: 20rem;
-            margin-top: 2rem;
-        }
-        a {
-            margin-top: 2rem;
-            width: 20rem;
-        }
-        label {
-            margin-top: 1rem;
-            font-weight: 500;
+        div {
+            height: 100%;
+            width: 100%;
+            overflow-y: scroll;
+            overflow-x: hidden;
+            padding-left: 0.5rem;
+            padding-right: 0.5rem;
+            em {
+                display: block;
+                font-size: 0.9rem;
+            }
+            input {
+                width: 90%;
+            }
+            button {
+                width: 18rem;
+                margin-top: 2rem;
+                padding-left: 0;
+                padding-right: 0;
+                margin-bottom: 3rem;
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            a {
+                margin-top: 2rem;
+                width: 18rem;
+                padding-left: 0;
+                padding-right: 0;
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+                color: white;
+            }
+            label {
+                margin-top: 1rem;
+                font-weight: 500;
+                display: block;
+            }
+            label:first-of-type {
+                margin-top: 3rem;
+            }
         }
     }
     #update-password > * {
@@ -141,27 +195,43 @@ $color5: #1d1611;
     }
     #delete-account {        
         background-color: $color1;
-        height: 80%;
+        height: 100%;
         width: 100%;
         display: flex;
         flex-direction: column;
-        padding-top: 1rem;
-        padding-bottom: 1rem;
         text-align: center;
         display: none;
         align-items: center;
         justify-content: center;
         padding-left: 1rem;
         padding-right: 1rem;
-        a {
-            width: 20rem;
-        }
-        a:first-of-type {
-            margin-top: 2rem;
-            color: white;
-        }
-        a:last-of-type {
-            margin-top: 3rem;
+        div {
+            height: 100%;
+            width: 100%;
+            overflow-y: scroll;
+            overflow-x: hidden;
+            padding-left: 0.5rem;
+            padding-right: 0.5rem;
+            a {
+                width: 18rem;
+                padding-left: 0;
+                padding-right: 0;
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            a:first-of-type {
+                margin-top: 2rem;
+                color: white;
+            }
+            a:last-of-type {
+                margin-top: 3rem;
+                margin-bottom: 3rem;
+            }
+            strong {
+                display: block;
+                margin-top: 3rem;
+            }
         }
     }
     #delete-account > * {
@@ -234,6 +304,15 @@ $color5: #1d1611;
     background-color: $color2;
     margin-top: 1rem;
     text-align: center;
+    div:last-of-type {
+        font-size: 1rem;
+        padding: 0.5rem;
+        font-weight: 400;
+        p {
+            margin: 0;
+            color: $black;
+        }
+    }
     div {
         div {
             margin-top: 0.5rem;
@@ -244,13 +323,15 @@ $color5: #1d1611;
                 padding-right: 0.5rem;
                 margin-top: 1rem;
             }
-            p {
+            p:first-of-type {
                 margin-top: 1rem;
                 color: $red;
                 font-size: 1.5rem;
             }
-            a:last-of-type {
+            p:last-of-type {
                 margin-top: 1rem;
+                font-weight: 500;
+                font-size: 1.2rem;
             }
         }
         div:last-of-type {
@@ -271,24 +352,33 @@ $color5: #1d1611;
     #modal {
         #update-profile {
             width: 80%;
-            ul {
-                width: 50%;
-            }
-            input {
-                width: 50%;
-            }
-            textarea {
-                width: 50%;
+            div {
+                height: auto;
+                ul {
+                    width: 50%;
+                }
+                input {
+                    width: 50%;
+                }
+                textarea {
+                    width: 50%;
+                }
             }
         }
         #update-password {
             width: 80%;
-            input {
-                width: 50%;
+            div {
+                height: auto;
+                input {
+                    width: 50%;
+                }
             }
         }
         #delete-account {
             width: 80%;
+            div {
+                height: auto;
+            }
         }
     }
     #bio {
