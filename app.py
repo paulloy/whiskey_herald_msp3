@@ -57,7 +57,7 @@ def add_whiskey():
         form_url = str(request.form.get("image-url"))
         # split the inputted url and check the extension
         x = form_url.split(".")
-        y = x[-1]
+        y = x[-1].lower()
 
         if y == allow_exten[0] or y == allow_exten[1] or y == allow_exten[2]:
             formSubmission = {
