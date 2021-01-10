@@ -1,13 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap");
 .no-reviews {
-  width: 100%;
+  width: 70%;
   background-color: #dae8ec;
   color: #212529;
   font-family: "Montserrat", sans-serif;
   text-align: center;
   font-size: 1.5rem;
-  border: 0.5rem double #dac5bc;
-  outline: white solid 0.25rem;
+  border: 0.5rem double rgba(0, 0, 0, 0.2);
   margin-top: 1rem;
 }
 .no-reviews p {
@@ -15,6 +14,7 @@
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
   font-family: "Montserrat", sans-serif;
+  font-size: 1.2rem;
 }
 .no-reviews p a {
   background-color: #dae8ec;
@@ -224,9 +224,17 @@
   .reviews {
     width: 90%;
   }
+
+  .no-reviews {
+    width: 90%;
+  }
 }
 @media only screen and (max-width: 1250px) {
   .reviews {
+    width: 100%;
+  }
+
+  .no-reviews {
     width: 100%;
   }
 
