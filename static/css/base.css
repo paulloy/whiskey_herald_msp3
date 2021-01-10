@@ -35,6 +35,31 @@ body {
   opacity: 0.5;
 }
 
+#flash {
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+  height: auto;
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  border-radius: 0;
+}
+#flash p {
+  font-size: 1rem;
+  margin: 0;
+}
+#flash i {
+  font-size: 1.5rem;
+}
+#flash i:first-of-type {
+  margin-right: 1rem;
+}
+#flash i:last-of-type {
+  margin-left: auto;
+  padding-left: 2rem;
+}
+
 #header {
   position: relative;
   width: 100%;
@@ -159,6 +184,16 @@ body {
     padding-left: 1rem;
   }
 }
+@media only screen and (max-width: 1564px) {
+  #flash {
+    width: 90%;
+  }
+}
+@media only screen and (max-width: 1250px) {
+  #flash {
+    width: 100%;
+  }
+}
 #navbar-background {
   position: fixed;
   top: 0;
@@ -195,16 +230,21 @@ body {
   z-index: 4;
 }
 #sidenav ul li {
-  background-color: #dae8ec;
   margin-bottom: 0.5rem;
-  padding: 0.25rem 0.5rem 0.25rem 0.5rem;
-  width: 90%;
   text-align: center;
   font-size: 1.5rem;
   list-style-type: none;
+  width: 90%;
 }
 #sidenav ul li a {
   color: #1d1611;
+  background-color: #dae8ec;
+  padding: 0.25rem 0.5rem 0.25rem 0.5rem;
+  width: 100%;
+  display: inline-block;
+}
+#sidenav ul li a:hover {
+  box-shadow: inset 50rem 50rem rgba(0, 0, 0, 0.1);
 }
 #sidenav ul li:nth-of-type(1) a {
   color: #1d1611;
@@ -217,28 +257,6 @@ body {
   #sidenav {
     width: 100vw;
   }
-}
-#flash {
-  width: 100%;
-  margin-left: auto;
-  margin-right: auto;
-  height: 4rem;
-  margin-top: 1rem;
-  display: flex;
-  align-items: center;
-}
-#flash p {
-  font-size: 1rem;
-  margin: 0;
-}
-#flash i {
-  font-size: 1.5rem;
-}
-#flash i:first-of-type {
-  margin-right: 1rem;
-}
-#flash i:last-of-type {
-  margin-left: auto;
 }
 
 /*# sourceMappingURL=base.css.map */
