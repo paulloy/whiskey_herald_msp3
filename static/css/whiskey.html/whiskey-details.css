@@ -5,8 +5,8 @@
   margin-right: auto;
   margin-top: 4rem;
   margin-bottom: 5rem;
-  border: 3rem solid rgba(255, 255, 255, 0.4);
-  outline: solid white 0.5rem;
+  border: 3rem solid rgba(255, 255, 255, 0.2);
+  outline: solid #dae8ec 0.5rem;
   position: relative;
   background-color: #997a73;
 }
@@ -20,11 +20,9 @@
 #whiskey-details div:nth-of-type(1) img {
   height: 100%;
   width: 100%;
-  padding-left: 1rem;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+  padding: 1rem;
   object-fit: scale-down;
-  border: 0.5rem white double;
+  border: 0.5rem #dae8ec double;
   border-right: 0;
   z-index: 1;
   background-color: rgba(0, 0, 0, 0.3);
@@ -32,8 +30,8 @@
 #whiskey-details div:nth-of-type(2) {
   width: 50%;
   height: 100%;
-  border-top: 0.5rem double white;
-  border-bottom: 0.5rem double white;
+  border-top: 0.5rem double #dae8ec;
+  border-bottom: 0.5rem double #dae8ec;
   padding-top: 1rem;
   padding-bottom: 1rem;
   z-index: 1;
@@ -47,8 +45,9 @@
   align-items: center;
 }
 #whiskey-details div:nth-of-type(2) div h3 {
-  color: #100802;
-  background-color: #BDAAA6;
+  color: #1d1611;
+  background-color: #dac5bc;
+  box-shadow: inset 50rem 50rem rgba(0, 0, 0, 0.1);
   margin: 0;
   margin-left: auto;
   margin-right: auto;
@@ -68,31 +67,18 @@
 #whiskey-details div:nth-of-type(2) div h3 span {
   color: rgba(124, 96, 77, 0.59);
 }
-#whiskey-details div:nth-of-type(2) div p {
-  background-color: #CAD4C0;
-  color: #c72c44;
-  font-size: 2rem;
-  padding: 0.5rem 1rem 0.5rem 1rem;
-  margin-top: 2rem;
-  border-radius: 1rem;
-  margin-left: auto;
-  border-right: 0.5rem dashed white;
-  border-top: 0.5rem solid rgba(0, 0, 0, 0.1);
-  border-left: 0.5rem solid rgba(0, 0, 0, 0.1);
-  padding-top: 0;
-  border-bottom: 0.5rem dashed white;
-  margin-right: auto;
-}
-#whiskey-details div:nth-of-type(2) article {
+#whiskey-details div:nth-of-type(2) div:last-of-type {
   max-width: 100%;
   min-width: 90%;
+  border: 0;
 }
-#whiskey-details div:nth-of-type(2) article p {
-  color: #100802;
-  background-color: #BDAAA6;
+#whiskey-details div:nth-of-type(2) div:last-of-type p {
+  color: #1d1611;
+  background-color: #dac5bc;
+  box-shadow: inset 50rem 50rem rgba(0, 0, 0, 0.1);
   margin: 1rem;
   font-size: 1.1rem;
-  font-family: "Noto Sans", sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-weight: 400;
   padding-top: 0;
   border: 0.2rem dashed rgba(255, 255, 255, 0.8);
@@ -107,7 +93,7 @@
   margin-left: auto;
   display: flex;
   flex-direction: column;
-  border: 0.5rem double white;
+  border: 0.5rem double #dae8ec;
   align-items: center;
   border-left: 0;
   justify-items: flex-end;
@@ -119,7 +105,7 @@
   height: 3rem;
   display: flex;
   align-items: center;
-  color: #212529;
+  color: #1d1611;
   font-family: "Poppins", sans-serif;
   background-color: #BDAAA6;
   font-size: 1.2rem;
@@ -140,13 +126,13 @@
   margin-top: 3rem;
   display: flex;
   align-items: center;
-  color: #212529;
+  color: #1d1611;
   font-family: "Poppins", sans-serif;
   background-color: #BDAAA6;
   font-size: 1.2rem;
   padding: 0.5rem 1rem 0.5rem 1rem;
   border: 0.2rem rgba(0, 0, 0, 0.1) solid;
-  color: #212529;
+  color: #1d1611;
   margin-top: 1rem;
 }
 #whiskey-details div:nth-of-type(3) p:last-of-type em {
@@ -228,7 +214,7 @@
     margin-left: 1rem;
     margin-right: 1rem;
   }
-  #whiskey-details div:nth-of-type(2) article {
+  #whiskey-details div:nth-of-type(2) div:last-of-type {
     margin-top: 1rem;
   }
   #whiskey-details div:nth-of-type(3) {
@@ -291,14 +277,14 @@
     padding-top: 0.25rem;
     text-align: center;
   }
-  #whiskey-details div:nth-of-type(2) article {
+  #whiskey-details div:nth-of-type(2) div:last-of-type {
     width: 100%;
     height: auto;
     margin-top: 1rem;
     padding-left: 1rem;
     padding-right: 1rem;
   }
-  #whiskey-details div:nth-of-type(2) article p {
+  #whiskey-details div:nth-of-type(2) div:last-of-type p {
     font-size: 1rem;
     margin: 0;
     width: 100%;

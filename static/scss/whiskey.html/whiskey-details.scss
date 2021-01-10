@@ -2,15 +2,18 @@ $green: #CAD4C0;
 $red: rgb(199, 44, 68);
 $cream: rgba(124, 96, 77, 0.59);
 $desert: #C7AD9B;
-$black: #212529;
 $padding: 0.5rem 1rem 0.5rem 1rem;
 $font: 'Poppins', sans-serif;
 
-$color1: rgba(255, 255, 255, 0.4);
-$color2: white;
-$color3: #BDAAA6;
+$color1: rgba(255, 255, 255, 0.2);
+$color2: #dae8ec;
+$color3: #dac5bc;
 $color4: rgba(153, 122, 115);
-$color5: #C2AFAB;
+$color5: rgb(253, 204, 194);
+$black: #1d1611;
+
+$font1: 'Montserrat', sans-serif;
+$font2: 'Source Sans Pro', sans-serif;
 
 #whiskey-details {
     width: 70%;
@@ -37,9 +40,7 @@ $color5: #C2AFAB;
             height: 100%;
             width: 100%;
 
-            padding-left: 1rem;
-            padding-top: 1rem;
-            padding-bottom: 1rem;
+            padding: 1rem;
 
             object-fit: scale-down;
 
@@ -73,8 +74,9 @@ $color5: #C2AFAB;
             display: flex;
             align-items: center;
             h3 {
-                color: rgb(16, 8, 2);
+                color: $black;
                 background-color: $color3;
+                box-shadow: inset 50rem 50rem rgba(0, 0, 0, 0.1);
                 
                 margin: 0;
                 margin-left: auto;
@@ -82,7 +84,7 @@ $color5: #C2AFAB;
                 width: 80%;
 
                 font-size: 2rem;
-                font-family: 'Montserrat', sans-serif;
+                font-family: $font1;
                 font-weight: 600;
                 text-align: center;
 
@@ -101,33 +103,20 @@ $color5: #C2AFAB;
                     color: $cream;
                 }
             }
-            p {
-                background-color: $green;
-                color: $red;
-                font-size: 2rem;
-                padding: $padding;
-                margin-top: 2rem;
-                border-radius: 1rem;
-                margin-left: auto;
-                border-right: 0.5rem dashed $color2;
-                border-top: 0.5rem solid rgba(0, 0, 0, 0.1);
-                border-left: 0.5rem solid rgba(0, 0, 0, 0.1);
-                padding-top: 0;
-                border-bottom: 0.5rem dashed $color2;
-                margin-right: auto;
-            }
         }
-        article {
+        div:last-of-type {
             max-width: 100%;
             min-width: 90%;
+            border: 0;
             p {
-                color: rgb(16, 8, 2);
-                background-color: #BDAAA6;
+                color: $black;
+                background-color: $color3;
+                box-shadow: inset 50rem 50rem rgba(0, 0, 0, 0.1);
                                 
                 margin: 1rem;
 
                 font-size: 1.1rem;
-                font-family: 'Noto Sans', sans-serif;
+                font-family: $font1;
                 font-weight: 400;
 
                 padding-top: 0;
@@ -269,7 +258,7 @@ $color5: #C2AFAB;
                     margin-right: 1rem;
                 }
             }
-            article {
+            div:last-of-type {
                 margin-top: 1rem;
             }
         }
@@ -334,7 +323,7 @@ $color5: #C2AFAB;
                 text-align: center;
             }
         }
-        article {
+        div:last-of-type {
             width: 100%;
             height: auto;
             margin-top: 1rem;
