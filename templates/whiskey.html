@@ -20,24 +20,24 @@
             <div>
                 <h3>{{ whiskeyDetails.drink }}</h3>
             </div> 
-            <article>
+            <div>
                 <p>{{ whiskeyDetails.description }}</p>
-            </article>
+            </div>
         </div>
         
         <div>
                 <p>
-                    {% if average_score == 0 %}
+                    {% if whiskeyDetails['average_score'] == 0 %}
                         No rating yet
-                    {% elif average_score == 1 %}
+                    {% elif whiskeyDetails['average_score'] == 1 %}
                         <i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>
-                    {% elif average_score == 2 %}
+                    {% elif whiskeyDetails['average_score'] == 2 %}
                         <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>
-                    {% elif average_score == 3 %}
+                    {% elif whiskeyDetails['average_score'] == 3 %}
                         <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>
-                    {% elif average_score == 4 %}
+                    {% elif whiskeyDetails['average_score'] == 4 %}
                         <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
-                    {% elif average_score == 5 %}
+                    {% elif whiskeyDetails['average_score'] == 5 %}
                         <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                     {% endif %}
                 </p>                                           
@@ -58,19 +58,20 @@
             <i class="far fa-comment-alt"></i> 
             <p>{{ find_reviews.count() }}</p>
         </span>
-        <a href="#leave-review">Leave a comment?</a>
+        <a href="#leave-review"><i class="fas fa-mouse-pointer"></i> Leave a comment?</a>
     </div>
 
-    <!-- reviews -->
+    <!-- delete reviews -->
     <div id="delete-review">
         <div>            
             Are you sure you want to delete this review?
             <span>
                 <button id="cancel" class="btn btn-secondary">CANCEL</button>
-                <a href="{{ url_for('delete_review', whiskey_name = whiskeyDetails.drink) }}" class="btn btn-danger">DELETE</a>
+                <a href="{{ url_for('delete_review', whiskey_name = whiskeyDetails['drink']) }}" class="btn btn-danger">DELETE</a>
             </span>
         </div>
     </div>
+    <!-- reviews -->
     {% if find_reviews.count() > 0 %}
         {% for review in find_reviews %}
         <div class="reviews width">
@@ -97,9 +98,9 @@
                     </div>
                     <div>
                         {% if session["username"]  == review["username"] %}
-                            <p id="user-rating">
+                            <p id="user-rating" class="user-rating">
                         {% else %}
-                            <p>
+                            <p class="user-rating">
                         {% endif %}
                             {% if review["score"] == 0 %}
                                 No rating yet
@@ -114,7 +115,8 @@
                             {% elif review["score"] == 5 %}
                                 <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                             {% endif %}
-                        </p>
+                            </p>                            
+                            <!-- Tag pairing error can be ignored.  -->
                         <h3>{{ review['title'] }}</h3>
                     </div>                    
                 </div>
@@ -122,43 +124,42 @@
             </div>
                 
                 {% if session["username"] == review['username'] %}
-                <script>
-                    let userReview = {
-                        title: "{{ review['title'] }}",
-                        score: "{{ review['score'] }}",
-                        review: "{{ review['review'] }}",
-                        starRating: document.getElementById("user-rating").innerHTML,
-                        edit: function () {
-                            document.getElementById("review-title").value = this.title;
-                            document.getElementById("score").value = this.score;
-                            document.getElementById("review").value = this.review;
-                            document.getElementById("rating").innerHTML = this.starRating;
-
+                    <!-- This script uses values from Jinja so had to be added inline instead of externally -->
+                    <script>
+                        let userReview = {
+                            title: "{{ review['title'] }}",
+                            score: "{{ review['score'] }}",
+                            review: "{{ review['review'] }}",
+                            starRating: document.getElementById("user-rating").innerHTML,
+                            edit: function () {
+                                document.getElementById("review-title").value = this.title;
+                                document.getElementById("score").value = this.score;
+                                document.getElementById("review").value = this.review;
+                                document.getElementById("rating").innerHTML = this.starRating;
+                            }
                         }
-                    }
-
-                    document.getElementById("edit-review").addEventListener("click", function () {
-                        userReview.edit();
-                        starRating(1);
-                        starRating(2);
-                        starRating(3);
-                        starRating(4);
-                        starRating(5);
-                    });
-                </script>
+                        document.getElementById("edit-review").addEventListener("click", function () {
+                            userReview.edit();
+                            starRating(1);
+                            starRating(2);
+                            starRating(3);
+                            starRating(4);
+                            starRating(5);
+                        });
+                    </script>
                 {% endif %}
 
             </div>
-    <hr>
-
         {% endfor %}
+    <!-- If there are no reviews -->
     {% else %}
         <div class="no-reviews width">
             <p>This drink has no reviews yet<br>
             {% if session %}
                 <a href="#leave-review">Be the first to review this drink?</a></p>
             {% else %}
-                <a href="{{ url_for('register') }}">Be the first to review this drink?</a></p> <!-- Only one of these is rendered on the page, so this needs no starting tag -->
+                <a href="{{ url_for('register') }}">Be the first to review this drink?</a></p> 
+                <!-- tag pairing error can be ignored -->
             {% endif %}
         </div>
     {% endif %}
@@ -174,8 +175,7 @@
         <div id="rating" title="Please leave a rating.">
             <i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>
         </div>
-        <input id="score" name="score" type="number" min="1" max="5" required>
-
+        <input id="score" name="score" type="hidden" min="1" max="5" required>
 
         <label for="review">YOUR REVIEW</label>
         <textarea id="review" name="review" cols="30" rows="10" required></textarea>
@@ -191,5 +191,5 @@
 
 {% block scripts %}
     <script src="{{ url_for('static', filename='js/whiskey.js') }}"></script>
-    <!-- <script src="{{ url_for('static', filename='js/edit-review.js') }}"></script> -->
+    <script src="{{ url_for('static', filename='js/edit-review.js') }}"></script>
 {% endblock %}

@@ -1,11 +1,12 @@
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap");
 .no-reviews {
-  width: 70%;
-  background-color: #BDAAA6;
+  width: 100%;
+  background-color: #dae8ec;
   color: #212529;
   font-family: "Montserrat", sans-serif;
   text-align: center;
   font-size: 1.5rem;
-  border: 0.5rem double white;
+  border: 0.5rem double #dac5bc;
   outline: white solid 0.25rem;
   margin-top: 1rem;
 }
@@ -13,25 +14,25 @@
   margin: 0;
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
+  font-family: "Montserrat", sans-serif;
 }
 .no-reviews p a {
-  background-color: rgba(255, 255, 255, 0.4);
+  background-color: #dae8ec;
   padding: 0.25rem 0.5rem 0.25rem 0.5rem;
 }
 
 .reviews {
   display: flex;
-  background-color: #A7ACB1;
+  background-color: #dae8ec;
   width: 70%;
   margin-left: auto;
   margin-right: auto;
-  border: 0.5rem double white;
-  outline: solid 0.25rem white;
   display: flex;
   align-items: center;
   height: auto;
-  margin-bottom: -1rem;
+  margin-top: 0.5rem;
   padding-top: 1rem;
+  border: 0.5rem double rgba(0, 0, 0, 0.2);
 }
 .reviews div:nth-of-type(1) {
   height: 100%;
@@ -65,7 +66,6 @@
   padding: 0;
   display: inline-block;
   width: auto;
-  background-color: transparent;
   padding: 0.5rem 0.75rem 0.5rem 0.75rem;
   display: inline-block;
   font-size: 1.6rem;
@@ -75,11 +75,6 @@
   color: #0051ff;
   white-space: nowrap;
   margin-left: 5rem;
-}
-.reviews div:nth-of-type(1) div:first-of-type div:first-of-type div:first-of-type a i {
-  padding: 0.25rem;
-  border: 0.2rem solid #0051ff;
-  border-radius: 50%;
 }
 .reviews div:nth-of-type(1) div:first-of-type div:first-of-type div:first-of-type .time {
   margin-left: auto;
@@ -98,9 +93,6 @@
   margin-left: 5rem;
   white-space: nowrap;
 }
-.reviews div:nth-of-type(1) div:first-of-type div:first-of-type div:first-of-type a:hover i {
-  border: 0.2rem solid #397abe;
-}
 .reviews div:nth-of-type(1) div:first-of-type div:first-of-type div:first-of-type #edit-delete {
   background-color: transparent;
   display: flex;
@@ -113,16 +105,40 @@
   margin-right: 5rem;
 }
 .reviews div:nth-of-type(1) div:first-of-type div:first-of-type div:first-of-type #edit-delete button {
-  background-color: #A7ACB1;
-  border: 0.25rem solid #3f4546;
-  border-top: 1px solid #A7ACB1;
-  border-bottom: 1px solid #A7ACB1;
-  color: #3f4546;
+  background-color: #dae8ec;
+  border: 0.2rem solid #007bff;
+  color: #007bff;
   border-radius: 50%;
   font-size: 1.2rem;
   position: absolute;
   top: 0.5rem;
   right: 0.5rem;
+}
+.reviews div:nth-of-type(1) div:first-of-type div:first-of-type div:first-of-type #edit-delete button:hover {
+  background-color: #007bff41;
+  border: 0.2rem solid #00438b;
+  color: #00438b;
+}
+.reviews div:nth-of-type(1) div:first-of-type div:first-of-type div:first-of-type #edit-delete ul {
+  background-color: #dae8ec;
+  border: 1px solid #00438b;
+  box-shadow: inset 50rem 50rem rgba(0, 0, 0, 0.1);
+}
+.reviews div:nth-of-type(1) div:first-of-type div:first-of-type div:first-of-type #edit-delete ul li {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.reviews div:nth-of-type(1) div:first-of-type div:first-of-type div:first-of-type #edit-delete ul li a {
+  background-color: auto;
+  color: white;
+  width: 100%;
+  height: 2.5rem;
+  font-size: 1.1rem;
+  margin: 0;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  font-family: "Montserrat", sans-serif;
 }
 .reviews div:nth-of-type(1) div:first-of-type div:last-of-type {
   display: flex;
@@ -147,16 +163,19 @@
   font-size: 1.3rem;
   padding: 0.5rem;
   margin-top: -1.5rem;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
 }
 .reviews div:nth-of-type(1) p:last-of-type {
   padding: 1rem;
-  background-color: rgba(255, 255, 255, 0.4);
+  background-color: #dae8ec;
   background-color: transparent;
   margin: 0;
   text-align: justify;
   padding-left: 5rem;
   padding-right: 5rem;
   padding-bottom: 2rem;
+  font-family: "Montserrat", sans-serif;
 }
 
 #delete-review {
@@ -176,22 +195,29 @@
   top: 25%;
   margin-left: auto;
   margin-right: auto;
-  background-color: white;
+  background-color: #dae8ec;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   font-size: 1.4rem;
+  font-family: "Montserrat", sans-serif;
 }
 #delete-review div span {
   display: inline-block;
   margin-top: 1rem;
 }
 #delete-review div span button {
-  margin-right: 0.5rem;
+  margin-right: 1rem;
+  font-size: 1.1rem;
+  height: 2.5rem;
+  width: 10rem;
 }
 #delete-review div span a {
-  margin-left: 0.5rem;
+  height: 2.5rem;
+  margin-left: 1rem;
+  width: 10rem;
+  font-size: 1.1rem;
 }
 
 @media only screen and (max-width: 1564px) {
@@ -202,6 +228,14 @@
 @media only screen and (max-width: 1250px) {
   .reviews {
     width: 100%;
+  }
+
+  #delete-review div {
+    width: 75%;
+    height: 50%;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    text-align: center;
   }
 }
 @media only screen and (max-width: 560px) {
@@ -221,6 +255,32 @@
     padding-left: 1rem;
     padding-right: 1rem;
     padding-bottom: 1rem;
+  }
+
+  #delete-review div {
+    width: 100%;
+    height: 50%;
+    font-size: 1.2rem;
+  }
+  #delete-review div span a {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2rem;
+  }
+  #delete-review div span button {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1rem;
+  }
+}
+@media only screen and (max-width: 360px) {
+  .reviews div:nth-of-type(1) div:first-of-type div:first-of-type div:first-of-type a {
+    margin-left: 0;
+  }
+  .reviews div:nth-of-type(1) div:first-of-type div:first-of-type div:first-of-type .time {
+    margin-left: -1.5rem;
   }
 }
 
