@@ -27,7 +27,9 @@ data = mongo.db
 # index.html
 @app.route("/")
 def index():
-    return render_template("index.html")
+    all_whiskeys = data.drinks.find()
+
+    return render_template("index.html", all_whiskeys=all_whiskeys)
 
 
 # about.html
@@ -45,7 +47,7 @@ def add_whiskey():
 
     if request.method == "POST":
         existing_drink = data.drinks.find_one(
-            {"drink": request.form.get("whiskey-name").lower()}
+            {"drink_lower": request.form.get("whiskey-name").lower()}
         )
 
         if existing_drink:
@@ -62,6 +64,7 @@ def add_whiskey():
         if y == allow_exten[0] or y == allow_exten[1] or y == allow_exten[2]:
             formSubmission = {
                 "drink": str(request.form.get("whiskey-name")),
+                "drink_lower": str(request.form.get("whiskey-name")).lower(),
                 "image_location": str(request.form.get("image-url")),
                 "type": str(request.form.get("whiskey-type")),
                 "description": str(request.form.get("description")),
@@ -92,6 +95,16 @@ def edit_whiskey(whiskey_name):
         return redirect(url_for("login"))
 
     if request.method == "POST":
+        existing_name = data.drinks.find_one({
+            "drink_lower": str(request.form.get("whiskey-name")).lower()})
+
+        # So a user does not rename whiskey to another that already exists
+        if existing_name:
+            if existing_name["drink_lower"] != str(whiskey_name).lower():
+                flash("This drink already exists", "error")
+                return redirect(url_for("edit_whiskey",
+                                whiskey_name=whiskey_name))
+
         # image addresses must end with one of these extensions
         allow_exten = ["jpg", "jpeg", "png"]
         form_url = str(request.form.get("image-url"))
@@ -102,6 +115,7 @@ def edit_whiskey(whiskey_name):
         if y == allow_exten[0] or y == allow_exten[1] or y == allow_exten[2]:
             whiskeyUpdate = {
                 "drink": str(request.form.get("whiskey-name")),
+                "drink_lower": str(request.form.get("whiskey-name")).lower(),
                 "image_location": str(request.form.get("image-url")),
                 "type": str(request.form.get("whiskey-type")),
                 "description": str(request.form.get("description")),
@@ -224,6 +238,7 @@ def review(whiskey_name):
 
             whiskeyDetails = {
                 "drink": whiskey["drink"],
+                "drink_lower": whiskey["drink_lower"],
                 "image_location": whiskey["image_location"],
                 "type": whiskey["type"],
                 "description": whiskey["description"],
@@ -257,6 +272,7 @@ def delete_review(whiskey_name):
 
     whiskeyDetails = {
         "drink": whiskey["drink"],
+        "drink_lower": whiskey["drink_lower"],
         "image_location": whiskey["image_location"],
         "type": whiskey["type"],
         "description": whiskey["description"],
