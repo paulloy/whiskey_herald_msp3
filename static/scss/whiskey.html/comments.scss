@@ -6,24 +6,27 @@ $black: #212529;
 $padding: 0.5rem 1rem 0.5rem 1rem;
 $font: 'Poppins', sans-serif;
 
-$color1: rgba(255, 255, 255, 0.4);
-$color2: white;
-$color3: #BDAAA6;
-$color4: rgba(153, 122, 115);
-$color5: #C2AFAB;
+$color1: #dae8ec;
+$color2: #dac5bc;
+$color3: #b48464;
+$color4: #572313;
+$color5: #1d1611;
+
+$font1: 'Montserrat', sans-serif;
+$font2: 'Source Sans Pro', sans-serif;
 
 #comments {   
-    border: 0.5rem double $color2;
-    outline: 0.25rem solid $color2;
     width: 70%;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 1rem;
-    background-color: #A7ACB1;
+    background-color: $color1;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 1rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    margin-top: 1rem;
+    border: 0.5rem solid rgba(0, 0, 0, 0.2);
     a {
         margin-left: auto;
         margin-right: auto;
@@ -33,7 +36,6 @@ $color5: #C2AFAB;
         margin-top: 0.5rem;
         margin-bottom: 0.5rem;
         color: rgb(0, 81, 255);
-        background-color: rgba(255, 255, 255, 0.7);
     }
     span {
         display: flex;
@@ -44,10 +46,10 @@ $color5: #C2AFAB;
         align-items: center;
         justify-content: center;
         p:first-of-type {
-            color: $black;
+            color: $color5;
             margin: 0;
             font-size: 2rem;
-            font-family: 'Montserrat', sans-serif;
+            font-family: $font1;
             font-weight: 600;
             letter-spacing: 3px;
             margin-left: 1rem;
