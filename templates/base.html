@@ -52,7 +52,6 @@
                 <li><a href="{{ url_for('register') }}">REGISTER</a></li>
             {% endif %}
             <li><a href="{{ url_for('index') }}">HOME</a></li>
-            <li><a href="{{ url_for('about') }}">WHO WE ARE</a></li>
             <li><a href="{{ url_for('add_whiskey') }}">ADD A WHISKEY</a></li>
         </ul>
     </nav>
@@ -61,9 +60,9 @@
     {% with success = get_flashed_messages(category_filter=["success"]) %}
         {% if success %}
             {% for message in success %}
-                <div id="flash" class="row alert alert-success">
+                <div id="flash" class="width alert alert-success">
                     <i class="fas fa-check-circle"></i>
-                    <p>{{ message }}</p>
+                    <p>{{ message|safe }}</p>
                     <i id="close-flash" class="far fa-times-circle"></i>
                 </div>
             {% endfor %}            
@@ -74,7 +73,7 @@
         {% if error %}
             {% for message in error %}
                 <!-- duplicate id error can be ignored. Only one will be rendered on page -->
-                <div id="flash" class="row alert alert-danger">
+                <div id="flash" class="width alert alert-danger">
                     <i class="fas fa-exclamation-circle"></i>
                     <p>{{ message }}</p>
                     <i id="close-flash" class="far fa-times-circle"></i>
