@@ -46,23 +46,36 @@
                     <a href="{{ url_for('edit_whiskey', whiskey_name = whiskeyDetails['drink']) }}" type="button" class="btn btn-primary">UPDATE</a>
                 {% endif %}
                 {% if session["username"] == "admin" %}
-                    <a href="{{ url_for('delete_whiskey', whiskey_name = whiskeyDetails['drink']) }}" type="button" class="btn btn-danger">DELETE</a>
+                    <a id="admin-delete-whiskey" type="button" role="button" class="btn btn-danger" tabindex="0">DELETE</a>
                 {% endif %}
         </div>
     </div>
 
     <!-- comments row  -->
     <div id="comments" class="row width">
-        <span>
+        <div>
             <p>REVIEWS</p> 
             <i class="far fa-comment-alt"></i> 
             <p>{{ find_reviews.count() }}</p>
-        </span>
+        </div>
         <a href="#leave-review"><i class="fas fa-mouse-pointer"></i> Leave a comment?</a>
     </div>
 
+    <!-- delete whiskey (admin only) -->
+    {% if session["username"] == "admin" %}
+        <div id="delete-whiskey" class="delete">
+            <div>            
+                Are you sure you want to delete this Whiskey?
+                <span>
+                    <button class="btn btn-secondary cancel">CANCEL</button>
+                    <a href="{{ url_for('delete_whiskey', whiskey_name = whiskeyDetails['drink']) }}" class="btn btn-danger">DELETE</a>
+                </span>
+            </div>
+        </div>
+    {% endif %}
+
     <!-- delete reviews -->
-    <div id="delete-review">
+    <div id="delete-review" class="delete">
         <div>            
             Are you sure you want to delete this review?
             <span>
@@ -71,6 +84,7 @@
             </span>
         </div>
     </div>
+ 
     <!-- reviews -->
     {% if find_reviews.count() > 0 %}
         {% for review in find_reviews %}
@@ -79,18 +93,16 @@
                 <div>
                     <div>
                         <div>                            
-                            <a href="{{ url_for('profile', username = review['username']) }}">{{ review['profile_pic']|safe }} {{ review['username'] }}</a>
+                            <a href="{{ url_for('profile', username = review['username']) }}" aria-label="{{ review['username'] }} profile page">{{ review['profile_pic']|safe }} {{ review['username'] }}</a>
                             <p class="time">{{ moment(review['time']).format('h:mm a. Do MMM YYYY') }}</p>
                         {% if session['username'] == review['username'] %}
                             <div id="edit-delete" class="dropdown">
-                                <button class="btn btn-secondary" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                                <button class="btn btn-secondary" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false" aria-label="edit or delete review">
                                     <i class="fas fa-ellipsis-h"></i>
                                 </button>
                                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                    <li><a id="edit-review" href="#leave-review" type="button" class="btn btn-primary">EDIT</a></li>
-                                    <li><a id="delete" type="button"
-                                        class="btn btn-danger">DELETE</a></li>                         
-                                    
+                                    <li><a id="edit-review" href="#leave-review" type="button" class="btn btn-primary" role="button">EDIT</a></li>
+                                    <li><a id="delete" type="button" role="button" class="btn btn-danger" tabindex="0">DELETE</a></li>
                                 </ul>
                             </div>                                                 
                         {% endif %}                       
@@ -145,6 +157,22 @@
                             starRating(3);
                             starRating(4);
                             starRating(5);
+                            for (let item of document.getElementById("rating").children) {
+                                item.setAttribute("tabindex", "0");
+                            }
+                        });
+                        document.getElementById("edit-review").addEventListener("keypress", function (e) {
+                            if (e.keyCode === 13) {
+                                userReview.edit();
+                                starRating(1);
+                                starRating(2);
+                                starRating(3);
+                                starRating(4);
+                                starRating(5);
+                                for (let item of document.getElementById("rating").children) {
+                                    item.setAttribute("tabindex", "0");
+                                }
+                            }
                         });
                     </script>
                 {% endif %}
@@ -173,15 +201,15 @@
 
         <label for="score">SCORE</label>
         <div id="rating" title="Please leave a rating.">
-            <i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>
+            <i tabindex="0" class="far fa-star"></i><i tabindex="0" class="far fa-star"></i><i tabindex="0" class="far fa-star"></i><i tabindex="0" class="far fa-star"></i><i tabindex="0" class="far fa-star"></i>
         </div>
-        <input id="score" name="score" type="hidden" min="1" max="5" required>
+        <input id="score" name="score" type="number" min="1" max="5" required>
 
         <label for="review">YOUR REVIEW</label>
         <textarea id="review" name="review" cols="30" rows="10" required></textarea>
 
         {% if session['username'] %}
-            <button type="submit">SUBMIT</button>
+            <button type="submit" class="btn btn-primary">SUBMIT</button>
         {% else %}
             <a href="{{ url_for('register') }}">Register an account to review this whiskey.</a>
         {% endif %}
@@ -191,5 +219,4 @@
 
 {% block scripts %}
     <script src="{{ url_for('static', filename='js/whiskey.js') }}"></script>
-    <script src="{{ url_for('static', filename='js/edit-review.js') }}"></script>
 {% endblock %}
