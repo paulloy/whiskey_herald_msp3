@@ -213,7 +213,8 @@ def review(whiskey_name):
             data.reviews.update({
                 "username": session["username"], "drink": whiskey_name
                 }, reviewUpdate)
-            flash("Your review has been updated", "success")
+            flash("Your review has been updated \
+                  <a href='#edit-delete'>View your review?</a>", "success")
 
         else:
             newReview = {
@@ -227,7 +228,8 @@ def review(whiskey_name):
             }
 
             data.reviews.insert_one(newReview)
-            flash("Your review has been submitted", "success")
+            flash("Your review has been submitted. \
+                  <a href='#edit-delete'>View your review?</a>", "success")
 
         average_score = int(0)
         if whiskey_reviews.count() != 0:
