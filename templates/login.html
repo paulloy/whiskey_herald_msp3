@@ -10,14 +10,14 @@
         <h2>LOGIN</h2>
 
         <label for="email">Email</label>
-        <input type="email" name="email" placeholder="Email" required>
+        <input id="email" type="email" name="email" placeholder="Email" required>
 
         <label for="password">Password</label>
-        <input type="password" name="password" placeholder="Password" required>
+        <input id="password" type="password" name="password" placeholder="Password" required>
 
         <button type="submit" class="btn btn-primary">LOGIN</button>
         
-        <a href="{{ url_for('register') }}">New here? REGISTER AN ACCOUNT</a>
+        <a href="{{ url_for('register') }}" aria-label="navigate to registration page">New here? REGISTER AN ACCOUNT</a>
     </form>
 
 {% endblock %}
