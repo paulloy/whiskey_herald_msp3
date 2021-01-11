@@ -20,18 +20,16 @@
     <!-- Header  -->
     <header id="header" class="row">
         <div class="col-lg-6 col-12">
-            <span>
-                <a href="{{ url_for('index') }}">
-                    <h1>Whiskey Herald</h1>
-                </a>
+            <span>                
+                <h1><a href="{{ url_for('index') }}">Whiskey Herald</a></h1>                
             </span>
         </div>
         <div class="col-lg-6 col-12">
             <form id="search" action="{{ url_for('search') }}" method="POST">
                 <input type="text" name="search" placeholder="Search Whiskeys"/>
-                <button type="submit"><i class="fas fa-search"></i></button>
+                <button type="submit" aria-label="submit search request"><i class="fas fa-search"></i></button>
             </form>
-            <div id="navbar-toggle" tabindex="0">
+            <div id="navbar-toggle" tabindex="0" role="button" aria-label="navbar toggle button">
                 <i class="fas fa-bars"></i>
             </div>
         </div>
@@ -45,7 +43,7 @@
     <nav id="sidenav">
         <ul>
             {% if session["username"] %}
-                <li><a href="{{ url_for('profile', username = session['username']) }}">{{ session["profile_pic"]|safe }} {{ session["username"] }}</a></li>
+                <li><a href="{{ url_for('profile', username = session['username']) }}" aria-label="{{ session['username'] }} profile page">{{ session["profile_pic"]|safe }} {{ session["username"] }}</a></li>
                 <li><a href="{{ url_for('logout') }}">LOGOUT</a></li>
             {% else %}
                 <li><a href="{{ url_for('login') }}"><i class="fas fa-user"></i> LOG IN</a></li>

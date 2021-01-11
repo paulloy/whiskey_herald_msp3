@@ -26,10 +26,12 @@ function navbar() {
 }
 
 $('#navbar-toggle, #navbar-background').click(navbar);
-// KEY PRESS ACCESS 
-// $('#navbar-toggle, #navbar-background').keypress(function() {
-//     navbar();
-// );
+$('#navbar-toggle, #navbar-background').keypress(function(e) {
+    if (e.keyCode === 13) {
+        navbar();
+    }
+});
+
 
 // close flashed messages
 $('#close-flash').click(function () {

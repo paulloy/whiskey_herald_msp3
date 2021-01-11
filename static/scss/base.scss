@@ -94,17 +94,21 @@ $header-height: 9.6rem;
         align-items: center;
         span {
             display: inline-block;
-            a {
-                text-decoration: none;
-                h1 {
+            h1 {
+                font-family: 'Raleway', sans-serif;
+                font-weight: 600;
+                letter-spacing: 1px;
+                padding-left: 0.5rem;
+                padding-right: 0.5rem;
+                height: 100%;
+                margin: 0;   
+                width: auto;
+                a {
+                    text-decoration: none;
+                    display: inline-block;
+                    width: 100%;
                     color: $color5;
-                    font-family: 'Raleway', sans-serif;
-                    font-weight: 600;
-                    letter-spacing: 1px;
-                    padding-left: 0.5rem;
-                    padding-right: 0.5rem;
                     height: 100%;
-                    margin: 0;
                 }
             }
             a:hover {

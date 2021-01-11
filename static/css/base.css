@@ -77,11 +77,7 @@ body {
 #header div:first-of-type span {
   display: inline-block;
 }
-#header div:first-of-type span a {
-  text-decoration: none;
-}
-#header div:first-of-type span a h1 {
-  color: #1d1611;
+#header div:first-of-type span h1 {
   font-family: "Raleway", sans-serif;
   font-weight: 600;
   letter-spacing: 1px;
@@ -89,6 +85,14 @@ body {
   padding-right: 0.5rem;
   height: 100%;
   margin: 0;
+  width: auto;
+}
+#header div:first-of-type span h1 a {
+  text-decoration: none;
+  display: inline-block;
+  width: 100%;
+  color: #1d1611;
+  height: 100%;
 }
 #header div:first-of-type span a:hover {
   text-decoration: underline;
