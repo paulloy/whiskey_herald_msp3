@@ -18,36 +18,36 @@
                 <input id="profile-pic" name="profile-pic" type="hidden" value="{{ userDetails['profile_pic'] }}" required>
                 <p>Profile Icon</p>               
                     <ul id="select-pic">
-                        <li tabindex="0"><i class="fas fa-user"></i></li>
-                        <li tabindex="0"><i class="fas fa-user-tie"></i></li>
-                        <li tabindex="0"><i class="fas fa-user-secret"></i></li>
-                        <li tabindex="0"><i class="fas fa-user-ninja"></i></li>
-                        <li tabindex="0"><i class="fas fa-user-circle"></i></li>
-                        <li tabindex="0"><i class="fas fa-snowboarding"></i></li>
-                        <li tabindex="0"><i class="fas fa-smile"></i></li>
-                        <li tabindex="0"><i class="far fa-smile"></i></li>
-                        <li tabindex="0"><i class="fas fa-skiing"></i></li>
-                        <li tabindex="0"><i class="fas fa-poo"></i></li>
-                        <li tabindex="0"><i class="fas fa-taxi"></i></li>
-                        <li tabindex="0"><i class="fab fa-suse"></i></li>
-                        <li tabindex="0"><i class="fas fa-dragon"></i></li>
-                        <li tabindex="0"><i class="fas fa-chess"></i></li>
-                        <li tabindex="0"><i class="fas fa-radiation"></i></li>
-                        <li tabindex="0"><i class="fas fa-atom"></i></li>
-                        <li tabindex="0"><i class="fas fa-dice"></i></li>
-                        <li tabindex="0"><i class="fas fa-dice-d20"></i></li>
-                        <li tabindex="0"><i class="fas fa-ghost"></i></li>
-                        <li tabindex="0"><i class="fas fa-wave-square"></i></li>
-                        <li tabindex="0"><i class="fas fa-hippo"></i></li>
-                        <li tabindex="0"><i class="fas fa-paw"></i></li>
-                        <li tabindex="0"><i class="fas fa-dove"></i></li>
-                        <li tabindex="0"><i class="fas fa-cat"></i></li>
-                        <li tabindex="0"><i class="fas fa-beer"></i></li>
-                        <li tabindex="0"><i class="fas fa-glass-whiskey"></i></li>
-                        <li tabindex="0"><i class="fas fa-snowman"></i></li>
-                        <li tabindex="0"><i class="fas fa-hat-wizard"></i></li>
-                        <li tabindex="0"><i class="fas fa-microphone-alt"></i></li>
-                        <li tabindex="0"><i class="fas fa-code"></i></li>
+                        <li tabindex="0" aria-label="icon"><i class="fas fa-user"></i></li>
+                        <li tabindex="0" aria-label="icon"><i class="fas fa-user-tie"></i></li>
+                        <li tabindex="0" aria-label="icon"><i class="fas fa-user-secret"></i></li>
+                        <li tabindex="0" aria-label="icon"><i class="fas fa-user-ninja"></i></li>
+                        <li tabindex="0" aria-label="icon"><i class="fas fa-user-circle"></i></li>
+                        <li tabindex="0" aria-label="icon"><i class="fas fa-snowboarding"></i></li>
+                        <li tabindex="0" aria-label="icon"><i class="fas fa-smile"></i></li>
+                        <li tabindex="0" aria-label="icon"><i class="far fa-smile"></i></li>
+                        <li tabindex="0" aria-label="icon"><i class="fas fa-skiing"></i></li>
+                        <li tabindex="0" aria-label="icon"><i class="fas fa-poo"></i></li>
+                        <li tabindex="0" aria-label="icon"><i class="fas fa-taxi"></i></li>
+                        <li tabindex="0" aria-label="icon"><i class="fab fa-suse"></i></li>
+                        <li tabindex="0" aria-label="icon"><i class="fas fa-dragon"></i></li>
+                        <li tabindex="0" aria-label="icon"><i class="fas fa-chess"></i></li>
+                        <li tabindex="0" aria-label="icon"><i class="fas fa-radiation"></i></li>
+                        <li tabindex="0" aria-label="icon"><i class="fas fa-atom"></i></li>
+                        <li tabindex="0" aria-label="icon"><i class="fas fa-dice"></i></li>
+                        <li tabindex="0" aria-label="icon"><i class="fas fa-dice-d20"></i></li>
+                        <li tabindex="0" aria-label="icon"><i class="fas fa-ghost"></i></li>
+                        <li tabindex="0" aria-label="icon"><i class="fas fa-wave-square"></i></li>
+                        <li tabindex="0" aria-label="icon"><i class="fas fa-hippo"></i></li>
+                        <li tabindex="0" aria-label="icon"><i class="fas fa-paw"></i></li>
+                        <li tabindex="0" aria-label="icon"><i class="fas fa-dove"></i></li>
+                        <li tabindex="0" aria-label="icon"><i class="fas fa-cat"></i></li>
+                        <li tabindex="0" aria-label="icon"><i class="fas fa-beer"></i></li>
+                        <li tabindex="0" aria-label="icon"><i class="fas fa-glass-whiskey"></i></li>
+                        <li tabindex="0" aria-label="icon"><i class="fas fa-snowman"></i></li>
+                        <li tabindex="0" aria-label="icon"><i class="fas fa-hat-wizard"></i></li>
+                        <li tabindex="0" aria-label="icon"><i class="fas fa-microphone-alt"></i></li>
+                        <li tabindex="0" aria-label="icon"><i class="fas fa-code"></i></li>
                     </ul>
 
                 <label for="username">Username</label>
@@ -59,7 +59,7 @@
 
                 
                     
-                <a class="btn btn-secondary cancel" tabindex="0">CANCEL</a>
+                <a class="btn btn-secondary cancel" tabindex="0" role="button">CANCEL</a>
                 <button class="btn btn-primary" type="submit">SUBMIT</button>
             </div>
         </form>
@@ -85,15 +85,15 @@
                 placeholder="Password"
                 title="Password must contain at least 1 number and 1 uppercase letter, and between 8-20 characters."
                 required>
-                <a class="btn btn-secondary cancel">CANCEL</a>
+                <a class="btn btn-secondary cancel" tabindex="0" role="button">CANCEL</a>
                 <button class="btn btn-primary">SUBMIT</button>
             </div>
         </form>
         <div id="delete-account" method="POST" action="{{ url_for('delete_account', username = userDetails['username']) }}">
             <div>
                 <strong>Are you sure you would like to delete your account?</strong> This will permanently delete your account details and reviews.
-                <a class="btn btn-secondary cancel">CANCEL</a>
-                <a href="{{ url_for('delete_account', username = session['username']) }}" class="btn btn-danger">DELETE</a>
+                <a class="btn btn-secondary cancel" tabindex="0" role="button">CANCEL</a>
+                <a href="{{ url_for('delete_account', username = session['username']) }}" class="btn btn-danger" role="button">DELETE</a>
             </div>
         </div>
     </div>
@@ -107,7 +107,7 @@
         </div>
         {% if session["username"] == userDetails["username"] %}
         <div class="dropdown">
-            <button class="btn btn-primary" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+            <button class="btn btn-primary" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false" aria-label="profile settings">
                 <i class="fas fa-cogs"></i>
             </button>
             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">

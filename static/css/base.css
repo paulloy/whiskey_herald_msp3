@@ -1,4 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500&display=swap");
+.btn-primary {
+  background-color: #0071eb;
+  border-color: #0071eb;
+}
+
 body {
   position: relative;
   overflow-x: hidden;
