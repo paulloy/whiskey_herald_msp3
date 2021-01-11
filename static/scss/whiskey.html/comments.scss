@@ -35,9 +35,9 @@ $font2: 'Source Sans Pro', sans-serif;
         padding-right: 0.5rem;
         margin-top: 0.5rem;
         margin-bottom: 0.5rem;
-        color: rgb(0, 81, 255);
+        color: #0063cc;
     }
-    span {
+    div {
         display: flex;
         width: 100%;
         color: $black;
@@ -89,7 +89,7 @@ $font2: 'Source Sans Pro', sans-serif;
             margin-right: auto;
             text-align: center;
         }
-        span {
+        div {
             display: flex;
         }
     }

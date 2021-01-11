@@ -19,9 +19,9 @@
   padding-right: 0.5rem;
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
-  color: #0051ff;
+  color: #0063cc;
 }
-#comments span {
+#comments div {
   display: flex;
   width: 100%;
   color: #212529;
@@ -30,7 +30,7 @@
   align-items: center;
   justify-content: center;
 }
-#comments span p:first-of-type {
+#comments div p:first-of-type {
   color: #1d1611;
   margin: 0;
   font-size: 2rem;
@@ -40,10 +40,10 @@
   margin-left: 1rem;
   margin-left: auto;
 }
-#comments span i {
+#comments div i {
   margin-left: 1rem;
 }
-#comments span p:last-of-type {
+#comments div p:last-of-type {
   margin: 0;
   font-family: monospace;
   font-weight: 800;
@@ -73,7 +73,7 @@
     margin-right: auto;
     text-align: center;
   }
-  #comments span {
+  #comments div {
     display: flex;
   }
 }

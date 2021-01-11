@@ -34,13 +34,13 @@ $font2: 'Source Sans Pro', sans-serif;
         a {
             background-color: $color1;
             padding: 0.25rem 0.5rem 0.25rem 0.5rem;
+            color: #0063cc;
         }
     }
 }
 .reviews {
     display: flex;       
-     background-color: $color1;
-
+    background-color: $color1;
     width: 70%;
     margin-left: auto;
     margin-right: auto;
@@ -53,8 +53,7 @@ $font2: 'Source Sans Pro', sans-serif;
     div:nth-of-type(1) {
         height: 100%;
         width: 100%;
-                    background-color: transparent;
-
+        background-color: transparent;
         div:first-of-type {
             height: auto;
             width: 100%;
@@ -79,17 +78,15 @@ $font2: 'Source Sans Pro', sans-serif;
                         padding: 0;
                         display: inline-block;  
                         width: auto;               
-                            padding: 0.5rem 0.75rem 0.5rem 0.75rem;
-                            display: inline-block;
-                            font-size: 1.6rem;
+                        padding: 0.5rem 0.75rem 0.5rem 0.75rem;
+                        display: inline-block;
+                        font-size: 1.6rem;
                         left: 0;
                         top: 0;
-                            margin-right: auto;
-                            color: rgb(0, 81, 255);
-                            white-space: nowrap;
-                            margin-left: 5rem;
-                        
-                        
+                        margin-right: auto;
+                        color: #0063cc;
+                        white-space: nowrap;
+                        margin-left: 5rem;                         
                     }
                     .time {
                         margin-left: auto;
@@ -105,8 +102,8 @@ $font2: 'Source Sans Pro', sans-serif;
                         letter-spacing: 1px;
                         font-style: italic;
                         color: rgba(0, 0, 0, 0.7);
-                            margin-left: 5rem;
-                            white-space: nowrap;
+                        margin-left: 5rem;
+                        white-space: nowrap;
                     }
                     #edit-delete {
                     background-color: transparent;
@@ -120,8 +117,8 @@ $font2: 'Source Sans Pro', sans-serif;
                     margin-right: 5rem;
                     button {
                         background-color: $color1;
-                        border: 0.2rem solid #007bff;
-                        color: #007bff;
+                        border: 0.2rem solid #0063cc;
+                        color: #0063cc;
                         border-radius: 50%;
                         font-size: 1.2rem;
                         position: absolute;
@@ -161,7 +158,7 @@ $font2: 'Source Sans Pro', sans-serif;
             div:last-of-type {
                 display: flex;
                 flex-direction: column;
-                    background-color: transparent;
+                background-color: transparent;
                 align-items: center;
                 margin-top: 0rem;
                 .user-rating {
@@ -180,19 +177,9 @@ $font2: 'Source Sans Pro', sans-serif;
                     font-size: 1.3rem;
                     padding: 0.5rem;
                     margin-top: -1.5rem;
-                        font-family: $font1;
-                        font-weight: 600;
+                    font-family: $font1;
+                    font-weight: 600;
                 }
-                // p:last-of-type {
-                //     margin-right: 1rem;
-                //     margin-left: auto;
-                //     font-style: italic;
-                //     background-color: transparent;
-                //     font-weight: 500;
-                //     white-space: nowrap;
-                //     padding-right: 0.5rem;
-                //     padding-left: 0.5rem;
-                // }
             }
         }        
         p:last-of-type {
@@ -208,7 +195,7 @@ $font2: 'Source Sans Pro', sans-serif;
         }
     }
 }
-#delete-review {
+.delete {
     display: none;
     position: fixed;
     top: 0;
@@ -266,138 +253,80 @@ $font2: 'Source Sans Pro', sans-serif;
     .no-reviews {
         width: 100%;
     }
-    #delete-review {
-    div {
-        width: 75%;
-        height: 50%;  
-        padding-left: 1rem;
-        padding-right: 1rem;
-        text-align: center;     
-    }
-}
-}
-@media only screen and (max-width: 560px) {
-    
-.reviews {
-    padding-top: 0;
-    div:nth-of-type(1) {
-
-        div:first-of-type {
-            div:first-of-type {
-                div:first-of-type {
-                    a {
-                        margin-left: 0;
-                        i {
-                        }
-                    }
-                    .time {
-                        margin-left: 0;
-                    }
-                    a:hover i {                        
-                    }
-                    #edit-delete {
-                        margin-right: 0;
-                    button {
-                    }
-                }
-                }
-                
-            }            
-            div:last-of-type {
-                .user-rating {
-                }
-                h3 {
-                }
-            }
-        }        
-        p:last-of-type {
+    .delete {
+        div {
+            width: 75%;
+            height: 50%;  
             padding-left: 1rem;
             padding-right: 1rem;
-            padding-bottom: 1rem;
+            text-align: center;     
         }
     }
 }
-#delete-review {
-    div {
-        width: 100%;
-        height: 50%;
-        font-size: 1.2rem;   
-        span {
-            a {
-                display: block;
-                margin-left: auto;
-                margin-right: auto;
-                margin-top: 2rem;
-            }
-            button {
-                display: block;
-                margin-left: auto;
-                margin-right: auto;
-                margin-top: 1rem;
-            }
-        }
-    }
-}
-}
-
-@media only screen and (max-width: 360px) {
-    
-.reviews {
-    div:nth-of-type(1) {
-
-        div:first-of-type {
+@media only screen and (max-width: 560px) {    
+    .reviews {
+        padding-top: 0;
+        div:nth-of-type(1) {
             div:first-of-type {
                 div:first-of-type {
-                    a {
-                        margin-left: 0;
-                    }
-                    .time {
-                        margin-left: -1.5rem;
-                    }
-                }     
+                    div:first-of-type {
+                        a {
+                            margin-left: 0;                        
+                        }
+                        .time {
+                            margin-left: 0;
+                        }
+                        #edit-delete {
+                            margin-right: 0;
+                        }
+                    }                
+                }   
+            }        
+            p:last-of-type {
+                padding-left: 1rem;
+                padding-right: 1rem;
+                padding-bottom: 1rem;
+            }
+        }
+    }
+    .delete {
+        div {
+            width: 100%;
+            height: 50%;
+            font-size: 1.2rem;   
+            span {
+                a {
+                    display: block;
+                    margin-left: auto;
+                    margin-right: auto;
+                    margin-top: 2rem;
+                }
+                button {
+                    display: block;
+                    margin-left: auto;
+                    margin-right: auto;
+                    margin-top: 1rem;
+                }
+            }
+        }
     }
 }
-}
-}
-}
 
-
-// @media only screen and (max-width: 850px) {
-    
-//     .reviews, .no-reviews {
-//         width: 100%;
-//     }
-//     .reviews {
-//     div:nth-of-type(1) {
-//         div:first-of-type {
-//             div:first-of-type {
-//                 #edit-delete {
-//                     margin-top: 1rem;
-//                     div {
-//                         a {
-//                         }
-//                     }
-//                 }
-//             }            
-//             div:last-of-type {
-//                 flex-wrap: wrap;
-//                 #user-rating {
-//                     width: 100%;
-//                     text-align: center;
-//                     margin-right: 1rem;
-//                 }
-//                 h3 {
-//                     width: 100%;
-//                     text-align: center;
-//                     margin-right: 1rem;
-//                 }
-//                 p:last-of-type {
-//                     width: 100%;
-//                     text-align: right;
-//                     margin-left: 1rem;
-//                 }
-//             }
-//         }        
-//     }
-// }
-// }
+@media only screen and (max-width: 360px) {    
+    .reviews {
+        div:nth-of-type(1) {
+            div:first-of-type {
+                div:first-of-type {
+                    div:first-of-type {
+                        a {
+                            margin-left: 0;
+                        }
+                        .time {
+                            margin-left: -1.5rem;
+                        }
+                    }     
+                }
+            }
+        }
+    }
+}

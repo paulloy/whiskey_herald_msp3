@@ -98,6 +98,8 @@
   border-left: 0;
   justify-items: flex-end;
   z-index: 1;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
   background-color: rgba(0, 0, 0, 0.3);
 }
 #whiskey-details div:nth-of-type(3) p:first-of-type {
@@ -108,13 +110,12 @@
   color: #1d1611;
   font-family: "Poppins", sans-serif;
   background-color: #BDAAA6;
-  font-size: 1.2rem;
   border: 0.2rem rgba(0, 0, 0, 0.1) solid;
   padding-left: 0.5rem;
   padding-right: 0.5rem;
 }
 #whiskey-details div:nth-of-type(3) p:first-of-type i {
-  font-size: 2.5rem;
+  font-size: 2rem;
   color: #c72c44;
 }
 #whiskey-details div:nth-of-type(3) p:last-of-type {
@@ -154,7 +155,7 @@
 }
 #whiskey-details div:nth-of-type(3) a:first-of-type {
   margin-top: auto;
-  background-color: #007BFF;
+  background-color: #0071eb;
 }
 
 #whiskey-details::after {
