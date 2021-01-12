@@ -1,7 +1,9 @@
+/*jshint esversion: 6 */
+
 let allow_exten = ["jpg", "jpeg", "png"];
 
 document.getElementById("image-url").addEventListener("input", function() {
-    arr = document.getElementById("image-url").value.split(".");
+    let arr = document.getElementById("image-url").value.split(".");
     let pop = arr.pop().toLowerCase();
     if (pop === allow_exten[0] || pop === allow_exten[1] || pop === allow_exten[2]) {
         console.log(pop);

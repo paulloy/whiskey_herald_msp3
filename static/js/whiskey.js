@@ -1,20 +1,23 @@
+/*globals $:false */
+/*jshint esversion: 6 */
+
 function starRating(num) {
     $('#rating >:nth-of-type(' + num + ')').click(function() {
         document.getElementById('score').value = num;
-        for (i = num; i > 0; i--) {
+        for (let i = num; i > 0; i--) {
             $('#rating >:nth-of-type(' + i + ')').attr("class", "fas fa-star");
         }
-        for (i = num + 1; i < 6; i++) {
+        for (let i = num + 1; i < 6; i++) {
             $('#rating >:nth-of-type(' + i + ')').attr("class", "far fa-star");
         }
     });
     $('#rating >:nth-of-type(' + num + ')').keypress(function(e) {
         if (e.keyCode === 13) {
             document.getElementById('score').value = num;
-            for (i = num; i > 0; i--) {
+            for (let i = num; i > 0; i--) {
                 $('#rating >:nth-of-type(' + i + ')').attr("class", "fas fa-star");
             }
-            for (i = num + 1; i < 6; i++) {
+            for (let i = num + 1; i < 6; i++) {
                 $('#rating >:nth-of-type(' + i + ')').attr("class", "far fa-star");
             }
         }

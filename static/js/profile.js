@@ -1,3 +1,6 @@
+/*globals $:false */
+/*jshint esversion: 6 */
+
 $("#select-pic li").click(function() {    
     let img = $(this).html();
     $(this).attr("class", "selected");
