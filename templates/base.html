@@ -20,9 +20,9 @@
     <!-- Header  -->
     <header id="header" class="row">
         <div class="col-lg-6 col-12">
-            <span>                
+            <div>                
                 <h1><a href="{{ url_for('index') }}">Whiskey Herald</a></h1>                
-            </span>
+            </div>
         </div>
         <div class="col-lg-6 col-12">
             <form id="search" action="{{ url_for('search') }}" method="POST">
@@ -83,6 +83,10 @@
     <!-- block content -->
     {% block content %}
     {% endblock %}
+
+    <footer>
+        
+    </footer>
 
     <!-- jQuery  -->
     <script src="https://code.jquery.com/jquery-3.5.1.js"

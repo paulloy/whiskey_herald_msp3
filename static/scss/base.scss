@@ -100,8 +100,7 @@ $header-height: 9.6rem;
     div:first-of-type {
         display: flex;
         align-items: center;
-        span {
-            display: inline-block;
+        div {
             h1 {
                 font-family: 'Raleway', sans-serif;
                 font-weight: 600;
@@ -198,7 +197,7 @@ $header-height: 9.6rem;
         div:first-of-type {
             width: 100%;
             text-align: center;
-            span h1 a {
+            div h1 a {
                 font-size: 2.25rem;
                 width: 100%;
                 margin-top: 0.5rem;
@@ -285,7 +284,7 @@ $sidenav-width: 600px;
 @media only screen and (max-width: 375px) {
     #header div:first-of-type {
         padding: 0;
-        span h1 a {
+        div h1 a {
             font-size: 1.7rem;
             padding-left: 1rem;
         }

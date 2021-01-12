@@ -82,10 +82,7 @@ body {
   display: flex;
   align-items: center;
 }
-#header div:first-of-type span {
-  display: inline-block;
-}
-#header div:first-of-type span h1 {
+#header div:first-of-type div h1 {
   font-family: "Raleway", sans-serif;
   font-weight: 600;
   letter-spacing: 1px;
@@ -95,18 +92,18 @@ body {
   margin: 0;
   width: auto;
 }
-#header div:first-of-type span h1 a {
+#header div:first-of-type div h1 a {
   text-decoration: none;
   display: inline-block;
   width: 100%;
   color: #1d1611;
   height: 100%;
 }
-#header div:first-of-type span a:hover {
+#header div:first-of-type div a:hover {
   text-decoration: underline;
   color: #1d1611;
 }
-#header div:first-of-type span a:focus {
+#header div:first-of-type div a:focus {
   text-decoration: underline;
   color: #1d1611;
 }
@@ -180,7 +177,7 @@ body {
     width: 100%;
     text-align: center;
   }
-  #header div:first-of-type span h1 a {
+  #header div:first-of-type div h1 a {
     font-size: 2.25rem;
     width: 100%;
     margin-top: 0.5rem;
@@ -265,7 +262,7 @@ body {
   #header div:first-of-type {
     padding: 0;
   }
-  #header div:first-of-type span h1 a {
+  #header div:first-of-type div h1 a {
     font-size: 1.7rem;
     padding-left: 1rem;
   }
