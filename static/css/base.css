@@ -180,20 +180,11 @@ body {
     width: 100%;
     text-align: center;
   }
-  #header div:first-of-type span a h1 {
+  #header div:first-of-type span h1 a {
     font-size: 2.25rem;
     width: 100%;
     margin-top: 0.5rem;
     margin-bottom: 0;
-  }
-}
-@media only screen and (max-width: 375px) {
-  #header div:first-of-type {
-    padding: 0;
-  }
-  #header div:first-of-type span a h1 {
-    font-size: 1.7rem;
-    padding-left: 1rem;
   }
 }
 @media only screen and (max-width: 1564px) {
@@ -268,6 +259,15 @@ body {
 @media only screen and (max-width: 600px) {
   #sidenav {
     width: 100vw;
+  }
+}
+@media only screen and (max-width: 375px) {
+  #header div:first-of-type {
+    padding: 0;
+  }
+  #header div:first-of-type span h1 a {
+    font-size: 1.7rem;
+    padding-left: 1rem;
   }
 }
 
