@@ -13,21 +13,23 @@
                 <img id="img" src="{{ find_drink['image_location'] }}" alt="Image of {{ find_drink['drink'] }} whiskey">
             </div>
             <div class="col-lg-6 col-12">
-                <label for="whiskey-name">Whiskey Name</label>
+                <label for="whiskey-name">Name</label>
                 <input id="whiskey-name" name="whiskey-name" type="text" value="{{ find_drink['drink'] }}" required>
 
-                <label for="whiskey-type">Whiskey Type</label>
+                <label for="whiskey-type">Type</label>
                 <input id="whiskey-type" name="whiskey-type" type="text" value="{{ find_drink['type'] }}" required>  
                 
-                <label for="image-url">Whiskey Image Url<br><em>Image must be .jpg, .jpeg, or .png</em></label>
-                <input id="image-url" name="image-url" type="text" value="{{ find_drink['image_location'] }}" required>                
+                <label for="image-url">Whiskey Image Url</label>
+                <input id="image-url" name="image-url" type="text" value="{{ find_drink['image_location'] }}" required>  
+                <em>Image address must end with .jpg, .jpeg, or .png</em>              
             </div>
         </div>
         <div class="row">
-            <label for="description">Description</label>
+            <label for="descript">Description</label>
             <textarea name="description" id="descript" minlength="100" maxlength="600" cols="30" rows="10" required>{{ find_drink['description'] }}</textarea>
-            <a href="{{ url_for('whiskey', whiskey_name = whiskey_name) }}" class="btn btn-primary">CANCEL</a>
-            <button type="submit">SUBMIT</button>
+            <em>Description must be between 100 and 600 characters.</em>
+            <a href="{{ url_for('whiskey', whiskey_name = whiskey_name) }}" class="btn btn-secondary">CANCEL</a>
+            <button type="submit" class="btn btn-primary">SUBMIT</button>
         </div>
     </form>
 

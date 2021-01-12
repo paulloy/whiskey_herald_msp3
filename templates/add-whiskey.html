@@ -19,18 +19,20 @@
                 <label for="whiskey-type">Whiskey Type</label>
                 <input id="whiskey-type" name="whiskey-type" type="text" placeholder="e.g. Scotch, Malt..." required>  
                 
-                <label for="image-url">Whiskey Image Url<br><em>Image must be .jpg, .jpeg, or .png</em></label>
+                <label for="image-url">Whiskey Image Url</label>
                 <input id="image-url" name="image-url" type="text" placeholder="https://whiskey.jpg" required>
+                <em>Image address must end with .jpg, .jpeg, or .png</em>              
 
             </div>
         </div>
         <div class="row">
-            <label for="description">Description</label>
+            <label for="descript">Description</label>
             <textarea name="description" minlength="100" maxlength="600" id="descript" cols="30" rows="10" placeholder="What's important to know about this whiskey?" required></textarea>
+            <em>Description must be between 100 and 600 characters.</em>
             {% if session['username'] %}
                 <button type="submit" class="btn btn-primary">SUBMIT</button>
             {% else %}
-                <a href="{{ url_for('register') }}">Register an account to add a whiskey.</a>
+                <a id="link" href="{{ url_for('register') }}">Register an account to add a whiskey.</a>
             {% endif %}                
         </div>
     </form>
