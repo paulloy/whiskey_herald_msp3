@@ -1,11 +1,4 @@
-$green: #CAD4C0;
-$red: rgb(199, 44, 68);
-$cream: rgba(124, 96, 77, 0.59);
-$desert: #C7AD9B;
 $black: #212529;
-$padding: 0.5rem 1rem 0.5rem 1rem;
-$font: 'Poppins', sans-serif;
-
 $color1: #dae8ec;
 $color2: #dac5bc;
 $color3: #b48464;
@@ -28,13 +21,12 @@ $font2: 'Source Sans Pro', sans-serif;
     margin-top: 1rem;
     border: 0.5rem solid rgba(0, 0, 0, 0.2);
     a {
+        margin: 0.5rem;
         margin-left: auto;
         margin-right: auto;
         font-size: 1.4rem;
         padding-left: 0.5rem;
         padding-right: 0.5rem;
-        margin-top: 0.5rem;
-        margin-bottom: 0.5rem;
         color: #0063cc;
     }
     div {
