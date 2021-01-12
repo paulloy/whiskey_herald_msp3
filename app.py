@@ -27,9 +27,14 @@ data = mongo.db
 # index.html
 @app.route("/")
 def index():
-    all_whiskeys = data.drinks.find()
+    irish = data.drinks.find({"type": "Irish"})
+    scotch = data.drinks.find({"type": "Scotch"})
+    bourbon = data.drinks.find({"type": "Bourbon"})
 
-    return render_template("index.html", all_whiskeys=all_whiskeys)
+    return render_template("index.html",
+                           irish=irish,
+                           scotch=scotch,
+                           bourbon=bourbon)
 
 
 # about.html

@@ -1,0 +1,155 @@
+#hero-image {
+  width: 100vw;
+  height: 30rem;
+  position: relative;
+  background-color: black;
+}
+#hero-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.3;
+  border-bottom: 0.5rem double white;
+  border-top: 0.5rem double white;
+}
+#hero-image div {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+}
+#hero-image div h2 {
+  color: white;
+  margin-bottom: 10rem;
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 0.5rem 1rem 0.5rem 1rem;
+}
+#hero-image div div {
+  display: flex;
+  flex-direction: row;
+}
+#hero-image div div p {
+  color: white;
+  margin-left: 2.5rem;
+  margin-right: 2.5rem;
+  font-size: 1.2rem;
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 0.5rem 1rem 0.5rem 1rem;
+}
+
+h2 {
+  color: white;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  text-transform: uppercase;
+  margin-top: 4rem;
+}
+
+.common {
+  height: 25rem;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1rem;
+}
+.common div {
+  height: 100%;
+  width: 100%;
+  background-color: #dae8ec;
+  border: 1px solid #b48464;
+  padding: 0;
+}
+.common div a {
+  height: 100%;
+  width: 100%;
+}
+.common div a img {
+  width: 100%;
+  height: 70%;
+  object-fit: scale-down;
+  padding: 0.5rem;
+}
+.common div a p {
+  height: 20%;
+  width: 100%;
+  color: #1d1611;
+  text-align: center;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+.common div a p:first-of-type {
+  font-weight: 400;
+  font-size: 1rem;
+  height: 10%;
+}
+.common div a p:first-of-type i {
+  color: #c72c43;
+  font-size: 1.2rem;
+}
+.common div a:focus, .common div a:hover {
+  text-decoration: none;
+  box-shadow: inset 50rem 50rem rgba(0, 0, 0, 0.2);
+  height: 100%;
+  width: 100%;
+  display: inline-block;
+}
+.common div a:focus p, .common div a:hover p {
+  text-decoration: underline;
+}
+.common div a:focus p:first-of-type, .common div a:hover p:first-of-type {
+  text-decoration: none;
+}
+
+.flickity-page-dots .dot {
+  background: white;
+}
+
+.flickity-button {
+  border: 0.12rem solid #1d1611;
+  color: #1d1611;
+}
+
+@media only screen and (max-width: 1200px) {
+  .common {
+    width: 100%;
+  }
+
+  #hero-image div h2 {
+    margin-bottom: 20rem;
+  }
+  #hero-image div div {
+    display: flex;
+    flex-direction: column;
+  }
+  #hero-image div div p {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+@media only screen and (max-width: 600px) {
+  #hero-image div {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  #hero-image div h2 {
+    font-size: 1.2rem;
+  }
+  #hero-image div div p {
+    font-size: 1.1rem;
+  }
+}
+
+/*# sourceMappingURL=index.css.map */

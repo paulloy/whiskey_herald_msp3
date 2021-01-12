@@ -1,5 +1,122 @@
 {% extends "base.html" %}
 
+{% block stylesheets %}
+    <!-- flickity stylehseet -->
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+    <!-- custom stylesheet -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}" />
+{% endblock %}
+
 {% block content %}
 
+<div id="hero-image">
+    <img src="{{ url_for('static', filename='img/hero-image.jpg') }}" alt="hero image">
+    <div>
+        <h2>A Community for Whiskey Lovers</h2>
+        <div>
+            {% if session %}
+                <p>Welcome back {{ session['profile_pic']|safe }} {{ session['username'] }}</p>
+            {% else %}
+                <p>Register an account</p>
+            {% endif %}
+            <p>Share your favourite whiskeys</p>
+            <p>Review your favourite whiskeys</p>
+        </div>
+    </div>
+</div>
+
+<h2>Irish Whiskeys</h2>
+<div class="row irish-carousel common">
+    {% for doc in irish %}
+        {% if loop.index <= 6 %}
+            <div class="col-lg-3 col-md-4 col-sm-6 col-12 carousel-cell">
+                    <a href="{{ url_for('whiskey', whiskey_name = doc.drink) }}">
+                        <img src="{{ doc.image_location }}" alt="Image of {{ doc.drink }} Whiskey">
+                        <p>
+                            {% if doc['average_score'] == 0 %}
+                                No rating yet
+                            {% elif doc['average_score'] == 1 %}
+                                <i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>
+                            {% elif doc['average_score'] == 2 %}
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>
+                            {% elif doc['average_score'] == 3 %}
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>
+                            {% elif doc['average_score'] == 4 %}
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
+                            {% elif doc['average_score'] == 5 %}
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            {% endif %}
+                        </p>  
+                        <p name="whiskey_name">{{ doc.drink }}</p>
+                    </a>
+            </div>
+        {% endif %}
+    {% endfor %}
+</div>
+
+<h2>Scotch Whiskeys</h2>
+<div class="row scotch-carousel common">
+    {% for doc in scotch %}
+        {% if loop.index <= 6 %}
+            <div class="col-lg-3 col-md-4 col-sm-6 col-12 carousel-cell">
+                    <a href="{{ url_for('whiskey', whiskey_name = doc.drink) }}">
+                        <img src="{{ doc.image_location }}" alt="Image of {{ doc.drink }} Whiskey">
+                        <p>
+                            {% if doc['average_score'] == 0 %}
+                                No rating yet
+                            {% elif doc['average_score'] == 1 %}
+                                <i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>
+                            {% elif doc['average_score'] == 2 %}
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>
+                            {% elif doc['average_score'] == 3 %}
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>
+                            {% elif doc['average_score'] == 4 %}
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
+                            {% elif doc['average_score'] == 5 %}
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            {% endif %}
+                        </p>  
+                        <p name="whiskey_name">{{ doc.drink }}</p>
+                    </a>
+            </div>
+        {% endif %}
+    {% endfor %}
+</div>
+
+<h2>Bourbon Whiskeys</h2>
+<div class="row bourbon-carousel common">
+    {% for doc in bourbon %}
+        {% if loop.index <= 6 %}
+            <div class="col-lg-3 col-md-4 col-sm-6 col-12 carousel-cell">
+                    <a href="{{ url_for('whiskey', whiskey_name = doc.drink) }}">
+                        <img src="{{ doc.image_location }}" alt="Image of {{ doc.drink }} Whiskey">
+                        <p>
+                            {% if doc['average_score'] == 0 %}
+                                No rating yet
+                            {% elif doc['average_score'] == 1 %}
+                                <i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>
+                            {% elif doc['average_score'] == 2 %}
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>
+                            {% elif doc['average_score'] == 3 %}
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>
+                            {% elif doc['average_score'] == 4 %}
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
+                            {% elif doc['average_score'] == 5 %}
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            {% endif %}
+                        </p>  
+                        <p name="whiskey_name">{{ doc.drink }}</p>
+                    </a>
+            </div>
+        {% endif %}
+    {% endfor %}
+</div>
+
+{% endblock %}
+
+{% block scripts %}
+    <!-- flickity script -->
+    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+
+    <script src="{{ url_for('static', filename='js/flickity.js') }}"></script>
 {% endblock %}
