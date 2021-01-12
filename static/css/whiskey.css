@@ -278,8 +278,7 @@
 }
 .reviews div:nth-of-type(1) div:first-of-type div:first-of-type {
   display: flex;
-  flex-direction: row;
-  padding-top: 1rem;
+  background-color: #C2AFAB;
 }
 .reviews div:nth-of-type(1) div:first-of-type div:first-of-type div:first-of-type {
   display: flex;
@@ -287,17 +286,24 @@
   width: 100%;
   background-color: transparent;
   padding: 0;
+  position: relative;
+  margin: 0;
 }
 .reviews div:nth-of-type(1) div:first-of-type div:first-of-type div:first-of-type h3 {
   margin: 0;
-  margin-left: 1rem;
   font-family: "Montserrat", sans-serif;
+  left: 0;
+  top: 0;
+  padding: 0;
 }
 .reviews div:nth-of-type(1) div:first-of-type div:first-of-type div:first-of-type h3 a {
-  background-color: rgba(255, 255, 255, 0.4);
+  background-color: #C2AFAB;
   padding: 0.5rem;
   display: inline-block;
-  font-size: 1.2rem;
+  font-size: 1.6rem;
+  top: 0;
+  left: 0;
+  margin-right: auto;
 }
 .reviews div:nth-of-type(1) div:first-of-type div:first-of-type div:first-of-type h3 i {
   padding: 0.25rem;
@@ -643,9 +649,6 @@ hr:last-of-type {
   .reviews div:nth-of-type(1) div:first-of-type div:first-of-type #edit-delete {
     margin-top: 1rem;
   }
-  .reviews div:nth-of-type(1) div:first-of-type div:first-of-type #edit-delete div a {
-    margin-left: 1rem;
-  }
   .reviews div:nth-of-type(1) div:first-of-type div:last-of-type {
     flex-wrap: wrap;
   }
@@ -664,6 +667,10 @@ hr:last-of-type {
     text-align: right;
     margin-left: 1rem;
   }
+}
+#delete-review {
+  display: none;
+  z-index: 10;
 }
 
 /*# sourceMappingURL=whiskey.css.map */
