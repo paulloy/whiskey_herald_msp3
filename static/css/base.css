@@ -7,6 +7,8 @@
 body {
   position: relative;
   overflow-x: hidden;
+  height: 100%;
+  padding-bottom: 5rem;
 }
 
 .width {
@@ -117,32 +119,29 @@ body {
   display: flex;
   flex-wrap: nowrap;
   position: relative;
-  padding: 0.25rem 0.5rem 0.25rem 0.5rem;
 }
 #header div:last-of-type form input {
-  width: 100%;
+  width: 80%;
   border: 0.2rem solid #1d1611;
-  border-radius: 5rem;
-  padding: 0.5rem;
-  padding-left: 1rem;
-  height: 2.8rem;
-  padding-right: 4.5rem;
+  padding: 0.25rem 1rem 0.25rem 1rem;
+  height: 2.4rem;
   background-color: white;
+  border-radius: 0.5rem;
+  margin-left: auto;
 }
 #header div:last-of-type form input::placeholder {
   color: #212529;
 }
 #header div:last-of-type form button {
-  height: 2.8rem;
-  width: 2.8rem;
-  background-color: transparent;
-  color: #c72c44;
-  position: absolute;
-  right: 3%;
+  height: 2.4rem;
+  width: 2.4rem;
+  margin-left: 0.5rem;
+  background-color: white;
   color: #1d1611;
-  font-size: 1.5rem;
-  border: 0;
-  border-left: solid 0.2rem #1d1611;
+  font-size: 1.1rem;
+  border-radius: 0.5rem;
+  border: 0.2rem solid black;
+  margin-right: auto;
 }
 #header div:last-of-type #navbar-toggle {
   display: flex;
@@ -168,10 +167,34 @@ body {
   cursor: pointer;
 }
 
+footer {
+  width: 100%;
+  height: 4rem;
+  background-color: #dac5bc;
+  display: flex;
+  align-items: center;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  box-shadow: inset 50rem 50rem rgba(0, 0, 0, 0.2);
+}
+footer p {
+  width: 100%;
+  text-align: center;
+  margin: 0;
+  font-weight: 500;
+  color: #1d1611;
+}
+
 @media only screen and (max-width: 992px) {
+  #navbar-toggle {
+    right: 0.5rem !important;
+    top: 0.5rem !important;
+  }
+
   #header {
-    height: 9rem;
     padding: 0;
+    height: 7rem;
   }
   #header div:first-of-type {
     width: 100%;
@@ -182,6 +205,9 @@ body {
     width: 100%;
     margin-top: 0.5rem;
     margin-bottom: 0;
+  }
+  #header div:last-of-type form {
+    margin-bottom: 0.5rem;
   }
 }
 @media only screen and (max-width: 1564px) {
