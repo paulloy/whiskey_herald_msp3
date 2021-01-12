@@ -7,20 +7,20 @@ var flky = new Flickity( '.irish-carousel', {
   adaptiveHeight: false,
   // set carousel height to the selected slide
 
-  autoPlay: true,
+  autoPlay: false,
   // advances to the next cell
   // if true, default is 3 seconds
   // or set time between advances in milliseconds
   // i.e. `autoPlay: 1000` will advance every 1 second
 
-  cellAlign: 'left',
+  cellAlign: 'center',
   // alignment of cells, 'center', 'left', or 'right'
   // or a decimal 0-1, 0 is beginning (left) of container, 1 is end (right)
 
   cellSelector: undefined,
   // specify selector for cell elements
 
-  contain: false,
+  contain: true,
   // will contain cells to container
   // so no excess scroll at beginning or end
   // has no effect if wrapAround is enabled
@@ -59,7 +59,7 @@ var flky = new Flickity( '.irish-carousel', {
   prevNextButtons: true,
   // creates and enables buttons to click to previous & next cells
 
-  pageDots: true,
+  pageDots: false,
   // create and enable page dots
 
   resize: true,
@@ -68,7 +68,7 @@ var flky = new Flickity( '.irish-carousel', {
   rightToLeft: false,
   // enables right-to-left layout
 
-  setGallerySize: true,
+  setGallerySize: false,
   // sets the height of gallery
   // disable if gallery already has height set with CSS
 
@@ -78,7 +78,6 @@ var flky = new Flickity( '.irish-carousel', {
 
   wrapAround: true
   // at end of cells, wraps-around to first for infinite scrolling
-
 });
 
 var flky = new Flickity( '.scotch-carousel', {
@@ -90,20 +89,20 @@ var flky = new Flickity( '.scotch-carousel', {
   adaptiveHeight: false,
   // set carousel height to the selected slide
 
-  autoPlay: true,
+  autoPlay: false,
   // advances to the next cell
   // if true, default is 3 seconds
   // or set time between advances in milliseconds
   // i.e. `autoPlay: 1000` will advance every 1 second
 
-  cellAlign: 'left',
+  cellAlign: 'center',
   // alignment of cells, 'center', 'left', or 'right'
   // or a decimal 0-1, 0 is beginning (left) of container, 1 is end (right)
 
   cellSelector: undefined,
   // specify selector for cell elements
 
-  contain: false,
+  contain: true,
   // will contain cells to container
   // so no excess scroll at beginning or end
   // has no effect if wrapAround is enabled
@@ -142,7 +141,7 @@ var flky = new Flickity( '.scotch-carousel', {
   prevNextButtons: true,
   // creates and enables buttons to click to previous & next cells
 
-  pageDots: true,
+  pageDots: false,
   // create and enable page dots
 
   resize: true,
@@ -151,7 +150,7 @@ var flky = new Flickity( '.scotch-carousel', {
   rightToLeft: false,
   // enables right-to-left layout
 
-  setGallerySize: true,
+  setGallerySize: false,
   // sets the height of gallery
   // disable if gallery already has height set with CSS
 
@@ -161,7 +160,6 @@ var flky = new Flickity( '.scotch-carousel', {
 
   wrapAround: true
   // at end of cells, wraps-around to first for infinite scrolling
-
 });
 
 var flky = new Flickity( '.bourbon-carousel', {
@@ -173,20 +171,20 @@ var flky = new Flickity( '.bourbon-carousel', {
   adaptiveHeight: false,
   // set carousel height to the selected slide
 
-  autoPlay: true,
+  autoPlay: false,
   // advances to the next cell
   // if true, default is 3 seconds
   // or set time between advances in milliseconds
   // i.e. `autoPlay: 1000` will advance every 1 second
 
-  cellAlign: 'left',
+  cellAlign: 'center',
   // alignment of cells, 'center', 'left', or 'right'
   // or a decimal 0-1, 0 is beginning (left) of container, 1 is end (right)
 
   cellSelector: undefined,
   // specify selector for cell elements
 
-  contain: false,
+  contain: true,
   // will contain cells to container
   // so no excess scroll at beginning or end
   // has no effect if wrapAround is enabled
@@ -225,7 +223,7 @@ var flky = new Flickity( '.bourbon-carousel', {
   prevNextButtons: true,
   // creates and enables buttons to click to previous & next cells
 
-  pageDots: true,
+  pageDots: false,
   // create and enable page dots
 
   resize: true,
@@ -234,7 +232,7 @@ var flky = new Flickity( '.bourbon-carousel', {
   rightToLeft: false,
   // enables right-to-left layout
 
-  setGallerySize: true,
+  setGallerySize: false,
   // sets the height of gallery
   // disable if gallery already has height set with CSS
 
@@ -244,5 +242,4 @@ var flky = new Flickity( '.bourbon-carousel', {
 
   wrapAround: true
   // at end of cells, wraps-around to first for infinite scrolling
-
 });

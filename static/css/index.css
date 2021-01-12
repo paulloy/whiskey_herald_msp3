@@ -41,6 +41,7 @@
   font-size: 1.2rem;
   background-color: rgba(0, 0, 0, 0.8);
   padding: 0.5rem 1rem 0.5rem 1rem;
+  text-align: center;
 }
 
 h2 {
@@ -49,9 +50,15 @@ h2 {
   margin-left: auto;
   margin-right: auto;
   text-transform: uppercase;
-  margin-top: 4rem;
+  margin-top: 1rem;
   padding: 0.5rem 1rem 0.5rem 1rem;
   background-color: rgba(0, 0, 0, 0.8);
+  border-top: 0.5rem double rgba(255, 255, 255, 0.2);
+  border-bottom: 0.5rem double rgba(255, 255, 255, 0.2);
+}
+
+h2:first-of-type {
+  margin-top: 1rem;
 }
 
 .common {
@@ -67,6 +74,7 @@ h2 {
   background-color: #dae8ec;
   border: 1px solid #b48464;
   padding: 0;
+  margin: 0;
 }
 .common div a {
   height: 100%;
@@ -115,22 +123,13 @@ h2 {
   text-decoration: none;
 }
 
-.flickity-page-dots .dot {
-  background: white;
-}
-
-.flickity-button {
-  border: 0.12rem solid #1d1611;
-  color: #1d1611;
-}
-
 @media only screen and (max-width: 1200px) {
   .common {
     width: 100%;
   }
 
   #hero-image div h2 {
-    margin-bottom: 20rem;
+    margin-bottom: 25rem;
   }
   #hero-image div div {
     display: flex;
@@ -142,15 +141,31 @@ h2 {
   }
 }
 @media only screen and (max-width: 600px) {
+  .common {
+    height: 30rem;
+  }
+
   #hero-image div {
     padding-left: 1rem;
     padding-right: 1rem;
   }
   #hero-image div h2 {
+    border: 0.5rem double rgba(255, 255, 255, 0.2);
+    font-size: 1.4rem;
+    font-weight: 400;
+  }
+  #hero-image div h2 em {
     font-size: 1.2rem;
+    font-weight: 600;
+  }
+  #hero-image div div {
+    margin-top: 1rem;
+    text-align: center;
   }
   #hero-image div div p {
     font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    border: 0.25rem double rgba(255, 255, 255, 0.2);
   }
 }
 

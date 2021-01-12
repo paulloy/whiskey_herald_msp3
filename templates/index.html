@@ -12,10 +12,10 @@
 <div id="hero-image">
     <img src="{{ url_for('static', filename='img/hero-image.jpg') }}" alt="hero image">
     <div>
-        <h2>A Community for Whiskey Lovers</h2>
+        <h2>A Community for<br><em>Whiskey Lovers</em></h2>
         <div>
             {% if session %}
-                <p>Welcome back {{ session['profile_pic']|safe }} {{ session['username'] }}</p>
+                <p>Welcome<br>{{ session['profile_pic']|safe }} {{ session['username'] }}</p>
             {% else %}
                 <p>Register an account</p>
             {% endif %}
@@ -29,7 +29,7 @@
 <div class="row irish-carousel common">
     {% for doc in irish %}
         {% if loop.index <= 6 %}
-            <div class="col-lg-3 col-md-4 col-sm-6 col-12 carousel-cell">
+            <div class="col-lg-3 col-md-4 col-6 carousel-cell">
                     <a href="{{ url_for('whiskey', whiskey_name = doc.drink) }}">
                         <img src="{{ doc.image_location }}" alt="Image of {{ doc.drink }} Whiskey">
                         <p>
@@ -58,7 +58,7 @@
 <div class="row scotch-carousel common">
     {% for doc in scotch %}
         {% if loop.index <= 6 %}
-            <div class="col-lg-3 col-md-4 col-sm-6 col-12 carousel-cell">
+            <div class="col-lg-3 col-md-4 col-6 carousel-cell">
                     <a href="{{ url_for('whiskey', whiskey_name = doc.drink) }}">
                         <img src="{{ doc.image_location }}" alt="Image of {{ doc.drink }} Whiskey">
                         <p>
@@ -87,7 +87,7 @@
 <div class="row bourbon-carousel common">
     {% for doc in bourbon %}
         {% if loop.index <= 6 %}
-            <div class="col-lg-3 col-md-4 col-sm-6 col-12 carousel-cell">
+            <div class="col-lg-3 col-md-4 col-6 carousel-cell">
                     <a href="{{ url_for('whiskey', whiskey_name = doc.drink) }}">
                         <img src="{{ doc.image_location }}" alt="Image of {{ doc.drink }} Whiskey">
                         <p>
