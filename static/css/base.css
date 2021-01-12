@@ -64,6 +64,9 @@ body {
   margin-left: auto;
   padding-left: 2rem;
 }
+#flash a {
+  color: #0063cc;
+}
 
 #header {
   position: relative;
