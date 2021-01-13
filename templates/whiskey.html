@@ -42,9 +42,7 @@
                     {% endif %}
                 </p>                                           
                 <p>Type: <em>{{ whiskeyDetails.type }}</em></p>
-                {% if session["username"] %}
-                    <a href="{{ url_for('edit_whiskey', whiskey_name = whiskeyDetails['drink']) }}" type="button" class="btn btn-primary">UPDATE</a>
-                {% endif %}
+                <a href="{{ url_for('edit_whiskey', whiskey_name = whiskeyDetails['drink']) }}" type="button" class="btn btn-primary">UPDATE</a>
                 {% if session["username"] == "admin" %}
                     <a id="admin-delete-whiskey" type="button" role="button" class="btn btn-danger" tabindex="0">DELETE</a>
                 {% endif %}
@@ -79,7 +77,7 @@
         <div>            
             Are you sure you want to delete this review?
             <span>
-                <button id="cancel" class="btn btn-secondary">CANCEL</button>
+                <button class="btn btn-secondary cancel">CANCEL</button>
                 <a href="{{ url_for('delete_review', whiskey_name = whiskeyDetails['drink']) }}" class="btn btn-danger">DELETE</a>
             </span>
         </div>
@@ -138,6 +136,8 @@
                 {% if session["username"] == review['username'] %}
                     <!-- This script uses values from Jinja so had to be added inline instead of externally -->
                     <script>
+                        // jshint esversion: 6
+                        // This object is called in static/js/whiskey.js
                         let userReview = {
                             title: "{{ review['title'] }}",
                             score: "{{ review['score'] }}",
@@ -149,31 +149,7 @@
                                 document.getElementById("review").value = this.review;
                                 document.getElementById("rating").innerHTML = this.starRating;
                             }
-                        }
-                        document.getElementById("edit-review").addEventListener("click", function () {
-                            userReview.edit();
-                            starRating(1);
-                            starRating(2);
-                            starRating(3);
-                            starRating(4);
-                            starRating(5);
-                            for (let item of document.getElementById("rating").children) {
-                                item.setAttribute("tabindex", "0");
-                            }
-                        });
-                        document.getElementById("edit-review").addEventListener("keypress", function (e) {
-                            if (e.keyCode === 13) {
-                                userReview.edit();
-                                starRating(1);
-                                starRating(2);
-                                starRating(3);
-                                starRating(4);
-                                starRating(5);
-                                for (let item of document.getElementById("rating").children) {
-                                    item.setAttribute("tabindex", "0");
-                                }
-                            }
-                        });
+                        };                        
                     </script>
                 {% endif %}
 

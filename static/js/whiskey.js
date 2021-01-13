@@ -1,6 +1,7 @@
 /*globals $:false */
 /*jshint esversion: 6 */
 
+// This function is responsible for creating an interactive 5 star rating system
 function starRating(num) {
     $('#rating >:nth-of-type(' + num + ')').click(function() {
         document.getElementById('score').value = num;
@@ -24,13 +25,25 @@ function starRating(num) {
     });
 }
 
-starRating(1);
-starRating(2);
-starRating(3);
-starRating(4);
-starRating(5);
+starRating(1);starRating(2);starRating(3);starRating(4);starRating(5);
 
+function updateReview() {
+    // userReview and its edit method are defined in whiskey.html with jinja importing values
+    userReview.edit();
+    starRating(1);starRating(2);starRating(3);starRating(4);starRating(5);
+    for (let item of document.getElementById("rating").children) {
+        item.setAttribute("tabindex", "0");
+    }
+}
 
+document.getElementById("edit-review").addEventListener("click", updateReview);
+document.getElementById("edit-review").addEventListener("keypress", function (e) {
+    if (e.keyCode === 13) {
+        updateReview();
+    }
+});
+
+// display #delete-review
 $("#delete").click(function() {
     $("#delete-review").show();
 });
@@ -40,6 +53,7 @@ $("#delete").keypress(function(e) {
     }
 });
 
+// hide #delete-review and #delete-whiskey for admin
 $(".cancel").click(function() {
     $("#delete-review").hide();
     $("#delete-whiskey").hide();
@@ -51,6 +65,7 @@ $(".cancel").keypress(function(e) {
     }
 });
 
+// display #delete-whiskey for admin
 $("#admin-delete-whiskey").click(function() {
     $("#delete-whiskey").show();
 });
