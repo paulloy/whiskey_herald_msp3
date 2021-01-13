@@ -1,4 +1,5 @@
 # Whiskey Herald
+## Code Institute: Milestone Project 3, Data Centric Development
 
 Whiskey Herald is a collaborative community where users can contribute to updating a database with information on all their favourite whiskeys. 
 This should facilitate community building and provide a meaningful experience to the user. A user can then leave reviews of their favourite whiskeys
@@ -40,6 +41,23 @@ My hope is that Whiskey Herald provides a great experience to as many whiskey lo
 [5] The user will be provided with a search bar that will allow them to navigate the database for what they are looking for.
 [6] The website will adhere to good practices for ensuring that it is accessible for users with visual impairment.
 
+## User Stories
+
+As a user I want to:
+
+- [1] Find out what other users think of a particular expensive whiskey and finding out if it is worth buying.
+- [2] Add a whiskey to the website that is not appearing in the search results.
+- [3] Update my username, profile icon, and bio for an individual identity.
+- [4] Update my password as the one I created upon registration was too weak.
+- [5] Receive feedback from the website so that I can be confident that my actions have made changes to the website.
+- [6] Update one of my reviews as I feel it was poorly written.
+- [7] Delete a review I left on the wrong whiskey. i.e. Left it on a 15 year bottle of Red Breast instead of the 12 year bottle.
+- [8] Fix inaccurate information I have seen about one of my favourite whiskeys.
+- [9] Leave a review of a whiskey.
+
+
+[User Story Testing](TESTING.md#User-Stories)
+
 ## UX Design Process
 
 ### Strategy
@@ -70,6 +88,8 @@ users {}
 This collection contains all the data on registered users. A user writes to this collection when registering. These can delete their own document if they choose to delete their account. Some fields can be updated by the user.
 
 drinks {}
+Key | Value | Purpose
+--- | ----- | -------
 _id | ObjectId | ObjectId of this document
 drink | String | The name of this particular whiskey.
 drink_lower | String | The name of this particular whiskey in lowercase.
@@ -79,6 +99,8 @@ description | String | A description of this whiskey.
 average_score | Int32 | The average score of this whiskey calculated from all reviews left for it. 1 <= average_score <= 5
 
 reviews {}
+Key | Value | Purpose
+--- | ----- | -------
 _id | ObjectId | ObjectId of this document
 username | String | The username of this particular user.
 drink | Streing | The name of this particular whiskey.
@@ -89,6 +111,8 @@ time | Date | The time this review was created, or updated.
 profile_pic | string | Font awesome icon.
 
 users {}
+Key | Value | Purpose
+--- | ----- | -------
 _id | ObjectId | ObjectId of this document
 email | String | The email of this particular user.
 username | String | The username of this particular user.
@@ -159,6 +183,11 @@ The following icons were sourced from [Font Awesome](https://fontawesome.com/)
 - [fas fa-search](https://fontawesome.com/icons/search?style=solid)
 - [fas fa-bars](https://fontawesome.com/icons/bars?style=solid)
 - [fas fa-times](https://fontawesome.com/icons/times?style=solid)
+
+## Content
+
+The following regex pattern "^[a-zA-Z0-9]([._-](?![._-])|[a-zA-Z0-9]){3,18}[a-zA-Z0-9]$" was copied from [Java regex validate username examples](https://mkyong.com/regular-expressions/how-to-validate-username-with-regular-expression/)
+I used [Flickity](https://flickity.metafizzy.co/) to create carousels. The code from [flickity.js](static/js/flickity.js) was copied from [Flickity Github Page](https://github.com/metafizzy/flickity)
 
 ## Acknowledgements
 
