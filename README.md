@@ -3,8 +3,18 @@
 Whiskey Herald is a collaborative community where users can contribute to updating a database with information on all their favourite whiskeys. 
 This should facilitate community building and provide a meaningful experience to the user. A user can then leave reviews of their favourite whiskeys
  with CRUD functionality on their own reviews.
- The project should be of interest to new users looking to become a part of the whiskey enthusiast community, and 
- veteran users who want to maintain a strong community and share their own thoughts of their favourite whiskeys.
+ The project should be of interest to new users looking to become a part of the whiskey community, and 
+ current users who want to maintain a strong community and share their own thoughts of their favourite whiskeys.
+
+ The main goal of this project is to provide the user a venue where they can share with a community their favourite whiskeys and publish reviews of those whiskeys.
+Whiskey Herald is designed with user experience as one of our central goals. The information on Whiskey Herald is collected similarly to a wiki where the users can write and update the whiskeys on 
+our database. The user’s goals are fulfilled with a responsive and user centric design with intuitive navigation and a familiar website design. Upon registration, a user can add a whiskey to the 
+website that does not already exist on our database. The information on the Whiskey includes its name, type, an image address, and description. If the user thinks this information can be improved, 
+they can then update the whiskeys information. Only the “admin” has permission to delete whiskeys, to prevent malicious users from undoing the hard work of other users in providing information.
+ The user can read other users reviews and create, update and delete their own reviews. The user also has a profile page where they can update their username, profile icon, bio, password, or delete 
+ their account.
+My hope is that Whiskey Herald provides a great experience to as many whiskey lovers as possible.
+
 
 
 # UX
@@ -23,79 +33,87 @@ This should facilitate community building and provide a meaningful experience to
 -	Feel that use of this website is a meaningful use of my time. [2]
 -	Accessible design. [6]
 
-[1] Following Jakob’s law I will use Bootstrap to customise my website with well used and tested designs so that a user can immediately begin to accomplish their goals rather than risk them being overwhelmed with having to learn how to navigate an unfamiliar website.
+[1] My website uses a common layout. Navbar toggle icon is placed at the top right of the page. All navigation is contained within the sidenav. The search bar is present in the header at all times.
 [2] All users will be able to update the information on whiskeys so that the database is up to date and they may contribute to a community of like-minded individuals.
 [3] HTML and CSS will be passed through validators, JavaScript will be passed through a linter, and Python will be written in accordance with PEP8 practices.
 [4] The home page will feature some filtered whiskey lists that a user may scroll through.
 [5] The user will be provided with a search bar that will allow them to navigate the database for what they are looking for.
 [6] The website will adhere to good practices for ensuring that it is accessible for users with visual impairment.
 
+## UX Design Process
+
+### Strategy
+
+My initial idea was to have a website where a user could review whiskeys. My primary problem was that I would be unable to provide a full database with every whiskey there is,
+and I could not find an API by anyone else who has attempted that feat. Providing only a small number of whiskeys would ruin the user experience as they would never be able 
+to review a whiskey that is not in the database. I decided that it would be better to allow the users to add the whiskeys themselves to the database. Any whiskey currently no existing 
+can be added and then the user can review them. I believe this would enhance the feeling of being part of a community as all users contribute to the website and therefore each other’s 
+experience as more whiskeys become available to search for.
+
+### Scope
+
+#### Content Requirements
+
+I wanted to provide the user with the name, type, an image, a description, and average rating of each whiskey on the website. Included with each whiskey will be a list of reviews 
+for any user to read, and a form for a user to be able to submit their own review. I wanted the user to be able to create an identity by giving them a profile page that displays 
+their username, profile icon, bio, and a list of all reviews they have left.
+
+#### Functional Requirements
+
+drinks {}
+This collection contains all drinks that are displayed on the website. Any registered user can create and update documents within this collection. Only the website admin can delete these documents, so a malicious user cannot start deleting documents. 
+
+reviews {}
+This collection contains all the reviews written to the website. Any registered user can write a review, update their review, or delete it.
+
+users {}
+This collection contains all the data on registered users. A user writes to this collection when registering. These can delete their own document if they choose to delete their account. Some fields can be updated by the user.
+
+drinks {}
+_id | ObjectId | ObjectId of this document
+drink | String | The name of this particular whiskey.
+drink_lower | String | The name of this particular whiskey in lowercase.
+image_location | String | The image address of this whiskey.
+type | String | The type of this whiskey.
+description | String | A description of this whiskey.
+average_score | Int32 | The average score of this whiskey calculated from all reviews left for it. 1 <= average_score <= 5
+
+reviews {}
+_id | ObjectId | ObjectId of this document
+username | String | The username of this particular user.
+drink | Streing | The name of this particular whiskey.
+title | String | The title of this particular review.
+review | String | The review.
+score | Int32 | The score the user has given the whiskey. 1 <= score <= 5
+time | Date | The time this review was created, or updated.
+profile_pic | string | Font awesome icon.
+
+users {}
+_id | ObjectId | ObjectId of this document
+email | String | The email of this particular user.
+username | String | The username of this particular user.
+username_lower | string | The username of this particular user in lowercase.
+password | String | The hashed password of this user.
+bio | String | The bio of this user.
+profile_pic | String | The profile icon of this user. Font Awesome icon.
+
 # wireframes
 
 [View wireframes](WIREFRAMES.md)
 
-# database
-
-![whiskey herald database](static/README/database/whiskey_herald.png)
-
-## drinks_collection {}
-This collection contains all drinks that are displayed on the website. Any registered user can create and update documents within this collection. Only the website admin can delete these documents, so a malicious user cannot start deleting documents. 
-
-## reviews_collection {}
-This collection contains all the reviews written to the website. Any registered user can write a review, update their review, or delete it.
-
-## users_collection {}
-This collection contains all the data on registered users. A user writes to this collection when registering. These can delete their own document if they choose to delete their account. Some fields can be updated by the user.
-
-![drinks collection](static/README/database/drinks_collection.png)
-
-## _id 
-The ObjectId of this document.
-## drink 
-The name of the drink. E.g. Jameson’s
-## image_location
-The location of the image in the static directory.
-## type
-The whiskeys type e.g. Irish
-## description
-A description of the drink.
-## average_score
-This is the average score of the drink, its value is calculated by totaling the scores from each review and finding the mean.
-
-![reviews collection](static/README/database/reviews_collection.png)
-
-## _id
-The ObjectId of this document.
-## users_id
-The ObjectId of a users_collection document. So a unique user can be identified as the author of this review.
-## drinks_id
-The ObjectId of a drinks_collection document. So the review can be attached as unique to an individual drink.
-## title
-The title of this review
-## review
-The review itself.
-## score
-An integer value of 1,2,3,4,5. 5 star rating.
-
-![users collection](static/README/database/users_collection.png)
-
-## _id
-The ObjectId of this document.
-## email
-The users unique email.
-## username
-the users unique username
-## password
-the users hashed password.
-## bio
-The users biography.
-## profile_pic
-A path to the users profile picture in the static directory.
 
 # Credits
 ## Acknowledgements
 
-Laws of UX: Using Psychology to Design Better Products & Services – Jon Yablonski
-Flask Web Development: Developing Web Applications with Python – Miguel Grinberg
+- Thanks to the [Code Institute](https://codeinstitute.net/5-day-coding-challenge/?utm_term=code%20institute&utm_campaign=a%2526c_BR_IRL_Code_Institute&utm_source=adwords&utm_medium=ppc&hsa_net=adwords&hsa_tgt=kwd-319867646331&hsa_ad=417883010337&hsa_acc=8983321581&hsa_grp=62188641240&hsa_mt=e&hsa_cam=1578649861&hsa_kw=code%20institute&hsa_ver=3&hsa_src=g&gclid=CjwKCAjwwab7BRBAEiwAapqpTEswcNcDEOmOyi4fCT-PcSheBvn53AA4ovSOWQuIihlEAascEMo_nRoC5s4QAvD_BwE&gclsrc=aw.ds) for my coding lessons.
+- Thanks to Maria, Tomás, Conor, Niall, Aaron, and Katie for registering accounts and beta testing my website.
+- Thanks to the rest of my friends and family who tested the website during its development and helped me with their valuable feedback on the user design.
+- Thanks to my tutor [Caleb Mbakwe](https://www.linkedin.com/in/calebmbakwe/) for feedback on the project.
+- I got additional help from Stack [Overflow](https://stackoverflow.com/) and [W3](https://www.w3schools.com/) Schools.
+
+## Books I Read
+
+- [Laws of UX: Using Psychology to Design Better Products & Services – Jon Yablonski](https://www.amazon.co.uk/Laws-UX-Principles-Persuasive-Products/dp/149205531X/ref=sr_1_1?dchild=1&keywords=Laws+of+UX%3A+Using+Psychology+to+Design+Better+Products+%26+Services+%E2%80%93+Jon+Yablonski&qid=1610554449&sr=8-1)
+- [Flask Web Development 2nd Edition: Developing Web Applications with Python – Miguel Grinberg](https://www.amazon.co.uk/Flask-Web-Development-Miquel-Grinberg/dp/1491991739/ref=sr_1_2?dchild=1&keywords=Flask+Web+Development%3A+Developing+Web+Applications+with+Python+%E2%80%93+Miguel+Grinberg&qid=1610554477&sr=8-2)
 
 
