@@ -97,12 +97,69 @@ password | String | The hashed password of this user.
 bio | String | The bio of this user.
 profile_pic | String | The profile icon of this user. Font Awesome icon.
 
-# wireframes
+### Structure
+
+#### Interaction Design
+
+The user can find a whiskey by using a search bar that is always present in the website header. The whiskey name, description, and type are searched through with the value the user inputted.
+For example, perhaps the user is interested in whiskeys matured in oak casks, then this will search through the whiskey descriptions for use of the word oak and return those results. 
+Clicking one of the search results will display the whiskeys page. Some whiskeys are previewed on the index page below the hero image. 
+
+#### Information Architecture
+
+The information presented should be in a consistent format, so the user doesn’t feel confused when interacting with the website. For the whiskey page, the whiskey image, name, description,
+and average score are presented at the top, and all reviews displayed below, with the review form displayed below the reviews.
+
+### Skeleton
+
+#### wireframes
 
 [View wireframes](WIREFRAMES.md)
 
+# Testing
+
+All testing and validation is contained within a separate .md file. [View](TESTING.md)
+
 
 # Credits
+
+## Media
+
+The following icons were sourced from [Font Awesome](https://fontawesome.com/)
+- [fas fa-user](https://fontawesome.com/icons/user?style=solid)
+- [fas fa-user-tie](https://fontawesome.com/icons/user-tie?style=solid)
+- [fas fa-user-secret](https://fontawesome.com/icons/user-secret?style=solid)
+- [fas fa-user-ninja](https://fontawesome.com/icons/user-ninja?style=solid)
+- [fas fa-user-circle](https://fontawesome.com/icons/user-circle?style=solid)
+- [fas fa-snowboarding](https://fontawesome.com/icons/snowboarding?style=solid)
+- [fas fa-smile](https://fontawesome.com/icons/smile?style=solid)
+- [far fa-smile](https://fontawesome.com/icons/smile?style=regular)
+- [fas fa-skiing](https://fontawesome.com/icons/skiing?style=solid)
+- [fas fa-poo](https://fontawesome.com/icons/poo?style=solid)
+- [fas fa-taxi](https://fontawesome.com/icons/taxi?style=solid)
+- [fab fa-suse](https://fontawesome.com/icons/suse?style=brands)
+- [fas fa-dragon](https://fontawesome.com/icons/dragon?style=solid)
+- [fas fa-chess](https://fontawesome.com/icons/chess?style=solid)
+- [fas fa-radiation](https://fontawesome.com/icons/radiation?style=solid)
+- [fas fa-atom](https://fontawesome.com/icons/atom?style=solid)
+- [fas fa-dice](https://fontawesome.com/icons/dice?style=solid)
+- [fas fa-dice-d20](https://fontawesome.com/icons/dice-d20?style=solid)
+- [fas fa-ghost](https://fontawesome.com/icons/ghost?style=solid)
+- [fas fa-wave-square](https://fontawesome.com/icons/wave-square?style=solid)
+- [fas fa-hippo](https://fontawesome.com/icons/hippo?style=solid)
+- [fas fa-paw](https://fontawesome.com/icons/paw?style=solid)
+- [fas fa-dove](https://fontawesome.com/icons/dove?style=solid)
+- [fas da-cat](https://fontawesome.com/icons/cat?style=solid)
+- [fas fa-beer](https://fontawesome.com/icons/beer?style=solid)
+- [fas fa-glass-whiskey](https://fontawesome.com/icons/glass-whiskey?style=solid)
+- [fas fa-snowman](https://fontawesome.com/icons/snowman?style=solid)
+- [fas da-hat-wizard](https://fontawesome.com/icons/hat-wizard?style=solid)
+- [fas fa-microphone](https://fontawesome.com/icons/microphone?style=solid)
+- [fas fa-code](https://fontawesome.com/icons/code?style=solid)
+- [fas fa-search](https://fontawesome.com/icons/search?style=solid)
+- [fas fa-bars](https://fontawesome.com/icons/bars?style=solid)
+- [fas fa-times](https://fontawesome.com/icons/times?style=solid)
+
 ## Acknowledgements
 
 - Thanks to the [Code Institute](https://codeinstitute.net/5-day-coding-challenge/?utm_term=code%20institute&utm_campaign=a%2526c_BR_IRL_Code_Institute&utm_source=adwords&utm_medium=ppc&hsa_net=adwords&hsa_tgt=kwd-319867646331&hsa_ad=417883010337&hsa_acc=8983321581&hsa_grp=62188641240&hsa_mt=e&hsa_cam=1578649861&hsa_kw=code%20institute&hsa_ver=3&hsa_src=g&gclid=CjwKCAjwwab7BRBAEiwAapqpTEswcNcDEOmOyi4fCT-PcSheBvn53AA4ovSOWQuIihlEAascEMo_nRoC5s4QAvD_BwE&gclsrc=aw.ds) for my coding lessons.
