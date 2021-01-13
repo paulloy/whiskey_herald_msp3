@@ -1,5 +1,7 @@
 # Testing
 
+[return to README.md](README.md)
+
 ## Functionality
 
 ### base.html
@@ -36,6 +38,7 @@ Focused on link for add-whiskey.html and pressed enter key | display add-whiskey
 inputted a value that returns results | display search.html with all drinks that match the query. They should have an image, rating, and name. | pass
 Clicked one of the search results | display custom page for the whiskey I clicked on, the same name, rating, and image. Display whiskey.html/<whiskey_name> | Pass
 Focused on a search result and pressed enter key | display custom page for the whiskey I clicked on, the same name, rating, and image. Display whiskey.html/<whiskey_name> | pass
+Inputted a misspelled search value. e.g scatch instead of scotch | display "no results for scatch" Did you mean "scotch"? | fail
 
 ### profile.html
 
@@ -126,7 +129,7 @@ submitting new review | load whiskey.html/<whiskey_name> with a flash success me
 selecting link in flash message for users review | page will scroll down to the users updated review | pass
 select delete option for review | modal appears asking the user if they are sure they would like to delete their review | pass
 select cancel | the dleete review modal will hide | pass
-select delete | whiskey.html/<whiskey_name> will load with a flash success message informing the user that their review has been deleted" | pass
+select delete | whiskey.html/<whiskey_name> will load with a flash success message informing the user that their review has been deleted. The review should also not be seen on their profile page. | pass
 
 ### add-whiskey.html
 
@@ -154,6 +157,37 @@ Submitting valid form | User is returned to whiskey.html/<whiskey_name> with a f
 same actions as add-whiskey.html | all the same actions that were performed on add-whiskey.html generate the same responses on edit-whiskey.html | pass
 
 ## User Stories
+
+- [1]: Using the search bar located in the header, the user can type in the name of the whiskey they want to view. Submitting the form will bring the user to search.html where their
+search results will be displayed. If the whiskey they are searching for exists its image, name, and average 5 star score will be displayed. Clicking on the box that contains the image, name, and score
+will display whiskey.html/<whiskey_name>. A list of reviews for this whiskey will be found below the whiskey details. Whether this particular goal for an individual is acomplished though is dependent
+upon other users; the whiskey might not exist until someone adds it, or the whiskey might exist but have no reviews yet. As more users join the website this problem should become less of an issue for
+future users.
+- [2]: A user might search for a whiskey that does not exist. If no search results are found a message will display on search.html informing the user that their search has returned no results, and
+the user will be provided with a link to add-whiskey.html where they can add the whiskey they are looking for to the website. After the whiskey is added, the user will be redirected to whiskey.html/<whiskey_name>
+where they can now view, and review the whiskey they added. 
+- [3]: In the sidenav the first nav-item for a logged in your will be a link to their profile page. Below the bio is displayed a settings icon which when selected will give the user access to
+"update profile." Here the user may update their username, profile icon, and bio. At the top of this modal will be displayed a preview of the inputted username and selected profile icon. upon
+submitting this form, the profile page will be reloaded and a flash message will appear informing the user whether or not their profile has been updated.
+- [4]: In the users profile page, within the settings button they can select "update password." A modal will be displayed where the user can enter in their new password. Upon submission of the form, 
+their profile will be reloaded with a flashed message informing them if the update was successful or not.
+- [5]: Any action where a user is creating, updating, or deleting data from the database will return a flash message to inform the user if an action has been successful or not. If not successful
+a message will be provided as to why it was unsuccessful.
+- [6]: On the users profile page will be displayed a list of their reviews. Clicking on the title of their review will bring them to their review on whiskey.html/<whiskey_name>. At the top right of their
+review is an options button that if selected will display the options to update and delete their review. Selecting update will scroll the user to the review form at the bottom of the page, with all fields
+filled out ready to be updated. Upon submission, the page will reload and a flash message will inform the user that their review has been updated, and a link to their review will be included in the flash
+message so they don't have to scroll back down the page.
+- [7]: Following the same process as in [6], an option a user can select in the options menu of their review is to delete it. Selecting this button will display a modal with a message asking 
+the user if they would like to delete their review. If the user clicking this option by accident this modal gives them the opportunity to select cancel and exit this modal. If the user is sure
+they want to delete their review, then selecting the delete button in this modal will reload the page and display a flash message informing them that their review has been deleted. Returning
+to the reviews of the whiskey, or their profile page the user will notice that the review no longer exists.
+- [8]: When a user is on a whiskeys page, there will be an update button below the whiskeys type. Selecting this while not logged in will redirect the user to login.html. If a user is logged in
+then selecting this will bring the user to edit-whiskey.html/<whiskey_name>. The form is identical to that in add-whiskey.html. All input fields will have the whiskey information filled ready for 
+updating. If the user wishes to cancel, selecting the cancel button will bring them back to the whiskey page. If they want to continue with the update, then they will be returned to the updated whiskey page
+with a flash message iniforming them whether or not the update was successful.
+- [9]: On a whiskey page will be a form at the bottom where a user can write a review. At the top of the reviews will be a link that will scroll the page to the form if clicked, or the user can scroll 
+themselves. Submitting this form will reload the page and inform the user if their review has been submitted successfully. A link to the review will be included in the flash message so the user does not have
+the scroll down to the review themselves.
 
 ## Validation
 
