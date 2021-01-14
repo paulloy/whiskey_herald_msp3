@@ -56,7 +56,7 @@ As a user I want to:
 - [9] Leave a review of a whiskey.
 
 
-[User Story Testing](TESTING.md#User-Stories)
+[User Story Testing](TESTING.md#user-stories)
 
 ## UX Design Process
 
@@ -144,6 +144,22 @@ and average score are presented at the top, and all reviews displayed below, wit
 
 All testing and validation is contained within a separate .md file. [View](TESTING.md)
 
+# Technologies Used
+
+-	[HTML5](https://www.w3schools.com/html/default.asp) - Used for structuring and presenting content.
+-	[CSS3](https://www.w3schools.com/css/default.asp) - Used to style the HTML in accordance with the project wireframes.
+-	[JavaScript](https://www.w3schools.com/js/default.asp) - Used to make the project interactive.
+-	[Python](https://www.python.org/) - Used to handle the backend.
+-	[JQuery](https://jquery.com/) - Used to simplify DOM manipulation and JavaScript.
+-	[SASS](https://sass-lang.com/) - Used for creating CSS as it is more readable with the ability to nest elements like in HTML.
+-   [Flask](https://flask.palletsprojects.com/en/1.1.x/) - Used with python and [extra modules](requirements.txt) to develop my application backend.
+-	[Google Chrome Developer Tools](https://developers.google.com/web/tools/chrome-devtools/) - Aided with responsive design, accessibility, and debugging.
+-	[Gitpod](https://www.gitpod.io/) - The project was developed on the Gitpod IDE.
+-	[Git](https://git-scm.com/) - Used to track website changes.
+-	[GitHub](https://github.com/) - This hosted my repository and changes made with Git.
+-   [MongoDB](https://www.mongodb.com/) - Used to host my database.
+-   [Heroku](https://www.heroku.com/) - Used to deploy my live website.
+-   [Flickity](https://flickity.metafizzy.co/) - Used for creating carousels.
 
 # Credits
 
@@ -183,6 +199,7 @@ The following icons were sourced from [Font Awesome](https://fontawesome.com/)
 - [fas fa-search](https://fontawesome.com/icons/search?style=solid)
 - [fas fa-bars](https://fontawesome.com/icons/bars?style=solid)
 - [fas fa-times](https://fontawesome.com/icons/times?style=solid)
+- [fas fa-cogs](https://fontawesome.com/icons/cogs?style=solid)
 
 ## Content
 
