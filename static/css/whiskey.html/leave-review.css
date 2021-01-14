@@ -23,6 +23,7 @@
   margin-right: auto;
   font-size: 1.1rem;
   font-family: "Montserrat", sans-serif;
+  border-radius: 0.5rem;
 }
 #leave-review label {
   font-size: 1.3rem;
@@ -52,8 +53,9 @@
   height: 10rem;
 }
 #leave-review button {
-  margin-top: 1rem;
-  width: 10rem;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+  width: 16rem;
   height: 2.5rem;
   font-family: "Montserrat", sans-serif;
   font-size: 1.2rem;
@@ -62,7 +64,7 @@
   margin-left: auto;
 }
 #leave-review a {
-  margin-top: 1rem;
+  margin-top: 1.5rem;
   background-color: #dae8ec;
   padding-top: 0.25rem;
   padding-bottom: 0.25rem;

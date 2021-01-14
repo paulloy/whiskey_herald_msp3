@@ -95,7 +95,7 @@
                             <p class="time">{{ moment(review['time']).format('h:mm a. Do MMM YYYY') }}</p>
                         {% if session['username'] == review['username'] %}
                             <div id="edit-delete" class="dropdown">
-                                <button class="btn btn-secondary" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false" aria-label="edit or delete review">
+                                <button type="button" id="dropdownMenuButton" class="btn btn-primary" data-bs-toggle="dropdown" aria-expanded="false" aria-label="edit or delete review">
                                     <i class="fas fa-ellipsis-h"></i>
                                 </button>
                                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">

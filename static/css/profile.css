@@ -31,6 +31,8 @@
   padding-right: 0.5rem;
 }
 #modal #update-profile div input {
+  border-radius: 0.5rem;
+  padding: 0.5rem;
   width: 90%;
 }
 #modal #update-profile div div:first-of-type {
@@ -109,7 +111,9 @@
 #modal #update-profile div textarea {
   resize: none;
   min-height: 10rem;
+  border-radius: 0.5rem;
   width: 90%;
+  padding: 0.5rem;
 }
 #modal #update-profile div em {
   font-size: 0.9rem;
@@ -145,6 +149,8 @@
 }
 #modal #update-password div input {
   width: 90%;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
 }
 #modal #update-password div button {
   width: 18rem;
@@ -242,6 +248,10 @@
 #bio div:first-of-type p {
   text-align: center;
   background-color: white;
+  width: 90%;
+  padding: 0.5rem;
+  margin-left: auto;
+  margin-right: auto;
 }
 #bio div:first-of-type i {
   font-size: 15rem;
@@ -297,8 +307,13 @@
   margin: 0;
   color: #212529;
 }
+#reviews div {
+  border-top: 0.1rem solid rgba(0, 0, 0, 0.2);
+  border-bottom: 0.1rem solid rgba(0, 0, 0, 0.2);
+}
 #reviews div div {
   margin-top: 0.5rem;
+  border: 0;
 }
 #reviews div div a {
   display: inline-block;
@@ -313,6 +328,11 @@
   font-size: 1.5rem;
 }
 #reviews div div p:last-of-type {
+  margin-top: 1rem;
+  font-weight: 500;
+  font-size: 1.2rem;
+}
+#reviews div div a:last-of-type {
   margin-top: 1rem;
   font-weight: 500;
   font-size: 1.2rem;

@@ -146,7 +146,7 @@
   margin-bottom: 1rem;
   width: 80%;
   margin-left: auto;
-  margin-right: 1rem;
+  margin-right: auto;
   border: 0.2rem solid rgba(0, 0, 0, 0.3);
   font-size: 1.3rem;
   font-family: "Noto Sans", sans-serif;
@@ -240,7 +240,7 @@
     margin-left: 0.5rem;
   }
   #whiskey-details div:nth-of-type(3) a {
-    width: 50%;
+    width: 16rem;
     margin-right: auto;
   }
 }

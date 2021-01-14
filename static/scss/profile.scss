@@ -42,6 +42,8 @@ $color5: #1d1611;
             padding-left: 0.5rem;
             padding-right: 0.5rem;
             input {
+                border-radius: 0.5rem;
+                padding: 0.5rem;
                 width: 90%;
             }
             div:first-of-type {
@@ -121,7 +123,9 @@ $color5: #1d1611;
             textarea {
                 resize: none;
                 min-height: 10rem;
+                border-radius: 0.5rem;
                 width: 90%;
+                padding: 0.5rem;
             }
             em {
                 font-size: 0.9rem;
@@ -157,6 +161,8 @@ $color5: #1d1611;
             }
             input {
                 width: 90%;
+                border-radius: 0.5rem;
+                padding: 0.5rem;
             }
             button {
                 width: 18rem;
@@ -257,6 +263,10 @@ $color5: #1d1611;
         p {
             text-align: center;
             background-color: white;
+            width: 90%;
+            padding: 0.5rem;
+            margin-left: auto;
+            margin-right: auto;
         }
         i {
             font-size: 15rem;
@@ -314,8 +324,11 @@ $color5: #1d1611;
         }
     }
     div {
+        border-top: 0.1rem solid rgba(0, 0, 0, 0.2);
+        border-bottom: 0.1rem solid rgba(0, 0, 0, 0.2);
         div {
             margin-top: 0.5rem;
+            border: 0;
             a {
                 display: inline-block;
                 font-size: 1.5rem;
@@ -329,6 +342,11 @@ $color5: #1d1611;
                 font-size: 1.5rem;
             }
             p:last-of-type {
+                margin-top: 1rem;
+                font-weight: 500;
+                font-size: 1.2rem;
+            }
+            a:last-of-type {                
                 margin-top: 1rem;
                 font-weight: 500;
                 font-size: 1.2rem;
