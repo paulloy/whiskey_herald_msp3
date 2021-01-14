@@ -514,12 +514,12 @@ def delete_account(username):
 
 
 # search.html
-@app.route("/search", methods=["GET", "POST"])
+@app.route("/search")
 def search():
-    query = request.form.get("search")
+    query = request.args.get("search")
     results = list(data.drinks.find({"$text": {"$search": query}}))
 
-    searched_value = request.form.get("search")
+    searched_value = request.args.get("search")
 
     return render_template("search.html",
                            results=results,
@@ -548,4 +548,4 @@ if __name__ == "__main__":
     app.run(
         host=os.environ.get("IP"),
         port=int(os.environ.get("PORT")),
-        debug=True)
+        debug=False)
