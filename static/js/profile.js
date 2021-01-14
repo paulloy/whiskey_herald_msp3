@@ -1,6 +1,7 @@
 /*globals $:false */
 /*jshint esversion: 6 */
 
+// profile icon selection. selected icon is previewed in #profile-pic
 $("#select-pic li").click(function() {    
     let img = $(this).html();
     $(this).attr("class", "selected");
@@ -18,6 +19,7 @@ $("#select-pic li").keypress(function(e) {
     }
 });
 
+// The users current profile icon is prepended to <ul> and highlighted with .select class
 for (let i = 0; i < $("#select-pic").children().length; i++) {
     if ($("#select-pic").children()[i].innerHTML === document.getElementById("profile-pic").value) {
         $("#select-pic").children()[i].setAttribute("class", "selected");
@@ -25,10 +27,12 @@ for (let i = 0; i < $("#select-pic").children().length; i++) {
     }
 }
 
+// The users new username is previewed in #current-username
 document.getElementById("username").addEventListener("input", function() {
     document.getElementById("current-username").innerText = document.getElementById("username").value;
 });
 
+// open #update-profile
 $("#open-update-profile").click(function() {
     $("#modal, #update-profile").css({"display": "flex"});
     $("#select-pic").show();
@@ -42,6 +46,7 @@ $("#open-update-profile").keypress(function(e) {
     }
 });
 
+// open #update-password
 $("#open-update-password").click(function() {
     $("#modal, #update-password").css({"display": "flex"});
     $("#update-profile, #delete-account").hide();
@@ -53,6 +58,7 @@ $("#open-update-password").keypress(function(e) {
     }
 });
 
+// open #delete-password
 $("#open-delete-account").click(function() {
     $("#modal, #delete-account").css({"display": "flex"});
     $("#update-password, #update-profile").hide();
@@ -64,6 +70,7 @@ $("#open-delete-account").keypress(function(e) {
     }
 });
 
+// close #modal and its children
 $(".cancel").click(function() {
     $("#modal, #update-profile, #update-password, #delete-account").hide();
 });

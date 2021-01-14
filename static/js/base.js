@@ -1,13 +1,13 @@
 /*globals $:false */
 /*jshint esversion: 6 */
 
-// Sidenav
-
+// sidenav
 let i = 0;
 let openNav = '<i class="fas fa-bars"></i>';
 let closeNav = '<i class="fas fa-times"></i>';
 let button = document.getElementById('navbar-toggle');
 
+// This function is responsible for toggling the sidenav
 function navbar() {
     i++;
     let j = i % 2;
@@ -34,7 +34,6 @@ $('#navbar-toggle, #navbar-background').keypress(function(e) {
         navbar();
     }
 });
-
 
 // close flashed messages
 $('#close-flash').click(function () {
