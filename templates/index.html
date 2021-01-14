@@ -10,17 +10,19 @@
 {% block content %}
 
 <div id="hero-image">
-    <img src="{{ url_for('static', filename='img/hero-image.jpg') }}" alt="hero image">
     <div>
-        <h2>A Community for<br><em>Whiskey Lovers</em></h2>
+        <img src="{{ url_for('static', filename='img/hero-image.jpg') }}" alt="hero image">
         <div>
-            {% if session %}
-                <p>Welcome<br>{{ session['profile_pic']|safe }} {{ session['username'] }}</p>
-            {% else %}
-                <p>Register an account</p>
-            {% endif %}
-            <p>Share your favourite whiskeys</p>
-            <p>Review your favourite whiskeys</p>
+            <h2>A Community for<br><em>Whiskey Lovers</em></h2>
+            <div>
+                {% if session %}
+                    <p>1. Welcome<br>{{ session['profile_pic']|safe }} {{ session['username'] }}</p>
+                {% else %}
+                    <p>1. Register an account</p>
+                {% endif %}
+                <p>2. Share your favourite whiskeys</p>
+                <p>3. Review your favourite whiskeys</p>
+            </div>
         </div>
     </div>
 </div>

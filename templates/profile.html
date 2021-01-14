@@ -108,7 +108,7 @@
         {% if session["username"] == userDetails["username"] %}
         <div class="dropdown">
             <button class="btn btn-primary" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false" aria-label="profile settings">
-                <i class="fas fa-cogs"></i>
+                <i class="fas fa-cogs"></i> Settings
             </button>
             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                 <li id="open-update-profile" tabindex="0">update profile</li>
@@ -139,8 +139,12 @@
                         {% elif doc['score'] == 5 %}
                             <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                         {% endif %}
-                    </p>                    
-                    <p>{{ doc['title'] }}</p>
+                    </p> 
+                    {% if session["username"] == userDetails["username"] %}    
+                        <a href="{{ url_for('whiskey', whiskey_name = doc['drink']) }}#edit-delete">{{ doc['title'] }}</a>
+                    {% else %}               
+                        <p>{{ doc['title'] }}</p>
+                    {% endif %}
                 </div>
             </div>
         {% endfor %}
