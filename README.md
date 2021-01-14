@@ -55,7 +55,6 @@ As a user I want to:
 - [8] Fix inaccurate information I have seen about one of my favourite whiskeys.
 - [9] Leave a review of a whiskey.
 
-
 [User Story Testing](TESTING.md#user-stories)
 
 ## UX Design Process
@@ -138,11 +137,14 @@ and average score are presented at the top, and all reviews displayed below, wit
 
 #### wireframes
 
-[View wireframes](WIREFRAMES.md)
+[Initial wireframe design](static/img/README/first-wireframe.pdf)
+[Updated Wireframe](static/img/README/updated-wireframe.pdf)
+
+### Surface
 
 # Testing
 
-All testing and validation is contained within a separate .md file. [View](TESTING.md)
+All testing and validation is contained within a separate .md file. [View TESTING.md](TESTING.md)
 
 # Technologies Used
 
@@ -201,10 +203,50 @@ The following icons were sourced from [Font Awesome](https://fontawesome.com/)
 - [fas fa-times](https://fontawesome.com/icons/times?style=solid)
 - [fas fa-cogs](https://fontawesome.com/icons/cogs?style=solid)
 
+## Deployment
+
+### Live Deployment
+
+This project was deployed on [Heroku]((https://www.heroku.com/). The address of my live project is [http://whiskey-herald.herokuapp.com/](http://whiskey-herald.herokuapp.com/)
+
+1. Firstly a requirements.txt file is needed so Heroku knows what dependencies must be installed to run this project. The following command in the terminal will create a .txt file for this project.
+`pip3 freeze --local > requirements.txt`
+1. A Procfile is needed so Heroku knows which file runs the app and how it should be run. The following command in the terminal will generate a Procfile.
+`echo web: python app.py > Procfile`
+1. Login to your Heroku account, select "New" and in the dropdown select "Create new app."
+1. Create a unique app name and choose the region closest to you. In my case that is Europe. Select "Create app."
+1. The easiest method of deployment is to set up automatic deployment from the github repository.
+1. In the "Deploy" section of Heroku, select Github as the deployment method and connect the repository. Login to your Github account and search for the repository you wish
+to connect, and deploy the master branch.
+1. Before enabling automatic deployment, environment variables must be added so that Heroku can run the app.
+1. Go to the Settings tab and select "Reveal Config Vars."
+1. The following config vars are used in this project:
+    - IP
+    - PORT
+    - SECRET_KEY
+    - MONGO_URI
+    - MONGO_DBNAME
+1. Return to the deploy tab after the Procfile and requirements.txt have been committed.
+1. Automatic deployment can now be enabled.
+1. Select "deploy branch" and wait for Heroku to build the website.
+1. When the message "Your app was successfully deployed" appears, clicking "view" will allow you to view the deployed website.
+
+### Local Deployment
+
+1. Open your favourite IDE with Git installed.
+1. Click on the Code button at the top of this repository.
+1. Copy the HTTPS URL.
+1. Open a new terminal in your IDE and use the command "git clone" followed by the copied url.
+`git clone https://github.com/paulloy/whiskey_herald_msp3.git`
+1. Click enter and wait for your local clone to download.
+1. You should now have access to a clone of this project.
+
 ## Content
 
 The following regex pattern "^[a-zA-Z0-9]([._-](?![._-])|[a-zA-Z0-9]){3,18}[a-zA-Z0-9]$" was copied from [Java regex validate username examples](https://mkyong.com/regular-expressions/how-to-validate-username-with-regular-expression/)
 I used [Flickity](https://flickity.metafizzy.co/) to create carousels. The code from [flickity.js](static/js/flickity.js) was copied from [Flickity Github Page](https://github.com/metafizzy/flickity)
+
+Wireframes were developed using [JustInMind](https://www.justinmind.com/)
 
 ## Acknowledgements
 
