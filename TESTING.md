@@ -78,7 +78,7 @@ informing them that their review has been deleted.
 ![user story image 8.1](static/img/TESTING/user-stories/8.1.png)
 ![user story image 8.2](static/img/TESTING/user-stories/8.2.png)
 - If a user is logged in then selecting this will bring the user to edit-whiskey.html/<whiskey_name>. The form is identical to that in add-whiskey.html. All input fields will have the whiskey 
-information filled ready for updating. 
+information filled ready for updating.
 ![user story image 8.3](static/img/TESTING/user-stories/8.3.png)
 - If the user wishes to cancel, selecting the cancel button will bring them back to the whiskey page. If they want to continue with the update, then they will be returned to the updated whiskey page
 with a flash message informing them whether or not the update was successful.
@@ -164,7 +164,7 @@ clicking delete button within delete account | register.html should load with fl
 focusing on delete button within delete account and pressing enter | register.html should load with flash success message informing the user that their account has been successfully deleted. | pass
 visiting a profile page with no reviews | a message should be displayed showing that the user has left no reviews yet | pass
 visting a profile page for a user who has left reviews. | All reviews by the user should be displayed with the whiskey name, rating, and review title | pass
-clicking whiskey name in review | display the whiskeys page. Whiskey.html/<whiskey _name> | pass
+clicking whiskey name in review | display the whiskeys page. Whiskey.html/<whiskey_name> | pass
 
 ### register.html
 
@@ -248,21 +248,95 @@ same actions as add-whiskey.html | all the same actions that were performed on a
 
 ## Validation
 
+
+
 ### HTML
 
 All HTML was validated at [W3C Markup Validation Service](https://validator.w3.org/)
+
+#### add-whiskey.html
+
+The following validation errors were discovered and then fixed during development.
+
+![whiskey5](static/img/TESTING/html-validation/whiskey5.png)
+
+#### login.html
+
+The following validation errors were discovered and then fixed during development.
+
+![login1](static/img/TESTING/html-validation/login1.png)
+
+#### profile.html
+
+The following validation errors were discovered and then fixed during development.
+
+![profile1](static/img/TESTING/html-validation/profile1.png)
+![profile2](static/img/TESTING/html-validation/profile2.png)
+![profile3](static/img/TESTING/html-validation/profile3.png)
+
+#### whiskey.html
+
+The following validation errors were discovered and then fixed during development.
+
+![whiskey1](static/img/TESTING/html-validation/whiskey1.png)
+![whiskey2](static/img/TESTING/html-validation/whiskey2.png)
+![whiskey3](static/img/TESTING/html-validation/whiskey3.png)
+![whiskey4](static/img/TESTING/html-validation/whiskey4.png)
+
+#### Deployed Website
+
+The deployed website was validated near the end of the project. The following validation error was discovered and has been fixed.
+
+![add-whiskey1](static/img/TESTING/html-validation/add-whiskey1.png)
 
 ### CSS
 
 All CSS was validated at [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/)
 
+#### add-whiskey.css
+
+The following validation errors were discovered and then fixed during development.
+
+![add-whiskey1.css](static/img/README/css-validation/add-whiskey1-css.png)
+
+#### reviews.css
+
+The following validation errors were discovered and then fixed during development.
+
+![reviews1.css](static/img/README/css-validation/reviews1-css.png)
+
 ### JavaScript
 
 All JavaScript was validated at [JSHint](https://jshint.com/)
 
+#### add-whiskey.js
+
+The following validation errors were discovered and then fixed during development.
+
+![add-whiskey.js](static/img/README/js-validation/add-whiskey-js.png)
+
+#### base.js
+
+The following validation errors were discovered and then fixed during development.
+
+![base.js](static/img/README/js-validation/base.png)
+
+#### profile.js
+
+The following validation errors were discovered and then fixed during development.
+
+![profile.js](static/img/README/js-validation/profile-js.png)
+
+#### whiskey.js
+
+The following validation errors were discovered and then fixed during development.
+
+![whiskey.js](static/img/README/js-validation/whiskey-js.png)
+
 ### Python
 
-All python was validated according to PEP8 standards at [PEP8 online](http://pep8online.com/)
+All python was validated according to PEP8 standards at [PEP8 online](http://pep8online.com/) with the only errors being that the code exceeded the max
+character length. These have been fixed.
 
 ## Bugs
 
@@ -270,6 +344,8 @@ On whiskey.html I found a bug during user story testing that I have not been abl
 When a user tries to update their review, some symbols that are inputted into the #leave-review form will be encoded.
 ![encode error1](static/img/TESTING/encode-error1.png)
 ![encode error2](static/img/TESTING/encode-error2.png)
+
+
 
 
 
