@@ -2,7 +2,7 @@ import os
 
 
 MONGO_URI = os.environ.get("MONGO_URI")
-DATABASE = "whiskey_herald"
+DATABASE = os.environ.get("MONGO_DBNAME")
 
 
 def mongo_connect(url):
