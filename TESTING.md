@@ -366,6 +366,19 @@ This is because the #edit-review button will only be rendered by Jinja when a lo
 #edit-review will not render. These console errors have not been fixed yet as they do not affect the functionality of the website. These errors will not occur when the elements that the event listeners
 are listening for are rendered by jinja. Patching these errors will be part of a future update.
 
+## Responsive Design
+
+Google Chrome Developer tools were used throughout the development to test the responsive design of the project.
+The deployed website is fully responsive from 320px to 3840px.
+
+The responsive design was also tested at [Am I Responsive?](http://ami.responsivedesign.is/)
+
+## Lighthouse
+
+I used Lighthouse in Chrome Developer Tools to test my website performance, accessiblity, best practices, and SEO. The main issue was performance. This is largely due to most images being loaded 
+from external sources. In a future update it would be best to allow users to save images directly to the website, and have a limit to the size of the uploaded image so performance can be improved.
+
+![lighthouse test](static/img/TESTING/lighthouse.png)
 
 
 
