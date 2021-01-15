@@ -12,7 +12,6 @@ $color3: #b48464;
 $color4: #572313;
 $color5: #1d1611;
 
-$font1: 'Montserrat', sans-serif;
 $font2: 'Source Sans Pro', sans-serif;
 
 #leave-review {
@@ -27,7 +26,6 @@ $font2: 'Source Sans Pro', sans-serif;
     text-align: center;
     color: $color5;
     h3 {     
-        font-family: $font1;
         font-weight: 600;
         padding-top: 0.25rem;
         padding-bottom: 0.25rem;
@@ -38,7 +36,6 @@ $font2: 'Source Sans Pro', sans-serif;
         margin-left: auto;
         margin-right: auto;
         font-size: 1.1rem;
-        font-family: $font1;
         border-radius: 0.5rem;
         
     }
@@ -46,7 +43,6 @@ $font2: 'Source Sans Pro', sans-serif;
         font-size: 1.3rem;
         margin-top: 1rem;
         font-weight: 600;
-        font-family: $font1;
     }
     #rating {
         font-size: 2.5rem;
@@ -74,7 +70,6 @@ $font2: 'Source Sans Pro', sans-serif;
         margin-bottom: 0.5rem;
         width: 16rem;
         height: 2.5rem;
-        font-family: $font1;
         font-size: 1.2rem;
         font-weight: 500;
         margin-right: auto;
