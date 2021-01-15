@@ -248,8 +248,6 @@ same actions as add-whiskey.html | all the same actions that were performed on a
 
 ## Validation
 
-
-
 ### HTML
 
 All HTML was validated at [W3C Markup Validation Service](https://validator.w3.org/)
@@ -333,6 +331,18 @@ The following validation errors were discovered and then fixed during developmen
 
 ![whiskey.js](static/img/README/js-validation/whiskey-js.png)
 
+The deployed project has one validation error where the object "userReview" is undefined. This has been ignored as this object is defined in whiskey.html as the values for its keys
+use jinja to input their values. The code on whiskey.html has one validation error which is that userReview is unused. This object is called in whiskey.js. It was easier to write the code for userReview
+in whiskey.html than place it in an external file. Comments have been added in whiskey.html and whiskey.js to highlight this.
+
+#### flickity.js
+
+There are some validation errors that have not been fixed.
+One undefined variable: Flickity.
+One unused variable: flky.
+
+These have not been fixed as this file is used to initalise the flickity carousels that are used on index.html and is not custom code of my own.
+
 ### Python
 
 All python was validated according to PEP8 standards at [PEP8 online](http://pep8online.com/) with the only errors being that the code exceeded the max
@@ -344,6 +354,17 @@ On whiskey.html I found a bug during user story testing that I have not been abl
 When a user tries to update their review, some symbols that are inputted into the #leave-review form will be encoded.
 ![encode error1](static/img/TESTING/encode-error1.png)
 ![encode error2](static/img/TESTING/encode-error2.png)
+
+
+Some console errors are present on the website. This is caused by an event listener unable to find an element. This is due to some elements not being rendered by Jinja.
+
+For example on whiskey.html, the following console error will appear:
+
+`whiskey.js:39 Uncaught TypeError: Cannot read property 'addEventListener' of null at whiskey.js:39`
+
+This is because the #edit-review button will only be rendered by Jinja when a logged in user has left a review on a whiskey. When a user is not logged in, or has not left a review on a whiskey,
+#edit-review will not render. These console errors have not been fixed yet as they do not affect the functionality of the website. These errors will not occur when the elements that the event listeners
+are listening for are rendered by jinja. Patching these errors will be part of a future update.
 
 
 
