@@ -160,7 +160,7 @@
 
 #whiskey-details::after {
   content: "";
-  background: url("https://c.stocksy.com/a/H4L900/z9/2225941.jpg");
+  background: url("../../img/whiskey-details-background.jpg");
   opacity: 0.05;
   top: 0;
   left: 0;

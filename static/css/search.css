@@ -6,11 +6,11 @@ p:last-of-type {
   font-size: 1.2rem;
   padding: 0.5rem;
   text-align: center;
-  border: 0.4rem solid black;
+  border: 0.2rem solid black;
 }
 
 #searched {
-  border: 0.4rem solid black;
+  border: 0.2rem solid black;
   background-color: #dae8ec;
   margin-top: 1rem;
   margin-bottom: 1rem;
@@ -20,6 +20,7 @@ p:last-of-type {
   margin-left: auto;
   margin-right: auto;
   color: #1d1611;
+  text-align: center;
 }
 
 #results {

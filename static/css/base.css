@@ -1,4 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Fira+Sans+Extra+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 html {
   scroll-behavior: smooth;
@@ -21,11 +20,6 @@ body {
   margin-right: auto;
 }
 
-@media only screen and (max-width: 750px) {
-  .width {
-    width: 100%;
-  }
-}
 #background-image {
   height: 100vh;
   width: 100vw;
@@ -52,6 +46,7 @@ body {
   margin-right: auto;
   height: auto;
   margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
   display: flex;
   align-items: center;
   border-radius: 0;
@@ -196,40 +191,6 @@ footer p {
   border: 0 !important;
 }
 
-@media only screen and (max-width: 992px) {
-  #navbar-toggle {
-    right: 0.5rem !important;
-    top: 0.5rem !important;
-  }
-
-  #header {
-    padding: 0;
-    height: 7.5rem;
-  }
-  #header div:first-of-type {
-    width: 100%;
-    text-align: center;
-  }
-  #header div:first-of-type div h1 a {
-    font-size: 2.25rem;
-    width: 100%;
-    margin-top: 0.5rem;
-    margin-bottom: 0;
-  }
-  #header div:last-of-type form {
-    margin-bottom: 0.5rem;
-  }
-}
-@media only screen and (max-width: 1564px) {
-  #flash {
-    width: 90%;
-  }
-}
-@media only screen and (max-width: 1250px) {
-  #flash {
-    width: 100%;
-  }
-}
 #navbar-background {
   position: fixed;
   top: 0;
@@ -290,6 +251,45 @@ footer p {
   margin-bottom: 5rem;
 }
 
+@media only screen and (max-width: 1564px) {
+  #flash {
+    width: 90%;
+  }
+}
+@media only screen and (max-width: 1250px) {
+  #flash {
+    width: 100%;
+  }
+}
+@media only screen and (max-width: 992px) {
+  #navbar-toggle {
+    right: 0.5rem !important;
+    top: 0.5rem !important;
+  }
+
+  #header {
+    padding: 0;
+    height: 7.5rem;
+  }
+  #header div:first-of-type {
+    width: 100%;
+    text-align: center;
+  }
+  #header div:first-of-type div h1 a {
+    font-size: 2.25rem;
+    width: 100%;
+    margin-top: 0.5rem;
+    margin-bottom: 0;
+  }
+  #header div:last-of-type form {
+    margin-bottom: 0.5rem;
+  }
+}
+@media only screen and (max-width: 750px) {
+  .width {
+    width: 100%;
+  }
+}
 @media only screen and (max-width: 600px) {
   #sidenav {
     width: 100vw;
