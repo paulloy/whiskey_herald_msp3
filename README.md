@@ -1,7 +1,7 @@
 # Whiskey Herald
 ## Code Institute: Milestone Project 3, Data Centric Development
 
-![Whiskey Herald](static/img/responsive.png)
+![Whiskey Herald](static/img//README/responsive.png)
 
 The main goal of this project is to provide the user with a venue where they can share with a community their favourite whiskeys and publish reviews of those whiskeys.
 Whiskey Herald is designed with user experience as one of our central goals. The information on Whiskey Herald is collected similarly to a wiki where the users can write and update the whiskeys on 
@@ -355,6 +355,8 @@ The following font was acquired from [Google Fonts](https://fonts.google.com/):
 Bopotstrap grid classes were acquired from [Bootstrap Grid System](https://getbootstrap.com/docs/4.0/layout/grid/)
 Bootstrap .btn classes were acquired from [Bootstrap Buttons](https://getbootstrap.com/docs/4.0/components/buttons/#button-tags)
 Bootstrap .alert classes were acquired from [Bootstrap Alerts](https://getbootstrap.com/docs/4.0/components/alerts/)
+
+The image at the top of this README was produced on [Am I Responsive?](http://ami.responsivedesign.is/)
 
 ## Acknowledgements
 
