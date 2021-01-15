@@ -387,6 +387,16 @@ This is because the #edit-review button will only be rendered by Jinja when a lo
 #edit-review will not render. These console errors have not been fixed yet as they do not affect the functionality of the website. These errors will not occur when the elements that the event listeners
 are listening for are rendered by jinja. Patching these errors will be part of a future update.
 
+In the deployed project I found a bug I was not able to fix on time.
+When the admin tries selecting the #admin-delete-whiskey button while there are no reviews, the #delete-whiskey modal will not display.
+- ![delete bug 1](static/img/TESTING/delete-bug1.png)
+
+Selecting #admin-delete-review will display #delete-whiskey only after the admin has left a review.
+- ![delete bug 2](static/img/TESTING/delete-bug2.png)
+- ![delete bug 3](static/img/TESTING/delete-bug3.png)
+
+Due to time constraints I have been unable to find a solution to this bug. This will be patched in a future update.
+
 ## Responsive Design
 
 Google Chrome Developer tools were used throughout the development to test the responsive design of the project.
