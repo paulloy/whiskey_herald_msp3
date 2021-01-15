@@ -41,7 +41,7 @@ My website is deployed live at [http://whiskey-herald.herokuapp.com/](http://whi
 - [Credits](README.md#credits)
     - [Media](README.md#media)
     - [Content](README.md#content)
-    - [Acknowledgements](README.md#)
+    - [Acknowledgements](README.md#acknowledgements)
     - [Books I read](README.md#books-i-read)
 
 # UX
