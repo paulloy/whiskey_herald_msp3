@@ -44,7 +44,7 @@
                 <p>Type: <em>{{ whiskeyDetails.type }}</em></p>
                 <a href="{{ url_for('edit_whiskey', whiskey_name = whiskeyDetails['drink']) }}" class="btn btn-primary">UPDATE</a>
                 {% if session["username"] == "admin" %}
-                    <a id="admin-delete-whiskey" type="button" role="button" class="btn btn-danger" tabindex="0">DELETE</a>
+                    <a id="admin-delete-whiskey" role="button" class="btn btn-danger" tabindex="0">DELETE</a>
                 {% endif %}
         </div>
     </div>
