@@ -118,6 +118,8 @@ focused on Home within #sidenav and pressed enter | display index.html | pass
 focused on Add a Whiskey within #sidenav while not logged in and pressed enter | display add-whiskey.html and flash message | pass
 focused on Add a Whiskey within #sidenav while logged in and pressed enter | display add-whiskey.html and flash message | pass
 
+All failed tests have been patched and now pass in the deployed project.
+
 ### search.html
 
 action taken | expected result | pass/fail
@@ -129,6 +131,8 @@ inputted a value that returns results | display search.html with all drinks that
 Clicked one of the search results | display custom page for the whiskey I clicked on, the same name, rating, and image. Display whiskey.html/<whiskey_name> | Pass
 Focused on a search result and pressed enter key | display custom page for the whiskey I clicked on, the same name, rating, and image. Display whiskey.html/<whiskey_name> | pass
 Inputted a misspelled search value. e.g scatch instead of scotch | display "no results for scatch" Did you mean "scotch"? | fail
+
+Only the final test still fails in the deployed website as I have been unable to find a spell checking module. This has been added as a future feature.
 
 ### profile.html
 
@@ -165,6 +169,8 @@ focusing on delete button within delete account and pressing enter | register.ht
 visiting a profile page with no reviews | a message should be displayed showing that the user has left no reviews yet | pass
 visting a profile page for a user who has left reviews. | All reviews by the user should be displayed with the whiskey name, rating, and review title | pass
 clicking whiskey name in review | display the whiskeys page. Whiskey.html/<whiskey_name> | pass
+
+All failed tests have been patched and now pass in the deployed project.
 
 ### register.html
 
@@ -220,6 +226,8 @@ selecting link in flash message for users review | page will scroll down to the 
 select delete option for review | modal appears asking the user if they are sure they would like to delete their review | pass
 select cancel | the dleete review modal will hide | pass
 select delete | whiskey.html/<whiskey_name> will load with a flash success message informing the user that their review has been deleted. The review should also not be seen on their profile page. | pass
+
+All failed tests have been patched and now pass in the deployed project.
 
 ### add-whiskey.html
 
@@ -287,6 +295,8 @@ The deployed website was validated near the end of the project. The following va
 
 ![add-whiskey1](static/img/TESTING/html-validation/add-whiskey1.png)
 
+The deployed website has now had all HTML validation errors fixed.
+
 ### CSS
 
 All CSS was validated at [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/)
@@ -302,6 +312,8 @@ The following validation errors were discovered and then fixed during developmen
 The following validation errors were discovered and then fixed during development.
 
 ![reviews1.css](static/img/README/css-validation/reviews1-css.png)
+
+The deployed website has now had all CSS validation errors fixed.
 
 ### JavaScript
 

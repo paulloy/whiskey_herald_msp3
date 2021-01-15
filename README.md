@@ -335,6 +335,12 @@ The following icons were sourced from [Font Awesome](https://fontawesome.com/)
 - [fas fa-times](https://fontawesome.com/icons/times?style=solid)
 - [fas fa-cogs](https://fontawesome.com/icons/cogs?style=solid)
 
+The following images used on the website were acquired from:
+- [back.jpg](http://www.otoklodzko.pl/foto_artykuly/2018/03/07/103912/103912_000gal-barrels_of_whiskey_in_storage_room.jpg)
+- [hero-image.jpg](https://mindpalaver.files.wordpress.com/2018/02/66049893_ml.jpg?w=880&h=312&crop=1)
+- [placeholder.jpg](https://media.caak.mn/cache/ea/23/ea2388e561abfae301df2fed10981b4e.jpg)
+- [whiskey-details-background.jpg](https://c.stocksy.com/a/H4L900/z9/2225941.jpg)
+
 ## Content
 
 The following regex pattern "^[a-zA-Z0-9]([._-](?![._-])|[a-zA-Z0-9]){3,18}[a-zA-Z0-9]$" was copied from [Java regex validate username examples](https://mkyong.com/regular-expressions/how-to-validate-username-with-regular-expression/)
