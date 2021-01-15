@@ -11,35 +11,68 @@ they can then update the whiskey's information. Only the “admin” has permiss
 The user can read other users reviews and create, update and delete their own reviews. The user also has a profile page where they can update their username, profile icon, bio, password, or delete 
 their account. My hope is that Whiskey Herald provides a great experience to as many whiskey lovers as possible.
 
+My website is deployed live at [http://whiskey-herald.herokuapp.com/](http://whiskey-herald.herokuapp.com/)
+
+# Table of Contents
+
+- [UX](README.md#ux)
+    - [Project Goals](README.md#project-goals)
+    - [User Goals](README.md#user-goals)
+    - [Project Wireframe](README.md#project-wireframe)
+    - [User Stories](README.md#user-stories)
+    - [UX Design Process](README.md#ux-design-process)
+- [Features](README.md#features)
+    - [base.html](README.md#basehtml)
+    - [index.html (Home)](README.md#indexhtml-home)
+    - [register.html](README.md#registerhtml)
+    - [login.html](README.md#loginhtml)
+    - [profile.html](README.md#profilehtml)
+    - [search.html](README.md#searchhtml)
+    - [whiskey.html](README.md#whiskeyhtml)
+    - [add-whiskey.html](README.md#add-whiskeyhtml)
+    - [edit-whiskey.html](README.md#edit-whiskeyhtml)
+    - [Error Handlers](README.md#error-handlers)
+    - [Future Features](README.md#future-features)
+- [Technologies Used](README.md#technologies-used)
+- [Testing](README.md#testing)
+- [Deployment](README.md#deployment)
+    - [Live Deployment](README.md#live-deployment)
+    - [Local Deployment](README.md#local-deployment)
+- [Credits](README.md#credits)
+    - [Media](README.md#media)
+    - [Content](README.md#content)
+    - [Acknowledgements](README.md#)
+    - [Books I read](README.md#books-i-read)
+
 # UX
 
 ## Project Goals
 
--	Develop a website with an intuitive design that helps the user accomplish their goals. [1]
--	Provide the user with a meaningful experience. [2]
--	Build a website in line with good coding practices. [3]
+-	Develop a website with an intuitive design that helps the user accomplish their goals.
+-	Provide the user with a meaningful experience.
+-	Build a website in line with good coding practices.
 
 ## User Goals
 
--	Search the database with custom keywords.  [4]
--	A website with a familiar enough design that I can focus on accomplishing my goals rather than learn how to use the website. [1]
--	Feel that use of this website is a meaningful use of my time. [2]
--	Accessible design. [5]
+-	Search the database with custom keywords.
+-	A website with a familiar enough design that I can focus on accomplishing my goals rather than learn how to use the website.
+-	Feel that use of this website is a meaningful use of my time.
+-	Accessible design.
 
-- [1] My website uses a common layout. Navbar toggle icon is placed at the top right of the page. All navigation is contained within the sidenav. The search bar is present in the header at all times.
-- [2] All users will be able to update the information on whiskeys so that the database is up to date, and they may contribute to a community of like-minded individuals.
-- [3] HTML and CSS will be passed through validators, JavaScript will be passed through a linter, and Python will be written in accordance with PEP8 practices.
-- [4] The user will be provided with a search bar that will allow them to navigate the database for what they are looking for.
-- [5] The website will adhere to good practices for ensuring that it is accessible for users with visual impairment.
+My website uses a common layout. Navbar toggle icon is placed at the top right of the page. All navigation is contained within the sidenav. The search bar is present in the header at all times.
+All users will be able to update the information on whiskeys so that the database is up to date, and they may contribute to a community of like-minded individuals.
+HTML and CSS will be passed through validators, JavaScript will be passed through a linter, and Python will be written in accordance with PEP8 practices.
+The user will be provided with a search bar that will allow them to navigate the database for what they are looking for.
+The website will adhere to good practices for ensuring that it is accessible for users with visual impairment.
 
 ## Project Wireframe
 
-[initial wireframe design](static/img/READEME/first-wireframe.pdf)
+[initial wireframe design](static/img/README/first-wireframe.pdf)
 
 This was my inital design for the website. I created a mockup of my website to test this design and the UX. During development this wireframe altered into a better design. User profile pictures
 were replaced with Font Awesome icons. The about.html page was removed. A hero image was added to index.html, and the layout of whiskey.html and profile.html altered for a better UX.
 
-[Updated wireframe design](static/img/READEME/updated-wireframe.pdf)
+[Updated wireframe design](static/img/README/updated-wireframe.pdf)
 
 This is the wireframe for my deployed project.
 
@@ -150,8 +183,8 @@ In the users profile page, their user information is displayed at the top of the
 
 The initial wireframe design was what I designed before development began. As I received more feedback on UX I updated the design during development.
 
-[Initial wireframe design](static/img/README/first-wireframe.pdf)
-[Updated Wireframe](static/img/README/updated-wireframe.pdf)
+- [Initial wireframe design](static/img/README/first-wireframe.pdf)
+- [Updated Wireframe](static/img/README/updated-wireframe.pdf)
 
 ### Surface
 
@@ -251,7 +284,7 @@ for "Scatch." Did you mean "Scotch?"
 -   [MongoDB](https://www.mongodb.com/) - Used to host my database.
 -   [Heroku](https://www.heroku.com/) - Used to deploy my live website.
 -   [Flickity](https://flickity.metafizzy.co/) - Used for creating carousels.
--   [Bootstrap] - I used bootstrap grids, .btn classes for styling, and .alert classes for flashed messages.
+-   [Bootstrap](https://getbootstrap.com/) - I used bootstrap grids, .btn classes for styling, and .alert classes for flashed messages.
 
 # Testing
 
@@ -261,12 +294,12 @@ All testing and validation is contained within a separate .md file. [View TESTIN
 
 ## Live Deployment
 
-This project was deployed on [Heroku]((https://www.heroku.com/). The address of my live project is [http://whiskey-herald.herokuapp.com/](http://whiskey-herald.herokuapp.com/)
+This project was deployed on [Heroku](https://www.heroku.com/). The address of my live project is [http://whiskey-herald.herokuapp.com/](http://whiskey-herald.herokuapp.com/)
 
 1. Firstly, a requirements.txt file is needed so Heroku knows what dependencies must be installed to run this project. The following command in the terminal will create a .txt file for this project.
-    `pip3 freeze --local > requirements.txt`
+    - `pip3 freeze --local > requirements.txt`
 1. A Procfile is needed so Heroku knows which file runs the app and how it should be run. The following command in the terminal will generate a Procfile.
-    `echo web: python app.py > Procfile`
+    - `echo web: python app.py > Procfile`
 1. Login to your Heroku account, select "New" and in the dropdown select "Create new app."
 1. Create a unique app name and choose the region closest to you. In my case that is Europe. Select "Create app."
 1. The easiest method of deployment is to set up automatic deployment from the github repository.
@@ -291,7 +324,7 @@ to connect, and deploy the master branch.
 1. Click on the Code button at the top of this repository.
 1. Copy the HTTPS URL.
 1. Open a new terminal in your IDE and use the command "git clone" followed by the copied url.
-    `git clone https://github.com/paulloy/whiskey_herald_msp3.git`
+    - `git clone https://github.com/paulloy/whiskey_herald_msp3.git`
 1. Click enter and wait for your local clone to download.
 1. You should now have access to a clone of this project.
 
@@ -343,20 +376,20 @@ The following images used on the website were acquired from:
 
 ## Content
 
-The following regex pattern "^[a-zA-Z0-9]([._-](?![._-])|[a-zA-Z0-9]){3,18}[a-zA-Z0-9]$" was copied from [Java regex validate username examples](https://mkyong.com/regular-expressions/how-to-validate-username-with-regular-expression/)
+- The following regex pattern `^[a-zA-Z0-9]([._-](?![._-])|[a-zA-Z0-9]){3,18}[a-zA-Z0-9]$` was copied from [Java regex validate username examples.](https://mkyong.com/regular-expressions/how-to-validate-username-with-regular-expression/)
 I used [Flickity](https://flickity.metafizzy.co/) to create carousels. All JavaScript code from [flickity.js](static/js/flickity.js) was copied from
 [Flickity Github Page](https://github.com/metafizzy/flickity) for the purpose of initalising the flickity carousels used on index.html and altering different carousel options.
 
-Wireframes were developed using [JustInMind](https://www.justinmind.com/)
+- Wireframes were developed using [JustInMind](https://www.justinmind.com/)
 
-The following font was acquired from [Google Fonts](https://fonts.google.com/):
-[Fira Sans Extra Condensed](https://fonts.google.com/specimen/Fira+Sans+Extra+Condensed?query=Fira+Sans+Extra+Condensed)
+- The following font was acquired from [Google Fonts](https://fonts.google.com/):
+    - [Fira Sans Extra Condensed](https://fonts.google.com/specimen/Fira+Sans+Extra+Condensed?query=Fira+Sans+Extra+Condensed)
 
-Bopotstrap grid classes were acquired from [Bootstrap Grid System](https://getbootstrap.com/docs/4.0/layout/grid/)
-Bootstrap .btn classes were acquired from [Bootstrap Buttons](https://getbootstrap.com/docs/4.0/components/buttons/#button-tags)
-Bootstrap .alert classes were acquired from [Bootstrap Alerts](https://getbootstrap.com/docs/4.0/components/alerts/)
+- Bootstrap grid classes were acquired from [Bootstrap Grid System.](https://getbootstrap.com/docs/4.0/layout/grid/)
+- Bootstrap .btn classes were acquired from [Bootstrap Buttons.](https://getbootstrap.com/docs/4.0/components/buttons/#button-tags)
+- Bootstrap .alert classes were acquired from [Bootstrap Alerts.](https://getbootstrap.com/docs/4.0/components/alerts/)
 
-The image at the top of this README was produced on [Am I Responsive?](http://ami.responsivedesign.is/)
+- The image at the top of this README was produced on [Am I Responsive?](http://ami.responsivedesign.is/)
 
 ## Acknowledgements
 
@@ -364,7 +397,7 @@ The image at the top of this README was produced on [Am I Responsive?](http://am
 - Thanks to Maria, Tomás, Conor, Niall, Aaron, and Katie for registering accounts and beta testing my website.
 - Thanks to the rest of my friends and family who tested the website during its development and helped me with their valuable feedback on the UX.
 - Thanks to my tutor [Caleb Mbakwe](https://www.linkedin.com/in/calebmbakwe/) for feedback on the project.
-- I got additional help from Stack [Overflow](https://stackoverflow.com/) and [W3](https://www.w3schools.com/) Schools.
+- I got additional help from Stack [Overflow](https://stackoverflow.com/) and [W3 Schools.](https://www.w3schools.com/)
 
 ## Books I Read
 
